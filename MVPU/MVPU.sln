@@ -1,14 +1,18 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-
+Project("{37ABAF1A-327E-8CFB-AF1D-3586D50290DE}") = "MVPU", "Assembly-CSharp.csproj", "{97D1B840-6035-715D-D7D7-270EA16C7614}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{97D1B840-6035-715D-D7D7-270EA16C7614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97D1B840-6035-715D-D7D7-270EA16C7614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97D1B840-6035-715D-D7D7-270EA16C7614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97D1B840-6035-715D-D7D7-270EA16C7614}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
