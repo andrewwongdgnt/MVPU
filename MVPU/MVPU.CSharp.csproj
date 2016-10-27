@@ -81,8 +81,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\GameModel.cs" />
-    <Compile Include="Assets\Scripts\Level1_1.cs" />
+    <Compile Include="Assets\Entities\Enemy\VEnemy\VEnemy.cs" />
+    <Compile Include="Assets\Entities\Entity.cs" />
+    <Compile Include="Assets\Entities\Player\Player.cs" />
+    <Compile Include="Assets\Levels\Cell.cs" />
+    <Compile Include="Assets\Levels\GameModel.cs" />
+    <Compile Include="Assets\Levels\Test World\TestLevel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
