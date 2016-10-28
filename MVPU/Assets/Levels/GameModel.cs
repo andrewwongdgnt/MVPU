@@ -3,9 +3,11 @@ using System.Collections;
 using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
+using System;
 
 public class GameModel : MonoBehaviour
 {
+    private readonly float ANIMATION_DELAY = 0.5f;
 
     private float _verticalSpace;
     public float verticalSpace
@@ -57,12 +59,12 @@ public class GameModel : MonoBehaviour
 
     }
 
-    private bool animationHappening;
+    private bool disableUserAction;
 
     // Update is called once per frame
     void Update()
     {
-        if (!animationHappening &&
+        if (!disableUserAction &&
             (Input.GetKeyDown(KeyCode.UpArrow)
             || Input.GetKeyDown(KeyCode.LeftArrow)
             || Input.GetKeyDown(KeyCode.DownArrow)
@@ -92,30 +94,48 @@ public class GameModel : MonoBehaviour
             {
                 Enemy vEnemyEntity = enemyEntityArr[i];
                 GameObject vEnemy = enemyArr[i];
-
-
                 vEnemyEntity.do_react(vEnemy, verticalSpace, horizontalSpace);
-
-
-
             }
+
+            StartCoroutine(handleUserActionState());
 
         }
 
-        if (endGame && !animationHappening)
+        if (endGame && !disableUserAction)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
 
     }
 
+    private IEnumerator handleUserActionState()
+    {
+        disableUserAction = true;
+        yield return new WaitForSeconds((enemyArr.Length + 1) * ANIMATION_DELAY);
+        disableUserAction = false;
+    }
+
     //Event Listeners
     public void moveGameObject(GameObject gameObject, Vector3 endPosition)
     {
-        StartCoroutine(MoveOverSeconds(gameObject, endPosition, .5f));
+        int order = getOrder(gameObject);
+        StartCoroutine(moveOverSeconds(gameObject, endPosition, ANIMATION_DELAY, order));
     }
 
     public void look(GameObject gameObject, Entity.Direction direction)
     {
+        float delay = getOrder(gameObject) * ANIMATION_DELAY;
+        StartCoroutine(lookWithDelay(gameObject, direction, delay));
+    }
+    //End Event Listener
+
+    private int getOrder(GameObject gameObject)
+    {
+        int order = gameObject == player ? 0 : 1 + Array.FindIndex(enemyArr, go => go == gameObject);
+        return order;
+    }
+    private IEnumerator lookWithDelay(GameObject gameObject, Entity.Direction direction, float delay)
+    {
+        yield return new WaitForSeconds(delay);
         if (direction == Entity.Direction.UP)
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
         if (direction == Entity.Direction.LEFT)
@@ -130,25 +150,23 @@ public class GameModel : MonoBehaviour
     {
         if (playerEntity.x == anEnemyEntity.x && playerEntity.y == anEnemyEntity.y)
             endGame = true;
-
-
     }
 
     // speed should be 1 unit per second
-    private IEnumerator MoveOverSpeed(GameObject objectToMove, Vector3 end, float speed)
+    private IEnumerator moveOverSpeed(GameObject objectToMove, Vector3 end, float speed)
     {
-        animationHappening = true;
+        disableUserAction = true;
         while (objectToMove.transform.position != end)
         {
             objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, speed * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
-        animationHappening = false;
+        disableUserAction = false;
     }
 
-    private IEnumerator MoveOverSeconds(GameObject objectToMove, Vector3 end, float seconds)
+    private IEnumerator moveOverSeconds(GameObject objectToMove, Vector3 end, float seconds, int order)
     {
-        animationHappening = true;
+        yield return new WaitForSeconds(order * ANIMATION_DELAY);
         float elapsedTime = 0;
         Vector3 startingPos = objectToMove.transform.position;
         while (elapsedTime < seconds)
@@ -158,7 +176,7 @@ public class GameModel : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         objectToMove.transform.position = end;
-        animationHappening = false;
+
     }
 
 

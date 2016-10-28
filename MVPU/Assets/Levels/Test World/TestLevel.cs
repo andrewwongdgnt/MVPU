@@ -20,7 +20,7 @@ public class TestLevel : MonoBehaviour {
         gameModel.playerEntity = new Player(1, 2, gameModel.grid, gameModel);
         gameModel.player = player;
 
-        gameModel.enemyEntityArr = new Enemy[] { new VEnemy(1, 1, gameModel.grid, gameModel) , new HEnemy(5, 2, gameModel.grid, gameModel) };
+        gameModel.enemyEntityArr = new Enemy[] { new HEnemy(1, 1, gameModel.grid, gameModel), new VEnemy(2, 0, gameModel.grid, gameModel), };
         gameModel.enemyArr = enemyArr;
     }
 	

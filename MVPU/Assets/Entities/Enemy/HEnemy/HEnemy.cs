@@ -19,41 +19,41 @@ public class HEnemy : Enemy
             //Player is left of 
             if (playerX < x)
             {
-                if (!tryToMoveLeft(gameObject, hDisplacement))
+                if (!tryToMoveLeftForEnemy(gameObject, hDisplacement))
                 {
-                    tryToMoveUpOrDown(playerY, gameObject, vDisplacement);
+                    tryToMoveUpOrDownForEnemy(playerY, gameObject, vDisplacement);
                 }
 
             }
             //Player is right of
             else if (playerX > x)
             {
-                if (!tryToMoveRight(gameObject, hDisplacement))
+                if (!tryToMoveRightForEnemy(gameObject, hDisplacement))
                 {
-                    tryToMoveUpOrDown(playerY, gameObject, vDisplacement);
+                    tryToMoveUpOrDownForEnemy(playerY, gameObject, vDisplacement);
                 }
             }
         }
         else
         {
-            tryToMoveUpOrDown(playerY, gameObject, vDisplacement);
+            tryToMoveUpOrDownForEnemy(playerY, gameObject, vDisplacement);
         }
 
         _gameModel.checkForEndGame(this);
     }
 
-    private void tryToMoveUpOrDown(int playerY, GameObject gameObject, float vDisplacement)
+    private void tryToMoveUpOrDownForEnemy(int playerY, GameObject gameObject, float vDisplacement)
     {
 
         //Player is above of 
         if (playerY < y)
         {
-            tryToMoveUp(gameObject, vDisplacement);
+            tryToMoveUpForEnemy(gameObject, vDisplacement);
         }
         //Player is below of
         else if (playerY > y)
         {
-            tryToMoveDown(gameObject, vDisplacement);
+            tryToMoveDownForEnemy(gameObject, vDisplacement);
         }
     }
 
