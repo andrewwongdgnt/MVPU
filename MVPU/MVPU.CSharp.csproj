@@ -81,6 +81,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Entities\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Entities\Enemy\HEnemy\HEnemy.cs" />
     <Compile Include="Assets\Entities\Enemy\VEnemy\VEnemy.cs" />
     <Compile Include="Assets\Entities\Entity.cs" />
     <Compile Include="Assets\Entities\Player\Player.cs" />

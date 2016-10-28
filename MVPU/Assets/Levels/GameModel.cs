@@ -10,7 +10,7 @@ public class GameModel : MonoBehaviour
     private float _verticalSpace;
     public float verticalSpace
     {
-        get;set;
+        get; set;
     }
 
     private float _horizontalSpace;
@@ -18,7 +18,7 @@ public class GameModel : MonoBehaviour
     {
         get; set;
     }
-   
+
     private Cell[,] _grid;
     public Cell[,] grid
     {
@@ -37,8 +37,8 @@ public class GameModel : MonoBehaviour
         get; set;
     }
 
-    private Entity[] _enemyEntityArr;
-    public Entity[] enemyEntityArr
+    private Enemy[] _enemyEntityArr;
+    public Enemy[] enemyEntityArr
     {
         get; set;
     }
@@ -54,7 +54,7 @@ public class GameModel : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+
     }
 
     private bool animationHappening;
@@ -90,25 +90,13 @@ public class GameModel : MonoBehaviour
 
             for (int i = 0; i < enemyEntityArr.Length; i++)
             {
-                Entity vEnemyEntity = enemyEntityArr[i];
+                Enemy vEnemyEntity = enemyEntityArr[i];
                 GameObject vEnemy = enemyArr[i];
 
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    vEnemyEntity.do_moveUp(vEnemy, verticalSpace, horizontalSpace);
-                }
-                else if (Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    vEnemyEntity.do_moveLeft(vEnemy, verticalSpace, horizontalSpace);
-                }
-                else if (Input.GetKeyDown(KeyCode.DownArrow))
-                {
-                    vEnemyEntity.do_moveDown(vEnemy, verticalSpace, horizontalSpace);
-                }
-                else if (Input.GetKeyDown(KeyCode.RightArrow))
-                {
-                    vEnemyEntity.do_moveRight(vEnemy, verticalSpace, horizontalSpace);
-                }
+
+                vEnemyEntity.do_react(vEnemy, verticalSpace, horizontalSpace);
+
+
 
             }
 
@@ -143,7 +131,7 @@ public class GameModel : MonoBehaviour
         if (playerEntity.x == anEnemyEntity.x && playerEntity.y == anEnemyEntity.y)
             endGame = true;
 
-   
+
     }
 
     // speed should be 1 unit per second

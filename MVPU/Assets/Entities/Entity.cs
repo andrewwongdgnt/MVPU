@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Entity
+public abstract class Entity
 {
     public enum Direction
     {
@@ -45,14 +45,16 @@ public class Entity
         _gameModel = gameModel;
     }
 
-    protected void tryToMoveUp(GameObject gameObject, float displacement)
+    protected bool tryToMoveUp(GameObject gameObject, float displacement)
     {
         do_look(gameObject, Direction.UP);
         if (y > 0 && !grid[y, x].topBlocked)
         {
             _y--;
             _gameModel.moveGameObject(gameObject, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + displacement, gameObject.transform.position.z));
+            return true;
         }
+        return false;
     }
 
     public virtual void do_moveUp(GameObject gameObject, float vDisplacement, float hDisplacement)
@@ -61,14 +63,16 @@ public class Entity
 
     }
 
-    protected void tryToMoveLeft(GameObject gameObject, float displacement)
+    protected bool tryToMoveLeft(GameObject gameObject, float displacement)
     {
         do_look(gameObject, Direction.LEFT);
         if (x > 0 && !grid[y, x].leftBlocked)
         {
             _x--;
             _gameModel.moveGameObject(gameObject, new Vector3(gameObject.transform.position.x - displacement, gameObject.transform.position.y, gameObject.transform.position.z));
+            return true;
         }
+        return false;
     }
 
     public virtual void do_moveLeft(GameObject gameObject, float vDisplacement, float hDisplacement)
@@ -76,14 +80,16 @@ public class Entity
         tryToMoveLeft(gameObject, hDisplacement);
     }
 
-    protected void tryToMoveDown(GameObject gameObject, float displacement)
+    protected bool tryToMoveDown(GameObject gameObject, float displacement)
     {
         do_look(gameObject, Direction.DOWN);
         if (y < grid.GetLength(0) - 1 && !grid[y, x].bottomBlocked)
         {
             _y++;
             _gameModel.moveGameObject(gameObject, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - displacement, gameObject.transform.position.z));
+            return true;
         }
+        return false;
     }
 
     public virtual void do_moveDown(GameObject gameObject, float vDisplacement, float hDisplacement)
@@ -91,14 +97,16 @@ public class Entity
         tryToMoveDown(gameObject, vDisplacement);
     }
 
-    protected void tryToMoveRight(GameObject gameObject, float displacement)
+    protected bool tryToMoveRight(GameObject gameObject, float displacement)
     {
         do_look(gameObject, Direction.RIGHT);
         if (x < grid.GetLength(1) - 1 && !grid[y, x].rightBlocked)
         {
             _x++;
             _gameModel.moveGameObject(gameObject, new Vector3(gameObject.transform.position.x + displacement, gameObject.transform.position.y, gameObject.transform.position.z));
+            return true;
         }
+        return false;
     }
 
     public virtual void do_moveRight(GameObject gameObject, float vDisplacement, float hDisplacement)
