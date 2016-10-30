@@ -3,51 +3,163 @@ using System.Collections;
 using System.Linq;
 using System;
 
-public abstract class Enemy : Entity
+public class Enemy : Entity
 {
-    public Enemy(int x, int y, Cell[,] grid, GameModel gameModel) : base(x, y, grid, gameModel)
+    public bool verticalOrientation;
+    public int stepsPerMove;
+
+    // Use this for initialization
+    void Start()
     {
+        Debug.Log("Enemy Created:"+" x="+x+" y="+y+" verticalOrientation="+verticalOrientation+" stepsPerMove="+stepsPerMove);
     }
 
-    protected bool tryToMoveUpForEnemy(GameObject gameObject, float displacement)
+
+    public void Do_React(float vDisplacement, float hDisplacement)
     {
-        do_look(gameObject, Direction.UP);
-        if (!Array.Exists(_gameModel.enemyEntityArr, en => en.x == x && en.y == y - 1))
+        int playerX = _gameModel.playerX;
+        int playerY = _gameModel.playerY;
+
+        
+        for (int i = 0; i < stepsPerMove; i++)
         {
-            return tryToMoveUp(gameObject, displacement);
+            Direction direction = Direction.NEUTRAL;
+            if (verticalOrientation)
+            {
+                if (playerY != y)
+                {
+                    //Player is above of 
+                    if (playerY < y)
+                    {
+                        direction = Direction.UP;
+                        if (!TryToMoveUpForEnemy(gameObject, vDisplacement))
+                        {
+                            direction = TryToMoveLeftOrRightForEnemy(playerX, gameObject, hDisplacement);
+                        }
+
+                    }
+                    //Player is below of
+                    else if (playerY > y)
+                    {
+                        direction = Direction.DOWN;
+                        if (!TryToMoveDownForEnemy(gameObject, vDisplacement))
+                        {
+                            direction = TryToMoveLeftOrRightForEnemy(playerX, gameObject, hDisplacement);
+                        }
+                    }
+                }
+                else
+                {
+                    direction = TryToMoveLeftOrRightForEnemy(playerX, gameObject, hDisplacement);
+                }
+            }
+            else
+            {
+
+                if (playerX != x)
+                {
+                    //Player is left of 
+                    if (playerX < x)
+                    {
+                        direction = Direction.LEFT;
+                        if (!TryToMoveLeftForEnemy(gameObject, hDisplacement))
+                        {
+                            direction = TryToMoveUpOrDownForEnemy(playerY, gameObject, vDisplacement);
+                        }
+
+                    }
+                    //Player is right of
+                    else if (playerX > x)
+                    {
+                        direction = Direction.RIGHT;
+                        if (!TryToMoveRightForEnemy(gameObject, hDisplacement))
+                        {
+                            direction = TryToMoveUpOrDownForEnemy(playerY, gameObject, vDisplacement);
+                        }
+                    }
+                }
+                else
+                {
+                    direction = TryToMoveUpOrDownForEnemy(playerY, gameObject, vDisplacement);
+                }
+            }
+            _gameModel.AnimateGameObject(this, direction,i);
+
+            _gameModel.CheckForEndGame(this);
+        }
+    }
+
+    private Direction TryToMoveLeftOrRightForEnemy(int playerX, GameObject gameObject, float hDisplacement)
+    {
+
+        //Player is left of 
+        if (playerX < x)
+        {
+            TryToMoveLeftForEnemy(gameObject, hDisplacement);
+            return Direction.LEFT;
+        }
+        //Player is right of
+        else if (playerX > x)
+        {
+            TryToMoveRightForEnemy(gameObject, hDisplacement);
+            return Direction.RIGHT;
+        }
+        return Direction.NEUTRAL;
+    }
+
+    private Direction TryToMoveUpOrDownForEnemy(int playerY, GameObject gameObject, float vDisplacement)
+    {
+
+        //Player is above of 
+        if (playerY < y)
+        {
+            TryToMoveUpForEnemy(gameObject, vDisplacement);
+            return Direction.UP;
+        }
+        //Player is below of
+        else if (playerY > y)
+        {
+            TryToMoveDownForEnemy(gameObject, vDisplacement);
+            return Direction.DOWN;
+        }
+        return Direction.NEUTRAL;
+    }
+
+    protected bool TryToMoveUpForEnemy(GameObject gameObject, float displacement)
+    {
+        if (_gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y - 1))
+        {
+            return TryToMoveUp(displacement);
         }
         return false;
     }
 
-    protected bool tryToMoveLeftForEnemy(GameObject gameObject, float displacement)
+    protected bool TryToMoveLeftForEnemy(GameObject gameObject, float displacement)
     {
-        do_look(gameObject, Direction.LEFT);
-        if (!Array.Exists(_gameModel.enemyEntityArr, en => en.x == x - 1 && en.y == y))
+        if (_gameModel.IsAnEnemyInTheWay(en => en.x == x - 1 && en.y == y))
         {
-            return tryToMoveLeft(gameObject, displacement);
+            return TryToMoveLeft(displacement);
         }
         return false;
     }
 
-    protected bool tryToMoveDownForEnemy(GameObject gameObject, float displacement)
+    protected bool TryToMoveDownForEnemy(GameObject gameObject, float displacement)
     {
-        do_look(gameObject, Direction.DOWN);
-        if (!Array.Exists(_gameModel.enemyEntityArr, en => en.x == x && en.y == y + 1))
+        if (_gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y + 1))
         {
-            return tryToMoveDown(gameObject, displacement);
+            return TryToMoveDown(displacement);
         }
         return false;
     }
 
-    protected bool tryToMoveRightForEnemy(GameObject gameObject, float displacement)
+    protected bool TryToMoveRightForEnemy(GameObject gameObject, float displacement)
     {
-        do_look(gameObject, Direction.RIGHT);
-        if (!Array.Exists(_gameModel.enemyEntityArr, en => en.x == x + 1 && en.y == y))
+        if (_gameModel.IsAnEnemyInTheWay(en => en.x == x + 1 && en.y == y))
         {
-            return tryToMoveRight(gameObject, displacement);
+            return TryToMoveRight(displacement);
         }
         return false;
     }
 
-    public abstract void do_react(GameObject gameObject, float vDisplacement, float hDisplacement);
+
 }

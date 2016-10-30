@@ -4,67 +4,135 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
 using System;
+using System.Collections.Generic;
 
 public class GameModel : MonoBehaviour
 {
     private readonly float ANIMATION_DELAY = 0.5f;
 
-    private float _verticalSpace;
     public float verticalSpace
     {
         get; set;
     }
 
-    private float _horizontalSpace;
     public float horizontalSpace
     {
         get; set;
     }
 
-    private Cell[,] _grid;
+    public float originX
+    {
+        get; set;
+    }
+
+    public float originY
+    {
+        get; set;
+    }
+
     public Cell[,] grid
     {
         get; set;
     }
 
-    private Player _playerEntity;
-    public Player playerEntity
+    private Player _player;
+    public Player player
     {
-        get; set;
+
+        set
+        {
+            _player = value;
+            _player.gameModel = this;
+        }
     }
 
-    private GameObject _player;
-    public GameObject player
+    public int playerX
     {
-        get; set;
+        get
+        {
+            return _player.x;
+        }
     }
 
-    private Enemy[] _enemyEntityArr;
-    public Enemy[] enemyEntityArr
+    public int playerY
     {
-        get; set;
+        get
+        {
+            return _player.y;
+        }
     }
 
-    private GameObject[] _enemyArr;
-    public GameObject[] enemyArr
+
+    private Enemy[] _enemyArr;
+    public Enemy[] enemyArr
     {
-        get; set;
+        set
+        {
+            _enemyArr = value;
+            Array.ForEach(_enemyArr, en =>
+            {
+                en.gameModel = this;
+            });
+        }
     }
 
     private bool endGame;
+    private List<List<bool>> animationComplete = new List<List<bool>>();
 
-    // Use this for initialization
-    void Start()
+
+
+    public void Commence()
     {
+        //for Player
+        List<bool> stepForPlayer = new List<bool>();
+        stepForPlayer.Add(true);
+        animationComplete.Add(stepForPlayer);
+
+        Array.ForEach(_enemyArr, en =>
+        {
+
+            List<bool> step = new List<bool>();
+            for (int i = 0; i < en.stepsPerMove; i++)
+                step.Add(true);
+            animationComplete.Add(step);
+
+        });
+
+        //set positions for each entity
+        _player.transform.position = new Vector3(originX + _player.x * horizontalSpace, originY + _player.y * -verticalSpace, _player.transform.position.z);
+
+        Array.ForEach(_enemyArr, en =>
+        {
+            en.transform.position = en.transform.position = new Vector3(originX + en.x * horizontalSpace, originY + en.y * -verticalSpace, en.transform.position.z);
+        });
 
     }
 
-    private bool disableUserAction;
+    private void updateAnimationCompleteListWith(bool value)
+    {
+        for (int i = 0; i < animationComplete.Count; i++)
+        {
+
+            List<bool> step = new List<bool>();
+
+            if (i == 0)
+            {
+                step.Add(value);
+            }
+            else
+            {
+                Enemy enemy = _enemyArr[i - 1];
+                for (int j = 0; j < enemy.stepsPerMove; j++)
+                    step.Add(value);
+            }
+            animationComplete[i] = step;
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (!disableUserAction &&
+        if (IsUserActionEnabled() &&
             (Input.GetKeyDown(KeyCode.UpArrow)
             || Input.GetKeyDown(KeyCode.LeftArrow)
             || Input.GetKeyDown(KeyCode.DownArrow)
@@ -72,101 +140,105 @@ public class GameModel : MonoBehaviour
             )
         {
 
+            updateAnimationCompleteListWith(false);
+
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                playerEntity.do_moveUp(player, verticalSpace, horizontalSpace);
+                _player.Do_MoveUp(verticalSpace, horizontalSpace);
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                playerEntity.do_moveLeft(player, verticalSpace, horizontalSpace);
+                _player.Do_MoveLeft(verticalSpace, horizontalSpace);
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                playerEntity.do_moveDown(player, verticalSpace, horizontalSpace);
+                _player.Do_MoveDown(verticalSpace, horizontalSpace);
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                playerEntity.do_moveRight(player, verticalSpace, horizontalSpace);
+                _player.Do_MoveRight(verticalSpace, horizontalSpace);
             }
-            Debug.Log(playerEntity.x + " , " + playerEntity.y);
+            Debug.Log(_player.x + " , " + _player.y);
 
-            for (int i = 0; i < enemyEntityArr.Length; i++)
+            for (int i = 0; i < _enemyArr.Length; i++)
             {
-                Enemy vEnemyEntity = enemyEntityArr[i];
-                GameObject vEnemy = enemyArr[i];
-                vEnemyEntity.do_react(vEnemy, verticalSpace, horizontalSpace);
+                Enemy enemy = _enemyArr[i];
+                enemy.Do_React(verticalSpace, horizontalSpace);
             }
-
-            StartCoroutine(handleUserActionState());
 
         }
 
-        if (endGame && !disableUserAction)
+        if (endGame && IsUserActionEnabled())
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
 
     }
 
-    private IEnumerator handleUserActionState()
+    private bool IsUserActionEnabled()
     {
-        disableUserAction = true;
-        yield return new WaitForSeconds((enemyArr.Length + 1) * ANIMATION_DELAY);
-        disableUserAction = false;
+        return animationComplete.All(list => list.All(b => b));
     }
 
     //Event Listeners
-    public void moveGameObject(GameObject gameObject, Vector3 endPosition)
+    public void AnimateGameObject(Entity entity, Entity.Direction direction, int stepOrder)
     {
-        int order = getOrder(gameObject);
-        StartCoroutine(moveOverSeconds(gameObject, endPosition, ANIMATION_DELAY, order));
-    }
+        int order = GetOrder(entity);
 
-    public void look(GameObject gameObject, Entity.Direction direction)
-    {
-        float delay = getOrder(gameObject) * ANIMATION_DELAY;
-        StartCoroutine(lookWithDelay(gameObject, direction, delay));
+        Vector3 endPosition = new Vector3(originX + entity.x * horizontalSpace, originY + entity.y * -verticalSpace, entity.transform.position.z);
+        StartCoroutine(MoveOverSeconds(entity, endPosition, direction, ANIMATION_DELAY, order, stepOrder));
     }
     //End Event Listener
 
-    private int getOrder(GameObject gameObject)
+    public void Look(Entity entity, Entity.Direction direction)
     {
-        int order = gameObject == player ? 0 : 1 + Array.FindIndex(enemyArr, go => go == gameObject);
-        return order;
-    }
-    private IEnumerator lookWithDelay(GameObject gameObject, Entity.Direction direction, float delay)
-    {
-        yield return new WaitForSeconds(delay);
+        //TODO: not the right way to do it but leave for testing
         if (direction == Entity.Direction.UP)
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+            entity.transform.rotation = Quaternion.Euler(0, 0, 90);
         if (direction == Entity.Direction.LEFT)
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
-        if (direction == Entity.Direction.DOWN)
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 270);
+            entity.transform.rotation = Quaternion.Euler(0, 0, 180);
+        if (direction == Entity.Direction.DOWN || direction == Entity.Direction.NEUTRAL)
+            entity.transform.rotation = Quaternion.Euler(0, 0, 270);
         if (direction == Entity.Direction.RIGHT)
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            entity.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
-    public void checkForEndGame(Entity anEnemyEntity)
+    public bool IsAnEnemyInTheWay(Predicate<Enemy> predicate)
     {
-        if (playerEntity.x == anEnemyEntity.x && playerEntity.y == anEnemyEntity.y)
+        return !Array.Exists(_enemyArr, predicate);
+    }
+
+    private int GetOrder(Entity entity)
+    {
+        int order = entity == _player ? 0 : 1 + Array.FindIndex(_enemyArr, en => en == entity);
+        return order;
+    }
+
+    public void CheckForEndGame(Entity anEnemyEntity)
+    {
+        if (_player.x == anEnemyEntity.x && _player.y == anEnemyEntity.y)
             endGame = true;
     }
 
     // speed should be 1 unit per second
     private IEnumerator moveOverSpeed(GameObject objectToMove, Vector3 end, float speed)
     {
-        disableUserAction = true;
         while (objectToMove.transform.position != end)
         {
             objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, speed * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
-        disableUserAction = false;
     }
 
-    private IEnumerator moveOverSeconds(GameObject objectToMove, Vector3 end, float seconds, int order)
+    private IEnumerator MoveOverSeconds(Entity objectToMove, Vector3 end, Entity.Direction direction, float seconds, int order, int stepOrder)
     {
-        yield return new WaitForSeconds(order * ANIMATION_DELAY);
+
+
+        yield return new WaitUntil(() => order == 0 ? true : stepOrder == 0 ? animationComplete[order - 1][animationComplete[order - 1].Count - 1] : animationComplete[order][stepOrder - 1]);
+
+        if (direction == Entity.Direction.NEUTRAL)
+            updateAnimationCompleteListWith(true);
+
+        Look(objectToMove, direction);
         float elapsedTime = 0;
         Vector3 startingPos = objectToMove.transform.position;
         while (elapsedTime < seconds)
@@ -176,6 +248,13 @@ public class GameModel : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         objectToMove.transform.position = end;
+
+        animationComplete[order][stepOrder] = true;
+        Enemy enemyTouchingPlayer = Array.Find(_enemyArr, en => en.x == _player.x && en.y == _player.y);
+        if (enemyTouchingPlayer != null && (animationComplete[0][0] && animationComplete[GetOrder(enemyTouchingPlayer)].All(b=>b)))
+        {
+            updateAnimationCompleteListWith(true);
+        }
 
     }
 
