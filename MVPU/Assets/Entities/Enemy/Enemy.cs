@@ -8,10 +8,13 @@ public class Enemy : Entity
     public bool verticalOrientation;
     public int stepsPerMove;
     public bool dozer;
+
     public bool inactive
     {
         get; set;
     }
+    private bool blocked;
+
 
     // Use this for initialization
     void Start()
@@ -31,6 +34,7 @@ public class Enemy : Entity
 
             for (int i = 0; i < stepsPerMove; i++)
             {
+                blocked = false;
                 Direction direction = Direction.NONE;
                 if (verticalOrientation)
                 {
@@ -94,6 +98,8 @@ public class Enemy : Entity
                 _gameModel.CheckForEndGame(this, i);
                 if (dozer)
                     _gameModel.CheckIfOtherEnemiesGotDozed(this, i);
+                if (blocked)
+                    _gameModel.SetBlocked(this, i);
 
                 _gameModel.AnimateGameObject(this, direction, i);
 
@@ -101,7 +107,7 @@ public class Enemy : Entity
         }
         else
         {
-            _gameModel.AnimateGameObject(this, Direction.NONE, -1);
+            _gameModel.AnimateGameObject(this, Direction.NONE, 0);
         }
     }
 
@@ -111,15 +117,16 @@ public class Enemy : Entity
         //Player is left of 
         if (playerX < x)
         {
-            TryToMoveLeftForEnemy();
+            blocked = !TryToMoveLeftForEnemy();
             return Direction.LEFT;
         }
         //Player is right of
         else if (playerX > x)
         {
-            TryToMoveRightForEnemy();
+            blocked = !TryToMoveRightForEnemy();
             return Direction.RIGHT;
         }
+        
         return defaultDirection;
     }
 
@@ -129,15 +136,16 @@ public class Enemy : Entity
         //Player is above of 
         if (playerY < y)
         {
-            TryToMoveUpForEnemy();
+            blocked = !TryToMoveUpForEnemy();
             return Direction.UP;
         }
         //Player is below of
         else if (playerY > y)
         {
-            TryToMoveDownForEnemy();
+            blocked = !TryToMoveDownForEnemy();
             return Direction.DOWN;
         }
+
         return defaultDirection;
     }
 

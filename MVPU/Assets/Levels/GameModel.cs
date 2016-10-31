@@ -92,6 +92,8 @@ public class GameModel : MonoBehaviour
     //win=true
     private Triple<int, int, bool> gameEndInfo;
 
+    private List<Pair<int, int>> blockedEnemiesList = new List<Pair<int, int>>();
+
 
 
     public void Commence()
@@ -154,6 +156,7 @@ public class GameModel : MonoBehaviour
         {
 
             updateAnimationCompleteListWith(false);
+            blockedEnemiesList.Clear();
 
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -209,16 +212,16 @@ public class GameModel : MonoBehaviour
 
     public void AnimateGameObject(Entity entity, Entity.Direction direction, int stepOrder)
     {
-        if (entity is Enemy && ((Enemy)entity).inactive)
+        if (entity is Enemy && ((Enemy)entity).inactive )
         {
-            Enemy dozedEnemy = (Enemy)entity;
+            Enemy enemy = (Enemy)entity;
+            
+            int order = GetOrder(enemy);
 
-            List<bool> step = new List<bool>();
-            for (int j = 0; j < dozedEnemy.stepsPerMove; j++)
-                step.Add(true);
+            List<bool> step = animationComplete[order];
+            for (int j = stepOrder; j < enemy.stepsPerMove; j++)
+                step[j]=true;
 
-            int order = GetOrder(dozedEnemy);
-            animationComplete[order] = step;
         }
         else
         {
@@ -290,6 +293,11 @@ public class GameModel : MonoBehaviour
         }
     }
 
+    public void SetBlocked(Enemy enemy, int stepOrder)
+    {
+        blockedEnemiesList.Add(new Pair<int, int>(GetOrder(enemy), stepOrder));
+    }
+
     // speed should be 1 unit per second
     private IEnumerator moveOverSpeed(GameObject objectToMove, Vector3 end, float speed)
     {
@@ -321,10 +329,9 @@ public class GameModel : MonoBehaviour
             {
                 return false;
             }
-            //return true;
+            
         }
 
-        //return order==0 ? true : stepOrder == 0 ? animationComplete[order - 1][animationComplete[order - 1].Count - 1] : animationComplete[order][stepOrder - 1];
         return true;
     }
 
@@ -339,14 +346,19 @@ public class GameModel : MonoBehaviour
             //Update sprite to face the proper direction
             Look(objectToMove, direction);
 
+            Pair<int, int> blockedEnemyInfo = blockedEnemiesList.Find(b => b.first == order && b.second == stepOrder);
+
             //Logic to move the object
             float elapsedTime = 0;
             Vector3 startingPos = objectToMove.transform.position;
-            while (elapsedTime < seconds)
+            if (blockedEnemyInfo == null)
             {
-                objectToMove.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
-                elapsedTime += Time.deltaTime;
-                yield return new WaitForEndOfFrame();
+                while (elapsedTime < seconds)
+                {
+                    objectToMove.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
+                    elapsedTime += Time.deltaTime;
+                    yield return new WaitForEndOfFrame();
+                }
             }
             objectToMove.transform.position = end;
 
@@ -360,14 +372,16 @@ public class GameModel : MonoBehaviour
             }
 
             //update view of dozed enemies
-            Triple<int, int, Enemy> trip = dozedEnemiesList.Find(d => d.first == order && d.second == stepOrder);
-            if (trip != null && trip.third != null)
+            Triple<int, int, Enemy> dozedEnemyInfo = dozedEnemiesList.Find(d => d.first == order && d.second == stepOrder);
+            if (dozedEnemyInfo != null && dozedEnemyInfo.third != null)
             {
-                Enemy dozedEnemy = trip.third;
+                Enemy dozedEnemy = dozedEnemyInfo.third;
 
                 Color color = dozedEnemy.GetComponent<SpriteRenderer>().material.color;
                 color.a = 0.5f;
                 dozedEnemy.GetComponent<SpriteRenderer>().material.color = color;
+
+                Look(dozedEnemy, Entity.Direction.DOWN);
 
             }
         }
