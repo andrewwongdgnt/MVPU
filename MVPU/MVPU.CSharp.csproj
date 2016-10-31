@@ -87,6 +87,8 @@
     <Compile Include="Assets\Levels\Cell.cs" />
     <Compile Include="Assets\Levels\GameModel.cs" />
     <Compile Include="Assets\Levels\Test World\TestLevel.cs" />
+    <Compile Include="Assets\UtilScripts\Pair.cs" />
+    <Compile Include="Assets\UtilScripts\Triple.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

@@ -13,6 +13,9 @@ public class TestLevel : MonoBehaviour
     public float originX;
     public float originY;
 
+    public int winX;
+    public int winY;
+
     // Use this for initialization
     void Start()
     {
@@ -20,6 +23,8 @@ public class TestLevel : MonoBehaviour
         gameModel.horizontalSpace = horizontalSpace;
         gameModel.originX = originX;
         gameModel.originY = originY;
+        gameModel.winX = winX;
+        gameModel.winY = winY;
 
         gameModel.grid = new Cell[,]{
             {Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,},

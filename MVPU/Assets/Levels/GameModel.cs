@@ -30,6 +30,16 @@ public class GameModel : MonoBehaviour
         get; set;
     }
 
+    public float winX
+    {
+        get; set;
+    }
+
+    public float winY
+    {
+        get; set;
+    }
+
     public Cell[,] grid
     {
         get; set;
@@ -76,8 +86,11 @@ public class GameModel : MonoBehaviour
         }
     }
 
-    private bool endGame;
+
     private List<List<bool>> animationComplete = new List<List<bool>>();
+    private List<Triple<int, int, Enemy>> dozedEnemiesList = new List<Triple<int, int, Enemy>>();
+    //win=true
+    private Triple<int, int, bool> gameEndInfo;
 
 
 
@@ -132,7 +145,7 @@ public class GameModel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsUserActionEnabled() &&
+        if (areAllAnimationsComplete() &&
             (Input.GetKeyDown(KeyCode.UpArrow)
             || Input.GetKeyDown(KeyCode.LeftArrow)
             || Input.GetKeyDown(KeyCode.DownArrow)
@@ -144,50 +157,77 @@ public class GameModel : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                _player.Do_MoveUp(verticalSpace, horizontalSpace);
+                _player.Do_MoveUp();
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                _player.Do_MoveLeft(verticalSpace, horizontalSpace);
+                _player.Do_MoveLeft();
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                _player.Do_MoveDown(verticalSpace, horizontalSpace);
+                _player.Do_MoveDown();
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                _player.Do_MoveRight(verticalSpace, horizontalSpace);
+                _player.Do_MoveRight();
             }
-            Debug.Log(_player.x + " , " + _player.y);
+            Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
 
             for (int i = 0; i < _enemyArr.Length; i++)
             {
                 Enemy enemy = _enemyArr[i];
-                enemy.Do_React(verticalSpace, horizontalSpace);
+                enemy.Do_React();
+                Debug.Log(enemy+" new position (" + enemy.x + ", " + enemy.y + ")");
             }
 
         }
 
-        if (endGame && IsUserActionEnabled())
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (areAllAnimationsComplete())
+        {
+            if (gameEndInfo != null)
+            {
+                if (gameEndInfo.third)
+                {
+                    Debug.Log("Game Win");
+                }
+                else
+                {
+
+                    Debug.Log("Game Over");
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
+            }
+        }
 
 
     }
 
-    private bool IsUserActionEnabled()
+    private bool areAllAnimationsComplete()
     {
         return animationComplete.All(list => list.All(b => b));
     }
 
-    //Event Listeners
     public void AnimateGameObject(Entity entity, Entity.Direction direction, int stepOrder)
     {
-        int order = GetOrder(entity);
+        if (entity is Enemy && ((Enemy)entity).inactive)
+        {
+            Enemy dozedEnemy = (Enemy)entity;
 
-        Vector3 endPosition = new Vector3(originX + entity.x * horizontalSpace, originY + entity.y * -verticalSpace, entity.transform.position.z);
-        StartCoroutine(MoveOverSeconds(entity, endPosition, direction, ANIMATION_DELAY, order, stepOrder));
+            List<bool> step = new List<bool>();
+            for (int j = 0; j < dozedEnemy.stepsPerMove; j++)
+                step.Add(true);
+
+            int order = GetOrder(dozedEnemy);
+            animationComplete[order] = step;
+        }
+        else
+        {
+            int order = GetOrder(entity);
+
+            Vector3 endPosition = new Vector3(originX + entity.x * horizontalSpace, originY + entity.y * -verticalSpace, entity.transform.position.z);
+            StartCoroutine(MoveOverSeconds(entity, endPosition, direction, ANIMATION_DELAY, order, stepOrder));
+        }
     }
-    //End Event Listener
 
     public void Look(Entity entity, Entity.Direction direction)
     {
@@ -196,7 +236,7 @@ public class GameModel : MonoBehaviour
             entity.transform.rotation = Quaternion.Euler(0, 0, 90);
         if (direction == Entity.Direction.LEFT)
             entity.transform.rotation = Quaternion.Euler(0, 0, 180);
-        if (direction == Entity.Direction.DOWN || direction == Entity.Direction.NEUTRAL)
+        if (direction == Entity.Direction.DOWN || direction == Entity.Direction.NONE)
             entity.transform.rotation = Quaternion.Euler(0, 0, 270);
         if (direction == Entity.Direction.RIGHT)
             entity.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -213,10 +253,41 @@ public class GameModel : MonoBehaviour
         return order;
     }
 
-    public void CheckForEndGame(Entity anEnemyEntity)
+    public void CheckForEndGame(Entity entity, int stepOrder)
     {
-        if (_player.x == anEnemyEntity.x && _player.y == anEnemyEntity.y)
-            endGame = true;
+        if (gameEndInfo == null)
+        {
+            if (_player.x == winX && _player.y == winY)
+            {
+                gameEndInfo = new Triple<int, int, bool>(GetOrder(_player), stepOrder, true);
+
+            }
+            else
+            {
+                if (entity == _player)
+                {
+                    Enemy theKiller = Array.Find(_enemyArr, en => en.x == _player.x && en.y == _player.y);
+                    if (theKiller != null)
+                    {
+                        gameEndInfo = new Triple<int, int, bool>(GetOrder(_player), stepOrder, false);
+                    }
+                }
+                else if (_player.x == entity.x && _player.y == entity.y)
+                    gameEndInfo = new Triple<int, int, bool>(GetOrder(entity), stepOrder, false);
+            }
+        }
+    }
+
+    public void CheckIfOtherEnemiesGotDozed(Entity anEnemy, int stepOrder)
+    {
+        Enemy dozedEnemy = Array.Find(_enemyArr, en => en != anEnemy && en.x == anEnemy.x && en.y == anEnemy.y);
+        if (dozedEnemy != null && !dozedEnemy.inactive)
+        {
+            dozedEnemy.inactive = true;
+
+            dozedEnemiesList.Add(new Triple<int, int, Enemy>(GetOrder(anEnemy), stepOrder, dozedEnemy));
+
+        }
     }
 
     // speed should be 1 unit per second
@@ -229,32 +300,79 @@ public class GameModel : MonoBehaviour
         }
     }
 
+    private bool isLatestAnimationComplete(int order, int stepOrder)
+    {
+
+        int currentOrder = order;
+        int currentStepOrder = stepOrder;
+        while (currentOrder > 0)
+        {
+            if (currentStepOrder == 0)
+            {
+                currentOrder--;
+                currentStepOrder = animationComplete[currentOrder].Count - 1;
+
+            }
+            else
+            {
+                currentStepOrder--;
+            }
+            if (!animationComplete[currentOrder][currentStepOrder])
+            {
+                return false;
+            }
+            //return true;
+        }
+
+        //return order==0 ? true : stepOrder == 0 ? animationComplete[order - 1][animationComplete[order - 1].Count - 1] : animationComplete[order][stepOrder - 1];
+        return true;
+    }
+
     private IEnumerator MoveOverSeconds(Entity objectToMove, Vector3 end, Entity.Direction direction, float seconds, int order, int stepOrder)
     {
 
 
-        yield return new WaitUntil(() => order == 0 ? true : stepOrder == 0 ? animationComplete[order - 1][animationComplete[order - 1].Count - 1] : animationComplete[order][stepOrder - 1]);
+        yield return new WaitUntil(() => isLatestAnimationComplete(order, stepOrder));
 
-        if (direction == Entity.Direction.NEUTRAL)
-            updateAnimationCompleteListWith(true);
-
-        Look(objectToMove, direction);
-        float elapsedTime = 0;
-        Vector3 startingPos = objectToMove.transform.position;
-        while (elapsedTime < seconds)
+        if (!areAllAnimationsComplete())
         {
-            objectToMove.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
-            elapsedTime += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
-        }
-        objectToMove.transform.position = end;
+            //Update sprite to face the proper direction
+            Look(objectToMove, direction);
 
-        animationComplete[order][stepOrder] = true;
-        Enemy enemyTouchingPlayer = Array.Find(_enemyArr, en => en.x == _player.x && en.y == _player.y);
-        if (enemyTouchingPlayer != null && (animationComplete[0][0] && animationComplete[GetOrder(enemyTouchingPlayer)].All(b=>b)))
-        {
-            updateAnimationCompleteListWith(true);
+            //Logic to move the object
+            float elapsedTime = 0;
+            Vector3 startingPos = objectToMove.transform.position;
+            while (elapsedTime < seconds)
+            {
+                objectToMove.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
+                elapsedTime += Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+            objectToMove.transform.position = end;
+
+            //this animation is done
+            animationComplete[order][stepOrder] = true;
+
+            //Check for game end
+            if (gameEndInfo != null && gameEndInfo.first == order && gameEndInfo.second == stepOrder)
+            {
+                updateAnimationCompleteListWith(true);
+            }
+
+            //update view of dozed enemies
+            Triple<int, int, Enemy> trip = dozedEnemiesList.Find(d => d.first == order && d.second == stepOrder);
+            if (trip != null && trip.third != null)
+            {
+                Enemy dozedEnemy = trip.third;
+
+                Color color = dozedEnemy.GetComponent<SpriteRenderer>().material.color;
+                color.a = 0.5f;
+                dozedEnemy.GetComponent<SpriteRenderer>().material.color = color;
+
+            }
         }
+
+
 
     }
 

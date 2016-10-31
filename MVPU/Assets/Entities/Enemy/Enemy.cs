@@ -7,156 +7,172 @@ public class Enemy : Entity
 {
     public bool verticalOrientation;
     public int stepsPerMove;
+    public bool dozer;
+    public bool inactive
+    {
+        get; set;
+    }
 
     // Use this for initialization
     void Start()
     {
-        Debug.Log("Enemy Created:"+" x="+x+" y="+y+" verticalOrientation="+verticalOrientation+" stepsPerMove="+stepsPerMove);
+        
+        Debug.Log(this+" Created:"+" x="+x+" y="+y+" verticalOrientation="+verticalOrientation+" stepsPerMove="+stepsPerMove+" dozer="+dozer);
     }
 
 
-    public void Do_React(float vDisplacement, float hDisplacement)
+    public void Do_React()
     {
-        int playerX = _gameModel.playerX;
-        int playerY = _gameModel.playerY;
-
-        
-        for (int i = 0; i < stepsPerMove; i++)
+        if (!inactive)
         {
-            Direction direction = Direction.NEUTRAL;
-            if (verticalOrientation)
-            {
-                if (playerY != y)
-                {
-                    //Player is above of 
-                    if (playerY < y)
-                    {
-                        direction = Direction.UP;
-                        if (!TryToMoveUpForEnemy(gameObject, vDisplacement))
-                        {
-                            direction = TryToMoveLeftOrRightForEnemy(playerX, gameObject, hDisplacement);
-                        }
+            int playerX = _gameModel.playerX;
+            int playerY = _gameModel.playerY;
 
-                    }
-                    //Player is below of
-                    else if (playerY > y)
+
+            for (int i = 0; i < stepsPerMove; i++)
+            {
+                Direction direction = Direction.NONE;
+                if (verticalOrientation)
+                {
+                    if (playerY != y)
                     {
-                        direction = Direction.DOWN;
-                        if (!TryToMoveDownForEnemy(gameObject, vDisplacement))
+                        //Player is above of 
+                        if (playerY < y)
                         {
-                            direction = TryToMoveLeftOrRightForEnemy(playerX, gameObject, hDisplacement);
+                            direction = Direction.UP;
+                            if (!TryToMoveUpForEnemy())
+                            {
+                                direction = TryToMoveLeftOrRightForEnemy(playerX, direction);
+                            }
+
                         }
+                        //Player is below of
+                        else if (playerY > y)
+                        {
+                            direction = Direction.DOWN;
+                            if (!TryToMoveDownForEnemy())
+                            {
+                                direction = TryToMoveLeftOrRightForEnemy(playerX, direction);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        direction = TryToMoveLeftOrRightForEnemy(playerX, direction);
                     }
                 }
                 else
                 {
-                    direction = TryToMoveLeftOrRightForEnemy(playerX, gameObject, hDisplacement);
-                }
-            }
-            else
-            {
 
-                if (playerX != x)
-                {
-                    //Player is left of 
-                    if (playerX < x)
+                    if (playerX != x)
                     {
-                        direction = Direction.LEFT;
-                        if (!TryToMoveLeftForEnemy(gameObject, hDisplacement))
+                        //Player is left of 
+                        if (playerX < x)
                         {
-                            direction = TryToMoveUpOrDownForEnemy(playerY, gameObject, vDisplacement);
+                            direction = Direction.LEFT;
+                            if (!TryToMoveLeftForEnemy())
+                            {
+                                direction = TryToMoveUpOrDownForEnemy(playerY, direction);
+                            }
+
                         }
-
-                    }
-                    //Player is right of
-                    else if (playerX > x)
-                    {
-                        direction = Direction.RIGHT;
-                        if (!TryToMoveRightForEnemy(gameObject, hDisplacement))
+                        //Player is right of
+                        else if (playerX > x)
                         {
-                            direction = TryToMoveUpOrDownForEnemy(playerY, gameObject, vDisplacement);
+                            direction = Direction.RIGHT;
+                            if (!TryToMoveRightForEnemy())
+                            {
+                                direction = TryToMoveUpOrDownForEnemy(playerY, direction);
+                            }
                         }
                     }
+                    else
+                    {
+                        direction = TryToMoveUpOrDownForEnemy(playerY, direction);
+                    }
                 }
-                else
-                {
-                    direction = TryToMoveUpOrDownForEnemy(playerY, gameObject, vDisplacement);
-                }
-            }
-            _gameModel.AnimateGameObject(this, direction,i);
+                _gameModel.CheckForEndGame(this, i);
+                if (dozer)
+                    _gameModel.CheckIfOtherEnemiesGotDozed(this, i);
 
-            _gameModel.CheckForEndGame(this);
+                _gameModel.AnimateGameObject(this, direction, i);
+
+            }
+        }
+        else
+        {
+            _gameModel.AnimateGameObject(this, Direction.NONE, -1);
         }
     }
 
-    private Direction TryToMoveLeftOrRightForEnemy(int playerX, GameObject gameObject, float hDisplacement)
+    private Direction TryToMoveLeftOrRightForEnemy(int playerX, Direction defaultDirection)
     {
 
         //Player is left of 
         if (playerX < x)
         {
-            TryToMoveLeftForEnemy(gameObject, hDisplacement);
+            TryToMoveLeftForEnemy();
             return Direction.LEFT;
         }
         //Player is right of
         else if (playerX > x)
         {
-            TryToMoveRightForEnemy(gameObject, hDisplacement);
+            TryToMoveRightForEnemy();
             return Direction.RIGHT;
         }
-        return Direction.NEUTRAL;
+        return defaultDirection;
     }
 
-    private Direction TryToMoveUpOrDownForEnemy(int playerY, GameObject gameObject, float vDisplacement)
+    private Direction TryToMoveUpOrDownForEnemy(int playerY, Direction defaultDirection)
     {
 
         //Player is above of 
         if (playerY < y)
         {
-            TryToMoveUpForEnemy(gameObject, vDisplacement);
+            TryToMoveUpForEnemy();
             return Direction.UP;
         }
         //Player is below of
         else if (playerY > y)
         {
-            TryToMoveDownForEnemy(gameObject, vDisplacement);
+            TryToMoveDownForEnemy();
             return Direction.DOWN;
         }
-        return Direction.NEUTRAL;
+        return defaultDirection;
     }
 
-    protected bool TryToMoveUpForEnemy(GameObject gameObject, float displacement)
+    protected bool TryToMoveUpForEnemy()
     {
-        if (_gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y - 1))
+        if (dozer || _gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y - 1))
         {
-            return TryToMoveUp(displacement);
+            return TryToMoveUp();
         }
         return false;
     }
 
-    protected bool TryToMoveLeftForEnemy(GameObject gameObject, float displacement)
+    protected bool TryToMoveLeftForEnemy()
     {
-        if (_gameModel.IsAnEnemyInTheWay(en => en.x == x - 1 && en.y == y))
+        if (dozer || _gameModel.IsAnEnemyInTheWay(en => en.x == x - 1 && en.y == y))
         {
-            return TryToMoveLeft(displacement);
+            return TryToMoveLeft();
         }
         return false;
     }
 
-    protected bool TryToMoveDownForEnemy(GameObject gameObject, float displacement)
+    protected bool TryToMoveDownForEnemy()
     {
-        if (_gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y + 1))
+        if (dozer || _gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y + 1))
         {
-            return TryToMoveDown(displacement);
+            return TryToMoveDown();
         }
         return false;
     }
 
-    protected bool TryToMoveRightForEnemy(GameObject gameObject, float displacement)
+    protected bool TryToMoveRightForEnemy()
     {
-        if (_gameModel.IsAnEnemyInTheWay(en => en.x == x + 1 && en.y == y))
+        if (dozer || _gameModel.IsAnEnemyInTheWay(en => en.x == x + 1 && en.y == y))
         {
-            return TryToMoveRight(displacement);
+            return TryToMoveRight();
         }
         return false;
     }

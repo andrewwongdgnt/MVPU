@@ -8,30 +8,42 @@ public class Player : Entity
     // Use this for initialization
     void Start()
     {
-        Debug.Log("Player Created:" + " x=" + x + " y=" + y);
+        Debug.Log(this+" Created:" + " x=" + x + " y=" + y);
     }
 
-    public void Do_MoveUp(float vDisplacement, float hDisplacement)
+    public void Do_MoveUp()
     {
-        TryToMoveUp(vDisplacement);
-        _gameModel.AnimateGameObject(this, Direction.UP,0);
+        TryToMove(Direction.UP);
     }
 
-    public void Do_MoveLeft(float vDisplacement, float hDisplacement)
+    public void Do_MoveLeft()
     {
-        TryToMoveLeft(hDisplacement);
-        _gameModel.AnimateGameObject(this, Direction.LEFT, 0);
+        TryToMove(Direction.LEFT);
     }
 
-    public void Do_MoveDown(float vDisplacement, float hDisplacement)
+    public void Do_MoveDown()
     {
-        TryToMoveDown(vDisplacement);
-        _gameModel.AnimateGameObject(this, Direction.DOWN, 0);
+        TryToMove(Direction.DOWN);
     }
 
-    public void Do_MoveRight(float vDisplacement, float hDisplacement)
+    public void Do_MoveRight()
     {
-        TryToMoveRight(hDisplacement);
-        _gameModel.AnimateGameObject(this, Direction.RIGHT, 0);
+        TryToMove(Direction.RIGHT);
+    }
+
+    private void TryToMove(Direction direction)
+    {
+        if (direction == Entity.Direction.UP)
+            TryToMoveUp();
+        if (direction == Entity.Direction.LEFT)
+            TryToMoveLeft();
+        if (direction == Entity.Direction.DOWN)
+            TryToMoveDown();
+        if (direction == Entity.Direction.RIGHT)
+            TryToMoveRight();
+        
+        _gameModel.CheckForEndGame(this, 0);
+        _gameModel.AnimateGameObject(this, direction, 0);
+
     }
 }

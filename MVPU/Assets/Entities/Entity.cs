@@ -5,7 +5,7 @@ public abstract class Entity : MonoBehaviour
 {
     public enum Direction
     {
-        UP, LEFT, DOWN, RIGHT, NEUTRAL
+        NONE, UP, LEFT, DOWN, RIGHT, 
     }
 
     public int x;
@@ -21,7 +21,7 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    protected bool TryToMoveUp(float displacement)
+    protected bool TryToMoveUp()
     {
 
         if (y > 0 && !_gameModel.grid[y, x].topBlocked)
@@ -33,7 +33,7 @@ public abstract class Entity : MonoBehaviour
     }
 
 
-    protected bool TryToMoveLeft(float displacement)
+    protected bool TryToMoveLeft()
     {
         if (x > 0 && !_gameModel.grid[y, x].leftBlocked)
         {
@@ -43,7 +43,7 @@ public abstract class Entity : MonoBehaviour
         return false;
     }
 
-    protected bool TryToMoveDown(float displacement)
+    protected bool TryToMoveDown()
     {
         if (y < _gameModel.grid.GetLength(0) - 1 && !_gameModel.grid[y, x].bottomBlocked)
         {
@@ -53,7 +53,7 @@ public abstract class Entity : MonoBehaviour
         return false;
     }
 
-    protected bool TryToMoveRight(float displacement)
+    protected bool TryToMoveRight()
     {
         if (x < _gameModel.grid.GetLength(1) - 1 && !_gameModel.grid[y, x].rightBlocked)
         {
@@ -62,5 +62,6 @@ public abstract class Entity : MonoBehaviour
         }
         return false;
     }
+
 
 }
