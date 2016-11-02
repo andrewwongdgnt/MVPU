@@ -87,6 +87,7 @@
     <Compile Include="Assets\Levels\Cell.cs" />
     <Compile Include="Assets\Levels\GameModel.cs" />
     <Compile Include="Assets\Levels\Test World\TestLevel.cs" />
+    <Compile Include="Assets\Obstacle\Bomb\Bomb.cs" />
     <Compile Include="Assets\UtilScripts\Pair.cs" />
     <Compile Include="Assets\UtilScripts\Triple.cs" />
   </ItemGroup>

@@ -6,6 +6,7 @@ public class TestLevel : MonoBehaviour
     public GameModel gameModel;
     public Player player;
     public Enemy[] enemyArr;
+    public Bomb[] bombArr;
 
     public float verticalSpace;
     public float horizontalSpace;
@@ -32,6 +33,8 @@ public class TestLevel : MonoBehaviour
             {Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,},
             {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,},
         };
+
+        gameModel.bombArr = bombArr;
 
         gameModel.player = player;
 

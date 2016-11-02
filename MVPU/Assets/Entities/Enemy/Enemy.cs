@@ -19,23 +19,24 @@ public class Enemy : Entity
     // Use this for initialization
     void Start()
     {
-        
-        Debug.Log(this+" Created:"+" x="+x+" y="+y+" verticalOrientation="+verticalOrientation+" stepsPerMove="+stepsPerMove+" dozer="+dozer);
+
+        Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " verticalOrientation=" + verticalOrientation + " stepsPerMove=" + stepsPerMove + " dozer=" + dozer);
     }
 
 
     public void Do_React()
     {
-        if (!inactive)
+        int playerX = _gameModel.playerX;
+        int playerY = _gameModel.playerY;
+
+
+        for (int i = 0; i < stepsPerMove; i++)
         {
-            int playerX = _gameModel.playerX;
-            int playerY = _gameModel.playerY;
-
-
-            for (int i = 0; i < stepsPerMove; i++)
+            Direction direction = Direction.NONE;
+            if (!inactive)
             {
                 blocked = false;
-                Direction direction = Direction.NONE;
+
                 if (verticalOrientation)
                 {
                     if (playerY != y)
@@ -100,16 +101,14 @@ public class Enemy : Entity
                     _gameModel.CheckIfOtherEnemiesGotDozed(this, i);
                 if (blocked)
                     _gameModel.SetBlocked(this, i);
-
-                _gameModel.AnimateGameObject(this, direction, i);
+                _gameModel.CheckIfBombed(this, i);
 
             }
-        }
-        else
-        {
-            _gameModel.AnimateGameObject(this, Direction.NONE, 0);
+
+            _gameModel.AnimateGameObject(this, direction, i);
         }
     }
+
 
     private Direction TryToMoveLeftOrRightForEnemy(int playerX, Direction defaultDirection)
     {
@@ -126,7 +125,7 @@ public class Enemy : Entity
             blocked = !TryToMoveRightForEnemy();
             return Direction.RIGHT;
         }
-        
+
         return defaultDirection;
     }
 
@@ -151,7 +150,7 @@ public class Enemy : Entity
 
     protected bool TryToMoveUpForEnemy()
     {
-        if (dozer || _gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y - 1))
+        if (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y - 1 && !en.inactive))
         {
             return TryToMoveUp();
         }
@@ -160,7 +159,7 @@ public class Enemy : Entity
 
     protected bool TryToMoveLeftForEnemy()
     {
-        if (dozer || _gameModel.IsAnEnemyInTheWay(en => en.x == x - 1 && en.y == y))
+        if (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x - 1 && en.y == y && !en.inactive))
         {
             return TryToMoveLeft();
         }
@@ -169,7 +168,7 @@ public class Enemy : Entity
 
     protected bool TryToMoveDownForEnemy()
     {
-        if (dozer || _gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y + 1))
+        if (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y + 1 && !en.inactive))
         {
             return TryToMoveDown();
         }
@@ -178,7 +177,7 @@ public class Enemy : Entity
 
     protected bool TryToMoveRightForEnemy()
     {
-        if (dozer || _gameModel.IsAnEnemyInTheWay(en => en.x == x + 1 && en.y == y))
+        if (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x + 1 && en.y == y && !en.inactive))
         {
             return TryToMoveRight();
         }
