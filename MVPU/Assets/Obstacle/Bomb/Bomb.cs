@@ -8,7 +8,7 @@ public class Bomb : MonoBehaviour {
     public int y;
     public bool affectsEnemy;
     public bool affectsPlayer;
-    public bool singleUse;
+    public int numOfUses;
 
     public bool inactive
     {

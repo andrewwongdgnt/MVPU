@@ -125,7 +125,7 @@ public class Enemy : Entity
             blocked = !TryToMoveRightForEnemy();
             return Direction.RIGHT;
         }
-
+        blocked = true;
         return defaultDirection;
     }
 
@@ -144,13 +144,14 @@ public class Enemy : Entity
             blocked = !TryToMoveDownForEnemy();
             return Direction.DOWN;
         }
-
+        blocked = true;
         return defaultDirection;
     }
 
     protected bool TryToMoveUpForEnemy()
     {
-        if (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y - 1 && !en.inactive))
+        if (!_gameModel.IsGoalInTheWay(go => go.x == x && go.y == y - 1)
+            && (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y - 1 && !en.inactive)))
         {
             return TryToMoveUp();
         }
@@ -159,7 +160,8 @@ public class Enemy : Entity
 
     protected bool TryToMoveLeftForEnemy()
     {
-        if (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x - 1 && en.y == y && !en.inactive))
+        if (!_gameModel.IsGoalInTheWay(go => go.x == x - 1 && go.y == y)
+            && (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x - 1 && en.y == y && !en.inactive)))
         {
             return TryToMoveLeft();
         }
@@ -168,7 +170,8 @@ public class Enemy : Entity
 
     protected bool TryToMoveDownForEnemy()
     {
-        if (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y + 1 && !en.inactive))
+        if (!_gameModel.IsGoalInTheWay(go => go.x == x && go.y == y + 1)
+            && (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x && en.y == y + 1 && !en.inactive)))
         {
             return TryToMoveDown();
         }
@@ -177,7 +180,8 @@ public class Enemy : Entity
 
     protected bool TryToMoveRightForEnemy()
     {
-        if (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x + 1 && en.y == y && !en.inactive))
+        if (!_gameModel.IsGoalInTheWay(go => go.x == x + 1 && go.y == y)
+            && (dozer || !_gameModel.IsAnEnemyInTheWay(en => en.x == x + 1 && en.y == y && !en.inactive)))
         {
             return TryToMoveRight();
         }

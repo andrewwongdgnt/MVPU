@@ -1,0 +1,2413 @@
+Mono path[0] = 'D:/Users/Owner/Unity games/MVPU/MVPU/MVP_Data/Managed'
+Mono path[1] = 'D:/Users/Owner/Unity games/MVPU/MVPU/MVP_Data/Mono'
+Mono config path = 'D:/Users/Owner/Unity games/MVPU/MVPU/MVP_Data/Mono/etc'
+PlayerConnection initialized from D:/Users/Owner/Unity games/MVPU/MVPU/MVP_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55448
+Multi-casting "[IP] 192.168.0.18 [Port] 55448 [Flags] 2 [Guid] 3338200404 [EditorId] 2436628155 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-FF0MVGU) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.0.18:55448]
+Initialize engine version: 5.4.1f1 (649f48bbbf0f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Vendor:   NVIDIA
+    VRAM:     4058 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.044 seconds
+Platform assembly: D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Users\Owner\Unity games\MVPU\MVPU\MVP_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3600x1080 at -1680,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.614802 ms
+Test H Enemy (Enemy) Created: x=0 y=2 verticalOrientation=False stepsPerMove=1 dozer=False
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Enemy:Start() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Entities\Enemy\Enemy.cs:23)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Entities/Enemy/Enemy.cs Line: 23)
+
+Test Goal (Goal) Created: x=5 y=2
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Goal:Start() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Entities\Goal\Goal.cs:9)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Entities/Goal/Goal.cs Line: 9)
+
+Test Player (Player) Created: x=0 y=1
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Player:Start() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Entities\Player\Player.cs:11)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Entities/Player/Player.cs Line: 11)
+
+Player new position (1, 1)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (1, 2)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Player new position (2, 1)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (2, 2)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Player new position (3, 1)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (3, 2)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Player new position (3, 0)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (3, 1)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Player new position (4, 0)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (3, 0)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Player new position (5, 0)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (4, 0)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Player new position (5, 1)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (5, 0)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Player new position (5, 2)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (5, 1)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Player new position (4, 2)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (4, 1)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Player new position (4, 1)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (4, 1)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Player new position (4, 0)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (4, 0)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Player new position (5, 0)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:201)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 201)
+
+Test H Enemy (Enemy) new position (5, 0)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:207)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 207)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Game Win
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameModel:Update() (at D:\Users\Owner\Unity games\MVPU\MVPU\Assets\Levels\GameModel.cs:218)
+ 
+(Filename: D:/Users/Owner/Unity games/MVPU/MVPU/Assets/Levels/GameModel.cs Line: 218)
+
+Setting up 3 worker threads for Enlighten.
+  Thread -> id: 4378 -> priority: 1 
+  Thread -> id: b28 -> priority: 1 
+  Thread -> id: 28cc -> priority: 1 
