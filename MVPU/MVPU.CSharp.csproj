@@ -88,10 +88,13 @@
     <Compile Include="Assets\Levels\Cell.cs" />
     <Compile Include="Assets\Levels\GameModel.cs" />
     <Compile Include="Assets\Levels\LevelModel.cs" />
+    <Compile Include="Assets\Levels\StartScript.cs" />
     <Compile Include="Assets\Levels\Test World\TestLevel.cs" />
     <Compile Include="Assets\Levels\World1\Level1_1.cs" />
-    <Compile Include="Assets\Menu\MainMenu.cs" />
+    <Compile Include="Assets\Menu\Main\MainMenu.cs" />
+    <Compile Include="Assets\Menu\Pause\PauseMenu.cs" />
     <Compile Include="Assets\Obstacle\Bomb\Bomb.cs" />
+    <Compile Include="Assets\UtilScripts\LevelManager.cs" />
     <Compile Include="Assets\UtilScripts\Pair.cs" />
     <Compile Include="Assets\UtilScripts\Triple.cs" />
   </ItemGroup>

@@ -216,6 +216,7 @@ public class GameModel : MonoBehaviour
                 if (gameEndInfo.third)
                 {
                     Debug.Log("Game Win");
+                    SceneManager.LoadScene("Main Menu");
                 }
                 else
                 {

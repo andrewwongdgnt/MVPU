@@ -20,25 +20,35 @@ public abstract class LevelModel : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if (LevelManager.levelToLoad == LevelId())
+        {
 
-        gameModel.verticalSpace = verticalSpace;
-        gameModel.horizontalSpace = horizontalSpace;
-        gameModel.originX = originX;
-        gameModel.originY = originY;
+            gameObject.SetActive(true);
 
-        gameModel.grid = grid();
+            gameModel.verticalSpace = verticalSpace;
+            gameModel.horizontalSpace = horizontalSpace;
+            gameModel.originX = originX;
+            gameModel.originY = originY;
 
-        gameModel.bombArr = bombArr;
+            gameModel.grid = Grid();
 
-        gameModel.player = player;
-        gameModel.goal = goal;
+            gameModel.bombArr = bombArr;
 
-        gameModel.enemyArr = enemyArr;
+            gameModel.player = player;
+            gameModel.goal = goal;
 
-        gameModel.Commence();
+            gameModel.enemyArr = enemyArr;
+
+            gameModel.Commence();
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
-    protected abstract Cell[,] grid();
+    protected abstract Cell[,] Grid();
+    protected abstract string LevelId();
 
 
 
