@@ -31,6 +31,11 @@ public class Player : Entity
         TryToMove(Direction.RIGHT);
     }
 
+    public void Do_Nothing()
+    {
+        TryToMove(Direction.NONE);
+    }
+
     private void TryToMove(Direction direction)
     {
         if (direction == Entity.Direction.UP)
@@ -41,7 +46,7 @@ public class Player : Entity
             TryToMoveDown();
         if (direction == Entity.Direction.RIGHT)
             TryToMoveRight();
-        
+
         _gameModel.CheckForEndGame(this, 0);
         _gameModel.AnimateGameObject(this, direction, 0);
 

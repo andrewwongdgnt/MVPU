@@ -91,6 +91,7 @@
     <Compile Include="Assets\Levels\StartScript.cs" />
     <Compile Include="Assets\Levels\Test World\TestLevel.cs" />
     <Compile Include="Assets\Levels\World1\Level1_1.cs" />
+    <Compile Include="Assets\Menu\Level Select\LevelSelect.cs" />
     <Compile Include="Assets\Menu\Main\MainMenu.cs" />
     <Compile Include="Assets\Menu\Pause\PauseMenu.cs" />
     <Compile Include="Assets\Obstacle\Bomb\Bomb.cs" />

@@ -170,10 +170,11 @@ public class GameModel : MonoBehaviour
     void Update()
     {
         if (areAllAnimationsComplete() &&
-            (Input.GetKeyDown(KeyCode.UpArrow)
-            || Input.GetKeyDown(KeyCode.LeftArrow)
-            || Input.GetKeyDown(KeyCode.DownArrow)
-            || Input.GetKeyDown(KeyCode.RightArrow))
+            (Input.GetAxis("Vertical") > 0
+            || Input.GetAxis("Horizontal") < 0
+            || Input.GetAxis("Vertical") < 0
+            || Input.GetAxis("Horizontal") > 0)
+            || Input.GetButtonDown("Cancel")
             )
         {
 
@@ -182,21 +183,25 @@ public class GameModel : MonoBehaviour
             blockedEnemiesList.Clear();
             bombedEnemiesList.Clear();
 
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetAxis("Vertical")>0)
             {
                 _player.Do_MoveUp();
             }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            else if (Input.GetAxis("Horizontal") < 0)
             {
                 _player.Do_MoveLeft();
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            else if (Input.GetAxis("Vertical") < 0)
             {
                 _player.Do_MoveDown();
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetAxis("Horizontal") > 0)
             {
                 _player.Do_MoveRight();
+            }
+            else if (Input.GetButtonDown("Cancel"))
+            {
+                _player.Do_Nothing();
             }
             Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
 
@@ -216,7 +221,7 @@ public class GameModel : MonoBehaviour
                 if (gameEndInfo.third)
                 {
                     Debug.Log("Game Win");
-                    SceneManager.LoadScene("Main Menu");
+                    SceneManager.LoadScene("Level Select");
                 }
                 else
                 {
@@ -280,11 +285,7 @@ public class GameModel : MonoBehaviour
                 {
                     Enemy theKiller = Array.Find(_enemyArr, en => en.x == _player.x && en.y == _player.y);
                     Bomb bomb = Array.Find(bombArr, bo => bo.x == _player.x && bo.y == _player.y);
-                    if (theKiller != null || (bomb != null && !bomb.inactive && bomb.affectsPlayer))
-                    {
-                        gameEndInfo = new Triple<int, int, bool>(GetOrder(_player), stepOrder, false);
-                    }
-                    else if (Array.Exists(bombArr, bo => bo.x == _player.x && bo.y == _player.y))
+                    if ((theKiller != null && !theKiller.inactive) || (bomb != null && !bomb.inactive && bomb.affectsPlayer))
                     {
                         gameEndInfo = new Triple<int, int, bool>(GetOrder(_player), stepOrder, false);
                     }
