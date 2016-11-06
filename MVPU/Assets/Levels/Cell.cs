@@ -8,8 +8,12 @@ public class Cell
     public static readonly Cell CELL_LEFT_CLOSED = new Cell(false, true, false, false);
     public static readonly Cell CELL_BOTTOM_CLOSED = new Cell(false, false, true, false);
     public static readonly Cell CELL_RIGHT_CLOSED = new Cell(false, false, false, true);
-    public static readonly Cell CELL_TOP_BOTTOM_CLOSED = new Cell(true, false, true, false);
     public static readonly Cell CELL_TOP_LEFT_CLOSED = new Cell(true, true, false, false);
+    public static readonly Cell CELL_TOP_BOTTOM_CLOSED = new Cell(true, false, true, false);
+    public static readonly Cell CELL_TOP_RIGHT_CLOSED = new Cell(true, false, false, true);
+    public static readonly Cell CELL_LEFT_BOTTOM_CLOSED = new Cell(false, true, true, false);
+    public static readonly Cell CELL_LEFT_RIGHT_CLOSED = new Cell(false, true, false, true);
+    public static readonly Cell CELL_BOTTOM_RIGHT_CLOSED = new Cell(false, false, true, true);
 
     private bool _topBlocked;
     public bool topBlocked
