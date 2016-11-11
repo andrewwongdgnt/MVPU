@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: 6b15fc891c9790849831fa18fa1e590c
+timeCreated: 1478576989
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Monkey Tail
+    21300002: Monkey Head
+    21300004: Monkey Body
+    21300006: Monkey Left Arm
+    21300008: Monkey Right Arm
+    21300010: Monkey Right Leg
+    21300012: Monkey Left Leg
+    21300014: Monkey Right Foot
+    21300016: Monkey Left Foot
+    21300018: Tail
+    21300020: Head
+    21300022: Body
+    21300024: Left Arm
+    21300026: Left Leg
+    21300028: Right Arm
+    21300030: Right Leg
+    21300032: Left Foot
+    21300034: Right Foot
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 256
+    textureFormat: -3
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tail
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 86
+        width: 67
+        height: 87
+      alignment: 9
+      pivot: {x: 0.89057034, y: 0.10522084}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Head
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 168
+        width: 94
+        height: 84
+      alignment: 9
+      pivot: {x: 0.59743476, y: 0.063862756}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Body
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 76
+        width: 59
+        height: 81
+      alignment: 9
+      pivot: {x: 0.5166322, y: 0.07193935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Left Arm
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 91
+        width: 53
+        height: 59
+      alignment: 9
+      pivot: {x: 0.17289706, y: 0.8603676}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Left Leg
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 46
+        width: 25
+        height: 46
+      alignment: 9
+      pivot: {x: 0.3037378, y: 0.8413247}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Right Arm
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 13
+        width: 32
+        height: 70
+      alignment: 9
+      pivot: {x: 0.745327, y: 0.8971962}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Right Leg
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 23
+        width: 22
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5892098, y: 0.86190104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Left Foot
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 12
+        width: 27
+        height: 18
+      alignment: 9
+      pivot: {x: 0.33039066, y: 0.77258575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Right Foot
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 27
+        height: 17
+      alignment: 9
+      pivot: {x: 0.33039093, y: 0.730896}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

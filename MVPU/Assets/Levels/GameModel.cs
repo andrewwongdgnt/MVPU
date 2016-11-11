@@ -7,7 +7,8 @@ using System.Collections.Generic;
 
 public class GameModel : MonoBehaviour
 {
-    private readonly float ANIMATION_DELAY = 0.5f;
+    private readonly float ANIMATION_DELAY = 1f;
+    private readonly float ANIMATION_SPEED = 1f;
 
     public float verticalSpace
     {
@@ -135,12 +136,12 @@ public class GameModel : MonoBehaviour
         });
 
         //set positions for each entity
-        _player.transform.position = new Vector3(originX + _player.x * horizontalSpace, originY + _player.y * -verticalSpace, _player.transform.position.z);
-        _goal.transform.position = new Vector3(originX + _goal.x * horizontalSpace, originY + _goal.y * -verticalSpace, _goal.transform.position.z);
+        _player.transform.position = new Vector3(originX + _player.x * horizontalSpace, originY + _player.y * -verticalSpace, originY + _player.y * -verticalSpace);
+        _goal.transform.position = new Vector3(originX + _goal.x * horizontalSpace, originY + _goal.y * -verticalSpace, originY + _goal.y * -verticalSpace);
 
         Array.ForEach(_enemyArr, en =>
         {
-            en.transform.position = en.transform.position = new Vector3(originX + en.x * horizontalSpace, originY + en.y * -verticalSpace, en.transform.position.z);
+            en.transform.position = en.transform.position = new Vector3(originX + en.x * horizontalSpace, originY + en.y * -verticalSpace, originY + en.y * -verticalSpace);
         });
 
     }
@@ -183,7 +184,7 @@ public class GameModel : MonoBehaviour
             blockedEnemiesList.Clear();
             bombedEnemiesList.Clear();
 
-            if (Input.GetAxis("Vertical")>0)
+            if (Input.GetAxis("Vertical") > 0)
             {
                 _player.Do_MoveUp();
             }
@@ -241,17 +242,37 @@ public class GameModel : MonoBehaviour
     }
 
 
-    public void Look(Entity entity, Entity.Direction direction)
+    private void Look(Entity entity, Entity.Direction direction)
     {
+
+
+
+
         //TODO: not the right way to do it but leave for testing
-        if (direction == Entity.Direction.UP)
-            entity.transform.rotation = Quaternion.Euler(0, 0, 90);
+        //if (direction == Entity.Direction.UP)
+        //    entity.transform.rotation = Quaternion.Euler(0, 0, 90);
         if (direction == Entity.Direction.LEFT)
-            entity.transform.rotation = Quaternion.Euler(0, 0, 180);
-        if (direction == Entity.Direction.DOWN || direction == Entity.Direction.NONE)
-            entity.transform.rotation = Quaternion.Euler(0, 0, 270);
+        {
+            entity.transform.localScale = new Vector3(Math.Abs(entity.transform.localScale.x) * -1, entity.transform.localScale.y, entity.transform.localScale.z);
+        }
+        //entity.transform.rotation = Quaternion.Euler(0, 0, 180);
+        //if (direction == Entity.Direction.DOWN || direction == Entity.Direction.NONE)
+        //    entity.transform.rotation = Quaternion.Euler(0, 0, 270);
         if (direction == Entity.Direction.RIGHT)
-            entity.transform.rotation = Quaternion.Euler(0, 0, 0);
+        {
+            entity.transform.localScale = new Vector3(Math.Abs(entity.transform.localScale.x), entity.transform.localScale.y, entity.transform.localScale.z);
+        }
+        //entity.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+    }
+
+    private void UpdateAnimator(Entity entity, string key, bool value)
+    {
+        Animator animator = entity.animator;
+        if (animator)
+        {
+            animator.SetBool(key, value);
+        }
     }
 
     public bool IsAnEnemyInTheWay(Predicate<Enemy> predicate)
@@ -356,13 +377,15 @@ public class GameModel : MonoBehaviour
         }
         else
         {
-
-            Vector3 endPosition = new Vector3(originX + entity.x * horizontalSpace, originY + entity.y * -verticalSpace, entity.transform.position.z);
-            StartCoroutine(MoveOverSeconds(entity, endPosition, direction, ANIMATION_DELAY, order, stepOrder));
+            float newX = originX + entity.x * horizontalSpace;
+            float newY = originY + entity.y * -verticalSpace;
+            float newZ = newY;
+            Vector3 endPosition = new Vector3(newX, newY, newZ);
+            StartCoroutine(MoveEntity(entity, endPosition, direction,  order, stepOrder));
         }
     }
 
-    private bool isLatestAnimationComplete(int order, int stepOrder)
+    private bool IsLatestAnimationComplete(int order, int stepOrder)
     {
 
         int currentOrder = order;
@@ -389,28 +412,35 @@ public class GameModel : MonoBehaviour
         return true;
     }
 
-    private IEnumerator MoveOverSeconds(Entity objectToMove, Vector3 end, Entity.Direction direction, float seconds, int order, int stepOrder)
+    private IEnumerator MoveEntity(Entity objectToMove, Vector3 end, Entity.Direction direction, int order, int stepOrder)
     {
 
 
-        yield return new WaitUntil(() => isLatestAnimationComplete(order, stepOrder));
+        yield return new WaitUntil(() => IsLatestAnimationComplete(order, stepOrder));
 
         if (!areAllAnimationsComplete())
         {
             //Update sprite to face the proper direction
             Look(objectToMove, direction);
+            UpdateAnimator(objectToMove, "HorizontalWalk", true);
 
             Pair<int, int> blockedEnemyInfo = blockedEnemiesList.Find(b => b.first == order && b.second == stepOrder);
-
-            //Logic to move the object
-            float elapsedTime = 0;
-            Vector3 startingPos = objectToMove.transform.position;
             if (blockedEnemyInfo == null)
             {
-                while (elapsedTime < seconds)
+                //Logic to move the object
+                /*float elapsedTime = 0;
+                Vector3 startingPos = objectToMove.transform.position;
+
+                while (elapsedTime < ANIMATION_DELAY)
                 {
-                    objectToMove.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
+                    objectToMove.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / ANIMATION_DELAY));
                     elapsedTime += Time.deltaTime;
+                    yield return new WaitForEndOfFrame();
+                }*/
+
+                while (objectToMove.transform.position != end)
+                {
+                    objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, ANIMATION_SPEED * Time.deltaTime);
                     yield return new WaitForEndOfFrame();
                 }
             }
@@ -418,6 +448,7 @@ public class GameModel : MonoBehaviour
 
             //this animation is done
             animationComplete[order][stepOrder] = true;
+            UpdateAnimator(objectToMove, "HorizontalWalk", false);
 
             //Check for game end
             if (gameEndInfo != null && gameEndInfo.first == order && gameEndInfo.second == stepOrder)

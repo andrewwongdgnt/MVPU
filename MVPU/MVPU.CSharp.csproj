@@ -84,20 +84,20 @@
     <Compile Include="Assets\Entities\Enemy\Enemy.cs" />
     <Compile Include="Assets\Entities\Entity.cs" />
     <Compile Include="Assets\Entities\Goal\Goal.cs" />
+    <Compile Include="Assets\Entities\Obstacle\Bomb\Bomb.cs" />
     <Compile Include="Assets\Entities\Player\Player.cs" />
     <Compile Include="Assets\Levels\Cell.cs" />
     <Compile Include="Assets\Levels\GameModel.cs" />
     <Compile Include="Assets\Levels\Level 1 - 1\Level1_1.cs" />
     <Compile Include="Assets\Levels\Level 1 - 2\Level1_2.cs" />
     <Compile Include="Assets\Levels\LevelModel.cs" />
-    <Compile Include="Assets\Levels\StartScript.cs" />
     <Compile Include="Assets\Levels\Test World\TestLevel.cs" />
     <Compile Include="Assets\Menu\Level Select\LevelSelect.cs" />
     <Compile Include="Assets\Menu\Main\MainMenu.cs" />
     <Compile Include="Assets\Menu\Pause\PauseMenu.cs" />
-    <Compile Include="Assets\Obstacle\Bomb\Bomb.cs" />
     <Compile Include="Assets\UtilScripts\LevelManager.cs" />
     <Compile Include="Assets\UtilScripts\Pair.cs" />
+    <Compile Include="Assets\UtilScripts\Point.cs" />
     <Compile Include="Assets\UtilScripts\Triple.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

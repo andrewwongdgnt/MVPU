@@ -11,6 +11,7 @@ public class Player : Entity
         Debug.Log(this+" Created:" + " x=" + x + " y=" + y);
     }
 
+
     public void Do_MoveUp()
     {
         TryToMove(Direction.UP);

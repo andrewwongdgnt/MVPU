@@ -8,8 +8,15 @@ public abstract class Entity : MonoBehaviour
         NONE, UP, LEFT, DOWN, RIGHT, 
     }
 
-    public int x;
-    public int y;
+    public int x
+    {
+        get;set;
+    }
+    public int y
+    {
+        get; set;
+    }
+    public Animator animator;
 
 
     protected GameModel _gameModel;
