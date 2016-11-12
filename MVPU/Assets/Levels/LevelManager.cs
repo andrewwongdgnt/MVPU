@@ -3,5 +3,5 @@ using System.Collections;
 
 public class LevelManager {
 
-    public static string levelToLoad = "Level 1 - 2";
+    public static string levelToLoad = "Level 1 - 1";
 }

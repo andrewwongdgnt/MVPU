@@ -2,7 +2,7 @@
 using System.Collections;
 
 [System.Serializable]
-public class Point : System.Object
+public class Location : System.Object
 {
 
     public int x;

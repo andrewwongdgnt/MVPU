@@ -10,6 +10,11 @@ public class GameModel : MonoBehaviour
     private readonly float ANIMATION_DELAY = 1f;
     private readonly float ANIMATION_SPEED = 1.4f;
 
+    private ScoringModel scoringModel;
+    public LevelScore levelScore
+    {
+        get; set;
+    }
     public float verticalSpace
     {
         get; set;
@@ -144,6 +149,8 @@ public class GameModel : MonoBehaviour
             en.transform.position = en.transform.position = new Vector3(originX + en.x * horizontalSpace, originY + en.y * -verticalSpace, originY + en.y * -verticalSpace);
         });
 
+        scoringModel = new ScoringModel(levelScore);
+
     }
 
     private void updateAnimationCompleteListWith(bool value)
@@ -204,6 +211,7 @@ public class GameModel : MonoBehaviour
             {
                 _player.Do_Nothing();
             }
+            scoringModel.addMove();
             Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
 
             for (int i = 0; i < _enemyArr.Length; i++)
@@ -221,7 +229,7 @@ public class GameModel : MonoBehaviour
             {
                 if (gameEndInfo.third)
                 {
-                    Debug.Log("Game Win");
+                    Debug.Log("Game Win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.getResult());
                     SceneManager.LoadScene("Level Select");
                 }
                 else
@@ -381,7 +389,7 @@ public class GameModel : MonoBehaviour
             float newY = originY + entity.y * -verticalSpace;
             float newZ = newY;
             Vector3 endPosition = new Vector3(newX, newY, newZ);
-            StartCoroutine(MoveEntity(entity, endPosition, direction,  order, stepOrder));
+            StartCoroutine(MoveEntity(entity, endPosition, direction, order, stepOrder));
         }
     }
 

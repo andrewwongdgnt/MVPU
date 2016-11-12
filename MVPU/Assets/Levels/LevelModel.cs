@@ -8,16 +8,18 @@ public abstract class LevelModel : MonoBehaviour
     public GameModel gameModel;
 
     public Player player;
-    public Point playerLocation;
+    public Location playerLocation;
 
     public Goal goal;
-    public Point goalLocation;
+    public Location goalLocation;
 
     public Enemy[] enemyArr;
-    public Point[] enemyLocationArr;
+    public Location[] enemyLocationArr;
 
     public Bomb[] bombArr;
-    public Point[] bombLocationArr;
+    public Location[] bombLocationArr;
+
+    public LevelScore levelScore;
 
     public float verticalSpace;
     public float horizontalSpace;
@@ -34,13 +36,18 @@ public abstract class LevelModel : MonoBehaviour
             GameObject[] entity = GameObject.FindGameObjectsWithTag("Entity");
             Array.ForEach(entity, ent =>
             {
-                if (ent.GetComponent<Player>() != player && ent.GetComponent<Goal>() != goal && !Array.Exists(enemyArr, en => en== ent.GetComponent<Enemy>()) && !Array.Exists(bombArr, bo => bo == ent.GetComponent<Bomb>()))
+                if (ent.GetComponent<Player>() != player && ent.GetComponent<Goal>() != goal && !Array.Exists(enemyArr, en => en == ent.GetComponent<Enemy>()) && !Array.Exists(bombArr, bo => bo == ent.GetComponent<Bomb>()))
                 {
                     ent.SetActive(false);
                 }
             });
 
             gameObject.SetActive(true);
+
+            levelScore.silverMoves = levelScore.silverMoves < levelScore.goldMoves ? levelScore.goldMoves + 1 : levelScore.silverMoves;
+            levelScore.bronzeMoves = levelScore.bronzeMoves < levelScore.silverMoves ? levelScore.silverMoves + 1 : levelScore.bronzeMoves;
+
+            gameModel.levelScore = levelScore;
 
             gameModel.verticalSpace = verticalSpace;
             gameModel.horizontalSpace = horizontalSpace;
@@ -57,7 +64,7 @@ public abstract class LevelModel : MonoBehaviour
             goal.y = goalLocation.y;
             gameModel.goal = goal;
 
-            for (int i =0; i< enemyLocationArr.Length; i++)
+            for (int i = 0; i < enemyLocationArr.Length; i++)
             {
                 enemyArr[i].x = enemyLocationArr[i].x;
                 enemyArr[i].y = enemyLocationArr[i].y;
