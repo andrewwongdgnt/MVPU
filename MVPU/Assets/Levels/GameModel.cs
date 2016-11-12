@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class GameModel : MonoBehaviour
 {
     private readonly float ANIMATION_DELAY = 1f;
-    private readonly float ANIMATION_SPEED = 1f;
+    private readonly float ANIMATION_SPEED = 1.4f;
 
     public float verticalSpace
     {

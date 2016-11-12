@@ -91,6 +91,7 @@
     <Compile Include="Assets\Levels\Level 1 - 1\Level1_1.cs" />
     <Compile Include="Assets\Levels\Level 1 - 2\Level1_2.cs" />
     <Compile Include="Assets\Levels\Level 1 - 3\Level1_3.cs" />
+    <Compile Include="Assets\Levels\Level 1 - 4\Level1_4.cs" />
     <Compile Include="Assets\Levels\LevelModel.cs" />
     <Compile Include="Assets\Levels\Test World\TestLevel.cs" />
     <Compile Include="Assets\Menu\Level Select\LevelSelect.cs" />
