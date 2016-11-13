@@ -40,11 +40,6 @@ public class GameModel : MonoBehaviour
         get; set;
     }
 
-    public Bomb[] bombArr
-    {
-        get; set;
-    }
-
     private Player _player;
     public Player player
     {
@@ -113,6 +108,46 @@ public class GameModel : MonoBehaviour
     }
 
 
+    private Bomb[] _bombArr;
+    public Bomb[] bombArr
+    {
+        set
+        {
+            _bombArr = value;
+            Array.ForEach(_bombArr, bo =>
+            {
+                bo.gameModel = this;
+            });
+        }
+    }
+
+
+    public void Undo()
+    {
+        scoringModel.subtractMove();
+        HistoryState historyState = undoManager.Undo();
+        if (historyState == null)
+            historyState = undoManager.initialHistoryState;
+        _player.RestoreState(historyState.playerState) ;
+        _goal.RestoreState(historyState.goalState);
+        for (int i = 0; i<_enemyArr.Length; i++)
+        {
+            _enemyArr[i].RestoreState(historyState.enemyArrState[i]);
+        }
+        for (int i = 0; i < _bombArr.Length; i++)
+        {
+            _bombArr[i].RestoreState(historyState.bombArrState[i]);
+        }
+        SetViewForEntities();
+    }
+
+    private void AddToHistory()
+    {
+        scoringModel.addMove();
+        undoManager.AddToHistory(_player, _goal, _enemyArr, _bombArr);
+    }
+
+
     private List<List<bool>> animationComplete = new List<List<bool>>();
     private List<Triple<int, int, Enemy>> dozedEnemiesList = new List<Triple<int, int, Enemy>>();
     //win=true
@@ -121,7 +156,7 @@ public class GameModel : MonoBehaviour
     private List<Pair<int, int>> blockedEnemiesList = new List<Pair<int, int>>();
     private List<Triple<int, int, Bomb>> bombedEnemiesList = new List<Triple<int, int, Bomb>>();
 
-
+    private UndoManager undoManager;
 
     public void Commence()
     {
@@ -140,20 +175,58 @@ public class GameModel : MonoBehaviour
 
         });
 
+
         //set positions for each entity
-        _player.transform.position = new Vector3(originX + _player.x * horizontalSpace, originY + _player.y * -verticalSpace, originY + _player.y * -verticalSpace);
-        _goal.transform.position = new Vector3(originX + _goal.x * horizontalSpace, originY + _goal.y * -verticalSpace, originY + _goal.y * -verticalSpace);
+        SetViewForEntities();
+
+        scoringModel = new ScoringModel(levelScore);
+        undoManager = new UndoManager();
+        undoManager.AddInitialState(_player, _goal, _enemyArr, _bombArr);
+    }
+
+    private void SetViewForEntities()
+    {
+        _player.transform.position = GetPositionForEntity(_player);
+        _goal.transform.position = GetPositionForEntity(_goal);
 
         Array.ForEach(_enemyArr, en =>
         {
-            en.transform.position = en.transform.position = new Vector3(originX + en.x * horizontalSpace, originY + en.y * -verticalSpace, originY + en.y * -verticalSpace);
+            en.transform.position = GetPositionForEntity(en);
+            SetViewForEnemy(en);
         });
-
-        scoringModel = new ScoringModel(levelScore);
-
+        Array.ForEach(_bombArr, bo =>
+        {
+            bo.transform.position = GetPositionForEntity(bo);
+            SetViewForBomb(bo);
+        });
     }
 
-    private void updateAnimationCompleteListWith(bool value)
+    private Vector3 GetPositionForEntity(Entity entity)
+    {
+        float newX = originX + entity.x * horizontalSpace;
+        float newY = originY + entity.y * -verticalSpace;
+        float newZ = newY;
+        return new Vector3(newX, newY, newZ);
+    }
+
+    private void SetViewForEnemy(Enemy enemy)
+    {
+
+        Color color = enemy.GetComponent<SpriteRenderer>().material.color;
+        color.a = enemy.inactive ? 0.5f : 1f;
+
+        enemy.GetComponent<SpriteRenderer>().material.color = color;
+        Look(enemy, Entity.Direction.DOWN);
+    }
+
+    private void SetViewForBomb(Bomb bomb)
+    {
+        Color color2 = bomb.GetComponent<SpriteRenderer>().material.color;
+        color2.a = bomb.inactive ? 0.0f : 1f;
+
+        bomb.GetComponent<SpriteRenderer>().material.color = color2;        
+    }
+    private void UpdateAnimationCompleteListWith(bool value)
     {
         for (int i = 0; i < animationComplete.Count; i++)
         {
@@ -177,7 +250,13 @@ public class GameModel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (areAllAnimationsComplete() &&
+
+        if (AreAllAnimationsComplete() && Input.GetKeyDown(KeyCode.Z))
+        {
+            Undo();
+        }
+
+        if (AreAllAnimationsComplete() &&
             (Input.GetAxis("Vertical") > 0
             || Input.GetAxis("Horizontal") < 0
             || Input.GetAxis("Vertical") < 0
@@ -186,7 +265,7 @@ public class GameModel : MonoBehaviour
             )
         {
 
-            updateAnimationCompleteListWith(false);
+            UpdateAnimationCompleteListWith(false);
             dozedEnemiesList.Clear();
             blockedEnemiesList.Clear();
             bombedEnemiesList.Clear();
@@ -211,7 +290,8 @@ public class GameModel : MonoBehaviour
             {
                 _player.Do_Nothing();
             }
-            scoringModel.addMove();
+            
+            
             Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
 
             for (int i = 0; i < _enemyArr.Length; i++)
@@ -220,10 +300,11 @@ public class GameModel : MonoBehaviour
                 enemy.Do_React();
                 Debug.Log(enemy + " new position (" + enemy.x + ", " + enemy.y + ")");
             }
+            AddToHistory();
 
         }
 
-        if (areAllAnimationsComplete())
+        if (AreAllAnimationsComplete())
         {
             if (gameEndInfo != null)
             {
@@ -244,7 +325,7 @@ public class GameModel : MonoBehaviour
 
     }
 
-    private bool areAllAnimationsComplete()
+    private bool AreAllAnimationsComplete()
     {
         return animationComplete.All(list => list.All(b => b));
     }
@@ -313,7 +394,7 @@ public class GameModel : MonoBehaviour
                 if (entity == _player)
                 {
                     Enemy theKiller = Array.Find(_enemyArr, en => en.x == _player.x && en.y == _player.y);
-                    Bomb bomb = Array.Find(bombArr, bo => bo.x == _player.x && bo.y == _player.y);
+                    Bomb bomb = Array.Find(_bombArr, bo => bo.x == _player.x && bo.y == _player.y);
                     if ((theKiller != null && !theKiller.inactive) || (bomb != null && !bomb.inactive && bomb.affectsPlayer))
                     {
                         gameEndInfo = new Triple<int, int, bool>(GetOrder(_player), stepOrder, false);
@@ -345,7 +426,7 @@ public class GameModel : MonoBehaviour
 
     public void CheckIfBombed(Enemy enemy, int stepOrder)
     {
-        Bomb bomb = Array.Find(bombArr, bo => bo.x == enemy.x && bo.y == enemy.y);
+        Bomb bomb = Array.Find(_bombArr, bo => bo.x == enemy.x && bo.y == enemy.y);
         if (bomb != null && !bomb.inactive && bomb.affectsEnemy)
         {
             if (bomb.numOfUses > 0)
@@ -385,10 +466,8 @@ public class GameModel : MonoBehaviour
         }
         else
         {
-            float newX = originX + entity.x * horizontalSpace;
-            float newY = originY + entity.y * -verticalSpace;
-            float newZ = newY;
-            Vector3 endPosition = new Vector3(newX, newY, newZ);
+            
+            Vector3 endPosition = GetPositionForEntity(entity); 
             StartCoroutine(MoveEntity(entity, endPosition, direction, order, stepOrder));
         }
     }
@@ -426,7 +505,7 @@ public class GameModel : MonoBehaviour
 
         yield return new WaitUntil(() => IsLatestAnimationComplete(order, stepOrder));
 
-        if (!areAllAnimationsComplete())
+        if (!AreAllAnimationsComplete())
         {
             //Update sprite to face the proper direction
             Look(objectToMove, direction);
@@ -461,27 +540,18 @@ public class GameModel : MonoBehaviour
             //Check for game end
             if (gameEndInfo != null && gameEndInfo.first == order && gameEndInfo.second == stepOrder)
             {
-                updateAnimationCompleteListWith(true);
+                UpdateAnimationCompleteListWith(true);
             }
 
             //update view of bombed enemies and bomb
             Triple<int, int, Bomb> bombedEnemyInfo = bombedEnemiesList.Find(bo => bo.first == order && bo.second == stepOrder);
             if (bombedEnemyInfo != null && bombedEnemyInfo.third != null)
             {
-                Color color = objectToMove.GetComponent<SpriteRenderer>().material.color;
-                color.a = 0.5f;
-
-                objectToMove.GetComponent<SpriteRenderer>().material.color = color;
-                Look(objectToMove, Entity.Direction.DOWN);
+                if (objectToMove is Enemy)
+                    SetViewForEnemy((Enemy)objectToMove);
 
                 Bomb bomb = bombedEnemyInfo.third;
-                if (bomb.inactive)
-                {
-                    Color color2 = bomb.GetComponent<SpriteRenderer>().material.color;
-                    color2.a = 0.0f;
-
-                    bomb.GetComponent<SpriteRenderer>().material.color = color2;
-                }
+                SetViewForBomb(bomb);
             }
 
             //update view of dozed enemies
@@ -489,12 +559,7 @@ public class GameModel : MonoBehaviour
             if (dozedEnemyInfo != null && dozedEnemyInfo.third != null)
             {
                 Enemy dozedEnemy = dozedEnemyInfo.third;
-
-                Color color = dozedEnemy.GetComponent<SpriteRenderer>().material.color;
-                color.a = 0.5f;
-                dozedEnemy.GetComponent<SpriteRenderer>().material.color = color;
-
-                Look(dozedEnemy, Entity.Direction.DOWN);
+                SetViewForEnemy(dozedEnemy);
 
             }
         }

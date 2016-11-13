@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Linq;
 using System;
+using System.Collections.Generic;
 
 public class Enemy : Entity
 {
@@ -15,6 +16,27 @@ public class Enemy : Entity
     }
     private bool blocked;
 
+    protected override void BuildAdditionalDict(Dictionary<string, object> dict)
+    {
+        dict.Add("verticalOrientation", verticalOrientation);
+        dict.Add("stepsPerMove", stepsPerMove);
+        dict.Add("dozer", dozer);
+        dict.Add("inactive", inactive);
+    }
+    protected override void RestoreAdditionalState(Dictionary<string, object> dict)
+    {
+        foreach (KeyValuePair<string, object> entry in dict)
+        {
+            if (entry.Key == "verticalOrientation" && entry.Value is bool)
+                verticalOrientation = (bool)entry.Value;
+            else if (entry.Key == "stepsPerMove" && entry.Value is int)
+                stepsPerMove = (int)entry.Value;
+            else if (entry.Key == "dozer" && entry.Value is bool)
+                dozer = (bool)entry.Value;
+            else if (entry.Key == "inactive" && entry.Value is bool)
+                inactive = (bool)entry.Value;
+        }
+    }
 
     // Use this for initialization
     void Start()

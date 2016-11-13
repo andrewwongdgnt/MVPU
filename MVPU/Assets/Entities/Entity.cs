@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public abstract class Entity : MonoBehaviour
+public abstract class Entity : MonoBehaviour, IUndoable
 {
+
+
     public enum Direction
     {
-        NONE, UP, LEFT, DOWN, RIGHT, 
+        NONE, UP, LEFT, DOWN, RIGHT,
     }
 
     public int x
     {
-        get;set;
+        get; set;
     }
     public int y
     {
@@ -26,6 +29,37 @@ public abstract class Entity : MonoBehaviour
         {
             _gameModel = value;
         }
+    }
+
+    public Dictionary<string, object> BuildDict()
+    {
+        Dictionary<string, object> dict = new Dictionary<string, object>();
+        dict.Add("x", x);
+        dict.Add("y", y);
+        BuildAdditionalDict(dict);
+        return dict;
+    }
+
+    protected virtual void BuildAdditionalDict(Dictionary<string, object> dict)
+    {
+
+    }
+
+    public void RestoreState(Dictionary<string, object> dict)
+    {
+        foreach (KeyValuePair<string, object> entry in dict)
+        {
+            if (entry.Key == "x" && entry.Value is int)
+                x = (int)entry.Value;
+            else if (entry.Key == "y" && entry.Value is int)
+                y = (int)entry.Value;
+        }
+        RestoreAdditionalState(dict);
+    }
+
+    protected virtual void RestoreAdditionalState(Dictionary<string, object> dict)
+    {
+
     }
 
     protected bool TryToMoveUp()
@@ -69,6 +103,7 @@ public abstract class Entity : MonoBehaviour
         }
         return false;
     }
+
 
 
 }
