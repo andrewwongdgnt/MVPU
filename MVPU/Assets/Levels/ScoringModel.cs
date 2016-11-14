@@ -24,18 +24,18 @@ public class ScoringModel
         _levelScore = levelScore;
     }
 
-    public void addMove()
+    public void AddMove()
     {
         numberOfMoves++;
     }
-    public void subtractMove()
+    public void SubtractMove()
     {
         numberOfMoves--;
         if (numberOfMoves < 0)
             numberOfMoves = 0;
     }
 
-    public ScoreTypes getResult()
+    public ScoreTypes GetResult()
     {
         if (numberOfMoves <= _levelScore.goldMoves)
             return ScoreTypes.GOLD;

@@ -109,7 +109,7 @@
     <Compile Include="Assets\Levels\LevelModel.cs" />
     <Compile Include="Assets\Levels\LevelScore.cs" />
     <Compile Include="Assets\Levels\ScoringModel.cs" />
-    <Compile Include="Assets\Levels\Test World\TestLevel.cs" />
+    <Compile Include="Assets\Levels\Test Level\TestLevel.cs" />
     <Compile Include="Assets\Levels\UndoManager.cs" />
     <Compile Include="Assets\Menu\Level Select\LevelSelect.cs" />
     <Compile Include="Assets\Menu\Main\MainMenu.cs" />

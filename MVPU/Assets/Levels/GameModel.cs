@@ -121,16 +121,35 @@ public class GameModel : MonoBehaviour
         }
     }
 
-
     public void Undo()
     {
-        scoringModel.subtractMove();
-        HistoryState historyState = undoManager.Undo();
-        if (historyState == null)
-            historyState = undoManager.initialHistoryState;
-        _player.RestoreState(historyState.playerState) ;
+        if (AreAllAnimationsComplete())
+        {
+            scoringModel.SubtractMove();
+            HistoryState historyState = undoManager.Undo();
+            if (historyState == null)
+                historyState = undoManager.initialHistoryState;
+
+            RestoreStateToEntities(historyState);
+        }
+    }
+
+    public void Redo()
+    {
+        if (AreAllAnimationsComplete())
+        {
+            scoringModel.AddMove();
+            HistoryState historyState = undoManager.Redo();
+            if (historyState != null)
+                RestoreStateToEntities(historyState);
+        }
+    }
+
+    private void RestoreStateToEntities(HistoryState historyState)
+    {
+        _player.RestoreState(historyState.playerState);
         _goal.RestoreState(historyState.goalState);
-        for (int i = 0; i<_enemyArr.Length; i++)
+        for (int i = 0; i < _enemyArr.Length; i++)
         {
             _enemyArr[i].RestoreState(historyState.enemyArrState[i]);
         }
@@ -143,7 +162,7 @@ public class GameModel : MonoBehaviour
 
     private void AddToHistory()
     {
-        scoringModel.addMove();
+        scoringModel.AddMove();
         undoManager.AddToHistory(_player, _goal, _enemyArr, _bombArr);
     }
 
@@ -224,7 +243,7 @@ public class GameModel : MonoBehaviour
         Color color2 = bomb.GetComponent<SpriteRenderer>().material.color;
         color2.a = bomb.inactive ? 0.0f : 1f;
 
-        bomb.GetComponent<SpriteRenderer>().material.color = color2;        
+        bomb.GetComponent<SpriteRenderer>().material.color = color2;
     }
     private void UpdateAnimationCompleteListWith(bool value)
     {
@@ -254,6 +273,11 @@ public class GameModel : MonoBehaviour
         if (AreAllAnimationsComplete() && Input.GetKeyDown(KeyCode.Z))
         {
             Undo();
+        }
+
+        if (AreAllAnimationsComplete() && Input.GetKeyDown(KeyCode.Y))
+        {
+            Redo();
         }
 
         if (AreAllAnimationsComplete() &&
@@ -290,8 +314,8 @@ public class GameModel : MonoBehaviour
             {
                 _player.Do_Nothing();
             }
-            
-            
+
+
             Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
 
             for (int i = 0; i < _enemyArr.Length; i++)
@@ -310,7 +334,7 @@ public class GameModel : MonoBehaviour
             {
                 if (gameEndInfo.third)
                 {
-                    Debug.Log("Game Win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.getResult());
+                    Debug.Log("Game Win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.GetResult());
                     SceneManager.LoadScene("Level Select");
                 }
                 else
@@ -466,8 +490,8 @@ public class GameModel : MonoBehaviour
         }
         else
         {
-            
-            Vector3 endPosition = GetPositionForEntity(entity); 
+
+            Vector3 endPosition = GetPositionForEntity(entity);
             StartCoroutine(MoveEntity(entity, endPosition, direction, order, stepOrder));
         }
     }

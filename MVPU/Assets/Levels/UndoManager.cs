@@ -6,25 +6,29 @@ using System;
 
 public class UndoManager
 {
-    
+    private int currentHistoryIndex = -1;
     private List<HistoryState> history = new List<HistoryState>();
 
     private HistoryState _initialHistoryState = new HistoryState();
-   public  HistoryState initialHistoryState
+    public HistoryState initialHistoryState
     {
         get
         {
-            return  _initialHistoryState;
+            return _initialHistoryState;
         }
     }
     public void AddInitialState(Player player, Goal goal, Enemy[] enemyArr, Bomb[] bombArr)
     {
-        _initialHistoryState = CreateHistoryState( player,  goal,  enemyArr, bombArr);
+        _initialHistoryState = CreateHistoryState(player, goal, enemyArr, bombArr);
     }
     public void AddToHistory(Player player, Goal goal, Enemy[] enemyArr, Bomb[] bombArr)
     {
-        HistoryState historyState = CreateHistoryState(player, goal, enemyArr, bombArr);
+        if (history.Count > currentHistoryIndex + 1)
+            history.RemoveRange(currentHistoryIndex + 1, history.Count - (currentHistoryIndex + 1));
 
+
+        HistoryState historyState = CreateHistoryState(player, goal, enemyArr, bombArr);
+        currentHistoryIndex++;
         history.Add(historyState);
     }
 
@@ -34,7 +38,7 @@ public class UndoManager
         historyState.playerState = player.BuildDict();
         historyState.goalState = goal.BuildDict();
         Dictionary<string, object>[] enemyArrState = new Dictionary<string, object>[enemyArr.Length];
-        for (int i = 0; i< enemyArr.Length; i++)
+        for (int i = 0; i < enemyArr.Length; i++)
         {
             enemyArrState[i] = enemyArr[i].BuildDict();
         }
@@ -50,12 +54,25 @@ public class UndoManager
 
     public HistoryState Undo()
     {
-        if (history.Count== 0)
+        if (currentHistoryIndex >= 0)
         {
-            return null;
-        }
-        history.RemoveAt(history.Count - 1);
+            currentHistoryIndex--;
+            if (currentHistoryIndex >= 0)
+            {
+                return history[currentHistoryIndex];
+            }
 
-        return history.Count == 0? null : history[history.Count - 1];
+        }
+        return null;
+    }
+
+    public HistoryState Redo()
+    {
+        if (currentHistoryIndex < history.Count - 1)
+        {
+            currentHistoryIndex++; return history[currentHistoryIndex];
+        }
+        return null;
+
     }
 }
