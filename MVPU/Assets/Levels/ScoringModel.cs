@@ -19,20 +19,32 @@ public class ScoringModel
         }
     }
     private LevelScore _levelScore;
-    public ScoringModel(LevelScore levelScore)
+
+    private GameModel _gameModel;
+    public ScoringModel(LevelScore levelScore, GameModel gameModel)
     {
         _levelScore = levelScore;
+        _gameModel = gameModel;
+        DispatchScore();
     }
 
     public void AddMove()
     {
         numberOfMoves++;
+        DispatchScore();
     }
     public void SubtractMove()
     {
         numberOfMoves--;
         if (numberOfMoves < 0)
             numberOfMoves = 0;
+        DispatchScore();
+    }
+
+    private void DispatchScore()
+    {
+        if (_gameModel != null)
+            _gameModel.UpdateScoreText(numberOfMoves + "/" + _levelScore.goldMoves);
     }
 
     public ScoreTypes GetResult()

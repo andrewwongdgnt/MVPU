@@ -23,7 +23,6 @@ public class PauseMenu : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            //Time.timeScale = Time.timeScale==1 ? 0 : 1;
             SetPause(Time.timeScale > 0);
 
         }

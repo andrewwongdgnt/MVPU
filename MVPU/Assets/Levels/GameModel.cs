@@ -4,13 +4,16 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 using System;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameModel : MonoBehaviour
 {
     private readonly float ANIMATION_DELAY = 1f;
     private readonly float ANIMATION_SPEED = 1.4f;
+    private readonly float DOUBLE_TAP_DELAY = 0.3f;
 
     private ScoringModel scoringModel;
+    private UndoManager undoManager;
     public LevelScore levelScore
     {
         get; set;
@@ -166,6 +169,15 @@ public class GameModel : MonoBehaviour
         undoManager.AddToHistory(_player, _goal, _enemyArr, _bombArr);
     }
 
+    public Text scoreGuiText;
+    public void UpdateScoreText(string text)
+    {
+        if (scoreGuiText != null)
+        {
+            scoreGuiText.text = text;
+        }
+    }
+
 
     private List<List<bool>> animationComplete = new List<List<bool>>();
     private List<Triple<int, int, Enemy>> dozedEnemiesList = new List<Triple<int, int, Enemy>>();
@@ -175,7 +187,6 @@ public class GameModel : MonoBehaviour
     private List<Pair<int, int>> blockedEnemiesList = new List<Pair<int, int>>();
     private List<Triple<int, int, Bomb>> bombedEnemiesList = new List<Triple<int, int, Bomb>>();
 
-    private UndoManager undoManager;
 
     public void Commence()
     {
@@ -198,7 +209,7 @@ public class GameModel : MonoBehaviour
         //set positions for each entity
         SetViewForEntities();
 
-        scoringModel = new ScoringModel(levelScore);
+        scoringModel = new ScoringModel(levelScore,this);
         undoManager = new UndoManager();
         undoManager.AddInitialState(_player, _goal, _enemyArr, _bombArr);
     }
@@ -265,6 +276,21 @@ public class GameModel : MonoBehaviour
             animationComplete[i] = step;
         }
     }
+    float touchDuration;
+    Touch touch;
+    bool doubleTapOccurred;
+
+    private IEnumerator singleOrDouble()
+    {
+        yield return new WaitForSeconds(DOUBLE_TAP_DELAY);
+
+        if (touch.tapCount == 2)
+        {
+            //this coroutine has been called twice. We should stop the next one here otherwise we get two double tap
+            StopCoroutine("singleOrDouble");
+            doubleTapOccurred = true;
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -280,12 +306,32 @@ public class GameModel : MonoBehaviour
             Redo();
         }
 
+        //Check for double tap
+        if (AreAllAnimationsComplete())
+        {
+            if (Input.touchCount > 0)
+            { //if there is any touch
+                touchDuration += Time.deltaTime;
+                touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Ended && touchDuration < 0.2f) //making sure it only check the touch once && it was a short touch/tap and not a dragging.
+                    StartCoroutine("singleOrDouble");
+            }
+            else
+                touchDuration = 0.0f;
+        }
+
         if (AreAllAnimationsComplete() &&
             (Input.GetAxis("Vertical") > 0
             || Input.GetAxis("Horizontal") < 0
             || Input.GetAxis("Vertical") < 0
             || Input.GetAxis("Horizontal") > 0)
             || Input.GetButtonDown("Cancel")
+            || SwipeManager.IsSwipingLeft()
+            || SwipeManager.IsSwipingRight()
+            || SwipeManager.IsSwipingUp()
+            || SwipeManager.IsSwipingDown()
+            || doubleTapOccurred
             )
         {
 
@@ -294,27 +340,27 @@ public class GameModel : MonoBehaviour
             blockedEnemiesList.Clear();
             bombedEnemiesList.Clear();
 
-            if (Input.GetAxis("Vertical") > 0)
+            if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUp())
             {
                 _player.Do_MoveUp();
             }
-            else if (Input.GetAxis("Horizontal") < 0)
+            else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingLeft())
             {
                 _player.Do_MoveLeft();
             }
-            else if (Input.GetAxis("Vertical") < 0)
+            else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDown())
             {
                 _player.Do_MoveDown();
             }
-            else if (Input.GetAxis("Horizontal") > 0)
+            else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingRight())
             {
                 _player.Do_MoveRight();
             }
-            else if (Input.GetButtonDown("Cancel"))
+            else if (Input.GetButtonDown("Cancel") || doubleTapOccurred)
             {
+                doubleTapOccurred = false;
                 _player.Do_Nothing();
             }
-
 
             Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
 
@@ -348,6 +394,7 @@ public class GameModel : MonoBehaviour
 
 
     }
+
 
     private bool AreAllAnimationsComplete()
     {
