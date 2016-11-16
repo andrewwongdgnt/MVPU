@@ -325,13 +325,13 @@ public class GameModel : MonoBehaviour
             (Input.GetAxis("Vertical") > 0
             || Input.GetAxis("Horizontal") < 0
             || Input.GetAxis("Vertical") < 0
-            || Input.GetAxis("Horizontal") > 0)
+            || Input.GetAxis("Horizontal") > 0
             || Input.GetButtonDown("Cancel")
             || SwipeManager.IsSwipingLeft()
             || SwipeManager.IsSwipingRight()
             || SwipeManager.IsSwipingUp()
             || SwipeManager.IsSwipingDown()
-            || doubleTapOccurred
+            || doubleTapOccurred)
             )
         {
 
