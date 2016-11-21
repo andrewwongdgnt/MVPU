@@ -124,14 +124,25 @@ public class GameModel : MonoBehaviour
         }
     }
 
+    private string _currentLevelId;
+    public string currentLevelId
+    {
+    
+        set
+        {
+            _currentLevelId = value;
+        }
+    }
+
     public void Undo()
     {
         if (AreAllAnimationsComplete())
         {
-            scoringModel.SubtractMove();
             HistoryState historyState = undoManager.Undo();
             if (historyState == null)
                 historyState = undoManager.initialHistoryState;
+
+            scoringModel.SubtractMove();
 
             RestoreStateToEntities(historyState);
         }
@@ -141,10 +152,12 @@ public class GameModel : MonoBehaviour
     {
         if (AreAllAnimationsComplete())
         {
-            scoringModel.AddMove();
             HistoryState historyState = undoManager.Redo();
             if (historyState != null)
+            {
                 RestoreStateToEntities(historyState);
+                scoringModel.AddMove();
+            }
         }
     }
 
@@ -233,8 +246,8 @@ public class GameModel : MonoBehaviour
 
     private Vector3 GetPositionForEntity(Entity entity)
     {
-        float newX = originX + entity.x * horizontalSpace;
-        float newY = originY + entity.y * -verticalSpace;
+        float newX = originX + entity.x * horizontalSpace + entity.y * horizontalSpace;
+        float newY = originY + entity.y * -verticalSpace + entity.x * verticalSpace;
         float newZ = newY;
         return new Vector3(newX, newY, newZ);
     }
@@ -296,18 +309,10 @@ public class GameModel : MonoBehaviour
     void Update()
     {
 
-        if (AreAllAnimationsComplete() && Input.GetKeyDown(KeyCode.Z))
-        {
-            Undo();
-        }
-
-        if (AreAllAnimationsComplete() && Input.GetKeyDown(KeyCode.Y))
-        {
-            Redo();
-        }
-
+        bool areAllAnimationsComplete = AreAllAnimationsComplete();
+        
         //Check for double tap
-        if (AreAllAnimationsComplete())
+        if (areAllAnimationsComplete)
         {
             if (Input.touchCount > 0)
             { //if there is any touch
@@ -321,56 +326,64 @@ public class GameModel : MonoBehaviour
                 touchDuration = 0.0f;
         }
 
-        if (AreAllAnimationsComplete() &&
+        if (areAllAnimationsComplete &&
             (Input.GetAxis("Vertical") > 0
             || Input.GetAxis("Horizontal") < 0
             || Input.GetAxis("Vertical") < 0
             || Input.GetAxis("Horizontal") > 0
             || Input.GetButtonDown("Cancel")
-            || SwipeManager.IsSwipingLeft()
-            || SwipeManager.IsSwipingRight()
-            || SwipeManager.IsSwipingUp()
-            || SwipeManager.IsSwipingDown()
+            || Input.GetKeyDown(KeyCode.Z)
+            || Input.GetKeyDown(KeyCode.Y)
+            || SwipeManager.IsSwipingUpLeft()
+            || SwipeManager.IsSwipingDownLeft()
+            || SwipeManager.IsSwipingDownRight()
+            || SwipeManager.IsSwipingUpRight()
             || doubleTapOccurred)
             )
         {
+            if (Input.GetKeyDown(KeyCode.Z))
+                Undo();
+            else if (Input.GetKeyDown(KeyCode.Y))
+                Redo();
+            else
+            {
+                UpdateAnimationCompleteListWith(false);
+                dozedEnemiesList.Clear();
+                blockedEnemiesList.Clear();
+                bombedEnemiesList.Clear();
 
-            UpdateAnimationCompleteListWith(false);
-            dozedEnemiesList.Clear();
-            blockedEnemiesList.Clear();
-            bombedEnemiesList.Clear();
+                if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft())
+                {
+                    _player.Do_MoveUp();
+                }
+                else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft())
+                {
+                    _player.Do_MoveLeft();
+                }
+                else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight())
+                {
+                    _player.Do_MoveDown();
+                }
+                else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight())
+                {
+                    _player.Do_MoveRight();
+                }
+                else if (Input.GetButtonDown("Cancel") || doubleTapOccurred)
+                {
+                    doubleTapOccurred = false;
+                    _player.Do_Nothing();
+                }
 
-            if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUp())
-            {
-                _player.Do_MoveUp();
-            }
-            else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingLeft())
-            {
-                _player.Do_MoveLeft();
-            }
-            else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDown())
-            {
-                _player.Do_MoveDown();
-            }
-            else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingRight())
-            {
-                _player.Do_MoveRight();
-            }
-            else if (Input.GetButtonDown("Cancel") || doubleTapOccurred)
-            {
-                doubleTapOccurred = false;
-                _player.Do_Nothing();
-            }
+                Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
 
-            Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
-
-            for (int i = 0; i < _enemyArr.Length; i++)
-            {
-                Enemy enemy = _enemyArr[i];
-                enemy.Do_React();
-                Debug.Log(enemy + " new position (" + enemy.x + ", " + enemy.y + ")");
+                for (int i = 0; i < _enemyArr.Length; i++)
+                {
+                    Enemy enemy = _enemyArr[i];
+                    enemy.Do_React();
+                    Debug.Log(enemy + " new position (" + enemy.x + ", " + enemy.y + ")");
+                }
+                AddToHistory();
             }
-            AddToHistory();
 
         }
 
@@ -380,13 +393,14 @@ public class GameModel : MonoBehaviour
             {
                 if (gameEndInfo.third)
                 {
-                    Debug.Log("Game Win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.GetResult());
+                    Debug.Log(_currentLevelId + ": Game win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.GetResult());
+                    PlayerPrefs.SetInt(_currentLevelId, 1);
                     SceneManager.LoadScene("Level Select");
                 }
                 else
                 {
 
-                    Debug.Log("Game Over");
+                    Debug.Log(_currentLevelId + ": Game Over");
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
             }
@@ -411,14 +425,14 @@ public class GameModel : MonoBehaviour
         //TODO: not the right way to do it but leave for testing
         //if (direction == Entity.Direction.UP)
         //    entity.transform.rotation = Quaternion.Euler(0, 0, 90);
-        if (direction == Entity.Direction.LEFT)
+        if (direction == Entity.Direction.LEFT || direction == Entity.Direction.UP)
         {
             entity.transform.localScale = new Vector3(Math.Abs(entity.transform.localScale.x) * -1, entity.transform.localScale.y, entity.transform.localScale.z);
         }
         //entity.transform.rotation = Quaternion.Euler(0, 0, 180);
         //if (direction == Entity.Direction.DOWN || direction == Entity.Direction.NONE)
         //    entity.transform.rotation = Quaternion.Euler(0, 0, 270);
-        if (direction == Entity.Direction.RIGHT)
+        if (direction == Entity.Direction.RIGHT || direction == Entity.Direction.DOWN)
         {
             entity.transform.localScale = new Vector3(Math.Abs(entity.transform.localScale.x), entity.transform.localScale.y, entity.transform.localScale.z);
         }

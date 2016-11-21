@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\JSON Tests\TroubleShoot.txt" />
+    <None Include="Assets\sky5X\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

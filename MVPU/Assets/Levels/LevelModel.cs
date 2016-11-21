@@ -77,6 +77,7 @@ public abstract class LevelModel : MonoBehaviour
                 bombArr[i].y = bombLocationArr[i].y;
             }
             gameModel.bombArr = bombArr;
+            gameModel.currentLevelId = LevelId();
 
             gameModel.Commence();
         }

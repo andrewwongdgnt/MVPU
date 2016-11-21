@@ -70,7 +70,8 @@ public class UndoManager
     {
         if (currentHistoryIndex < history.Count - 1)
         {
-            currentHistoryIndex++; return history[currentHistoryIndex];
+            currentHistoryIndex++;
+            return history[currentHistoryIndex];
         }
         return null;
 
