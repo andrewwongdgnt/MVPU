@@ -14,6 +14,9 @@ public class GameModel : MonoBehaviour
 
     private ScoringModel scoringModel;
     private UndoManager undoManager;
+
+    public EndGameMenu endGameMenu;
+
     public LevelScore levelScore
     {
         get; set;
@@ -136,6 +139,7 @@ public class GameModel : MonoBehaviour
 
     public void Undo()
     {
+        endGameMenu.HideEndGameMenu();
         if (AreAllAnimationsComplete())
         {
             HistoryState historyState = undoManager.Undo();
@@ -150,6 +154,7 @@ public class GameModel : MonoBehaviour
 
     public void Redo()
     {
+        endGameMenu.HideEndGameMenu();
         if (AreAllAnimationsComplete())
         {
             HistoryState historyState = undoManager.Redo();
@@ -308,105 +313,107 @@ public class GameModel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        bool areAllAnimationsComplete = AreAllAnimationsComplete();
-        
-        //Check for double tap
-        if (areAllAnimationsComplete)
+        if (Time.timeScale > 0)
         {
-            if (Input.touchCount > 0)
-            { //if there is any touch
-                touchDuration += Time.deltaTime;
-                touch = Input.GetTouch(0);
+            bool areAllAnimationsComplete = AreAllAnimationsComplete();
 
-                if (touch.phase == TouchPhase.Ended && touchDuration < 0.2f) //making sure it only check the touch once && it was a short touch/tap and not a dragging.
-                    StartCoroutine("singleOrDouble");
-            }
-            else
-                touchDuration = 0.0f;
-        }
-
-        if (areAllAnimationsComplete &&
-            (Input.GetAxis("Vertical") > 0
-            || Input.GetAxis("Horizontal") < 0
-            || Input.GetAxis("Vertical") < 0
-            || Input.GetAxis("Horizontal") > 0
-            || Input.GetButtonDown("Cancel")
-            || Input.GetKeyDown(KeyCode.Z)
-            || Input.GetKeyDown(KeyCode.Y)
-            || SwipeManager.IsSwipingUpLeft()
-            || SwipeManager.IsSwipingDownLeft()
-            || SwipeManager.IsSwipingDownRight()
-            || SwipeManager.IsSwipingUpRight()
-            || doubleTapOccurred)
-            )
-        {
-            if (Input.GetKeyDown(KeyCode.Z))
-                Undo();
-            else if (Input.GetKeyDown(KeyCode.Y))
-                Redo();
-            else
+            //Check for double tap
+            if (areAllAnimationsComplete)
             {
-                UpdateAnimationCompleteListWith(false);
-                dozedEnemiesList.Clear();
-                blockedEnemiesList.Clear();
-                bombedEnemiesList.Clear();
+                if (Input.touchCount > 0)
+                { //if there is any touch
+                    touchDuration += Time.deltaTime;
+                    touch = Input.GetTouch(0);
 
-                if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft())
-                {
-                    _player.Do_MoveUp();
-                }
-                else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft())
-                {
-                    _player.Do_MoveLeft();
-                }
-                else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight())
-                {
-                    _player.Do_MoveDown();
-                }
-                else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight())
-                {
-                    _player.Do_MoveRight();
-                }
-                else if (Input.GetButtonDown("Cancel") || doubleTapOccurred)
-                {
-                    doubleTapOccurred = false;
-                    _player.Do_Nothing();
-                }
-
-                Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
-
-                for (int i = 0; i < _enemyArr.Length; i++)
-                {
-                    Enemy enemy = _enemyArr[i];
-                    enemy.Do_React();
-                    Debug.Log(enemy + " new position (" + enemy.x + ", " + enemy.y + ")");
-                }
-                AddToHistory();
-            }
-
-        }
-
-        if (AreAllAnimationsComplete())
-        {
-            if (gameEndInfo != null)
-            {
-                if (gameEndInfo.third)
-                {
-                    Debug.Log(_currentLevelId + ": Game win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.GetResult());
-                    PlayerPrefs.SetInt(_currentLevelId, 1);
-                    SceneManager.LoadScene("Level Select");
+                    if (touch.phase == TouchPhase.Ended && touchDuration < 0.2f) //making sure it only check the touch once && it was a short touch/tap and not a dragging.
+                        StartCoroutine("singleOrDouble");
                 }
                 else
-                {
+                    touchDuration = 0.0f;
+            }
 
-                    Debug.Log(_currentLevelId + ": Game Over");
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (areAllAnimationsComplete &&
+                (Input.GetAxis("Vertical") > 0
+                || Input.GetAxis("Horizontal") < 0
+                || Input.GetAxis("Vertical") < 0
+                || Input.GetAxis("Horizontal") > 0
+                || Input.GetButtonDown("Cancel")
+                || Input.GetKeyDown(KeyCode.Z)
+                || Input.GetKeyDown(KeyCode.Y)
+                || SwipeManager.IsSwipingUpLeft()
+                || SwipeManager.IsSwipingDownLeft()
+                || SwipeManager.IsSwipingDownRight()
+                || SwipeManager.IsSwipingUpRight()
+                || doubleTapOccurred)
+                )
+            {
+                if (Input.GetKeyDown(KeyCode.Z))
+                    Undo();
+                else if (Input.GetKeyDown(KeyCode.Y))
+                    Redo();
+                else
+                {
+                    UpdateAnimationCompleteListWith(false);
+                    dozedEnemiesList.Clear();
+                    blockedEnemiesList.Clear();
+                    bombedEnemiesList.Clear();
+
+                    if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft())
+                    {
+                        _player.Do_MoveUp();
+                    }
+                    else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft())
+                    {
+                        _player.Do_MoveLeft();
+                    }
+                    else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight())
+                    {
+                        _player.Do_MoveDown();
+                    }
+                    else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight())
+                    {
+                        _player.Do_MoveRight();
+                    }
+                    else if (Input.GetButtonDown("Cancel") || doubleTapOccurred)
+                    {
+                        doubleTapOccurred = false;
+                        _player.Do_Nothing();
+                    }
+
+                    Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
+
+                    for (int i = 0; i < _enemyArr.Length; i++)
+                    {
+                        Enemy enemy = _enemyArr[i];
+                        enemy.Do_React();
+                        Debug.Log(enemy + " new position (" + enemy.x + ", " + enemy.y + ")");
+                    }
+                    AddToHistory();
                 }
+
             }
         }
+        
+    }
 
-
+    private void HandleEndGamePhase()
+    {
+        if (gameEndInfo != null)
+        {
+            bool winning = gameEndInfo.third;
+            gameEndInfo = null;
+            if (winning)
+            {
+                Debug.Log(_currentLevelId + ": Game win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.GetResult());
+                SaveStateManager.SaveLevel(_currentLevelId, scoringModel.numberOfMoves);
+                endGameMenu.ShowWinMenu(true);
+            }
+            else
+            {
+                Debug.Log(_currentLevelId + ": Game Over");
+                endGameMenu.ShowLoseMenu(true);
+            }
+        }
     }
 
 
@@ -626,6 +633,7 @@ public class GameModel : MonoBehaviour
             if (gameEndInfo != null && gameEndInfo.first == order && gameEndInfo.second == stepOrder)
             {
                 UpdateAnimationCompleteListWith(true);
+                HandleEndGamePhase();
             }
 
             //update view of bombed enemies and bomb

@@ -19,8 +19,6 @@ public abstract class LevelModel : MonoBehaviour
     public Bomb[] bombArr;
     public Location[] bombLocationArr;
 
-    public LevelScore levelScore;
-
     public float verticalSpace;
     public float horizontalSpace;
 
@@ -43,11 +41,8 @@ public abstract class LevelModel : MonoBehaviour
             });
 
             gameObject.SetActive(true);
-
-            levelScore.silverMoves = levelScore.silverMoves < levelScore.goldMoves ? levelScore.goldMoves + 1 : levelScore.silverMoves;
-            levelScore.bronzeMoves = levelScore.bronzeMoves < levelScore.silverMoves ? levelScore.silverMoves + 1 : levelScore.bronzeMoves;
-
-            gameModel.levelScore = levelScore;
+           
+            gameModel.levelScore = LevelManager.LevelScoreMap[LevelId()];
 
             gameModel.verticalSpace = verticalSpace;
             gameModel.horizontalSpace = horizontalSpace;

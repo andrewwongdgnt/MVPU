@@ -112,7 +112,7 @@ public class SwipeManager : MonoBehaviour
             // Make sure it was a legit swipe, not a tap
             if (swipeCm < instance.minSwipeLength)
             {
-                if (Application.isEditor)
+                if (Application.isEditor || Time.timeScale<1)
                 {
                     //Debug.Log("[SwipeManager] Swipe was not long enough.");
                 }

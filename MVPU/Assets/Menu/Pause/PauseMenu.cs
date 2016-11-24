@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Linq;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
-
     GameObject[] pauseObjects;
     GameObject[] unPauseObjects;
 
     // Use this for initialization
     void Start()
     {
-       
-        pauseObjects = GameObject.FindGameObjectsWithTag("Pause");
+
+        pauseObjects = GameObject.FindGameObjectsWithTag("Pause").Concat(GameObject.FindGameObjectsWithTag("GenericMenu")).ToArray();
         unPauseObjects = GameObject.FindGameObjectsWithTag("Unpause");
 
-        SetPause(false);
+        SetPause(false, 0);
     }
 
     // Update is called once per frame
@@ -28,47 +29,38 @@ public class PauseMenu : MonoBehaviour {
         }
     }
 
+    //Need a delay so that the swipe manager doesn't pick up the taps as a swipe
+    private IEnumerator SetPauseWithDelay(bool pause, int delay = 30)
+    {
+        yield return delay;
+        Time.timeScale = pause ? 0 : 1;
+
+        foreach (GameObject g in pauseObjects)
+        {
+            g.SetActive(pause);
+        }
+        foreach (GameObject g in unPauseObjects)
+        {
+            g.SetActive(!pause);
+        }
+    }
+
+    //Exists for the button's on click
+    public void SetPauseWithDelay(bool pause)
+    {
+        SetPause(pause);
+    }
+
+    public void SetPause(bool pause, int delay = 30)
+    {
+        StartCoroutine(SetPauseWithDelay(pause, delay));
+
+    }
+
 
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void SetPause(bool pause)
-    {
-        Time.timeScale = pause ? 0 : 1;
-        if (Time.timeScale == 1)
-        {
-            HidePaused();
-        }
-        else if (Time.timeScale == 0)
-        {
-            ShowPaused();
-        }
-    }
-
-    public void ShowPaused()
-    {
-        foreach (GameObject g in pauseObjects)
-        {
-            g.SetActive(true);
-        }
-        foreach (GameObject g in unPauseObjects)
-        {
-            g.SetActive(false);
-        }
-    }
-
-    public void HidePaused()
-    {
-        foreach (GameObject g in pauseObjects)
-        {
-            g.SetActive(false);
-        }
-        foreach (GameObject g in unPauseObjects)
-        {
-            g.SetActive(true);
-        }
     }
 
     public void Quit()
