@@ -12,44 +12,51 @@ public class Player : Entity
     }
 
 
-    public void Do_MoveUp()
+    public bool Do_MoveUp()
     {
-        TryToMove(Direction.UP);
+        return TryToMove(Direction.UP);
     }
 
-    public void Do_MoveLeft()
+    public bool Do_MoveLeft()
     {
-        TryToMove(Direction.LEFT);
+        return TryToMove(Direction.LEFT);
     }
 
-    public void Do_MoveDown()
+    public bool Do_MoveDown()
     {
-        TryToMove(Direction.DOWN);
+        return TryToMove(Direction.DOWN);
     }
 
-    public void Do_MoveRight()
+    public bool Do_MoveRight()
     {
-        TryToMove(Direction.RIGHT);
+        return TryToMove(Direction.RIGHT);
     }
 
-    public void Do_Nothing()
+    public bool Do_Nothing()
     {
-        TryToMove(Direction.NONE);
+        return TryToMove(Direction.NONE);
     }
 
-    private void TryToMove(Direction direction)
+    private bool TryToMove(Direction direction)
     {
+        bool unblocked = true;
         if (direction == Entity.Direction.UP)
-            TryToMoveUp();
+            unblocked = TryToMoveUp();
         if (direction == Entity.Direction.LEFT)
-            TryToMoveLeft();
+            unblocked = TryToMoveLeft();
         if (direction == Entity.Direction.DOWN)
-            TryToMoveDown();
+            unblocked = TryToMoveDown();
         if (direction == Entity.Direction.RIGHT)
-            TryToMoveRight();
+            unblocked = TryToMoveRight();
+
+        if (!unblocked)
+            return false;
 
         _gameModel.CheckForEndGame(this, 0);
         _gameModel.AnimateGameObject(this, direction, 0);
+
+        return true;
+        
 
     }
 }

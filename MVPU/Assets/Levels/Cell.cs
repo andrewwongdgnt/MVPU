@@ -14,6 +14,7 @@ public class Cell
     public static readonly Cell CELL_LEFT_BOTTOM_CLOSED = new Cell(false, true, true, false);
     public static readonly Cell CELL_LEFT_RIGHT_CLOSED = new Cell(false, true, false, true);
     public static readonly Cell CELL_BOTTOM_RIGHT_CLOSED = new Cell(false, false, true, true);
+    public static readonly Cell CELL_CLOSED = new Cell(true, true, true, true);
 
     private bool _topBlocked;
     public bool topBlocked

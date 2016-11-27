@@ -10,7 +10,7 @@ public class LevelSelect : MonoBehaviour {
         LevelScore levelScore = LevelManager.LevelScoreMap["Level 1 - 1"];
 
         SaveStateManager.LevelState levelState = SaveStateManager.LoadLevel("Level 1 - 1");
-        level1_1Text.text = (levelState !=null ? "Beaten" : "New") + " " + levelState.moveCount+"/"+ levelScore.goldMoves;
+        level1_1Text.text = (levelState !=null ? "Beaten" : "New") + " " + levelState.moveCount+"/"+ levelScore.minMoveCount;
     }
 
     public void SelectLevel(string level)

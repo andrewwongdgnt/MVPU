@@ -1,39 +1,43 @@
 ﻿using UnityEngine;
 using System.Collections;
 [System.Serializable]
-public class LevelScore 
+public class LevelScore
 {
-    //Minimum number of moves to beat a level
-    public int goldMoves
+
+    public int minMoveCount
+    {
+        get; private set;
+    }
+    public int greatMoveCount
     {
         get; private set;
     }
 
-    //Number of moves that is considered par
-    public int silverMoves
+    public int goodMoveCount
     {
         get; private set;
     }
 
-    //Highest number of moves before considered subpar
-    public int bronzeMoves
+    public int adequateMoveCount
     {
         get; private set;
     }
 
-    public LevelScore (int goldMoves, int silverMoves, int bronzeMoves)
+    public LevelScore (int minMoveCount, int greatMoveCount, int goodMoveCount, int adequateMoveCount)
     {
-        this.goldMoves = goldMoves;
-        this.silverMoves = silverMoves;
-        this.bronzeMoves = bronzeMoves;
+        this.minMoveCount = minMoveCount;
+        this.greatMoveCount = greatMoveCount;
+        this.goodMoveCount = goodMoveCount;
+        this.adequateMoveCount = adequateMoveCount;
     }
 
 
-    public LevelScore(int goldMoves)
+    public LevelScore(int minMoveCount)
     {
 
-        this.goldMoves = goldMoves;
-        silverMoves = goldMoves+1;
-        bronzeMoves = silverMoves + 1;
+        this.minMoveCount = minMoveCount;
+        greatMoveCount = minMoveCount+2;
+        goodMoveCount = greatMoveCount + 2;
+        adequateMoveCount = goodMoveCount + 2;
     }
 }

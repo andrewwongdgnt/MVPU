@@ -21,22 +21,12 @@ public class GameModel : MonoBehaviour
     {
         get; set;
     }
-    public float verticalSpace
+    public Coordinate distance
     {
         get; set;
     }
 
-    public float horizontalSpace
-    {
-        get; set;
-    }
-
-    public float originX
-    {
-        get; set;
-    }
-
-    public float originY
+    public Coordinate origin
     {
         get; set;
     }
@@ -251,8 +241,8 @@ public class GameModel : MonoBehaviour
 
     private Vector3 GetPositionForEntity(Entity entity)
     {
-        float newX = originX + entity.x * horizontalSpace + entity.y * horizontalSpace;
-        float newY = originY + entity.y * -verticalSpace + entity.x * verticalSpace;
+        float newX = origin.x + entity.x * distance.x + entity.y * distance.x;
+        float newY = origin.y + entity.y * -distance.y + entity.x * distance.y;
         float newZ = newY;
         return new Vector3(newX, newY, newZ);
     }
@@ -358,37 +348,46 @@ public class GameModel : MonoBehaviour
                     blockedEnemiesList.Clear();
                     bombedEnemiesList.Clear();
 
+                    bool unblocked = true;
                     if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft())
                     {
-                        _player.Do_MoveUp();
+                        unblocked = _player.Do_MoveUp();
                     }
                     else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft())
                     {
-                        _player.Do_MoveLeft();
+                        unblocked = _player.Do_MoveLeft();
                     }
                     else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight())
                     {
-                        _player.Do_MoveDown();
+                        unblocked = _player.Do_MoveDown();
                     }
                     else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight())
                     {
-                        _player.Do_MoveRight();
+                        unblocked = _player.Do_MoveRight();
                     }
                     else if (Input.GetButtonDown("Cancel") || doubleTapOccurred)
                     {
                         doubleTapOccurred = false;
-                        _player.Do_Nothing();
+                        unblocked = _player.Do_Nothing();
                     }
 
-                    Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
-
-                    for (int i = 0; i < _enemyArr.Length; i++)
+                    if (unblocked)
                     {
-                        Enemy enemy = _enemyArr[i];
-                        enemy.Do_React();
-                        Debug.Log(enemy + " new position (" + enemy.x + ", " + enemy.y + ")");
+                        Debug.Log("Player new position (" + _player.x + ", " + _player.y + ")");
+
+                        for (int i = 0; i < _enemyArr.Length; i++)
+                        {
+                            Enemy enemy = _enemyArr[i];
+                            enemy.Do_React();
+                            Debug.Log(enemy + " new position (" + enemy.x + ", " + enemy.y + ")");
+                        }
+                        AddToHistory();
+                    } else
+                    {
+
+                        UpdateAnimationCompleteListWith(true);
+                        Debug.Log("Player is blocked so no reaction from Enemies");
                     }
-                    AddToHistory();
                 }
 
             }

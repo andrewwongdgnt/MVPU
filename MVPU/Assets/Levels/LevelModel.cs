@@ -19,11 +19,12 @@ public abstract class LevelModel : MonoBehaviour
     public Bomb[] bombArr;
     public Location[] bombLocationArr;
 
-    public float verticalSpace;
-    public float horizontalSpace;
 
-    public float originX;
-    public float originY;
+    [Tooltip("vertical and horizontal distance from one cell to another")]
+    public Coordinate distance;
+
+    [Tooltip("X and Y coordinate of the top left cell in the level")]
+    public Coordinate origin;
 
     // Use this for initialization
     void Start()
@@ -44,10 +45,8 @@ public abstract class LevelModel : MonoBehaviour
            
             gameModel.levelScore = LevelManager.LevelScoreMap[LevelId()];
 
-            gameModel.verticalSpace = verticalSpace;
-            gameModel.horizontalSpace = horizontalSpace;
-            gameModel.originX = originX;
-            gameModel.originY = originY;
+            gameModel.distance = distance;
+            gameModel.origin = origin;
 
             gameModel.grid = Grid();
 

@@ -5,7 +5,7 @@ public class ScoringModel
 {
     public enum ScoreTypes
     {
-        GOLD, SILVER, BRONZE, NONE
+        MIN, GREAT, GOOD, ADEQUATE, NONE
     }
     public int numberOfMoves
     {
@@ -15,7 +15,7 @@ public class ScoringModel
     {
         get
         {
-            return _levelScore.goldMoves;
+            return _levelScore.minMoveCount;
         }
     }
     private LevelScore _levelScore;
@@ -44,17 +44,19 @@ public class ScoringModel
     private void DispatchScore()
     {
         if (_gameModel != null)
-            _gameModel.UpdateScoreText(numberOfMoves + "/" + _levelScore.goldMoves);
+            _gameModel.UpdateScoreText(numberOfMoves + "/" + _levelScore.minMoveCount);
     }
 
     public ScoreTypes GetResult()
     {
-        if (numberOfMoves <= _levelScore.goldMoves)
-            return ScoreTypes.GOLD;
-        else if (numberOfMoves <= _levelScore.silverMoves)
-            return ScoreTypes.SILVER;
-        else if (numberOfMoves <= _levelScore.bronzeMoves)
-            return ScoreTypes.BRONZE;
+        if (numberOfMoves <= _levelScore.minMoveCount)
+            return ScoreTypes.MIN;
+        else if (numberOfMoves <= _levelScore.greatMoveCount)
+            return ScoreTypes.GREAT;
+        else if (numberOfMoves <= _levelScore.goodMoveCount)
+            return ScoreTypes.GOOD;
+        else if (numberOfMoves <= _levelScore.adequateMoveCount)
+            return ScoreTypes.ADEQUATE;
         else
             return ScoreTypes.NONE;
     }
