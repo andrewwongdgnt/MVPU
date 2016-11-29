@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class LevelManager {
 
-    public static string levelToLoad = "Level 1 - 3";
+    public static string levelToLoad = "Level 1 - 1";
 
     public static Dictionary<string, LevelScore> LevelScoreMap = new Dictionary<string, LevelScore>
         {
