@@ -1,69 +1,69 @@
 fileFormatVersion: 2
-guid: 3c8f699db9d055549827fbcd8fd64619
-timeCreated: 1480398839
+guid: 88dbe376e11a2944da9929c26c50f11b
+timeCreated: 1480404910
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Penguin Idle_0
-    21300002: Penguin Idle_1
-    21300004: Penguin Idle_2
-    21300006: Penguin Idle_3
-    21300008: Penguin Idle_4
-    21300010: Penguin Idle_5
-    21300012: Penguin Idle_6
-    21300014: Penguin Idle_7
-    21300016: Penguin Idle_8
-    21300018: Penguin Idle_9
-    21300020: Penguin Idle_10
-    21300022: Penguin Idle_11
-    21300024: Penguin Idle_12
-    21300026: Penguin Idle_13
-    21300028: Penguin Idle_14
-    21300030: Penguin Idle_15
-    21300032: Penguin Idle_16
-    21300034: Penguin Idle_17
-    21300036: Penguin Idle_18
-    21300038: Penguin Idle_19
-    21300040: Penguin Idle_20
-    21300042: Penguin Idle_21
-    21300044: Penguin Idle_22
-    21300046: Penguin Idle_23
-    21300048: Penguin Idle_24
-    21300050: Penguin Idle_25
-    21300052: Penguin Idle_26
-    21300054: Penguin Idle_27
-    21300056: Penguin Idle_28
-    21300058: Penguin Idle_29
-    21300060: Penguin Idle_30
-    21300062: Penguin Idle_31
-    21300064: Penguin Idle_32
-    21300066: Penguin Idle_33
-    21300068: Penguin Idle_34
-    21300070: Penguin Idle_35
-    21300072: Penguin Idle_36
-    21300074: Penguin Idle_37
-    21300076: Penguin Idle_38
-    21300078: Penguin Idle_39
-    21300080: Penguin Idle_40
-    21300082: Penguin Idle_41
-    21300084: Penguin Idle_42
-    21300086: Penguin Idle_43
-    21300088: Penguin Idle_44
-    21300090: Penguin Idle_45
-    21300092: Penguin Idle_46
-    21300094: Penguin Idle_47
-    21300096: Penguin Idle_48
-    21300098: Penguin Idle_49
-    21300100: Penguin Idle_50
-    21300102: Penguin Idle_51
-    21300104: Penguin Idle_52
-    21300106: Penguin Idle_53
-    21300108: Penguin Idle_54
-    21300110: Penguin Idle_55
-    21300112: Penguin Idle_56
-    21300114: Penguin Idle_57
-    21300116: Penguin Idle_58
-    21300118: Penguin Idle_59
+    21300000: Penguin Idle 1_0
+    21300002: Penguin Idle 1_1
+    21300004: Penguin Idle 1_2
+    21300006: Penguin Idle 1_3
+    21300008: Penguin Idle 1_4
+    21300010: Penguin Idle 1_5
+    21300012: Penguin Idle 1_6
+    21300014: Penguin Idle 1_7
+    21300016: Penguin Idle 1_8
+    21300018: Penguin Idle 1_9
+    21300020: Penguin Idle 1_10
+    21300022: Penguin Idle 1_11
+    21300024: Penguin Idle 1_12
+    21300026: Penguin Idle 1_13
+    21300028: Penguin Idle 1_14
+    21300030: Penguin Idle 1_15
+    21300032: Penguin Idle 1_16
+    21300034: Penguin Idle 1_17
+    21300036: Penguin Idle 1_18
+    21300038: Penguin Idle 1_19
+    21300040: Penguin Idle 1_20
+    21300042: Penguin Idle 1_21
+    21300044: Penguin Idle 1_22
+    21300046: Penguin Idle 1_23
+    21300048: Penguin Idle 1_24
+    21300050: Penguin Idle 1_25
+    21300052: Penguin Idle 1_26
+    21300054: Penguin Idle 1_27
+    21300056: Penguin Idle 1_28
+    21300058: Penguin Idle 1_29
+    21300060: Penguin Idle 1_30
+    21300062: Penguin Idle 1_31
+    21300064: Penguin Idle 1_32
+    21300066: Penguin Idle 1_33
+    21300068: Penguin Idle 1_34
+    21300070: Penguin Idle 1_35
+    21300072: Penguin Idle 1_36
+    21300074: Penguin Idle 1_37
+    21300076: Penguin Idle 1_38
+    21300078: Penguin Idle 1_39
+    21300080: Penguin Idle 1_40
+    21300082: Penguin Idle 1_41
+    21300084: Penguin Idle 1_42
+    21300086: Penguin Idle 1_43
+    21300088: Penguin Idle 1_44
+    21300090: Penguin Idle 1_45
+    21300092: Penguin Idle 1_46
+    21300094: Penguin Idle 1_47
+    21300096: Penguin Idle 1_48
+    21300098: Penguin Idle 1_49
+    21300100: Penguin Idle 1_50
+    21300102: Penguin Idle 1_51
+    21300104: Penguin Idle 1_52
+    21300106: Penguin Idle 1_53
+    21300108: Penguin Idle 1_54
+    21300110: Penguin Idle 1_55
+    21300112: Penguin Idle 1_56
+    21300114: Penguin Idle 1_57
+    21300116: Penguin Idle 1_58
+    21300118: Penguin Idle 1_59
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Penguin Idle_0
+      name: Penguin Idle 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,7 +126,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_1
+      name: Penguin Idle 1_1
       rect:
         serializedVersion: 2
         x: 64
@@ -139,7 +139,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_2
+      name: Penguin Idle 1_2
       rect:
         serializedVersion: 2
         x: 128
@@ -152,7 +152,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_3
+      name: Penguin Idle 1_3
       rect:
         serializedVersion: 2
         x: 192
@@ -165,7 +165,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_4
+      name: Penguin Idle 1_4
       rect:
         serializedVersion: 2
         x: 256
@@ -178,7 +178,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_5
+      name: Penguin Idle 1_5
       rect:
         serializedVersion: 2
         x: 320
@@ -191,7 +191,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_6
+      name: Penguin Idle 1_6
       rect:
         serializedVersion: 2
         x: 384
@@ -204,7 +204,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_7
+      name: Penguin Idle 1_7
       rect:
         serializedVersion: 2
         x: 448
@@ -217,7 +217,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_8
+      name: Penguin Idle 1_8
       rect:
         serializedVersion: 2
         x: 512
@@ -230,7 +230,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_9
+      name: Penguin Idle 1_9
       rect:
         serializedVersion: 2
         x: 576
@@ -243,7 +243,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_10
+      name: Penguin Idle 1_10
       rect:
         serializedVersion: 2
         x: 640
@@ -256,7 +256,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_11
+      name: Penguin Idle 1_11
       rect:
         serializedVersion: 2
         x: 704
@@ -269,7 +269,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_12
+      name: Penguin Idle 1_12
       rect:
         serializedVersion: 2
         x: 768
@@ -282,7 +282,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_13
+      name: Penguin Idle 1_13
       rect:
         serializedVersion: 2
         x: 832
@@ -295,7 +295,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_14
+      name: Penguin Idle 1_14
       rect:
         serializedVersion: 2
         x: 896
@@ -308,7 +308,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_15
+      name: Penguin Idle 1_15
       rect:
         serializedVersion: 2
         x: 960
@@ -321,7 +321,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_16
+      name: Penguin Idle 1_16
       rect:
         serializedVersion: 2
         x: 1024
@@ -334,7 +334,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_17
+      name: Penguin Idle 1_17
       rect:
         serializedVersion: 2
         x: 1088
@@ -347,7 +347,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_18
+      name: Penguin Idle 1_18
       rect:
         serializedVersion: 2
         x: 1152
@@ -360,7 +360,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_19
+      name: Penguin Idle 1_19
       rect:
         serializedVersion: 2
         x: 1216
@@ -373,7 +373,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_20
+      name: Penguin Idle 1_20
       rect:
         serializedVersion: 2
         x: 1280
@@ -386,7 +386,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_21
+      name: Penguin Idle 1_21
       rect:
         serializedVersion: 2
         x: 1344
@@ -399,7 +399,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_22
+      name: Penguin Idle 1_22
       rect:
         serializedVersion: 2
         x: 1408
@@ -412,7 +412,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_23
+      name: Penguin Idle 1_23
       rect:
         serializedVersion: 2
         x: 1472
@@ -425,7 +425,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_24
+      name: Penguin Idle 1_24
       rect:
         serializedVersion: 2
         x: 1536
@@ -438,7 +438,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_25
+      name: Penguin Idle 1_25
       rect:
         serializedVersion: 2
         x: 1600
@@ -451,7 +451,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_26
+      name: Penguin Idle 1_26
       rect:
         serializedVersion: 2
         x: 1664
@@ -464,7 +464,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_27
+      name: Penguin Idle 1_27
       rect:
         serializedVersion: 2
         x: 1728
@@ -477,7 +477,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_28
+      name: Penguin Idle 1_28
       rect:
         serializedVersion: 2
         x: 1792
@@ -490,7 +490,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_29
+      name: Penguin Idle 1_29
       rect:
         serializedVersion: 2
         x: 1856
@@ -503,7 +503,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_30
+      name: Penguin Idle 1_30
       rect:
         serializedVersion: 2
         x: 1920
@@ -516,7 +516,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_31
+      name: Penguin Idle 1_31
       rect:
         serializedVersion: 2
         x: 0
@@ -529,7 +529,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_32
+      name: Penguin Idle 1_32
       rect:
         serializedVersion: 2
         x: 64
@@ -542,7 +542,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_33
+      name: Penguin Idle 1_33
       rect:
         serializedVersion: 2
         x: 128
@@ -555,7 +555,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_34
+      name: Penguin Idle 1_34
       rect:
         serializedVersion: 2
         x: 192
@@ -568,7 +568,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_35
+      name: Penguin Idle 1_35
       rect:
         serializedVersion: 2
         x: 256
@@ -581,7 +581,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_36
+      name: Penguin Idle 1_36
       rect:
         serializedVersion: 2
         x: 320
@@ -594,7 +594,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_37
+      name: Penguin Idle 1_37
       rect:
         serializedVersion: 2
         x: 384
@@ -607,7 +607,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_38
+      name: Penguin Idle 1_38
       rect:
         serializedVersion: 2
         x: 448
@@ -620,7 +620,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_39
+      name: Penguin Idle 1_39
       rect:
         serializedVersion: 2
         x: 512
@@ -633,7 +633,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_40
+      name: Penguin Idle 1_40
       rect:
         serializedVersion: 2
         x: 576
@@ -646,7 +646,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_41
+      name: Penguin Idle 1_41
       rect:
         serializedVersion: 2
         x: 640
@@ -659,7 +659,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_42
+      name: Penguin Idle 1_42
       rect:
         serializedVersion: 2
         x: 704
@@ -672,7 +672,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_43
+      name: Penguin Idle 1_43
       rect:
         serializedVersion: 2
         x: 768
@@ -685,7 +685,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_44
+      name: Penguin Idle 1_44
       rect:
         serializedVersion: 2
         x: 832
@@ -698,7 +698,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_45
+      name: Penguin Idle 1_45
       rect:
         serializedVersion: 2
         x: 896
@@ -711,7 +711,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_46
+      name: Penguin Idle 1_46
       rect:
         serializedVersion: 2
         x: 960
@@ -724,7 +724,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_47
+      name: Penguin Idle 1_47
       rect:
         serializedVersion: 2
         x: 1024
@@ -737,7 +737,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_48
+      name: Penguin Idle 1_48
       rect:
         serializedVersion: 2
         x: 1088
@@ -750,7 +750,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_49
+      name: Penguin Idle 1_49
       rect:
         serializedVersion: 2
         x: 1152
@@ -763,7 +763,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_50
+      name: Penguin Idle 1_50
       rect:
         serializedVersion: 2
         x: 1216
@@ -776,7 +776,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_51
+      name: Penguin Idle 1_51
       rect:
         serializedVersion: 2
         x: 1280
@@ -789,7 +789,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_52
+      name: Penguin Idle 1_52
       rect:
         serializedVersion: 2
         x: 1344
@@ -802,7 +802,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_53
+      name: Penguin Idle 1_53
       rect:
         serializedVersion: 2
         x: 1408
@@ -815,7 +815,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_54
+      name: Penguin Idle 1_54
       rect:
         serializedVersion: 2
         x: 1472
@@ -828,7 +828,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_55
+      name: Penguin Idle 1_55
       rect:
         serializedVersion: 2
         x: 1536
@@ -841,7 +841,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_56
+      name: Penguin Idle 1_56
       rect:
         serializedVersion: 2
         x: 1600
@@ -854,7 +854,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_57
+      name: Penguin Idle 1_57
       rect:
         serializedVersion: 2
         x: 1664
@@ -867,7 +867,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_58
+      name: Penguin Idle 1_58
       rect:
         serializedVersion: 2
         x: 1728
@@ -880,7 +880,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Penguin Idle_59
+      name: Penguin Idle 1_59
       rect:
         serializedVersion: 2
         x: 1792
