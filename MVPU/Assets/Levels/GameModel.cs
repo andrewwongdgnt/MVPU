@@ -250,11 +250,11 @@ public class GameModel : MonoBehaviour
     private void SetViewForEnemy(Enemy enemy)
     {
 
-        Color color = enemy.GetComponent<SpriteRenderer>().material.color;
-        color.a = enemy.inactive ? 0.5f : 1f;
+        //Color color = enemy.GetComponent<SpriteRenderer>().material.color;
+        //color.a = enemy.inactive ? 0.5f : 1f;
 
-        enemy.GetComponent<SpriteRenderer>().material.color = color;
-        Look(enemy, Entity.Direction.DOWN);
+        //enemy.GetComponent<SpriteRenderer>().material.color = color;
+        //Look(enemy, Entity.Direction.DOWN);
     }
 
     private void SetViewForBomb(Bomb bomb)
