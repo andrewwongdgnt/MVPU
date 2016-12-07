@@ -35,18 +35,18 @@ public class UndoManager
     private HistoryState CreateHistoryState(Player player, Goal goal, Enemy[] enemyArr, Bomb[] bombArr)
     {
         HistoryState historyState = new HistoryState();
-        historyState.playerState = player.BuildDict();
-        historyState.goalState = goal.BuildDict();
+        historyState.playerState = player.BuildStateDict();
+        historyState.goalState = goal.BuildStateDict();
         Dictionary<string, object>[] enemyArrState = new Dictionary<string, object>[enemyArr.Length];
         for (int i = 0; i < enemyArr.Length; i++)
         {
-            enemyArrState[i] = enemyArr[i].BuildDict();
+            enemyArrState[i] = enemyArr[i].BuildStateDict();
         }
         historyState.enemyArrState = enemyArrState;
         Dictionary<string, object>[] bombArrState = new Dictionary<string, object>[bombArr.Length];
         for (int i = 0; i < bombArr.Length; i++)
         {
-            bombArrState[i] = bombArr[i].BuildDict();
+            bombArrState[i] = bombArr[i].BuildStateDict();
         }
         historyState.bombArrState = bombArrState;
         return historyState;

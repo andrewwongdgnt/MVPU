@@ -247,14 +247,17 @@ public class GameModel : MonoBehaviour
         return new Vector3(newX, newY, newZ);
     }
 
-    private void SetViewForEnemy(Enemy enemy)
+    private void SetViewForEnemy(Enemy enemy, String animatorKey = null)
     {
+        UpdateAnimator(enemy, "Dozed", animatorKey == "Dozed");
+        SpriteRenderer[] sprites = enemy.GetComponentsInChildren<SpriteRenderer>();
+        Array.ForEach(sprites, s =>
+        {
+            Color color = s.material.color;
+            color.a = enemy.inactive && animatorKey  == null? 0f : 1f;
 
-        //Color color = enemy.GetComponent<SpriteRenderer>().material.color;
-        //color.a = enemy.inactive ? 0.5f : 1f;
-
-        //enemy.GetComponent<SpriteRenderer>().material.color = color;
-        //Look(enemy, Entity.Direction.DOWN);
+            s.material.color = color;
+        });
     }
 
     private void SetViewForBomb(Bomb bomb)
@@ -651,7 +654,7 @@ public class GameModel : MonoBehaviour
             if (dozedEnemyInfo != null && dozedEnemyInfo.third != null)
             {
                 Enemy dozedEnemy = dozedEnemyInfo.third;
-                SetViewForEnemy(dozedEnemy);
+                SetViewForEnemy(dozedEnemy, "Dozed");
 
             }
         }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 88dbe376e11a2944da9929c26c50f11b
-timeCreated: 1480741023
+timeCreated: 1480896881
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -177,9 +177,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 441
-        width: 52
-        height: 71
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: Penguin Idle_1
       rect:
         serializedVersion: 2
-        x: 52
-        y: 441
-        width: 52
-        height: 71
+        x: 71
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: Penguin Idle_2
       rect:
         serializedVersion: 2
-        x: 104
-        y: 441
-        width: 52
-        height: 71
+        x: 142
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: Penguin Idle_3
       rect:
         serializedVersion: 2
-        x: 156
-        y: 441
-        width: 52
-        height: 71
+        x: 213
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: Penguin Idle_4
       rect:
         serializedVersion: 2
-        x: 208
-        y: 441
-        width: 52
-        height: 71
+        x: 284
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: Penguin Idle_5
       rect:
         serializedVersion: 2
-        x: 260
-        y: 441
-        width: 52
-        height: 71
+        x: 355
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,10 +254,10 @@ TextureImporter:
       name: Penguin Idle_6
       rect:
         serializedVersion: 2
-        x: 312
-        y: 441
-        width: 52
-        height: 71
+        x: 426
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: Penguin Idle_7
       rect:
         serializedVersion: 2
-        x: 364
-        y: 441
-        width: 52
-        height: 71
+        x: 497
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +280,10 @@ TextureImporter:
       name: Penguin Idle_8
       rect:
         serializedVersion: 2
-        x: 416
-        y: 441
-        width: 52
-        height: 71
+        x: 568
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +293,10 @@ TextureImporter:
       name: Penguin Idle_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 370
-        width: 52
-        height: 71
+        x: 639
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,10 +306,10 @@ TextureImporter:
       name: Penguin Idle_10
       rect:
         serializedVersion: 2
-        x: 52
-        y: 370
-        width: 52
-        height: 71
+        x: 710
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,10 +319,10 @@ TextureImporter:
       name: Penguin Idle_11
       rect:
         serializedVersion: 2
-        x: 104
-        y: 370
-        width: 52
-        height: 71
+        x: 781
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,10 +332,10 @@ TextureImporter:
       name: Penguin Idle_12
       rect:
         serializedVersion: 2
-        x: 156
-        y: 370
-        width: 52
-        height: 71
+        x: 852
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,10 +345,10 @@ TextureImporter:
       name: Penguin Idle_13
       rect:
         serializedVersion: 2
-        x: 208
-        y: 370
-        width: 52
-        height: 71
+        x: 923
+        y: 929
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,10 +358,10 @@ TextureImporter:
       name: Penguin Idle_14
       rect:
         serializedVersion: 2
-        x: 260
-        y: 370
-        width: 52
-        height: 71
+        x: 0
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,10 +371,10 @@ TextureImporter:
       name: Penguin Idle_15
       rect:
         serializedVersion: 2
-        x: 312
-        y: 370
-        width: 52
-        height: 71
+        x: 71
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,10 +384,10 @@ TextureImporter:
       name: Penguin Idle_16
       rect:
         serializedVersion: 2
-        x: 364
-        y: 370
-        width: 52
-        height: 71
+        x: 142
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,10 +397,10 @@ TextureImporter:
       name: Penguin Idle_17
       rect:
         serializedVersion: 2
-        x: 416
-        y: 370
-        width: 52
-        height: 71
+        x: 213
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,10 +410,10 @@ TextureImporter:
       name: Penguin Idle_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 299
-        width: 52
-        height: 71
+        x: 284
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,10 +423,10 @@ TextureImporter:
       name: Penguin Idle_19
       rect:
         serializedVersion: 2
-        x: 52
-        y: 299
-        width: 52
-        height: 71
+        x: 355
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,10 +436,10 @@ TextureImporter:
       name: Penguin Idle_20
       rect:
         serializedVersion: 2
-        x: 104
-        y: 299
-        width: 52
-        height: 71
+        x: 426
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,10 +449,10 @@ TextureImporter:
       name: Penguin Idle_21
       rect:
         serializedVersion: 2
-        x: 156
-        y: 299
-        width: 52
-        height: 71
+        x: 497
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: Penguin Idle_22
       rect:
         serializedVersion: 2
-        x: 208
-        y: 299
-        width: 52
-        height: 71
+        x: 568
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,10 +475,10 @@ TextureImporter:
       name: Penguin Idle_23
       rect:
         serializedVersion: 2
-        x: 260
-        y: 299
-        width: 52
-        height: 71
+        x: 639
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,10 +488,10 @@ TextureImporter:
       name: Penguin Idle_24
       rect:
         serializedVersion: 2
-        x: 312
-        y: 299
-        width: 52
-        height: 71
+        x: 710
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -501,10 +501,10 @@ TextureImporter:
       name: Penguin Idle_25
       rect:
         serializedVersion: 2
-        x: 364
-        y: 299
-        width: 52
-        height: 71
+        x: 781
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -514,10 +514,10 @@ TextureImporter:
       name: Penguin Idle_26
       rect:
         serializedVersion: 2
-        x: 416
-        y: 299
-        width: 52
-        height: 71
+        x: 852
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -527,10 +527,10 @@ TextureImporter:
       name: Penguin Idle_27
       rect:
         serializedVersion: 2
-        x: 0
-        y: 228
-        width: 52
-        height: 71
+        x: 923
+        y: 834
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,10 +540,10 @@ TextureImporter:
       name: Penguin Idle_28
       rect:
         serializedVersion: 2
-        x: 52
-        y: 228
-        width: 52
-        height: 71
+        x: 0
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -553,10 +553,10 @@ TextureImporter:
       name: Penguin Idle_29
       rect:
         serializedVersion: 2
-        x: 104
-        y: 228
-        width: 52
-        height: 71
+        x: 71
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,10 +566,10 @@ TextureImporter:
       name: Penguin Idle_30
       rect:
         serializedVersion: 2
-        x: 156
-        y: 228
-        width: 52
-        height: 71
+        x: 142
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -579,10 +579,10 @@ TextureImporter:
       name: Penguin Idle_31
       rect:
         serializedVersion: 2
-        x: 208
-        y: 228
-        width: 52
-        height: 71
+        x: 213
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -592,10 +592,10 @@ TextureImporter:
       name: Penguin Idle_32
       rect:
         serializedVersion: 2
-        x: 260
-        y: 228
-        width: 52
-        height: 71
+        x: 284
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -605,10 +605,10 @@ TextureImporter:
       name: Penguin Idle_33
       rect:
         serializedVersion: 2
-        x: 312
-        y: 228
-        width: 52
-        height: 71
+        x: 355
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -618,10 +618,10 @@ TextureImporter:
       name: Penguin Idle_34
       rect:
         serializedVersion: 2
-        x: 364
-        y: 228
-        width: 52
-        height: 71
+        x: 426
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -631,10 +631,10 @@ TextureImporter:
       name: Penguin Idle_35
       rect:
         serializedVersion: 2
-        x: 416
-        y: 228
-        width: 52
-        height: 71
+        x: 497
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -644,10 +644,10 @@ TextureImporter:
       name: Penguin Idle_36
       rect:
         serializedVersion: 2
-        x: 0
-        y: 157
-        width: 52
-        height: 71
+        x: 568
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -657,10 +657,10 @@ TextureImporter:
       name: Penguin Idle_37
       rect:
         serializedVersion: 2
-        x: 52
-        y: 157
-        width: 52
-        height: 71
+        x: 639
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -670,10 +670,10 @@ TextureImporter:
       name: Penguin Idle_38
       rect:
         serializedVersion: 2
-        x: 104
-        y: 157
-        width: 52
-        height: 71
+        x: 710
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -683,10 +683,10 @@ TextureImporter:
       name: Penguin Idle_39
       rect:
         serializedVersion: 2
-        x: 156
-        y: 157
-        width: 52
-        height: 71
+        x: 781
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -696,10 +696,10 @@ TextureImporter:
       name: Penguin Idle_40
       rect:
         serializedVersion: 2
-        x: 208
-        y: 157
-        width: 52
-        height: 71
+        x: 852
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -709,10 +709,10 @@ TextureImporter:
       name: Penguin Idle_41
       rect:
         serializedVersion: 2
-        x: 260
-        y: 157
-        width: 52
-        height: 71
+        x: 923
+        y: 739
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -722,10 +722,10 @@ TextureImporter:
       name: Penguin Idle_42
       rect:
         serializedVersion: 2
-        x: 312
-        y: 157
-        width: 52
-        height: 71
+        x: 0
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -735,10 +735,10 @@ TextureImporter:
       name: Penguin Idle_43
       rect:
         serializedVersion: 2
-        x: 364
-        y: 157
-        width: 52
-        height: 71
+        x: 71
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -748,10 +748,10 @@ TextureImporter:
       name: Penguin Idle_44
       rect:
         serializedVersion: 2
-        x: 416
-        y: 157
-        width: 52
-        height: 71
+        x: 142
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -761,10 +761,10 @@ TextureImporter:
       name: Penguin Idle_45
       rect:
         serializedVersion: 2
-        x: 0
-        y: 86
-        width: 52
-        height: 71
+        x: 213
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -774,10 +774,10 @@ TextureImporter:
       name: Penguin Idle_46
       rect:
         serializedVersion: 2
-        x: 52
-        y: 86
-        width: 52
-        height: 71
+        x: 284
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -787,10 +787,10 @@ TextureImporter:
       name: Penguin Idle_47
       rect:
         serializedVersion: 2
-        x: 104
-        y: 86
-        width: 52
-        height: 71
+        x: 355
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -800,10 +800,10 @@ TextureImporter:
       name: Penguin Idle_48
       rect:
         serializedVersion: 2
-        x: 156
-        y: 86
-        width: 52
-        height: 71
+        x: 426
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -813,10 +813,10 @@ TextureImporter:
       name: Penguin Idle_49
       rect:
         serializedVersion: 2
-        x: 208
-        y: 86
-        width: 52
-        height: 71
+        x: 497
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -826,10 +826,10 @@ TextureImporter:
       name: Penguin Idle_50
       rect:
         serializedVersion: 2
-        x: 260
-        y: 86
-        width: 52
-        height: 71
+        x: 568
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -839,10 +839,10 @@ TextureImporter:
       name: Penguin Idle_51
       rect:
         serializedVersion: 2
-        x: 312
-        y: 86
-        width: 52
-        height: 71
+        x: 639
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -852,10 +852,10 @@ TextureImporter:
       name: Penguin Idle_52
       rect:
         serializedVersion: 2
-        x: 364
-        y: 86
-        width: 52
-        height: 71
+        x: 710
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -865,10 +865,10 @@ TextureImporter:
       name: Penguin Idle_53
       rect:
         serializedVersion: 2
-        x: 416
-        y: 86
-        width: 52
-        height: 71
+        x: 781
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -878,10 +878,10 @@ TextureImporter:
       name: Penguin Idle_54
       rect:
         serializedVersion: 2
-        x: 0
-        y: 15
-        width: 52
-        height: 71
+        x: 852
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -891,10 +891,10 @@ TextureImporter:
       name: Penguin Idle_55
       rect:
         serializedVersion: 2
-        x: 52
-        y: 15
-        width: 52
-        height: 71
+        x: 923
+        y: 644
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -904,10 +904,10 @@ TextureImporter:
       name: Penguin Idle_56
       rect:
         serializedVersion: 2
-        x: 104
-        y: 15
-        width: 52
-        height: 71
+        x: 0
+        y: 549
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -917,10 +917,10 @@ TextureImporter:
       name: Penguin Idle_57
       rect:
         serializedVersion: 2
-        x: 156
-        y: 15
-        width: 52
-        height: 71
+        x: 71
+        y: 549
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -930,10 +930,10 @@ TextureImporter:
       name: Penguin Idle_58
       rect:
         serializedVersion: 2
-        x: 208
-        y: 15
-        width: 52
-        height: 71
+        x: 142
+        y: 549
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -943,10 +943,10 @@ TextureImporter:
       name: Penguin Idle_59
       rect:
         serializedVersion: 2
-        x: 260
-        y: 15
-        width: 52
-        height: 71
+        x: 213
+        y: 549
+        width: 71
+        height: 95
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

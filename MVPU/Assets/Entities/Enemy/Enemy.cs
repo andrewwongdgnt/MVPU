@@ -16,7 +16,7 @@ public class Enemy : Entity
     }
     private bool blocked;
 
-    protected override void BuildAdditionalDict(Dictionary<string, object> dict)
+    protected override void BuildAdditionalStateDict(Dictionary<string, object> dict)
     {
         dict.Add("verticalOrientation", verticalOrientation);
         dict.Add("stepsPerMove", stepsPerMove);

@@ -18,7 +18,7 @@ public class Bomb : Entity {
     //TODO: maybe allow this, come back later
     //public int radius;
 
-    protected override void BuildAdditionalDict(Dictionary<string, object> dict)
+    protected override void BuildAdditionalStateDict(Dictionary<string, object> dict)
     {
         dict.Add("affectsEnemy", affectsEnemy);
         dict.Add("affectsPlayer", affectsPlayer);

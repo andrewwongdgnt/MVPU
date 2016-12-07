@@ -31,16 +31,16 @@ public abstract class Entity : MonoBehaviour, IUndoable
         }
     }
 
-    public Dictionary<string, object> BuildDict()
+    public Dictionary<string, object> BuildStateDict()
     {
         Dictionary<string, object> dict = new Dictionary<string, object>();
         dict.Add("x", x);
         dict.Add("y", y);
-        BuildAdditionalDict(dict);
+        BuildAdditionalStateDict(dict);
         return dict;
     }
 
-    protected virtual void BuildAdditionalDict(Dictionary<string, object> dict)
+    protected virtual void BuildAdditionalStateDict(Dictionary<string, object> dict)
     {
 
     }
