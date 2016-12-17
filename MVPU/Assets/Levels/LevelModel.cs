@@ -4,8 +4,9 @@ using System;
 
 public abstract class LevelModel : MonoBehaviour
 {
-
     public GameModel gameModel;
+
+    public Tutorial tutorial;
 
     public Player player;
     public Location playerLocation;
@@ -73,6 +74,10 @@ public abstract class LevelModel : MonoBehaviour
             gameModel.bombArr = bombArr;
             gameModel.currentLevelId = LevelId();
 
+            if (tutorial!=null)
+                tutorial.tutorialActionArr = LevelManager.TutorialContent.ContainsKey(LevelId()) ? LevelManager.TutorialContent[LevelId()] : null;
+            gameModel.tutorial = tutorial;
+
             gameModel.Commence();
         }
         else
@@ -80,6 +85,7 @@ public abstract class LevelModel : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
 
     protected abstract Cell[,] Grid();
     protected abstract string LevelId();

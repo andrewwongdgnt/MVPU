@@ -17,6 +17,17 @@ public class GameModel : MonoBehaviour
 
     public EndGameMenu endGameMenu;
 
+    public Text scoreGuiText;
+
+    public TutorialAction.Action actionAllowedFromTutorial
+    {
+        get; set;
+    }
+
+    public string[] tutorialStringArr
+    {
+        get; set;
+    }
     public LevelScore levelScore
     {
         get; set;
@@ -36,6 +47,14 @@ public class GameModel : MonoBehaviour
         get; set;
     }
 
+    private Tutorial _tutorial;
+    public Tutorial tutorial
+    {
+        set
+        {
+            _tutorial = value;
+        }
+    }
     private Player _player;
     public Player player
     {
@@ -120,7 +139,7 @@ public class GameModel : MonoBehaviour
     private string _currentLevelId;
     public string currentLevelId
     {
-    
+
         set
         {
             _currentLevelId = value;
@@ -177,13 +196,32 @@ public class GameModel : MonoBehaviour
         undoManager.AddToHistory(_player, _goal, _enemyArr, _bombArr);
     }
 
-    public Text scoreGuiText;
     public void UpdateScoreText(string text)
     {
         if (scoreGuiText != null)
         {
             scoreGuiText.text = text;
         }
+    }
+
+
+    public void AdvanceTutorial(Boolean forceAdvance = false)
+    {
+        TutorialAction.Action actionAllowed;
+        if (_tutorial != null)
+            actionAllowed = _tutorial.AdvanceTutorial(forceAdvance);
+        else
+            actionAllowed = TutorialAction.Action.ALL;
+
+        StartCoroutine(setActionAllowedFromTutorialWithDelay(actionAllowed));
+    }
+
+    private IEnumerator setActionAllowedFromTutorialWithDelay(TutorialAction.Action actionAllowed)
+    {
+        actionAllowedFromTutorial = TutorialAction.Action.NONE;
+        yield return 30;
+        actionAllowedFromTutorial = actionAllowed;
+
     }
 
 
@@ -217,10 +255,14 @@ public class GameModel : MonoBehaviour
         //set positions for each entity
         SetViewForEntities();
 
-        scoringModel = new ScoringModel(levelScore,this);
+        scoringModel = new ScoringModel(levelScore, this);
         undoManager = new UndoManager();
         undoManager.AddInitialState(_player, _goal, _enemyArr, _bombArr);
+
+        AdvanceTutorial();
+
     }
+
 
     private void SetViewForEntities()
     {
@@ -254,7 +296,7 @@ public class GameModel : MonoBehaviour
         Array.ForEach(sprites, s =>
         {
             Color color = s.material.color;
-            color.a = enemy.inactive && animatorKey  == null? 0f : 1f;
+            color.a = enemy.inactive && animatorKey == null ? 0f : 1f;
 
             s.material.color = color;
         });
@@ -306,7 +348,7 @@ public class GameModel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale > 0)
+        if (Time.timeScale > 0 && actionAllowedFromTutorial != TutorialAction.Action.NONE)
         {
             bool areAllAnimationsComplete = AreAllAnimationsComplete();
 
@@ -351,27 +393,38 @@ public class GameModel : MonoBehaviour
                     blockedEnemiesList.Clear();
                     bombedEnemiesList.Clear();
 
-                    bool unblocked = true;
-                    if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft())
+                    bool unblocked = false;
+                    if (actionAllowedFromTutorial == TutorialAction.Action.SWIPE || actionAllowedFromTutorial == TutorialAction.Action.ALL)
                     {
-                        unblocked = _player.Do_MoveUp();
+                        if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft())
+                        {
+                            unblocked = _player.Do_MoveUp();
+                            AdvanceTutorial(true);
+                        }
+                        else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft())
+                        {
+                            unblocked = _player.Do_MoveLeft();
+                            AdvanceTutorial(true);
+                        }
+                        else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight())
+                        {
+                            unblocked = _player.Do_MoveDown();
+                            AdvanceTutorial(true);
+                        }
+                        else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight())
+                        {
+                            unblocked = _player.Do_MoveRight();
+                            AdvanceTutorial(true);
+                        }
                     }
-                    else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft())
+                    else if (actionAllowedFromTutorial == TutorialAction.Action.TAP || actionAllowedFromTutorial == TutorialAction.Action.ALL)
                     {
-                        unblocked = _player.Do_MoveLeft();
-                    }
-                    else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight())
-                    {
-                        unblocked = _player.Do_MoveDown();
-                    }
-                    else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight())
-                    {
-                        unblocked = _player.Do_MoveRight();
-                    }
-                    else if (Input.GetButtonDown("Cancel") || doubleTapOccurred)
-                    {
-                        doubleTapOccurred = false;
-                        unblocked = _player.Do_Nothing();
+                        if (Input.GetButtonDown("Cancel") || doubleTapOccurred)
+                        {
+                            doubleTapOccurred = false;
+                            unblocked = _player.Do_Nothing();
+                            AdvanceTutorial(true);
+                        }
                     }
 
                     if (unblocked)
@@ -385,7 +438,8 @@ public class GameModel : MonoBehaviour
                             Debug.Log(enemy + " new position (" + enemy.x + ", " + enemy.y + ")");
                         }
                         AddToHistory();
-                    } else
+                    }
+                    else
                     {
 
                         UpdateAnimationCompleteListWith(true);
@@ -395,7 +449,7 @@ public class GameModel : MonoBehaviour
 
             }
         }
-        
+
     }
 
     private void HandleEndGamePhase()

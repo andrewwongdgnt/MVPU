@@ -115,6 +115,8 @@
     <Compile Include="Assets\Menu\Level Select\LevelSelect.cs" />
     <Compile Include="Assets\Menu\Main\MainMenu.cs" />
     <Compile Include="Assets\Menu\Pause\PauseMenu.cs" />
+    <Compile Include="Assets\Tutorial\Tutorial.cs" />
+    <Compile Include="Assets\Tutorial\TutorialAction.cs" />
     <Compile Include="Assets\UtilScripts\LevelManager.cs" />
     <Compile Include="Assets\UtilScripts\Pair.cs" />
     <Compile Include="Assets\UtilScripts\SaveStateManager.cs" />
