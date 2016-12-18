@@ -34,8 +34,17 @@ public class LevelManager {
             { "Level 1 - 3", new TutorialAction[] {
                 new TutorialAction("Hello again!", TutorialAction.Action.NONE),
                 new TutorialAction("Sometimes it is better to just not move at all and let Kongo walk into a trap.", TutorialAction.Action.NONE),
-                new TutorialAction("Double tap on the screen to cancel your move.", TutorialAction.Action.TAP),
-                new TutorialAction("Good Job!", TutorialAction.Action.NONE) } }
+                new TutorialAction("Double tap on the screen to skip your move.", TutorialAction.Action.TAP),
+                new TutorialAction("Good Job! Keep going!", TutorialAction.Action.NONE) } },
+            { "Level 1 - 6", new TutorialAction[] {
+                new TutorialAction("Hello again!", TutorialAction.Action.NONE),
+                new TutorialAction("Looks like there are two Kongos, which means double the danger.", TutorialAction.Action.NONE),
+                new TutorialAction("But not to worry! There is a way to still get the Monkey to the Penguin.", TutorialAction.Action.NONE),
+                new TutorialAction("If you can get one Kongo to run into the other, only one will come out. Give it a try!", TutorialAction.Action.NONE) } },
+            { "Level 1 - 7", new TutorialAction[] {
+                new TutorialAction("Uh Oh! Kongo looks really mad.", TutorialAction.Action.NONE),
+                new TutorialAction("When Kongo is red, he can move two steps everytime the Monkey moves one.", TutorialAction.Action.NONE),
+                new TutorialAction("So be extra careful with your moves. Good luck!", TutorialAction.Action.NONE) } }
         };
 
 

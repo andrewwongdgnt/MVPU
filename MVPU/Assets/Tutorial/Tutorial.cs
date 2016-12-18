@@ -12,6 +12,7 @@ public class Tutorial : MonoBehaviour
     public Animator anim;
     public Button tutorialButton;
     public Text tutorialText;
+    public Text tutorial2Text;
 
     private int tutorialIndex =-1;
     private TutorialAction[] _tutorialActionArr;
@@ -69,7 +70,9 @@ public class Tutorial : MonoBehaviour
                 {
                     tutorialButton.gameObject.SetActive(true);
                     tutorialText.text = _tutorialActionArr[tutorialIndex].text;
-                    return _tutorialActionArr[tutorialIndex].action;
+                    TutorialAction.Action action = _tutorialActionArr[tutorialIndex].action;
+                    tutorial2Text.text = action == TutorialAction.Action.NONE ? "Tap here to continue" : "Follow tutorial instructions";
+                    return action;
                 }
                 else
                 {
