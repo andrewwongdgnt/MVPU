@@ -74,9 +74,12 @@ public abstract class LevelModel : MonoBehaviour
             gameModel.bombArr = bombArr;
             gameModel.currentLevelId = LevelId();
 
-            if (tutorial!=null)
-                tutorial.tutorialActionArr = LevelManager.TutorialContent.ContainsKey(LevelId()) ? LevelManager.TutorialContent[LevelId()] : null;
-            gameModel.tutorial = tutorial;
+            if (SettingsManager.IsTutorialOn())
+            {
+                if (tutorial != null)
+                    tutorial.tutorialActionArr = LevelManager.TutorialContent.ContainsKey(LevelId()) ? LevelManager.TutorialContent[LevelId()] : null;
+                gameModel.tutorial = tutorial;
+            }
 
             gameModel.Commence();
         }

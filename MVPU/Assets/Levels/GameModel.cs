@@ -673,9 +673,11 @@ public class GameModel : MonoBehaviour
                     yield return new WaitForEndOfFrame();
                 }*/
 
+                float speedMultiplier = SettingsManager.GetEntitySpeedMultipler();
+
                 while (objectToMove.transform.position != end)
                 {
-                    objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, ANIMATION_SPEED * Time.deltaTime);
+                    objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, ANIMATION_SPEED * speedMultiplier * Time.deltaTime);
                     yield return new WaitForEndOfFrame();
                 }
             }
