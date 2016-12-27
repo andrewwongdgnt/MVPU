@@ -417,7 +417,7 @@ public class GameModel : MonoBehaviour
                             AdvanceTutorial(true);
                         }
                     }
-                    else if (actionAllowedFromTutorial == TutorialAction.Action.TAP || actionAllowedFromTutorial == TutorialAction.Action.ALL)
+                    if (actionAllowedFromTutorial == TutorialAction.Action.TAP || actionAllowedFromTutorial == TutorialAction.Action.ALL)
                     {
                         if (Input.GetButtonDown("Cancel") || doubleTapOccurred)
                         {
