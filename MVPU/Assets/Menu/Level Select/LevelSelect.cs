@@ -23,4 +23,9 @@ public class LevelSelect : MonoBehaviour {
     {
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void GoToSettings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
 }

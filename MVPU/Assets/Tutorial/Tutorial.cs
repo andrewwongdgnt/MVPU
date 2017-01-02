@@ -8,13 +8,13 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    
+
     public Animator anim;
     public Button tutorialButton;
     public Text tutorialText;
     public Text tutorial2Text;
 
-    private int tutorialIndex =-1;
+    private int tutorialIndex = -1;
     private TutorialAction[] _tutorialActionArr;
     public TutorialAction[] tutorialActionArr
     {
@@ -28,18 +28,29 @@ public class Tutorial : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {        
+    {
         StartCoroutine(SetObjectsActiveStatusAfterDelay());
     }
 
     IEnumerator SetObjectsActiveStatusAfterDelay()
-    {    
+    {
         yield return 0;
-        tutorialEnded = false;
-        tutorialButton.gameObject.SetActive(_tutorialActionArr != null);
-        gameObject.SetActive(_tutorialActionArr != null);
+        tutorialEnded = _tutorialActionArr == null;
+        tutorialButton.gameObject.SetActive(!tutorialEnded);
+        ShowTutorialMascot(!tutorialEnded);
 
     }
+
+    private void ShowTutorialMascot(Boolean show)
+    {
+        Array.ForEach(gameObject.GetComponentsInChildren<Image>(), im =>
+        {
+            Color tmp = im.color;
+            tmp.a = show ? 1 : 0;
+            im.color = tmp;
+        });
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -57,7 +68,7 @@ public class Tutorial : MonoBehaviour
         if (_tutorialActionArr != null)
         {
 
-            gameObject.SetActive(true);
+            ShowTutorialMascot(true);
             if (forceAdvance || tutorialIndex < 0 || _tutorialActionArr.Length > tutorialIndex && _tutorialActionArr[tutorialIndex].action == TutorialAction.Action.NONE)
             {
                 tutorialIndex++;
@@ -81,7 +92,7 @@ public class Tutorial : MonoBehaviour
                     tutorialEnded = true;
                     return TutorialAction.Action.ALL;
                 }
-            } 
+            }
             else
             {
                 return _tutorialActionArr.Length > tutorialIndex ? _tutorialActionArr[tutorialIndex].action : TutorialAction.Action.ALL;
@@ -90,7 +101,7 @@ public class Tutorial : MonoBehaviour
         else
         {
             tutorialButton.gameObject.SetActive(false);
-            gameObject.SetActive(false);
+            ShowTutorialMascot(false);
             return TutorialAction.Action.ALL;
         }
     }

@@ -113,9 +113,9 @@
     <Compile Include="Assets\Levels\UndoManager.cs" />
     <Compile Include="Assets\Menu\End Game\EndGameMenu.cs" />
     <Compile Include="Assets\Menu\Level Select\LevelSelect.cs" />
-    <Compile Include="Assets\Menu\Main\MainMenu.cs" />
+    <Compile Include="Assets\Menu\Level Select\ScaleButton.cs" />
+    <Compile Include="Assets\Menu\Menu.cs" />
     <Compile Include="Assets\Menu\Pause\PauseMenu.cs" />
-    <Compile Include="Assets\Menu\Settings\SettingsMenu.cs" />
     <Compile Include="Assets\Tutorial\Tutorial.cs" />
     <Compile Include="Assets\Tutorial\TutorialAction.cs" />
     <Compile Include="Assets\UtilScripts\LevelManager.cs" />
