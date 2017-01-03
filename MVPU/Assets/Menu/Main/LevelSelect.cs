@@ -16,16 +16,6 @@ public class LevelSelect : MonoBehaviour {
     public void SelectLevel(string level)
     {
         LevelManager.levelToLoad = level;
-        SceneManager.LoadScene("Level");
-    }
-
-    public void Back()
-    {
-        SceneManager.LoadScene("Main Menu");
-    }
-
-    public void GoToSettings()
-    {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("Load Screen");
     }
 }
