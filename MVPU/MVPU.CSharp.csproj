@@ -90,6 +90,9 @@
     <Compile Include="Assets\Entities\Enemy\Enemy.cs" />
     <Compile Include="Assets\Entities\Entity.cs" />
     <Compile Include="Assets\Entities\Goal\Goal.cs" />
+    <Compile Include="Assets\Entities\IEntity.cs" />
+    <Compile Include="Assets\Entities\IWalker.cs" />
+    <Compile Include="Assets\Entities\Item\Key\Key.cs" />
     <Compile Include="Assets\Entities\Location.cs" />
     <Compile Include="Assets\Entities\Obstacle\Bomb\Bomb.cs" />
     <Compile Include="Assets\Entities\Player\Player.cs" />
@@ -113,7 +116,7 @@
     <Compile Include="Assets\Levels\UndoManager.cs" />
     <Compile Include="Assets\Load Screen\SceneLoader.cs" />
     <Compile Include="Assets\Menu\End Game\EndGameMenu.cs" />
-    <Compile Include="Assets\Menu\Main\LevelSelect.cs" />
+    <Compile Include="Assets\Menu\Main\LevelSelectMenu.cs" />
     <Compile Include="Assets\Menu\Main\Menu.cs" />
     <Compile Include="Assets\Menu\Main\ScaleButton.cs" />
     <Compile Include="Assets\Menu\Main\SettingsMenu.cs" />

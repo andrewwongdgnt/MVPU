@@ -42,8 +42,8 @@ public class Bomb : Entity {
 
     // Use this for initialization
     void Start () {
-	
-	}
+        Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " affectsEnemy=" + affectsEnemy + " affectsPlayer="+ affectsPlayer+ " numOfUses="+ numOfUses+ " inactive="+ inactive);
+    }
 	
 	// Update is called once per frame
 	void Update () {

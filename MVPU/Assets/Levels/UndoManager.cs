@@ -17,22 +17,22 @@ public class UndoManager
             return _initialHistoryState;
         }
     }
-    public void AddInitialState(Player player, Goal goal, Enemy[] enemyArr, Bomb[] bombArr)
+    public void AddInitialState(Player player, Goal goal, Enemy[] enemyArr, Bomb[] bombArr, Key[] keyArr)
     {
-        _initialHistoryState = CreateHistoryState(player, goal, enemyArr, bombArr);
+        _initialHistoryState = CreateHistoryState(player, goal, enemyArr, bombArr, keyArr);
     }
-    public void AddToHistory(Player player, Goal goal, Enemy[] enemyArr, Bomb[] bombArr)
+    public void AddToHistory(Player player, Goal goal, Enemy[] enemyArr, Bomb[] bombArr, Key[] keyArr)
     {
         if (history.Count > currentHistoryIndex + 1)
             history.RemoveRange(currentHistoryIndex + 1, history.Count - (currentHistoryIndex + 1));
 
 
-        HistoryState historyState = CreateHistoryState(player, goal, enemyArr, bombArr);
+        HistoryState historyState = CreateHistoryState(player, goal, enemyArr, bombArr, keyArr);
         currentHistoryIndex++;
         history.Add(historyState);
     }
 
-    private HistoryState CreateHistoryState(Player player, Goal goal, Enemy[] enemyArr, Bomb[] bombArr)
+    private HistoryState CreateHistoryState(Player player, Goal goal, Enemy[] enemyArr, Bomb[] bombArr, Key[] keyArr)
     {
         HistoryState historyState = new HistoryState();
         historyState.playerState = player.BuildStateDict();
@@ -49,6 +49,12 @@ public class UndoManager
             bombArrState[i] = bombArr[i].BuildStateDict();
         }
         historyState.bombArrState = bombArrState;
+        Dictionary<string, object>[] keyArrState = new Dictionary<string, object>[keyArr.Length];
+        for (int i = 0; i < keyArr.Length; i++)
+        {
+            keyArrState[i] = keyArr[i].BuildStateDict();
+        }
+        historyState.keyArrState = keyArrState;
         return historyState;
     }
 

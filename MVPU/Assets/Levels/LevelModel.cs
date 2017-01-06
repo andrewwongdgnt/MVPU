@@ -20,6 +20,9 @@ public abstract class LevelModel : MonoBehaviour
     public Bomb[] bombArr;
     public Location[] bombLocationArr;
 
+    public Key[] keyArr;
+    public Location[] keyLocationArr;
+
 
     [Tooltip("vertical and horizontal distance from one cell to another")]
     public Coordinate distance;
@@ -36,7 +39,11 @@ public abstract class LevelModel : MonoBehaviour
             GameObject[] entity = GameObject.FindGameObjectsWithTag("Entity");
             Array.ForEach(entity, ent =>
             {
-                if (ent.GetComponent<Player>() != player && ent.GetComponent<Goal>() != goal && !Array.Exists(enemyArr, en => en == ent.GetComponent<Enemy>()) && !Array.Exists(bombArr, bo => bo == ent.GetComponent<Bomb>()))
+                if (ent.GetComponent<Player>() != player 
+                && ent.GetComponent<Goal>() != goal 
+                && !Array.Exists(enemyArr, en => en == ent.GetComponent<Enemy>()) 
+                && !Array.Exists(bombArr, bo => bo == ent.GetComponent<Bomb>())
+                && !Array.Exists(keyArr, k => k == ent.GetComponent<Key>()))
                 {
                     ent.SetActive(false);
                 }
@@ -72,6 +79,14 @@ public abstract class LevelModel : MonoBehaviour
                 bombArr[i].y = bombLocationArr[i].y;
             }
             gameModel.bombArr = bombArr;
+
+            for (int i = 0; i < keyLocationArr.Length; i++)
+            {
+                keyArr[i].x = keyLocationArr[i].x;
+                keyArr[i].y = keyLocationArr[i].y;
+            }
+            gameModel.keyArr = keyArr;
+
             gameModel.currentLevelId = LevelId();
 
             if (SettingsManager.IsTutorialOn())

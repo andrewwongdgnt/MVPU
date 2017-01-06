@@ -20,4 +20,8 @@ public class HistoryState {
     {
         get; set;
     }
+    public Dictionary<string, object>[] keyArrState
+    {
+        get; set;
+    }
 }

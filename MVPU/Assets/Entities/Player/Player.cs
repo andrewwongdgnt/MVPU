@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-public class Player : Entity
+public class Player : Entity, IWalker
 {
 
     // Use this for initialization
@@ -58,5 +58,22 @@ public class Player : Entity
         return true;
         
 
+    }
+
+    public void StartWalkAnimation()
+    {
+        animator.SetBool("HorizontalWalk", true);
+    }
+    public void StopWalkAnimation()
+    {
+        animator.SetBool("HorizontalWalk", false);
+    }
+
+    public Entity entity
+    {
+        get
+        {
+            return this;
+        }
     }
 }

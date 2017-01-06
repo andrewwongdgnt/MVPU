@@ -136,6 +136,20 @@ public class GameModel : MonoBehaviour
         }
     }
 
+
+    private Key[] _keyArr;
+    public Key[] keyArr
+    {
+        set
+        {
+            _keyArr = value;
+            Array.ForEach(_keyArr, k =>
+            {
+                k.gameModel = this;
+            });
+        }
+    }
+
     private string _currentLevelId;
     public string currentLevelId
     {
@@ -187,13 +201,17 @@ public class GameModel : MonoBehaviour
         {
             _bombArr[i].RestoreState(historyState.bombArrState[i]);
         }
+        for (int i = 0; i < _keyArr.Length; i++)
+        {
+            _keyArr[i].RestoreState(historyState.keyArrState[i]);
+        }
         SetViewForEntities();
     }
 
     private void AddToHistory()
     {
         scoringModel.AddMove();
-        undoManager.AddToHistory(_player, _goal, _enemyArr, _bombArr);
+        undoManager.AddToHistory(_player, _goal, _enemyArr, _bombArr, _keyArr);
     }
 
     public void UpdateScoreText(string text)
@@ -257,7 +275,7 @@ public class GameModel : MonoBehaviour
 
         scoringModel = new ScoringModel(levelScore, this);
         undoManager = new UndoManager();
-        undoManager.AddInitialState(_player, _goal, _enemyArr, _bombArr);
+        undoManager.AddInitialState(_player, _goal, _enemyArr, _bombArr, _keyArr);
 
         AdvanceTutorial();
 
@@ -279,6 +297,11 @@ public class GameModel : MonoBehaviour
             bo.transform.position = GetPositionForEntity(bo);
             SetViewForBomb(bo);
         });
+        Array.ForEach(_keyArr, k =>
+        {
+            k.transform.position = GetPositionForEntity(k);
+            SetViewForKey(k);
+        });
     }
 
     private Vector3 GetPositionForEntity(Entity entity)
@@ -289,14 +312,18 @@ public class GameModel : MonoBehaviour
         return new Vector3(newX, newY, newZ);
     }
 
-    private void SetViewForEnemy(Enemy enemy, String animatorKey = null)
+    private void SetViewForEnemy(Enemy enemy, bool dozeAnimation=false)
     {
-        UpdateAnimator(enemy, "Dozed", animatorKey == "Dozed");
+        if (dozeAnimation)
+            enemy.StartDozedAnimation();
+        else
+            enemy.StopDozedAnimation();
+        //UpdateAnimator(enemy, "Dozed", animatorKey == "Dozed");
         SpriteRenderer[] sprites = enemy.GetComponentsInChildren<SpriteRenderer>();
         Array.ForEach(sprites, s =>
         {
             Color color = s.material.color;
-            color.a = enemy.inactive && animatorKey == null ? 0f : 1f;
+            color.a = enemy.inactive && !dozeAnimation ? 0f : 1f;
 
             s.material.color = color;
         });
@@ -308,6 +335,19 @@ public class GameModel : MonoBehaviour
         color2.a = bomb.inactive ? 0.0f : 1f;
 
         bomb.GetComponent<SpriteRenderer>().material.color = color2;
+    }
+    private void SetViewForKey(Key key)
+    {
+
+        SpriteRenderer[] sprites = key.GetComponentsInChildren<SpriteRenderer>();
+        Array.ForEach(sprites, s =>
+        {
+            Color color = s.material.color;
+            color.a = key.consumed ? 0f : 1f;
+
+            s.material.color = color;
+        });
+        
     }
     private void UpdateAnimationCompleteListWith(bool value)
     {
@@ -479,10 +519,10 @@ public class GameModel : MonoBehaviour
     }
 
 
-    private void Look(Entity entity, Entity.Direction direction)
+    private void Look(IWalker walker, Entity.Direction direction)
     {
 
-
+        Entity entity = walker.entity;
 
 
         //TODO: not the right way to do it but leave for testing
@@ -503,15 +543,6 @@ public class GameModel : MonoBehaviour
 
     }
 
-    private void UpdateAnimator(Entity entity, string key, bool value)
-    {
-        Animator animator = entity.animator;
-        if (animator)
-        {
-            animator.SetBool(key, value);
-        }
-    }
-
     public bool IsAnEnemyInTheWay(Predicate<Enemy> predicate)
     {
         return Array.Exists(_enemyArr, predicate);
@@ -522,13 +553,13 @@ public class GameModel : MonoBehaviour
         return predicate(_goal);
     }
 
-    private int GetOrder(Entity entity)
+    private int GetOrder(IWalker walker)
     {
-        int order = entity == _player ? 0 : 1 + Array.FindIndex(_enemyArr, en => en == entity);
+        int order = walker.entity == _player ? 0 : 1 + Array.FindIndex(_enemyArr, en => en == walker.entity);
         return order;
     }
 
-    public void CheckForEndGame(Entity entity, int stepOrder)
+    public void CheckForEndGame(IWalker walker, int stepOrder)
     {
         if (gameEndInfo == null)
         {
@@ -539,7 +570,7 @@ public class GameModel : MonoBehaviour
             }
             else
             {
-                if (entity == _player)
+                if (walker.entity == _player)
                 {
                     Enemy theKiller = Array.Find(_enemyArr, en => en.x == _player.x && en.y == _player.y);
                     Bomb bomb = Array.Find(_bombArr, bo => bo.x == _player.x && bo.y == _player.y);
@@ -548,8 +579,8 @@ public class GameModel : MonoBehaviour
                         gameEndInfo = new Triple<int, int, bool>(GetOrder(_player), stepOrder, false);
                     }
                 }
-                else if (_player.x == entity.x && _player.y == entity.y)
-                    gameEndInfo = new Triple<int, int, bool>(GetOrder(entity), stepOrder, false);
+                else if (_player.x == walker.entity.x && _player.y == walker.entity.y)
+                    gameEndInfo = new Triple<int, int, bool>(GetOrder(walker), stepOrder, false);
 
             }
         }
@@ -589,23 +620,12 @@ public class GameModel : MonoBehaviour
         }
     }
 
-    // speed should be 1 unit per second
-    private IEnumerator moveOverSpeed(GameObject objectToMove, Vector3 end, float speed)
+    public void AnimateGameObject(IWalker walker, Entity.Direction direction, int stepOrder)
     {
-        while (objectToMove.transform.position != end)
+        int order = GetOrder(walker);
+        if (walker is Enemy && ((Enemy)walker).inactive && !bombedEnemiesList.Exists(bo => bo.first == order && bo.second == stepOrder))
         {
-            objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, speed * Time.deltaTime);
-            yield return new WaitForEndOfFrame();
-        }
-    }
-
-
-    public void AnimateGameObject(Entity entity, Entity.Direction direction, int stepOrder)
-    {
-        int order = GetOrder(entity);
-        if (entity is Enemy && ((Enemy)entity).inactive && !bombedEnemiesList.Exists(bo => bo.first == order && bo.second == stepOrder))
-        {
-            Enemy enemy = (Enemy)entity;
+            Enemy enemy = (Enemy)walker;
 
             List<bool> step = animationComplete[order];
             for (int j = stepOrder; j < enemy.stepsPerMove; j++)
@@ -615,8 +635,8 @@ public class GameModel : MonoBehaviour
         else
         {
 
-            Vector3 endPosition = GetPositionForEntity(entity);
-            StartCoroutine(MoveEntity(entity, endPosition, direction, order, stepOrder));
+            Vector3 endPosition = GetPositionForEntity(walker.entity);
+            StartCoroutine(MoveWalker(walker, endPosition, direction, order, stepOrder));
         }
     }
 
@@ -647,7 +667,7 @@ public class GameModel : MonoBehaviour
         return true;
     }
 
-    private IEnumerator MoveEntity(Entity objectToMove, Vector3 end, Entity.Direction direction, int order, int stepOrder)
+    private IEnumerator MoveWalker(IWalker walker, Vector3 end, Entity.Direction direction, int order, int stepOrder)
     {
 
 
@@ -655,9 +675,12 @@ public class GameModel : MonoBehaviour
 
         if (!AreAllAnimationsComplete())
         {
+            Entity entity = walker.entity;
+
             //Update sprite to face the proper direction
-            Look(objectToMove, direction);
-            UpdateAnimator(objectToMove, "HorizontalWalk", true);
+            Look(walker, direction);
+
+            walker.StartWalkAnimation();
 
             Pair<int, int> blockedEnemyInfo = blockedEnemiesList.Find(b => b.first == order && b.second == stepOrder);
             if (blockedEnemyInfo == null)
@@ -675,17 +698,18 @@ public class GameModel : MonoBehaviour
 
                 float speedMultiplier = SettingsManager.GetEntitySpeedMultipler();
 
-                while (objectToMove.transform.position != end)
+                while (entity.transform.position != end)
                 {
-                    objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, ANIMATION_SPEED * speedMultiplier * Time.deltaTime);
+                    entity.transform.position = Vector3.MoveTowards(entity.transform.position, end, ANIMATION_SPEED * speedMultiplier * Time.deltaTime);
                     yield return new WaitForEndOfFrame();
                 }
             }
-            objectToMove.transform.position = end;
+            entity.transform.position = end;
 
             //this animation is done
             animationComplete[order][stepOrder] = true;
-            UpdateAnimator(objectToMove, "HorizontalWalk", false);
+
+            walker.StopWalkAnimation();
 
             //Check for game end
             if (gameEndInfo != null && gameEndInfo.first == order && gameEndInfo.second == stepOrder)
@@ -698,8 +722,8 @@ public class GameModel : MonoBehaviour
             Triple<int, int, Bomb> bombedEnemyInfo = bombedEnemiesList.Find(bo => bo.first == order && bo.second == stepOrder);
             if (bombedEnemyInfo != null && bombedEnemyInfo.third != null)
             {
-                if (objectToMove is Enemy)
-                    SetViewForEnemy((Enemy)objectToMove);
+                if (walker is Enemy)
+                    SetViewForEnemy((Enemy)walker, true);
 
                 Bomb bomb = bombedEnemyInfo.third;
                 SetViewForBomb(bomb);
@@ -710,7 +734,7 @@ public class GameModel : MonoBehaviour
             if (dozedEnemyInfo != null && dozedEnemyInfo.third != null)
             {
                 Enemy dozedEnemy = dozedEnemyInfo.third;
-                SetViewForEnemy(dozedEnemy, "Dozed");
+                SetViewForEnemy(dozedEnemy, true);
 
             }
         }
