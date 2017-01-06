@@ -318,7 +318,6 @@ public class GameModel : MonoBehaviour
             enemy.StartDozedAnimation();
         else
             enemy.StopDozedAnimation();
-        //UpdateAnimator(enemy, "Dozed", animatorKey == "Dozed");
         SpriteRenderer[] sprites = enemy.GetComponentsInChildren<SpriteRenderer>();
         Array.ForEach(sprites, s =>
         {

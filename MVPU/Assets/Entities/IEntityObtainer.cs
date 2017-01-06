@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface IEntity  {
+public interface IEntityObtainer  {
     Entity entity
     {
         get;
