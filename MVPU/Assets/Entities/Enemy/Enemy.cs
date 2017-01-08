@@ -210,13 +210,6 @@ public class Enemy : Entity, IWalker
         return false;
     }
 
-    public Entity entity
-    {
-        get
-        {
-            return this;
-        }
-    }
 
     public void StartWalkAnimation()
     {

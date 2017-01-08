@@ -69,11 +69,4 @@ public class Player : Entity, IWalker
         animator.SetBool("HorizontalWalk", false);
     }
 
-    public Entity entity
-    {
-        get
-        {
-            return this;
-        }
-    }
 }

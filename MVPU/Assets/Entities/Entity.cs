@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public abstract class Entity : MonoBehaviour, IUndoable
+public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
 {
 
 
@@ -105,5 +105,12 @@ public abstract class Entity : MonoBehaviour, IUndoable
     }
 
 
+    public Entity entity
+    {
+        get
+        {
+            return this;
+        }
+    } 
 
 }
