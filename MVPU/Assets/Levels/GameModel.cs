@@ -18,6 +18,7 @@ public class GameModel : MonoBehaviour
     public EndGameMenu endGameMenu;
 
     public Text scoreGuiText;
+    public Text bestScoreGuiText;
 
     public TutorialAction.Action actionAllowedFromTutorial
     {
@@ -214,11 +215,15 @@ public class GameModel : MonoBehaviour
         undoManager.AddToHistory(_player, _goal, _enemyArr, _bombArr, _keyArr);
     }
 
-    public void UpdateScoreText(string text)
+    public void UpdateScoreText(int score, int bestScore)
     {
         if (scoreGuiText != null)
         {
-            scoreGuiText.text = text;
+            scoreGuiText.text = score.ToString();
+        }
+        if (bestScoreGuiText != null)
+        {
+            bestScoreGuiText.text = bestScore.ToString();
         }
     }
 

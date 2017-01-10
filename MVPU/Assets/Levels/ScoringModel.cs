@@ -44,7 +44,9 @@ public class ScoringModel
     private void DispatchScore()
     {
         if (_gameModel != null)
-            _gameModel.UpdateScoreText(numberOfMoves + "/" + _levelScore.minMoveCount);
+        {
+            _gameModel.UpdateScoreText(numberOfMoves,_levelScore.minMoveCount);
+        }
     }
 
     public ScoreTypes GetResult()
