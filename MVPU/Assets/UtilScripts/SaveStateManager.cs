@@ -6,9 +6,9 @@ public class SaveStateManager  {
 
     static string MOVE_COUNT_KEY = "moveCount";
 
-	public static void SaveLevel (string levelId, int moveCount) {
+	public static void SaveLevel (LevelManager.LevelID levelId, int moveCount) {
 
-        string jsonString = PlayerPrefs.GetString(levelId);
+        string jsonString = PlayerPrefs.GetString(levelId.ToString());
         JSONNode savedNode = JSON.Parse(jsonString);
 
         int moveCountToUse = moveCount;
@@ -21,12 +21,12 @@ public class SaveStateManager  {
         JSONNode node = new JSONClass();
         node[MOVE_COUNT_KEY].AsInt = moveCountToUse;
 
-        PlayerPrefs.SetString(levelId, node.ToString());
+        PlayerPrefs.SetString(levelId.ToString(), node.ToString());
     }
 
-    public static LevelState LoadLevel(string levelId)
+    public static LevelState LoadLevel(LevelManager.LevelID levelId)
     {
-        string jsonString = PlayerPrefs.GetString(levelId);
+        string jsonString = PlayerPrefs.GetString(levelId.ToString());
         JSONNode node = JSON.Parse(jsonString);
 
         if (node != null)

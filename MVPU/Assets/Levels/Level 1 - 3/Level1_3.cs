@@ -16,8 +16,8 @@ public class Level1_3 : LevelModel
     }
 
 
-    protected override string LevelId()
+    protected override LevelManager.LevelID LevelId()
     {
-        return "Level 1 - 3";
+        return LevelManager.LevelID.LEVEL_1_3;
     }
 }

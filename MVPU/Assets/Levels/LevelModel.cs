@@ -106,7 +106,7 @@ public abstract class LevelModel : MonoBehaviour
 
 
     protected abstract Cell[,] Grid();
-    protected abstract string LevelId();
+    protected abstract LevelManager.LevelID LevelId();
 
 
 

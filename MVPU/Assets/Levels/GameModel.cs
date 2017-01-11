@@ -151,8 +151,8 @@ public class GameModel : MonoBehaviour
         }
     }
 
-    private string _currentLevelId;
-    public string currentLevelId
+    private LevelManager.LevelID _currentLevelId;
+    public LevelManager.LevelID currentLevelId
     {
 
         set

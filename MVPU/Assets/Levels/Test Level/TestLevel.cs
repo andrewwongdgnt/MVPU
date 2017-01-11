@@ -15,8 +15,8 @@ public class TestLevel : LevelModel
             {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,},
         };
     }
-    protected override string LevelId()
+    protected override LevelManager.LevelID LevelId()
     {
-        return "Test Level";
+        return LevelManager.LevelID.TEST_LEVEL;
     }
 }

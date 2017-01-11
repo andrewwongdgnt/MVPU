@@ -171,6 +171,7 @@
     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\TestRunnerCallbackList.cs" />
     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\TestRunnerConfigurator.cs" />
     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestingAssets\CallTesting.cs" />
+    <Compile Include="Assets\UtilScripts\EnumActionAttribute.cs" />
     <Compile Include="Assets\UtilScripts\LevelManager.cs" />
     <Compile Include="Assets\UtilScripts\Pair.cs" />
     <Compile Include="Assets\UtilScripts\SaveStateManager.cs" />
