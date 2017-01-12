@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
     GameObject[] pauseObjects;
-    GameObject[] unPauseObjects;
 
     public Text title;
 
@@ -15,7 +14,7 @@ public class PauseMenu : MonoBehaviour {
     {
 
         pauseObjects = GameObject.FindGameObjectsWithTag("Pause").Concat(GameObject.FindGameObjectsWithTag("GenericMenu")).ToArray();
-        unPauseObjects = GameObject.FindGameObjectsWithTag("Unpause");
+
 
         SetPause(false, 0);
     }
@@ -41,10 +40,6 @@ public class PauseMenu : MonoBehaviour {
         foreach (GameObject g in pauseObjects)
         {
             g.SetActive(pause);
-        }
-        foreach (GameObject g in unPauseObjects)
-        {
-            g.SetActive(!pause);
         }
     }
 

@@ -12,7 +12,7 @@ public class LevelManager {
 
     }
 
-    public static LevelID levelToLoad = LevelID.TEST_LEVEL;
+    public static LevelID levelToLoad = LevelID.LEVEL_1_1;
 
     public static Dictionary<LevelID, LevelScore> LevelScoreMap = new Dictionary<LevelID, LevelScore>
         {

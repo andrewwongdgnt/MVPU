@@ -24,7 +24,6 @@ public class Tutorial : MonoBehaviour
         }
     }
 
-    private Boolean tutorialEnded;
 
     // Use this for initialization
     void Start()
@@ -35,13 +34,13 @@ public class Tutorial : MonoBehaviour
     IEnumerator SetObjectsActiveStatusAfterDelay()
     {
         yield return 0;
-        tutorialEnded = _tutorialActionArr == null;
+        bool tutorialEnded = _tutorialActionArr == null;
         tutorialButton.gameObject.SetActive(!tutorialEnded);
         ShowTutorialMascot(!tutorialEnded);
 
     }
 
-    private void ShowTutorialMascot(Boolean show)
+    private void ShowTutorialMascot(bool show)
     {
         Array.ForEach(gameObject.GetComponentsInChildren<Image>(), im =>
         {
@@ -49,17 +48,6 @@ public class Tutorial : MonoBehaviour
             tmp.a = show ? 1 : 0;
             im.color = tmp;
         });
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (tutorialEnded)
-        {
-            tutorialButton.gameObject.SetActive(false);
-        }
-
     }
 
     public TutorialAction.Action AdvanceTutorial(Boolean forceAdvance = false)
@@ -89,7 +77,6 @@ public class Tutorial : MonoBehaviour
                 {
                     tutorialButton.gameObject.SetActive(false);
                     anim.SetBool("EndTutorial", true);
-                    tutorialEnded = true;
                     return TutorialAction.Action.ALL;
                 }
             }
