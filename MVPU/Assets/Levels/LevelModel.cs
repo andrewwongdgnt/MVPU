@@ -2,8 +2,10 @@
 using System.Collections;
 using System;
 
-public abstract class LevelModel : MonoBehaviour
+public class LevelModel : MonoBehaviour
 {
+    public LevelManager.LevelID levelID;
+
     public GameModel gameModel;
 
     public Tutorial tutorial;
@@ -33,7 +35,7 @@ public abstract class LevelModel : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (LevelManager.levelToLoad == LevelId())
+        if (LevelManager.levelToLoad == levelID)
         {
             //Disable entities not related to this level
             GameObject[] entity = GameObject.FindGameObjectsWithTag("Entity");
@@ -51,12 +53,12 @@ public abstract class LevelModel : MonoBehaviour
 
             gameObject.SetActive(true);
            
-            gameModel.levelScore = LevelManager.LevelScoreMap[LevelId()];
+            gameModel.levelScore = LevelManager.LevelScoreMap[levelID];
 
             gameModel.distance = distance;
             gameModel.origin = origin;
 
-            gameModel.grid = Grid();
+            gameModel.grid = LevelManager.LevelGridMap[levelID];
 
             player.x = playerLocation.x;
             player.y = playerLocation.y;
@@ -87,12 +89,12 @@ public abstract class LevelModel : MonoBehaviour
             }
             gameModel.keyArr = keyArr;
 
-            gameModel.currentLevelId = LevelId();
+            gameModel.currentLevelId = levelID;
 
             if (SettingsManager.IsTutorialOn())
             {
                 if (tutorial != null)
-                    tutorial.tutorialActionArr = LevelManager.TutorialContent.ContainsKey(LevelId()) ? LevelManager.TutorialContent[LevelId()] : null;
+                    tutorial.tutorialActionArr = LevelManager.TutorialContent.ContainsKey(levelID) ? LevelManager.TutorialContent[levelID] : null;
                 gameModel.tutorial = tutorial;
             }
 
@@ -103,10 +105,7 @@ public abstract class LevelModel : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-
-    protected abstract Cell[,] Grid();
-    protected abstract LevelManager.LevelID LevelId();
+    
 
 
 

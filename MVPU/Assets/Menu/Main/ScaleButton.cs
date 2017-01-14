@@ -1,16 +1,21 @@
 ﻿using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class ScaleButton : MonoBehaviour {
 
     public GameObject[] childrenToScale;
     public float scaleTo;
 	
-    public void ScaleChildren(Boolean shrink)
+    public void ScaleChildren(bool shrink)
     {
-        Array.ForEach(childrenToScale, go =>
+        Button btn = GetComponent<Button>();
+        if (btn.IsInteractable())
         {
-            go.transform.localScale = shrink ? new Vector3(scaleTo, scaleTo, scaleTo) : new Vector3(1, 1, 1);
-        });
+            Array.ForEach(childrenToScale, go =>
+            {
+                go.transform.localScale = shrink ? new Vector3(scaleTo, scaleTo, scaleTo) : new Vector3(1, 1, 1);
+            });
+        }
     }
 }
