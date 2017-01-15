@@ -51,13 +51,21 @@ public class ScoringModel
 
     public ScoreTypes GetResult()
     {
-        if (numberOfMoves <= _levelScore.minMoveCount)
+        return GetResult(numberOfMoves, _levelScore);
+    }
+    public static ScoreTypes GetResult(int numberOfMoves, LevelManager.LevelID levelId)
+    {
+        return GetResult(numberOfMoves, LevelManager.LevelScoreMap[levelId]);
+    }
+    public static ScoreTypes GetResult(int numberOfMoves, LevelScore levelScore)
+    {
+        if (numberOfMoves <= levelScore.minMoveCount)
             return ScoreTypes.MIN;
-        else if (numberOfMoves <= _levelScore.greatMoveCount)
+        else if (numberOfMoves <= levelScore.greatMoveCount)
             return ScoreTypes.GREAT;
-        else if (numberOfMoves <= _levelScore.goodMoveCount)
+        else if (numberOfMoves <= levelScore.goodMoveCount)
             return ScoreTypes.GOOD;
-        else if (numberOfMoves <= _levelScore.adequateMoveCount)
+        else if (numberOfMoves <= levelScore.adequateMoveCount)
             return ScoreTypes.ADEQUATE;
         else
             return ScoreTypes.NONE;
