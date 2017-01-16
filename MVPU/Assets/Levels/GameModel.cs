@@ -506,7 +506,7 @@ public class GameModel : MonoBehaviour
             {
                 Debug.Log(_currentLevelId + ": Game win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.GetResult());
                 SaveStateManager.SaveLevel(_currentLevelId, scoringModel.numberOfMoves);
-                endGameMenu.ShowWinMenu(true);
+                endGameMenu.ShowWinMenu(true, ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId));
             }
             else
             {

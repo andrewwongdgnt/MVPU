@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour {
     GameObject[] pauseObjects;
 
-    public Text title;
-
     // Use this for initialization
     void Start()
     {
@@ -35,8 +33,6 @@ public class PauseMenu : MonoBehaviour {
     {
         yield return delay;
         Time.timeScale = pause ? 0 : 1;
-        if (pause)
-            title.text = "Pause";
         foreach (GameObject g in pauseObjects)
         {
             g.SetActive(pause);

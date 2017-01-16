@@ -11,6 +11,7 @@ public class LevelSelectButton : MonoBehaviour {
     public Image star2;
     public Image star3;
 
+    public Sprite starSpecial;
     public Sprite starOn;
     public Sprite starOff;
     public Sprite starDisable;
@@ -45,7 +46,7 @@ public class LevelSelectButton : MonoBehaviour {
                     switch (scoreType)
                     {
                         case ScoringModel.ScoreTypes.MIN:
-                            star1.sprite = star2.sprite = star3.sprite = starOn;
+                            star1.sprite = star2.sprite = star3.sprite = starSpecial;
                             break;
                         case ScoringModel.ScoreTypes.GREAT:
                             star1.sprite = star2.sprite = star3.sprite = starOn;

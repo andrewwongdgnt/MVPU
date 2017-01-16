@@ -5,7 +5,7 @@ public class ScoringModel
 {
     public enum ScoreTypes
     {
-        MIN, GREAT, GOOD, ADEQUATE, NONE
+        NONE, ADEQUATE, GOOD, GREAT, MIN
     }
     public int numberOfMoves
     {
