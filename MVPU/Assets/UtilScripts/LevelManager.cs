@@ -69,7 +69,7 @@ public class LevelManager
             {Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,},
         }
         },
-        { LevelID.LEVEL_1_7, new Cell[,]{
+        { LevelID.LEVEL_1_10, new Cell[,]{
             {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,},
             {Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_RIGHT_CLOSED,Cell.CELL_TOP_LEFT_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,},
             {Cell.CELL_OPEN,Cell.CELL_TOP_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
@@ -90,7 +90,7 @@ public class LevelManager
             { LevelID.LEVEL_1_4, new LevelScore(9) },
             { LevelID.LEVEL_1_5, new LevelScore(10) },
             { LevelID.LEVEL_1_6, new LevelScore(9) },
-            { LevelID.LEVEL_1_7, new LevelScore(18) },
+            { LevelID.LEVEL_1_10, new LevelScore(18) },
         };
     public static Dictionary<LevelID, LevelID[]> LevelPrereq = new Dictionary<LevelID, LevelID[]>
         {
@@ -129,7 +129,7 @@ public class LevelManager
                 new TutorialAction("Looks like there are two Kongos, which means double the danger.", TutorialAction.Action.NONE),
                 new TutorialAction("But not to worry! There is a way to still get the Monkey to the Penguin.", TutorialAction.Action.NONE),
                 new TutorialAction("If you can get one Kongo to run into the other, only one will come out. Give it a try!", TutorialAction.Action.NONE) } },
-            { LevelID.LEVEL_1_7, new TutorialAction[] {
+            { LevelID.LEVEL_1_10, new TutorialAction[] {
                 new TutorialAction("Uh Oh! Kongo looks really mad.", TutorialAction.Action.NONE),
                 new TutorialAction("When Kongo is red, he can move two steps everytime the Monkey moves one.", TutorialAction.Action.NONE),
                 new TutorialAction("So be extra careful with your moves. Good luck!", TutorialAction.Action.NONE) } }
