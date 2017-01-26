@@ -54,7 +54,7 @@ public class Player : Entity, IWalker
 
         _gameModel.CheckForEndGame(this, 0);
         _gameModel.AnimateGameObject(this, direction, 0);
-
+        facingDirection = direction;
         return true;
         
 

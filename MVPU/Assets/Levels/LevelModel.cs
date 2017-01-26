@@ -12,12 +12,14 @@ public class LevelModel : MonoBehaviour
 
     public Player player;
     public Location playerLocation;
+    public Entity.Direction playerFacingDirection;
 
     public Goal goal;
     public Location goalLocation;
 
     public Enemy[] enemyArr;
     public Location[] enemyLocationArr;
+    public Entity.Direction[] enemyFacingDirectionArr;
 
     public Bomb[] bombArr;
     public Location[] bombLocationArr;
@@ -62,6 +64,7 @@ public class LevelModel : MonoBehaviour
 
             player.x = playerLocation.x;
             player.y = playerLocation.y;
+            player.facingDirection = playerFacingDirection==Entity.Direction.NONE ? Entity.Direction.RIGHT : playerFacingDirection ;
             gameModel.player = player;
 
             goal.x = goalLocation.x;
@@ -72,6 +75,8 @@ public class LevelModel : MonoBehaviour
             {
                 enemyArr[i].x = enemyLocationArr[i].x;
                 enemyArr[i].y = enemyLocationArr[i].y;
+                enemyArr[i].facingDirection = enemyFacingDirectionArr.Length <= i || enemyFacingDirectionArr[i] == Entity.Direction.NONE ? Entity.Direction.RIGHT : enemyFacingDirectionArr[i];
+
             }
             gameModel.enemyArr = enemyArr;
 

@@ -19,6 +19,10 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
     {
         get; set;
     }
+    public Direction facingDirection
+    {
+        get;set;
+    }
     public Animator animator;
 
 
@@ -36,6 +40,7 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
         Dictionary<string, object> dict = new Dictionary<string, object>();
         dict.Add("x", x);
         dict.Add("y", y);
+        dict.Add("facingDirection", facingDirection);
         BuildAdditionalStateDict(dict);
         return dict;
     }
@@ -53,6 +58,8 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
                 x = (int)entry.Value;
             else if (entry.Key == "y" && entry.Value is int)
                 y = (int)entry.Value;
+            else if (entry.Key == "facingDirection" && entry.Value is Direction)
+                facingDirection = (Direction)entry.Value;
         }
         RestoreAdditionalState(dict);
     }

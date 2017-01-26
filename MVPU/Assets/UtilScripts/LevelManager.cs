@@ -14,7 +14,7 @@ public class LevelManager
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_1_1;
+    public static LevelID levelToLoad = LevelID.LEVEL_1_2;
 
     public static Dictionary<LevelID, Cell[,]> LevelGridMap = new Dictionary<LevelID, Cell[,]>
     {

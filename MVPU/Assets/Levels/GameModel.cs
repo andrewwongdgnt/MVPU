@@ -289,22 +289,19 @@ public class GameModel : MonoBehaviour
 
     private void SetViewForEntities()
     {
-        _player.transform.position = GetPositionForEntity(_player);
+        SetViewForPlayer(_player);
         _goal.transform.position = GetPositionForEntity(_goal);
 
         Array.ForEach(_enemyArr, en =>
         {
-            en.transform.position = GetPositionForEntity(en);
             SetViewForEnemy(en);
         });
         Array.ForEach(_bombArr, bo =>
         {
-            bo.transform.position = GetPositionForEntity(bo);
             SetViewForBomb(bo);
         });
         Array.ForEach(_keyArr, k =>
         {
-            k.transform.position = GetPositionForEntity(k);
             SetViewForKey(k);
         });
     }
@@ -317,8 +314,15 @@ public class GameModel : MonoBehaviour
         return new Vector3(newX, newY, newZ);
     }
 
+    private void SetViewForPlayer(Player player)
+    {
+        Look(player, player.facingDirection);
+        player.transform.position = GetPositionForEntity(player);
+    }
     private void SetViewForEnemy(Enemy enemy, bool dozeAnimation=false)
     {
+        enemy.transform.position = GetPositionForEntity(enemy);
+        Look(enemy, enemy.facingDirection);
         if (dozeAnimation)
             enemy.StartDozedAnimation();
         else
@@ -335,6 +339,7 @@ public class GameModel : MonoBehaviour
 
     private void SetViewForBomb(Bomb bomb)
     {
+        bomb.transform.position = GetPositionForEntity(bomb);
         Color color2 = bomb.GetComponent<SpriteRenderer>().material.color;
         color2.a = bomb.inactive ? 0.0f : 1f;
 
@@ -343,6 +348,7 @@ public class GameModel : MonoBehaviour
     private void SetViewForKey(Key key)
     {
 
+        key.transform.position = GetPositionForEntity(key);
         SpriteRenderer[] sprites = key.GetComponentsInChildren<SpriteRenderer>();
         Array.ForEach(sprites, s =>
         {

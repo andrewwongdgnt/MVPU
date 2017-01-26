@@ -128,6 +128,7 @@ public class Enemy : Entity, IWalker
             }
 
             _gameModel.AnimateGameObject(this, direction, i);
+            facingDirection = direction;
         }
     }
 
