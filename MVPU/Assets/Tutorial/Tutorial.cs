@@ -13,6 +13,7 @@ public class Tutorial : MonoBehaviour
     public Button tutorialButton;
     public Text tutorialText;
     public Text tutorial2Text;
+    public InGameHelp inGameHelp;
 
     private int tutorialIndex = -1;
     private TutorialAction[] _tutorialActionArr;
@@ -51,6 +52,18 @@ public class Tutorial : MonoBehaviour
     }
 
     public TutorialAction.Action AdvanceTutorial(Boolean forceAdvance = false)
+    {
+        
+        TutorialAction.Action action =  AdvanceTutorialInternal(forceAdvance);
+        if (action == TutorialAction.Action.SWIPE)
+            inGameHelp.Swipe();
+        else if (action == TutorialAction.Action.TAP)
+            inGameHelp.Tap();
+        else 
+            inGameHelp.Stop();
+        return action;
+    }
+    private TutorialAction.Action AdvanceTutorialInternal(Boolean forceAdvance = false)
     {
 
         if (_tutorialActionArr != null)

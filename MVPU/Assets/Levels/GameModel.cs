@@ -426,9 +426,13 @@ public class GameModel : MonoBehaviour
                 || Input.GetKeyDown(KeyCode.Z)
                 || Input.GetKeyDown(KeyCode.Y)
                 || SwipeManager.IsSwipingUpLeft()
+                || SwipeManager.IsSwipingUp()
                 || SwipeManager.IsSwipingDownLeft()
+                || SwipeManager.IsSwipingLeft()
                 || SwipeManager.IsSwipingDownRight()
+                || SwipeManager.IsSwipingDown()
                 || SwipeManager.IsSwipingUpRight()
+                || SwipeManager.IsSwipingRight()
                 || doubleTapOccurred)
                 )
             {
@@ -446,22 +450,22 @@ public class GameModel : MonoBehaviour
                     bool unblocked = false;
                     if (actionAllowedFromTutorial == TutorialAction.Action.SWIPE || actionAllowedFromTutorial == TutorialAction.Action.ALL)
                     {
-                        if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft())
+                        if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft() || SwipeManager.IsSwipingUp())
                         {
                             unblocked = _player.Do_MoveUp();
                             AdvanceTutorial(true);
                         }
-                        else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft())
+                        else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft() || SwipeManager.IsSwipingLeft())
                         {
                             unblocked = _player.Do_MoveLeft();
                             AdvanceTutorial(true);
                         }
-                        else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight())
+                        else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight() || SwipeManager.IsSwipingDown())
                         {
                             unblocked = _player.Do_MoveDown();
                             AdvanceTutorial(true);
                         }
-                        else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight())
+                        else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight() || SwipeManager.IsSwipingRight())
                         {
                             unblocked = _player.Do_MoveRight();
                             AdvanceTutorial(true);
