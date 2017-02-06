@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class GameModel : MonoBehaviour
 {
-    private readonly float ANIMATION_DELAY = 1f;
     private readonly float ANIMATION_SPEED = 1.4f;
     private readonly float DOUBLE_TAP_DELAY = 0.3f;
 
@@ -424,6 +423,7 @@ public class GameModel : MonoBehaviour
                 || Input.GetAxis("Horizontal") > 0
                 || Input.GetButtonDown("Cancel")
                 || Input.GetKeyDown(KeyCode.Z)
+                || Input.GetKeyDown(KeyCode.Escape)
                 || Input.GetKeyDown(KeyCode.Y)
                 || SwipeManager.IsSwipingUpLeft()
                 || SwipeManager.IsSwipingUp()
@@ -436,7 +436,7 @@ public class GameModel : MonoBehaviour
                 || doubleTapOccurred)
                 )
             {
-                if (Input.GetKeyDown(KeyCode.Z))
+                if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Z))
                     Undo();
                 else if (Input.GetKeyDown(KeyCode.Y))
                     Redo();

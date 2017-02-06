@@ -106,7 +106,7 @@ public class EndGameMenu : MonoBehaviour
         star1.SetBool("StarOff", false);
         star2.SetBool("StarOff", false);
         star3.SetBool("StarOff", false);
-        Debug.Log("ssdsdsdsd");
+
         if (scoreType != ScoringModel.ScoreTypes.NONE)
         {
             if (scoreType == ScoringModel.ScoreTypes.ADEQUATE)

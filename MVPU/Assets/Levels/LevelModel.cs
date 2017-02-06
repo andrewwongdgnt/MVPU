@@ -4,11 +4,15 @@ using System;
 
 public class LevelModel : MonoBehaviour
 {
+
+    private static readonly float MAGIC_DISTANCE_NUMBER = 1.1275f; //Check the width of each isometric square in the flash file
+
     public LevelManager.LevelID levelID;
 
     public GameModel gameModel;
 
     public Tutorial tutorial;
+    
 
     public Player player;
     public Location playerLocation;
@@ -27,9 +31,8 @@ public class LevelModel : MonoBehaviour
     public Key[] keyArr;
     public Location[] keyLocationArr;
 
-
-    [Tooltip("vertical and horizontal distance from one cell to another")]
-    public Coordinate distance;
+    [Tooltip("The base distance from one cell to another in the X direction")]
+    public float baseDistanceX = MAGIC_DISTANCE_NUMBER;
 
     [Tooltip("X and Y coordinate of the top left cell in the level")]
     public Coordinate origin;
@@ -57,18 +60,25 @@ public class LevelModel : MonoBehaviour
            
             gameModel.levelScore = LevelManager.LevelScoreMap[levelID];
 
+            Coordinate distance = new Coordinate();
+            distance.x = baseDistanceX;
+            distance.y = distance.x / 2;
             gameModel.distance = distance;
             gameModel.origin = origin;
 
             gameModel.grid = LevelManager.LevelGridMap[levelID];
 
+            float scale = baseDistanceX / MAGIC_DISTANCE_NUMBER;
+
             player.x = playerLocation.x;
             player.y = playerLocation.y;
             player.facingDirection = playerFacingDirection==Entity.Direction.NONE ? Entity.Direction.RIGHT : playerFacingDirection ;
+            player.gameObject.transform.localScale = new Vector3(scale,scale,scale);
             gameModel.player = player;
 
             goal.x = goalLocation.x;
             goal.y = goalLocation.y;
+            goal.gameObject.transform.localScale = new Vector3(scale, scale, scale);
             gameModel.goal = goal;
 
             for (int i = 0; i < enemyLocationArr.Length; i++)
@@ -77,6 +87,7 @@ public class LevelModel : MonoBehaviour
                 enemyArr[i].y = enemyLocationArr[i].y;
                 enemyArr[i].facingDirection = enemyFacingDirectionArr.Length <= i || enemyFacingDirectionArr[i] == Entity.Direction.NONE ? Entity.Direction.RIGHT : enemyFacingDirectionArr[i];
 
+                enemyArr[i].gameObject.transform.localScale = new Vector3(scale, scale, scale);
             }
             gameModel.enemyArr = enemyArr;
 
@@ -84,6 +95,7 @@ public class LevelModel : MonoBehaviour
             {
                 bombArr[i].x = bombLocationArr[i].x;
                 bombArr[i].y = bombLocationArr[i].y;
+                bombArr[i].gameObject.transform.localScale = new Vector3(scale, scale, scale);
             }
             gameModel.bombArr = bombArr;
 
@@ -91,6 +103,7 @@ public class LevelModel : MonoBehaviour
             {
                 keyArr[i].x = keyLocationArr[i].x;
                 keyArr[i].y = keyLocationArr[i].y;
+                keyArr[i].gameObject.transform.localScale = new Vector3(scale, scale, scale);
             }
             gameModel.keyArr = keyArr;
 

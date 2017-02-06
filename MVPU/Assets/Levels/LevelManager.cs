@@ -14,7 +14,7 @@ public class LevelManager
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_1_10;
+    public static LevelID levelToLoad = LevelID.LEVEL_2_1;
 
     public static Dictionary<LevelID, Cell[,]> LevelGridMap = new Dictionary<LevelID, Cell[,]>
     {
@@ -90,8 +90,8 @@ public class LevelManager
         { LevelID.LEVEL_1_9, new Cell[,]{
             {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,},
             {Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_TOP_RIGHT_CLOSED,Cell.CELL_TOP_LEFT_CLOSED,Cell.CELL_OPEN,},
-            {Cell.CELL_RIGHT_CLOSED,Cell.CELL_TOP_LEFT_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,},
-            {Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_BOTTOM_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
+            {Cell.CELL_RIGHT_CLOSED,Cell.CELL_TOP_LEFT_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_BOTTOM_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
             {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,},
         }
         },
@@ -101,6 +101,15 @@ public class LevelManager
             {Cell.CELL_OPEN,Cell.CELL_TOP_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
             {Cell.CELL_OPEN,Cell.CELL_TOP_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,},
             {Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+        }
+        },
+        { LevelID.LEVEL_2_1, new Cell[,]{
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
         }
         },
 
@@ -120,6 +129,7 @@ public class LevelManager
             { LevelID.LEVEL_1_8, new LevelScore(13) },
             { LevelID.LEVEL_1_9, new LevelScore(16) },
             { LevelID.LEVEL_1_10, new LevelScore(18) },
+            { LevelID.LEVEL_2_1, new LevelScore(2) },
         };
     public static Dictionary<LevelID, LevelID[]> LevelPrereq = new Dictionary<LevelID, LevelID[]>
         {
@@ -134,6 +144,7 @@ public class LevelManager
             { LevelID.LEVEL_1_8, new LevelID[] { LevelID.LEVEL_1_7 } },
             { LevelID.LEVEL_1_9, new LevelID[] { LevelID.LEVEL_1_8 } },
             { LevelID.LEVEL_1_10, new LevelID[] { LevelID.LEVEL_1_9 } },
+            { LevelID.LEVEL_2_1, new LevelID[] { LevelID.LEVEL_1_10 } },
         };
     public static Dictionary<LevelID, TutorialAction[]> TutorialContent = new Dictionary<LevelID, TutorialAction[]>
         {
