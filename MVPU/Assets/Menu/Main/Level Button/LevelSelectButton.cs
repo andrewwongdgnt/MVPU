@@ -3,9 +3,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelSelectButton : MonoBehaviour {
+public class LevelSelectButton : MonoBehaviour
+{
+    [Tooltip("The index that defines the order of the level regardless of world index. EG, if this is set to 0, then this level belongs to level 1 of world 1, or 2, etc...")]
+    public int levelIndex;
 
-    public LevelManager.LevelID levelId;
+    public Text label;
 
     public Image star1;
     public Image star2;
@@ -19,10 +22,27 @@ public class LevelSelectButton : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        if (levelId != LevelManager.LevelID.TEST_LEVEL)
+        UpdateStars();
+    }
+    LevelManager.LevelID GetResolvedLevelId()
+    {
+        LevelManager.LevelID[] levelIds = LevelManager.WorldToLevelArr[levelIndex];
+
+        int currentWorldIndex = LevelSelectManager.GetCurrentWorld();
+        if (levelIds.Length > currentWorldIndex)
+            return levelIds[LevelSelectManager.GetCurrentWorld()];
+        else
+            return LevelManager.LevelID.NO_LEVEL;
+
+    }
+    public void UpdateStars()
+    {
+        LevelManager.LevelID levelId = GetResolvedLevelId();
+
+        if (levelId != LevelManager.LevelID.NO_LEVEL && levelId != LevelManager.LevelID.TEST_LEVEL)
         {
             Button btn = GetComponent<Button>();
-            LevelManager.LevelID[] levelPrereqs = LevelManager.LevelPrereq[levelId];
+            LevelManager.LevelID[] levelPrereqs = LevelManager.LevelPrereq.ContainsKey(levelId) ? LevelManager.LevelPrereq[levelId] : new LevelManager.LevelID[] { };
 
             btn.interactable = levelPrereqs.Length == 0 || Array.Exists(levelPrereqs, l =>
                   SaveStateManager.LoadLevel(l) != null
@@ -76,7 +96,12 @@ public class LevelSelectButton : MonoBehaviour {
 
     public void GoToLevel()
     {
-        LevelManager.levelToLoad = levelId;
-        SceneManager.LoadScene("Load Screen");
+        LevelManager.LevelID levelId = GetResolvedLevelId();
+        if (levelId != LevelManager.LevelID.NO_LEVEL)
+        {
+            LevelManager.levelToLoad = levelId;
+            SceneManager.LoadScene("Load Screen");
+        }
     }
+
 }

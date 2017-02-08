@@ -7,14 +7,37 @@ public class LevelManager
 
     public enum LevelID
     {
-        TEST_LEVEL
+        NO_LEVEL
+            , TEST_LEVEL
             , LEVEL_1_1, LEVEL_1_2, LEVEL_1_3, LEVEL_1_4, LEVEL_1_5, LEVEL_1_6, LEVEL_1_7, LEVEL_1_8, LEVEL_1_9, LEVEL_1_10
             , LEVEL_2_1, LEVEL_2_2, LEVEL_2_3, LEVEL_2_4, LEVEL_2_5, LEVEL_2_6, LEVEL_2_7, LEVEL_2_8, LEVEL_2_9, LEVEL_2_10
+            , LEVEL_3_1, LEVEL_3_2, LEVEL_3_3, LEVEL_3_4, LEVEL_3_5, LEVEL_3_6, LEVEL_3_7, LEVEL_3_8, LEVEL_3_9, LEVEL_3_10
+            , LEVEL_4_1, LEVEL_4_2, LEVEL_4_3, LEVEL_4_4, LEVEL_4_5, LEVEL_4_6, LEVEL_4_7, LEVEL_4_8, LEVEL_4_9, LEVEL_4_10
+            , LEVEL_5_1, LEVEL_5_2, LEVEL_5_3, LEVEL_5_4, LEVEL_5_5, LEVEL_5_6, LEVEL_5_7, LEVEL_5_8, LEVEL_5_9, LEVEL_5_10
+            , LEVEL_6_1, LEVEL_6_2, LEVEL_6_3, LEVEL_6_4, LEVEL_6_5, LEVEL_6_6, LEVEL_6_7, LEVEL_6_8, LEVEL_6_9, LEVEL_6_10
+            , LEVEL_7_1, LEVEL_7_2, LEVEL_7_3, LEVEL_7_4, LEVEL_7_5, LEVEL_7_6, LEVEL_7_7, LEVEL_7_8, LEVEL_7_9, LEVEL_7_10
+            , LEVEL_8_1, LEVEL_8_2, LEVEL_8_3, LEVEL_8_4, LEVEL_8_5, LEVEL_8_6, LEVEL_8_7, LEVEL_8_8, LEVEL_8_9, LEVEL_8_10
+            , LEVEL_9_1, LEVEL_9_2, LEVEL_9_3, LEVEL_9_4, LEVEL_9_5, LEVEL_9_6, LEVEL_9_7, LEVEL_9_8, LEVEL_9_9, LEVEL_9_10
+            , LEVEL_10_1, LEVEL_10_2, LEVEL_10_3, LEVEL_10_4, LEVEL_10_5, LEVEL_10_6, LEVEL_10_7, LEVEL_10_8, LEVEL_10_9, LEVEL_10_10
 
     }
 
     //meant to be mutable
     public static LevelID levelToLoad = LevelID.LEVEL_2_1;
+
+    public static LevelID[][] WorldToLevelArr = new LevelID[][]
+    {
+        new LevelID[] {LevelID.LEVEL_1_1,LevelID.LEVEL_2_1,LevelID.LEVEL_3_1,LevelID.LEVEL_4_1,LevelID.LEVEL_5_1,LevelID.LEVEL_6_1,LevelID.LEVEL_7_1,LevelID.LEVEL_8_1,LevelID.LEVEL_9_1,LevelID.LEVEL_10_1},
+        new LevelID[] {LevelID.LEVEL_1_2,LevelID.LEVEL_2_2,LevelID.LEVEL_3_2,LevelID.LEVEL_4_2,LevelID.LEVEL_5_2,LevelID.LEVEL_6_2,LevelID.LEVEL_7_2,LevelID.LEVEL_8_2,LevelID.LEVEL_9_2,LevelID.LEVEL_10_2},
+        new LevelID[] {LevelID.LEVEL_1_3,LevelID.LEVEL_2_3,LevelID.LEVEL_3_3,LevelID.LEVEL_4_3,LevelID.LEVEL_5_3,LevelID.LEVEL_6_3,LevelID.LEVEL_7_3,LevelID.LEVEL_8_3,LevelID.LEVEL_9_3,LevelID.LEVEL_10_3},
+        new LevelID[] {LevelID.LEVEL_1_4,LevelID.LEVEL_2_4,LevelID.LEVEL_3_4,LevelID.LEVEL_4_4,LevelID.LEVEL_5_4,LevelID.LEVEL_6_4,LevelID.LEVEL_7_4,LevelID.LEVEL_8_4,LevelID.LEVEL_9_4,LevelID.LEVEL_10_4},
+        new LevelID[] {LevelID.LEVEL_1_5,LevelID.LEVEL_2_5,LevelID.LEVEL_3_5,LevelID.LEVEL_4_5,LevelID.LEVEL_5_5,LevelID.LEVEL_6_5,LevelID.LEVEL_7_5,LevelID.LEVEL_8_5,LevelID.LEVEL_9_5,LevelID.LEVEL_10_5},
+        new LevelID[] {LevelID.LEVEL_1_6,LevelID.LEVEL_2_6,LevelID.LEVEL_3_6,LevelID.LEVEL_4_6,LevelID.LEVEL_5_6,LevelID.LEVEL_6_6,LevelID.LEVEL_7_6,LevelID.LEVEL_8_6,LevelID.LEVEL_9_6,LevelID.LEVEL_10_6},
+        new LevelID[] {LevelID.LEVEL_1_7,LevelID.LEVEL_2_7,LevelID.LEVEL_3_7,LevelID.LEVEL_4_7,LevelID.LEVEL_5_7,LevelID.LEVEL_6_7,LevelID.LEVEL_7_7,LevelID.LEVEL_8_7,LevelID.LEVEL_9_7,LevelID.LEVEL_10_7},
+        new LevelID[] {LevelID.LEVEL_1_8,LevelID.LEVEL_2_8,LevelID.LEVEL_3_8,LevelID.LEVEL_4_8,LevelID.LEVEL_5_8,LevelID.LEVEL_6_8,LevelID.LEVEL_7_8,LevelID.LEVEL_8_8,LevelID.LEVEL_9_8,LevelID.LEVEL_10_8},
+        new LevelID[] {LevelID.LEVEL_1_9,LevelID.LEVEL_2_9,LevelID.LEVEL_3_9,LevelID.LEVEL_4_9,LevelID.LEVEL_5_9,LevelID.LEVEL_6_9,LevelID.LEVEL_7_9,LevelID.LEVEL_8_9,LevelID.LEVEL_9_9,LevelID.LEVEL_10_9},
+        new LevelID[] {LevelID.LEVEL_1_10,LevelID.LEVEL_2_10,LevelID.LEVEL_3_10,LevelID.LEVEL_4_10,LevelID.LEVEL_5_10,LevelID.LEVEL_6_10,LevelID.LEVEL_7_10,LevelID.LEVEL_8_10,LevelID.LEVEL_9_10,LevelID.LEVEL_10_10},
+    };
 
     public static Dictionary<LevelID, Cell[,]> LevelGridMap = new Dictionary<LevelID, Cell[,]>
     {
@@ -104,12 +127,12 @@ public class LevelManager
         }
         },
         { LevelID.LEVEL_2_1, new Cell[,]{
-            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
-            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
-            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
-            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
-            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
-            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_TOP_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,},
+            {Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_RIGHT_CLOSED,Cell.CELL_TOP_LEFT_CLOSED,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_BOTTOM_CLOSED,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_CLOSED,},
         }
         },
 
@@ -129,7 +152,7 @@ public class LevelManager
             { LevelID.LEVEL_1_8, new LevelScore(13) },
             { LevelID.LEVEL_1_9, new LevelScore(16) },
             { LevelID.LEVEL_1_10, new LevelScore(18) },
-            { LevelID.LEVEL_2_1, new LevelScore(2) },
+            { LevelID.LEVEL_2_1, new LevelScore(12) },
         };
     public static Dictionary<LevelID, LevelID[]> LevelPrereq = new Dictionary<LevelID, LevelID[]>
         {
@@ -144,7 +167,105 @@ public class LevelManager
             { LevelID.LEVEL_1_8, new LevelID[] { LevelID.LEVEL_1_7 } },
             { LevelID.LEVEL_1_9, new LevelID[] { LevelID.LEVEL_1_8 } },
             { LevelID.LEVEL_1_10, new LevelID[] { LevelID.LEVEL_1_9 } },
+
             { LevelID.LEVEL_2_1, new LevelID[] { LevelID.LEVEL_1_10 } },
+            { LevelID.LEVEL_2_2, new LevelID[] { LevelID.LEVEL_2_1 } },
+            { LevelID.LEVEL_2_3, new LevelID[] { LevelID.LEVEL_2_2 } },
+            { LevelID.LEVEL_2_4, new LevelID[] { LevelID.LEVEL_2_3 } },
+            { LevelID.LEVEL_2_5, new LevelID[] { LevelID.LEVEL_2_4 } },
+            { LevelID.LEVEL_2_6, new LevelID[] { LevelID.LEVEL_2_5 } },
+            { LevelID.LEVEL_2_7, new LevelID[] { LevelID.LEVEL_2_6 } },
+            { LevelID.LEVEL_2_8, new LevelID[] { LevelID.LEVEL_2_7 } },
+            { LevelID.LEVEL_2_9, new LevelID[] { LevelID.LEVEL_2_8 } },
+            { LevelID.LEVEL_2_10, new LevelID[] { LevelID.LEVEL_2_9 } },
+
+            { LevelID.LEVEL_3_1, new LevelID[] { LevelID.LEVEL_2_10 } },
+            { LevelID.LEVEL_3_2, new LevelID[] { LevelID.LEVEL_3_1 } },
+            { LevelID.LEVEL_3_3, new LevelID[] { LevelID.LEVEL_3_2 } },
+            { LevelID.LEVEL_3_4, new LevelID[] { LevelID.LEVEL_3_3 } },
+            { LevelID.LEVEL_3_5, new LevelID[] { LevelID.LEVEL_3_4 } },
+            { LevelID.LEVEL_3_6, new LevelID[] { LevelID.LEVEL_3_5 } },
+            { LevelID.LEVEL_3_7, new LevelID[] { LevelID.LEVEL_3_6 } },
+            { LevelID.LEVEL_3_8, new LevelID[] { LevelID.LEVEL_3_7 } },
+            { LevelID.LEVEL_3_9, new LevelID[] { LevelID.LEVEL_3_8 } },
+            { LevelID.LEVEL_3_10, new LevelID[] { LevelID.LEVEL_3_9 } },
+
+            { LevelID.LEVEL_4_1, new LevelID[] { LevelID.LEVEL_3_10 } },
+            { LevelID.LEVEL_4_2, new LevelID[] { LevelID.LEVEL_4_1 } },
+            { LevelID.LEVEL_4_3, new LevelID[] { LevelID.LEVEL_4_2 } },
+            { LevelID.LEVEL_4_4, new LevelID[] { LevelID.LEVEL_4_3 } },
+            { LevelID.LEVEL_4_5, new LevelID[] { LevelID.LEVEL_4_4 } },
+            { LevelID.LEVEL_4_6, new LevelID[] { LevelID.LEVEL_4_5 } },
+            { LevelID.LEVEL_4_7, new LevelID[] { LevelID.LEVEL_4_6 } },
+            { LevelID.LEVEL_4_8, new LevelID[] { LevelID.LEVEL_4_7 } },
+            { LevelID.LEVEL_4_9, new LevelID[] { LevelID.LEVEL_4_8 } },
+            { LevelID.LEVEL_4_10, new LevelID[] { LevelID.LEVEL_4_9 } },
+
+            { LevelID.LEVEL_5_1, new LevelID[] { LevelID.LEVEL_4_10 } },
+            { LevelID.LEVEL_5_2, new LevelID[] { LevelID.LEVEL_5_1 } },
+            { LevelID.LEVEL_5_3, new LevelID[] { LevelID.LEVEL_5_2 } },
+            { LevelID.LEVEL_5_4, new LevelID[] { LevelID.LEVEL_5_3 } },
+            { LevelID.LEVEL_5_5, new LevelID[] { LevelID.LEVEL_5_4 } },
+            { LevelID.LEVEL_5_6, new LevelID[] { LevelID.LEVEL_5_5 } },
+            { LevelID.LEVEL_5_7, new LevelID[] { LevelID.LEVEL_5_6 } },
+            { LevelID.LEVEL_5_8, new LevelID[] { LevelID.LEVEL_5_7 } },
+            { LevelID.LEVEL_5_9, new LevelID[] { LevelID.LEVEL_5_8 } },
+            { LevelID.LEVEL_5_10, new LevelID[] { LevelID.LEVEL_5_9 } },
+
+            { LevelID.LEVEL_6_1, new LevelID[] { LevelID.LEVEL_5_10 } },
+            { LevelID.LEVEL_6_2, new LevelID[] { LevelID.LEVEL_6_1 } },
+            { LevelID.LEVEL_6_3, new LevelID[] { LevelID.LEVEL_6_2 } },
+            { LevelID.LEVEL_6_4, new LevelID[] { LevelID.LEVEL_6_3 } },
+            { LevelID.LEVEL_6_5, new LevelID[] { LevelID.LEVEL_6_4 } },
+            { LevelID.LEVEL_6_6, new LevelID[] { LevelID.LEVEL_6_5 } },
+            { LevelID.LEVEL_6_7, new LevelID[] { LevelID.LEVEL_6_6 } },
+            { LevelID.LEVEL_6_8, new LevelID[] { LevelID.LEVEL_6_7 } },
+            { LevelID.LEVEL_6_9, new LevelID[] { LevelID.LEVEL_6_8 } },
+            { LevelID.LEVEL_6_10, new LevelID[] { LevelID.LEVEL_6_9 } },
+
+            { LevelID.LEVEL_7_1, new LevelID[] { LevelID.LEVEL_6_10 } },
+            { LevelID.LEVEL_7_2, new LevelID[] { LevelID.LEVEL_7_1 } },
+            { LevelID.LEVEL_7_3, new LevelID[] { LevelID.LEVEL_7_2 } },
+            { LevelID.LEVEL_7_4, new LevelID[] { LevelID.LEVEL_7_3 } },
+            { LevelID.LEVEL_7_5, new LevelID[] { LevelID.LEVEL_7_4 } },
+            { LevelID.LEVEL_7_6, new LevelID[] { LevelID.LEVEL_7_5 } },
+            { LevelID.LEVEL_7_7, new LevelID[] { LevelID.LEVEL_7_6 } },
+            { LevelID.LEVEL_7_8, new LevelID[] { LevelID.LEVEL_7_7 } },
+            { LevelID.LEVEL_7_9, new LevelID[] { LevelID.LEVEL_7_8 } },
+            { LevelID.LEVEL_7_10, new LevelID[] { LevelID.LEVEL_7_9 } },
+
+            { LevelID.LEVEL_8_1, new LevelID[] { LevelID.LEVEL_7_10 } },
+            { LevelID.LEVEL_8_2, new LevelID[] { LevelID.LEVEL_8_1 } },
+            { LevelID.LEVEL_8_3, new LevelID[] { LevelID.LEVEL_8_2 } },
+            { LevelID.LEVEL_8_4, new LevelID[] { LevelID.LEVEL_8_3 } },
+            { LevelID.LEVEL_8_5, new LevelID[] { LevelID.LEVEL_8_4 } },
+            { LevelID.LEVEL_8_6, new LevelID[] { LevelID.LEVEL_8_5 } },
+            { LevelID.LEVEL_8_7, new LevelID[] { LevelID.LEVEL_8_6 } },
+            { LevelID.LEVEL_8_8, new LevelID[] { LevelID.LEVEL_8_7 } },
+            { LevelID.LEVEL_8_9, new LevelID[] { LevelID.LEVEL_8_8 } },
+            { LevelID.LEVEL_8_10, new LevelID[] { LevelID.LEVEL_8_9 } },
+
+            { LevelID.LEVEL_9_1, new LevelID[] { LevelID.LEVEL_8_10 } },
+            { LevelID.LEVEL_9_2, new LevelID[] { LevelID.LEVEL_9_1 } },
+            { LevelID.LEVEL_9_3, new LevelID[] { LevelID.LEVEL_9_2 } },
+            { LevelID.LEVEL_9_4, new LevelID[] { LevelID.LEVEL_9_3 } },
+            { LevelID.LEVEL_9_5, new LevelID[] { LevelID.LEVEL_9_4 } },
+            { LevelID.LEVEL_9_6, new LevelID[] { LevelID.LEVEL_9_5 } },
+            { LevelID.LEVEL_9_7, new LevelID[] { LevelID.LEVEL_9_6 } },
+            { LevelID.LEVEL_9_8, new LevelID[] { LevelID.LEVEL_9_7 } },
+            { LevelID.LEVEL_9_9, new LevelID[] { LevelID.LEVEL_9_8 } },
+            { LevelID.LEVEL_9_10, new LevelID[] { LevelID.LEVEL_9_9 } },
+
+            { LevelID.LEVEL_10_1, new LevelID[] { LevelID.LEVEL_9_10 } },
+            { LevelID.LEVEL_10_2, new LevelID[] { LevelID.LEVEL_10_1 } },
+            { LevelID.LEVEL_10_3, new LevelID[] { LevelID.LEVEL_10_2 } },
+            { LevelID.LEVEL_10_4, new LevelID[] { LevelID.LEVEL_10_3 } },
+            { LevelID.LEVEL_10_5, new LevelID[] { LevelID.LEVEL_10_4 } },
+            { LevelID.LEVEL_10_6, new LevelID[] { LevelID.LEVEL_10_5 } },
+            { LevelID.LEVEL_10_7, new LevelID[] { LevelID.LEVEL_10_6 } },
+            { LevelID.LEVEL_10_8, new LevelID[] { LevelID.LEVEL_10_7 } },
+            { LevelID.LEVEL_10_9, new LevelID[] { LevelID.LEVEL_10_8 } },
+            { LevelID.LEVEL_10_10, new LevelID[] { LevelID.LEVEL_10_9 } },
         };
     public static Dictionary<LevelID, TutorialAction[]> TutorialContent = new Dictionary<LevelID, TutorialAction[]>
         {
