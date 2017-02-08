@@ -38,12 +38,13 @@ public class Menu : MonoBehaviour
     {
 
         title.text = "Level Select";
-        DeactivateObjects(level: false);
+        DeactivateObjects(level: false, world:false);
     }
 
-    private void DeactivateObjects( Boolean settings = true, Boolean level = true)
+    private void DeactivateObjects(bool settings = true, bool level = true, bool world = true)
     {
         Array.ForEach(settings_arr, go => go.SetActive(!settings));
         Array.ForEach(level_arr, go => go.SetActive(!level));
+        Array.ForEach(world_arr, go => go.SetActive(!world));
     }
 }
