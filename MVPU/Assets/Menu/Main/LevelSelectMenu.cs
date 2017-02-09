@@ -1,10 +1,9 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class WorldSelectButton : MonoBehaviour
-{
+public class LevelSelectMenu : MonoBehaviour {
+
     public LevelSelectButton levelSelectButton1;
     public LevelSelectButton levelSelectButton2;
     public LevelSelectButton levelSelectButton3;
@@ -44,7 +43,7 @@ public class WorldSelectButton : MonoBehaviour
 
     void UpdateLevelSelectButton(LevelSelectButton levelSelectButton)
     {
-        levelSelectButton.label.text = (LevelSelectManager.GetCurrentWorld() * 10 + levelSelectButton.levelIndex+1).ToString();
+        levelSelectButton.label.text = (LevelSelectManager.GetCurrentWorld() * 10 + levelSelectButton.levelIndex + 1).ToString();
         levelSelectButton.UpdateStars();
     }
 
@@ -54,5 +53,4 @@ public class WorldSelectButton : MonoBehaviour
 
         UpdateAllLevelSelectButtons();
     }
-
 }

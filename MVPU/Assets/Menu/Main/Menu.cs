@@ -10,13 +10,11 @@ public class Menu : MonoBehaviour
 
     private GameObject[] level_arr;
     private GameObject[] settings_arr;
-    private GameObject[] world_arr;
 
     // Use this for initialization
     void Start()
     {
 
-        world_arr = GameObject.FindGameObjectsWithTag("World");
         settings_arr = GameObject.FindGameObjectsWithTag("Settings");
         level_arr = GameObject.FindGameObjectsWithTag("Level");
         GoToLevelSelect();
@@ -45,6 +43,5 @@ public class Menu : MonoBehaviour
     {
         Array.ForEach(settings_arr, go => go.SetActive(!settings));
         Array.ForEach(level_arr, go => go.SetActive(!level));
-        Array.ForEach(world_arr, go => go.SetActive(!world));
     }
 }
