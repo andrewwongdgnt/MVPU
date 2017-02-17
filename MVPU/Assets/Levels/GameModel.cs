@@ -11,6 +11,9 @@ public class GameModel : MonoBehaviour
     private readonly float ANIMATION_SPEED = 1.4f;
     private readonly float DOUBLE_TAP_DELAY = 0.3f;
 
+    //This is dependant on the length of the player's lose animation
+    private readonly float LOSE_ANIMATION_LENGTH_IN_SECONDS = 2f;
+
     private ScoringModel scoringModel;
     private UndoManager undoManager;
 
@@ -160,12 +163,14 @@ public class GameModel : MonoBehaviour
         }
     }
 
-    public void Undo()
+    private bool endGameAnimationPlaying;
+
+    public void Undo(bool removeLastState)
     {
         endGameMenu.HideEndGameMenu();
         if (AreAllAnimationsComplete())
         {
-            HistoryState historyState = undoManager.Undo();
+            HistoryState historyState = undoManager.Undo(removeLastState);
             if (historyState == null)
                 historyState = undoManager.initialHistoryState;
 
@@ -192,14 +197,17 @@ public class GameModel : MonoBehaviour
     private void RestoreStateToEntities(HistoryState historyState)
     {
         _player.RestoreState(historyState.playerState);
+        _player.StopDieAnimation();
         _goal.RestoreState(historyState.goalState);
         for (int i = 0; i < _enemyArr.Length; i++)
         {
             _enemyArr[i].RestoreState(historyState.enemyArrState[i]);
+            _enemyArr[i].StopAttackAnimation();
         }
         for (int i = 0; i < _bombArr.Length; i++)
         {
             _bombArr[i].RestoreState(historyState.bombArrState[i]);
+            _bombArr[i].StopAttackAnimation();
         }
         for (int i = 0; i < _keyArr.Length; i++)
         {
@@ -249,8 +257,8 @@ public class GameModel : MonoBehaviour
 
     private List<List<bool>> animationComplete = new List<List<bool>>();
     private List<Triple<int, int, Enemy>> dozedEnemiesList = new List<Triple<int, int, Enemy>>();
-    //win=true
-    private Triple<int, int, bool> gameEndInfo;
+    //if Entity is null, that means the player has won
+    private Triple<int, int, Entity> gameEndInfo;
 
     private List<Pair<int, int>> blockedEnemiesList = new List<Pair<int, int>>();
     private List<Triple<int, int, Bomb>> bombedEnemiesList = new List<Triple<int, int, Bomb>>();
@@ -437,7 +445,7 @@ public class GameModel : MonoBehaviour
                 )
             {
                 if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Z))
-                    Undo();
+                    Undo(false);
                 else if (Input.GetKeyDown(KeyCode.Y))
                     Redo();
                 else
@@ -510,7 +518,8 @@ public class GameModel : MonoBehaviour
     {
         if (gameEndInfo != null)
         {
-            bool winning = gameEndInfo.third;
+            bool winning = gameEndInfo.third==null;
+            IAttacker attacker = gameEndInfo.third is IAttacker ? (IAttacker)gameEndInfo.third : null;
             gameEndInfo = null;
             if (winning)
             {
@@ -521,15 +530,31 @@ public class GameModel : MonoBehaviour
             else
             {
                 Debug.Log(_currentLevelId + ": Game Over");
-                endGameMenu.ShowLoseMenu(true);
+                StartCoroutine(StartLoseGameAnimation(attacker));
+
             }
         }
+    }
+
+    private IEnumerator StartLoseGameAnimation(IAttacker attacker)
+    {
+        endGameAnimationPlaying = true;
+        _player.StartDieAnimation();
+        if (attacker != null)
+        {
+            attacker.StartAttackAnimation();
+            FaceHorizontally(attacker.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
+        }
+        yield return new WaitForSeconds(LOSE_ANIMATION_LENGTH_IN_SECONDS);
+        endGameAnimationPlaying = false;
+        endGameMenu.ShowLoseMenu(true);
+        
     }
 
 
     private bool AreAllAnimationsComplete()
     {
-        return animationComplete.All(list => list.All(b => b));
+        return animationComplete.All(list => list.All(b => b)) && !endGameAnimationPlaying;
     }
 
 
@@ -538,22 +563,30 @@ public class GameModel : MonoBehaviour
 
         Entity entity = walker.entity;
 
-
-        //TODO: not the right way to do it but leave for testing
-        //if (direction == Entity.Direction.UP)
-        //    entity.transform.rotation = Quaternion.Euler(0, 0, 90);
         if (direction == Entity.Direction.LEFT || direction == Entity.Direction.UP)
         {
             entity.transform.localScale = new Vector3(Math.Abs(entity.transform.localScale.x) * -1, entity.transform.localScale.y, entity.transform.localScale.z);
         }
-        //entity.transform.rotation = Quaternion.Euler(0, 0, 180);
-        //if (direction == Entity.Direction.DOWN || direction == Entity.Direction.NONE)
-        //    entity.transform.rotation = Quaternion.Euler(0, 0, 270);
+
         if (direction == Entity.Direction.RIGHT || direction == Entity.Direction.DOWN)
         {
             entity.transform.localScale = new Vector3(Math.Abs(entity.transform.localScale.x), entity.transform.localScale.y, entity.transform.localScale.z);
         }
-        //entity.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+    }
+
+    private void FaceHorizontally(Entity entity, Entity.Direction direction)
+    {
+
+        if (direction == Entity.Direction.LEFT )
+        {
+            entity.transform.localScale = new Vector3(Math.Abs(entity.transform.localScale.x) * -1, entity.transform.localScale.y, entity.transform.localScale.z);
+        }
+
+        if (direction == Entity.Direction.RIGHT )
+        {
+            entity.transform.localScale = new Vector3(Math.Abs(entity.transform.localScale.x), entity.transform.localScale.y, entity.transform.localScale.z);
+        }
 
     }
 
@@ -579,7 +612,7 @@ public class GameModel : MonoBehaviour
         {
             if (_player.x == goalX && _player.y == goalY)
             {
-                gameEndInfo = new Triple<int, int, bool>(GetOrder(_player), stepOrder, true);
+                gameEndInfo = new Triple<int, int, Entity>(GetOrder(_player), stepOrder, null);
 
             }
             else
@@ -588,13 +621,19 @@ public class GameModel : MonoBehaviour
                 {
                     Enemy theKiller = Array.Find(_enemyArr, en => en.x == _player.x && en.y == _player.y);
                     Bomb bomb = Array.Find(_bombArr, bo => bo.x == _player.x && bo.y == _player.y);
-                    if ((theKiller != null && !theKiller.inactive) || (bomb != null && !bomb.inactive && bomb.affectsPlayer))
+                    //Player walks into lose state
+                    if (theKiller != null && !theKiller.inactive)
                     {
-                        gameEndInfo = new Triple<int, int, bool>(GetOrder(_player), stepOrder, false);
+                        gameEndInfo = new Triple<int, int, Entity>(GetOrder(_player), stepOrder, theKiller);
+                    }
+                    else if (bomb != null && !bomb.inactive && bomb.affectsPlayer)
+                    {
+                        gameEndInfo = new Triple<int, int, Entity>(GetOrder(_player), stepOrder, bomb);
                     }
                 }
-                else if (_player.x == walker.entity.x && _player.y == walker.entity.y)
-                    gameEndInfo = new Triple<int, int, bool>(GetOrder(walker), stepOrder, false);
+                //Walker walks into player to cause lose state
+                else if (_player.x == walker.entity.x && _player.y == walker.entity.y )
+                    gameEndInfo = new Triple<int, int, Entity>(GetOrder(walker), stepOrder, walker.entity);
 
             }
         }

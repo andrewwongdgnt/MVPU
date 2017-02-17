@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 
 public class Player : Entity, IWalker
 {
@@ -60,6 +60,7 @@ public class Player : Entity, IWalker
 
     }
 
+
     public void StartWalkAnimation()
     {
         animator.SetBool("HorizontalWalk", true);
@@ -67,6 +68,17 @@ public class Player : Entity, IWalker
     public void StopWalkAnimation()
     {
         animator.SetBool("HorizontalWalk", false);
+    }
+
+    public void StartDieAnimation()
+    {
+        animator.SetBool("Dead", true);
+    }
+
+    public void StopDieAnimation()
+    {
+        animator.SetBool("Dead", false);
+
     }
 
 }

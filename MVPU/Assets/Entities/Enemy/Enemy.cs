@@ -4,7 +4,7 @@ using System.Linq;
 using System;
 using System.Collections.Generic;
 
-public class Enemy : Entity, IWalker
+public class Enemy : Entity, IWalker, IAttacker
 {
     public bool verticalOrientation;
     public int stepsPerMove;
@@ -230,5 +230,12 @@ public class Enemy : Entity, IWalker
     {
         animator.SetBool("Dozed", false);
     }
-
+    public void StartAttackAnimation()
+    {
+        animator.SetBool("Attack", true);
+    }
+    public void StopAttackAnimation()
+    {
+        animator.SetBool("Attack", false);
+    }
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Bomb : Entity {
+public class Bomb : Entity, IAttacker {
 
 
 
@@ -49,4 +49,15 @@ public class Bomb : Entity {
 	void Update () {
 	
 	}
+
+    public void StartAttackAnimation()
+    {
+        //TODO: uncomment when animator exists
+        //animator.SetBool("Attack", true);
+    }
+    public void StopAttackAnimation()
+    {
+        //TODO: uncomment when animator exists
+        //animator.SetBool("Attack", false);
+    }
 }
