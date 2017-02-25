@@ -8,7 +8,6 @@ public class EndGameMenu : MonoBehaviour
 
     GameObject[] winObjects;
     GameObject[] loseObjects;
-    GameObject[] unPauseObjects;
 
     public Animator star1;
     public Animator star2;
@@ -21,7 +20,6 @@ public class EndGameMenu : MonoBehaviour
         GameObject[] endGameMenuItems = GameObject.FindGameObjectsWithTag("WinLose").Concat(GameObject.FindGameObjectsWithTag("GenericMenu")).ToArray();
         winObjects = GameObject.FindGameObjectsWithTag("Win").Concat(endGameMenuItems).ToArray();
         loseObjects = GameObject.FindGameObjectsWithTag("Lose").Concat(endGameMenuItems).ToArray();
-        unPauseObjects = GameObject.FindGameObjectsWithTag("Unpause");
 
         HideEndGameMenu(0);
     }
@@ -40,10 +38,6 @@ public class EndGameMenu : MonoBehaviour
         {
             g.SetActive(false);
         }
-        foreach (GameObject g in unPauseObjects)
-        {
-            g.SetActive(true);
-        }
     }
 
     public void HideEndGameMenu(int delay = 30)
@@ -52,7 +46,7 @@ public class EndGameMenu : MonoBehaviour
 
 
     }
-
+    
     public void ShowLoseMenu(bool show)
     {
         StartCoroutine(ShowLoseMenuWithDelay(show));
@@ -69,10 +63,6 @@ public class EndGameMenu : MonoBehaviour
         foreach (GameObject g in loseObjects)
         {
             g.SetActive(show);
-        }
-        foreach (GameObject g in unPauseObjects)
-        {
-            g.SetActive(!show);
         }
     }
 
@@ -94,10 +84,6 @@ public class EndGameMenu : MonoBehaviour
         foreach (GameObject g in winObjects)
         {
             g.SetActive(show);
-        }
-        foreach (GameObject g in unPauseObjects)
-        {
-            g.SetActive(!show);
         }
 
         star1.SetBool("StarOff", true);

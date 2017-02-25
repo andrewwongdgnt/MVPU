@@ -40,13 +40,13 @@ public class Player : Entity, IWalker
     private bool TryToMove(Direction direction)
     {
         bool unblocked = true;
-        if (direction == Entity.Direction.UP)
+        if (direction == Direction.UP)
             unblocked = TryToMoveUp();
-        if (direction == Entity.Direction.LEFT)
+        if (direction == Direction.LEFT)
             unblocked = TryToMoveLeft();
-        if (direction == Entity.Direction.DOWN)
+        if (direction == Direction.DOWN)
             unblocked = TryToMoveDown();
-        if (direction == Entity.Direction.RIGHT)
+        if (direction == Direction.RIGHT)
             unblocked = TryToMoveRight();
 
         if (!unblocked)
@@ -54,7 +54,8 @@ public class Player : Entity, IWalker
 
         _gameModel.CheckForEndGame(this, 0);
         _gameModel.AnimateGameObject(this, direction, 0);
-        facingDirection = direction;
+        if (direction!=Direction.NONE)
+            facingDirection = direction;
         return true;
         
 
@@ -70,10 +71,12 @@ public class Player : Entity, IWalker
         animator.SetBool("HorizontalWalk", false);
     }
 
-    public void StartDieAnimation()
+    public void StartDieAnimation(bool showOnlyFirstFrame = false)
     {
         animator.SetBool("Dead", true);
+        animator.speed = showOnlyFirstFrame ? 0 : 1;
     }
+
 
     public void StopDieAnimation()
     {

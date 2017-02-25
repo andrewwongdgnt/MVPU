@@ -11,8 +11,7 @@ public class GameModel : MonoBehaviour
     private readonly float ANIMATION_SPEED = 1.4f;
     private readonly float DOUBLE_TAP_DELAY = 0.3f;
 
-    //This is dependant on the length of the player's lose animation
-    private readonly float LOSE_ANIMATION_LENGTH_IN_SECONDS = 2f;
+    private readonly float LOSE_ANIMATION_DELAY_IN_SECONDS = 1f;
 
     private ScoringModel scoringModel;
     private UndoManager undoManager;
@@ -530,25 +529,30 @@ public class GameModel : MonoBehaviour
             else
             {
                 Debug.Log(_currentLevelId + ": Game Over");
-                StartCoroutine(StartLoseGameAnimation(attacker));
-
+                endGameAnimationPlaying = true;
+                _player.StartDieAnimation(true);
+                if (attacker!=null)
+                {
+                    attacker.StartAttackAnimation();
+                    FaceHorizontally(attacker.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
+                } else
+                {
+                    _player.StartDieAnimation();
+                }
             }
         }
     }
 
-    private IEnumerator StartLoseGameAnimation(IAttacker attacker)
+    public void ShowLoseMenu()
     {
-        endGameAnimationPlaying = true;
-        _player.StartDieAnimation();
-        if (attacker != null)
-        {
-            attacker.StartAttackAnimation();
-            FaceHorizontally(attacker.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
-        }
-        yield return new WaitForSeconds(LOSE_ANIMATION_LENGTH_IN_SECONDS);
+        StartCoroutine(ShowLoseMenuWithDelay());
+    }
+
+    public IEnumerator ShowLoseMenuWithDelay()
+    {
+        yield return new WaitForSeconds(LOSE_ANIMATION_DELAY_IN_SECONDS);
         endGameAnimationPlaying = false;
         endGameMenu.ShowLoseMenu(true);
-        
     }
 
 
