@@ -23,4 +23,10 @@ public class AnimatorEvent : MonoBehaviour {
         if (gameModel != null)
             gameModel.ShowLoseMenu();
     }
+
+    public void PlayerWinEvent()
+    {
+        if (gameModel != null)
+            gameModel.ShowWinMenu();
+    }
 }

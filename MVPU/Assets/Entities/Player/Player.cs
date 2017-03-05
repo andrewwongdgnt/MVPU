@@ -84,4 +84,16 @@ public class Player : Entity, IWalker
 
     }
 
+    public void StartWinAnimation()
+    {
+        animator.SetBool("Win", true);
+    }
+
+
+    public void StopWinAnimation()
+    {
+        animator.SetBool("Win", false);
+
+    }
+
 }

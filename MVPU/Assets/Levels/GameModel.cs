@@ -12,9 +12,13 @@ public class GameModel : MonoBehaviour
     private readonly float DOUBLE_TAP_DELAY = 0.3f;
 
     private readonly float LOSE_ANIMATION_DELAY_IN_SECONDS = 1f;
+    private readonly float WIN_ANIMATION_DELAY_IN_SECONDS = 1f;
 
     private ScoringModel scoringModel;
     private UndoManager undoManager;
+
+    private bool endGameAnimationPlaying;
+    private bool allowShowEndGameMenu;
 
     public EndGameMenu endGameMenu;
 
@@ -162,12 +166,11 @@ public class GameModel : MonoBehaviour
         }
     }
 
-    private bool endGameAnimationPlaying;
 
     public void Undo(bool removeLastState)
     {
         endGameMenu.HideEndGameMenu();
-        if (AreAllAnimationsComplete())
+        if (UserInteractionAllowed())
         {
             HistoryState historyState = undoManager.Undo(removeLastState);
             if (historyState == null)
@@ -182,7 +185,7 @@ public class GameModel : MonoBehaviour
     public void Redo()
     {
         endGameMenu.HideEndGameMenu();
-        if (AreAllAnimationsComplete())
+        if (UserInteractionAllowed())
         {
             HistoryState historyState = undoManager.Redo();
             if (historyState != null)
@@ -197,7 +200,9 @@ public class GameModel : MonoBehaviour
     {
         _player.RestoreState(historyState.playerState);
         _player.StopDieAnimation();
+        _player.StopWinAnimation();
         _goal.RestoreState(historyState.goalState);
+        _goal.StopWinAnimation();
         for (int i = 0; i < _enemyArr.Length; i++)
         {
             _enemyArr[i].RestoreState(historyState.enemyArrState[i]);
@@ -406,10 +411,10 @@ public class GameModel : MonoBehaviour
     {
         if (Time.timeScale > 0 && actionAllowedFromTutorial != TutorialAction.Action.NONE)
         {
-            bool areAllAnimationsComplete = AreAllAnimationsComplete();
+            bool userInteractionAllowed = UserInteractionAllowed();
 
             //Check for double tap
-            if (areAllAnimationsComplete)
+            if (userInteractionAllowed)
             {
                 if (Input.touchCount > 0)
                 { //if there is any touch
@@ -423,7 +428,7 @@ public class GameModel : MonoBehaviour
                     touchDuration = 0.0f;
             }
 
-            if (areAllAnimationsComplete &&
+            if (userInteractionAllowed &&
                 (Input.GetAxis("Vertical") > 0
                 || Input.GetAxis("Horizontal") < 0
                 || Input.GetAxis("Vertical") < 0
@@ -520,19 +525,24 @@ public class GameModel : MonoBehaviour
             bool winning = gameEndInfo.third==null;
             IAttacker attacker = gameEndInfo.third is IAttacker ? (IAttacker)gameEndInfo.third : null;
             gameEndInfo = null;
+           endGameAnimationPlaying = true;
+            allowShowEndGameMenu = true;
             if (winning)
             {
                 Debug.Log(_currentLevelId + ": Game win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.GetResult());
                 SaveStateManager.SaveLevel(_currentLevelId, scoringModel.numberOfMoves);
-                endGameMenu.ShowWinMenu(true, ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId));
+                //endGameMenu.ShowWinMenu(true, ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId));
+                _player.StartWinAnimation();
+                _goal.StartWinAnimation();
+                FaceHorizontally(_goal.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
             }
             else
             {
-                Debug.Log(_currentLevelId + ": Game Over");
-                endGameAnimationPlaying = true;
-                _player.StartDieAnimation(true);
+                Debug.Log(_currentLevelId + ": Game Over");                
                 if (attacker!=null)
                 {
+                    //endGameMenu.ShowLoseMenu(true);
+                    _player.StartDieAnimation(true);
                     attacker.StartAttackAnimation();
                     FaceHorizontally(attacker.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
                 } else
@@ -545,7 +555,11 @@ public class GameModel : MonoBehaviour
 
     public void ShowLoseMenu()
     {
-        StartCoroutine(ShowLoseMenuWithDelay());
+        if (allowShowEndGameMenu)
+        {
+            StartCoroutine(ShowLoseMenuWithDelay());
+            allowShowEndGameMenu = false;
+        }
     }
 
     public IEnumerator ShowLoseMenuWithDelay()
@@ -555,10 +569,30 @@ public class GameModel : MonoBehaviour
         endGameMenu.ShowLoseMenu(true);
     }
 
-
-    private bool AreAllAnimationsComplete()
+    public void ShowWinMenu()
     {
-        return animationComplete.All(list => list.All(b => b)) && !endGameAnimationPlaying;
+        if (allowShowEndGameMenu)
+        {
+            StartCoroutine(ShowWinMenuWithDelay());
+            allowShowEndGameMenu = false;
+        }
+    }
+
+    public IEnumerator ShowWinMenuWithDelay()
+    {
+        yield return new WaitForSeconds(WIN_ANIMATION_DELAY_IN_SECONDS);
+        endGameAnimationPlaying = false;
+        endGameMenu.ShowWinMenu(true, ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId));
+    }
+
+
+    private bool AllAnimationsComplete()
+    {
+        return animationComplete.All(list => list.All(b => b));
+    }
+    private bool UserInteractionAllowed()
+    {
+        return AllAnimationsComplete() && !endGameAnimationPlaying;
     }
 
 
@@ -730,7 +764,7 @@ public class GameModel : MonoBehaviour
 
         yield return new WaitUntil(() => IsLatestAnimationComplete(order, stepOrder));
 
-        if (!AreAllAnimationsComplete())
+        if (!AllAnimationsComplete())
         {
             Entity entity = walker.entity;
 
