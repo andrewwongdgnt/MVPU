@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0d02374bd1a17384bb5932a2c14fea57
-timeCreated: 1488600975
+timeCreated: 1492994018
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -151,7 +151,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 895
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -162,9 +162,9 @@ TextureImporter:
       name: Monkey Celebrate_1
       rect:
         serializedVersion: 2
-        x: 110
+        x: 114
         y: 895
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -175,9 +175,9 @@ TextureImporter:
       name: Monkey Celebrate_2
       rect:
         serializedVersion: 2
-        x: 220
+        x: 228
         y: 895
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -188,9 +188,9 @@ TextureImporter:
       name: Monkey Celebrate_3
       rect:
         serializedVersion: 2
-        x: 330
+        x: 342
         y: 895
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -201,9 +201,9 @@ TextureImporter:
       name: Monkey Celebrate_4
       rect:
         serializedVersion: 2
-        x: 440
+        x: 456
         y: 895
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -214,9 +214,9 @@ TextureImporter:
       name: Monkey Celebrate_5
       rect:
         serializedVersion: 2
-        x: 550
+        x: 570
         y: 895
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -227,9 +227,9 @@ TextureImporter:
       name: Monkey Celebrate_6
       rect:
         serializedVersion: 2
-        x: 660
+        x: 684
         y: 895
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -240,9 +240,9 @@ TextureImporter:
       name: Monkey Celebrate_7
       rect:
         serializedVersion: 2
-        x: 770
+        x: 798
         y: 895
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -253,9 +253,9 @@ TextureImporter:
       name: Monkey Celebrate_8
       rect:
         serializedVersion: 2
-        x: 880
-        y: 895
-        width: 110
+        x: 0
+        y: 766
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -266,9 +266,9 @@ TextureImporter:
       name: Monkey Celebrate_9
       rect:
         serializedVersion: 2
-        x: 0
+        x: 114
         y: 766
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -279,9 +279,9 @@ TextureImporter:
       name: Monkey Celebrate_10
       rect:
         serializedVersion: 2
-        x: 110
+        x: 228
         y: 766
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -292,9 +292,9 @@ TextureImporter:
       name: Monkey Celebrate_11
       rect:
         serializedVersion: 2
-        x: 220
+        x: 342
         y: 766
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -305,9 +305,9 @@ TextureImporter:
       name: Monkey Celebrate_12
       rect:
         serializedVersion: 2
-        x: 330
+        x: 456
         y: 766
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -318,9 +318,9 @@ TextureImporter:
       name: Monkey Celebrate_13
       rect:
         serializedVersion: 2
-        x: 440
+        x: 570
         y: 766
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -331,9 +331,9 @@ TextureImporter:
       name: Monkey Celebrate_14
       rect:
         serializedVersion: 2
-        x: 550
+        x: 684
         y: 766
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -344,9 +344,9 @@ TextureImporter:
       name: Monkey Celebrate_15
       rect:
         serializedVersion: 2
-        x: 660
+        x: 798
         y: 766
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -357,9 +357,9 @@ TextureImporter:
       name: Monkey Celebrate_16
       rect:
         serializedVersion: 2
-        x: 770
-        y: 766
-        width: 110
+        x: 0
+        y: 637
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -370,9 +370,9 @@ TextureImporter:
       name: Monkey Celebrate_17
       rect:
         serializedVersion: 2
-        x: 880
-        y: 766
-        width: 110
+        x: 114
+        y: 637
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -383,9 +383,9 @@ TextureImporter:
       name: Monkey Celebrate_18
       rect:
         serializedVersion: 2
-        x: 0
+        x: 228
         y: 637
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -396,9 +396,9 @@ TextureImporter:
       name: Monkey Celebrate_19
       rect:
         serializedVersion: 2
-        x: 110
+        x: 342
         y: 637
-        width: 110
+        width: 114
         height: 129
       alignment: 7
       pivot: {x: 0.5, y: 0}
