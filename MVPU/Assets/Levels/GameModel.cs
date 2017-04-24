@@ -531,7 +531,6 @@ public class GameModel : MonoBehaviour
             {
                 Debug.Log(_currentLevelId + ": Game win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.GetResult());
                 SaveStateManager.SaveLevel(_currentLevelId, scoringModel.numberOfMoves);
-                //endGameMenu.ShowWinMenu(true, ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId));
                 _player.StartWinAnimation();
                 _goal.StartWinAnimation();
                 FaceHorizontally(_goal.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
@@ -541,7 +540,6 @@ public class GameModel : MonoBehaviour
                 Debug.Log(_currentLevelId + ": Game Over");                
                 if (attacker!=null)
                 {
-                    //endGameMenu.ShowLoseMenu(true);
                     _player.StartDieAnimation(true);
                     attacker.StartAttackAnimation();
                     FaceHorizontally(attacker.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
@@ -776,17 +774,7 @@ public class GameModel : MonoBehaviour
             Pair<int, int> blockedEnemyInfo = blockedEnemiesList.Find(b => b.first == order && b.second == stepOrder);
             if (blockedEnemyInfo == null)
             {
-                //Logic to move the object
-                /*float elapsedTime = 0;
-                Vector3 startingPos = objectToMove.transform.position;
-
-                while (elapsedTime < ANIMATION_DELAY)
-                {
-                    objectToMove.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / ANIMATION_DELAY));
-                    elapsedTime += Time.deltaTime;
-                    yield return new WaitForEndOfFrame();
-                }*/
-
+  
                 float speedMultiplier = SettingsManager.GetEntitySpeedMultipler();
 
                 while (entity.transform.position != end)

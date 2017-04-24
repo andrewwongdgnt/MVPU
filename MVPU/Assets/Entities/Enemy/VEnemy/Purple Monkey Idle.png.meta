@@ -1,73 +1,73 @@
 fileFormatVersion: 2
-guid: 6183106c43a4d82448da640146d90b61
-timeCreated: 1480743558
+guid: ef1ad744572b56b479718741dc2148ce
+timeCreated: 1493003048
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Gorilla Idle_0
-    21300002: Gorilla Idle_1
-    21300004: Gorilla Idle_2
-    21300006: Gorilla Idle_3
-    21300008: Gorilla Idle_4
-    21300010: Gorilla Idle_5
-    21300012: Gorilla Idle_6
-    21300014: Gorilla Idle_7
-    21300016: Gorilla Idle_8
-    21300018: Gorilla Idle_9
-    21300020: Gorilla Idle_10
-    21300022: Gorilla Idle_11
-    21300024: Gorilla Idle_12
-    21300026: Gorilla Idle_13
-    21300028: Gorilla Idle_14
-    21300030: Gorilla Idle_15
-    21300032: Gorilla Idle_16
-    21300034: Gorilla Idle_17
-    21300036: Gorilla Idle_18
-    21300038: Gorilla Idle_19
-    21300040: Gorilla Idle_20
-    21300042: Gorilla Idle_21
-    21300044: Gorilla Idle_22
-    21300046: Gorilla Idle_23
-    21300048: Gorilla Idle_24
-    21300050: Gorilla Idle_25
-    21300052: Gorilla Idle_26
-    21300054: Gorilla Idle_27
-    21300056: Gorilla Idle_28
-    21300058: Gorilla Idle_29
-    21300060: Gorilla Idle_30
-    21300062: Gorilla Idle_31
-    21300064: Gorilla Idle_32
-    21300066: Gorilla Idle_33
-    21300068: Gorilla Idle_34
-    21300070: Gorilla Idle_35
-    21300072: Gorilla Idle_36
-    21300074: Gorilla Idle_37
-    21300076: Gorilla Idle_38
-    21300078: Gorilla Idle_39
-    21300080: Gorilla Idle_40
-    21300082: Gorilla Idle_41
-    21300084: Gorilla Idle_42
-    21300086: Gorilla Idle_43
-    21300088: Gorilla Idle_44
-    21300090: Gorilla Idle_45
-    21300092: Gorilla Idle_46
-    21300094: Gorilla Idle_47
-    21300096: Gorilla Idle_48
-    21300098: Gorilla Idle_49
-    21300100: Gorilla Idle_50
-    21300102: Gorilla Idle_51
-    21300104: Gorilla Idle_52
-    21300106: Gorilla Idle_53
-    21300108: Gorilla Idle_54
-    21300110: Gorilla Idle_55
-    21300112: Gorilla Idle_56
-    21300114: Gorilla Idle_57
-    21300116: Gorilla Idle_58
-    21300118: Gorilla Idle_59
+    21300000: Purple Monkey Idle_0
+    21300002: Purple Monkey Idle_1
+    21300004: Purple Monkey Idle_2
+    21300006: Purple Monkey Idle_3
+    21300008: Purple Monkey Idle_4
+    21300010: Purple Monkey Idle_5
+    21300012: Purple Monkey Idle_6
+    21300014: Purple Monkey Idle_7
+    21300016: Purple Monkey Idle_8
+    21300018: Purple Monkey Idle_9
+    21300020: Purple Monkey Idle_10
+    21300022: Purple Monkey Idle_11
+    21300024: Purple Monkey Idle_12
+    21300026: Purple Monkey Idle_13
+    21300028: Purple Monkey Idle_14
+    21300030: Purple Monkey Idle_15
+    21300032: Purple Monkey Idle_16
+    21300034: Purple Monkey Idle_17
+    21300036: Purple Monkey Idle_18
+    21300038: Purple Monkey Idle_19
+    21300040: Purple Monkey Idle_20
+    21300042: Purple Monkey Idle_21
+    21300044: Purple Monkey Idle_22
+    21300046: Purple Monkey Idle_23
+    21300048: Purple Monkey Idle_24
+    21300050: Purple Monkey Idle_25
+    21300052: Purple Monkey Idle_26
+    21300054: Purple Monkey Idle_27
+    21300056: Purple Monkey Idle_28
+    21300058: Purple Monkey Idle_29
+    21300060: Purple Monkey Idle_30
+    21300062: Purple Monkey Idle_31
+    21300064: Purple Monkey Idle_32
+    21300066: Purple Monkey Idle_33
+    21300068: Purple Monkey Idle_34
+    21300070: Purple Monkey Idle_35
+    21300072: Purple Monkey Idle_36
+    21300074: Purple Monkey Idle_37
+    21300076: Purple Monkey Idle_38
+    21300078: Purple Monkey Idle_39
+    21300080: Purple Monkey Idle_40
+    21300082: Purple Monkey Idle_41
+    21300084: Purple Monkey Idle_42
+    21300086: Purple Monkey Idle_43
+    21300088: Purple Monkey Idle_44
+    21300090: Purple Monkey Idle_45
+    21300092: Purple Monkey Idle_46
+    21300094: Purple Monkey Idle_47
+    21300096: Purple Monkey Idle_48
+    21300098: Purple Monkey Idle_49
+    21300100: Purple Monkey Idle_50
+    21300102: Purple Monkey Idle_51
+    21300104: Purple Monkey Idle_52
+    21300106: Purple Monkey Idle_53
+    21300108: Purple Monkey Idle_54
+    21300110: Purple Monkey Idle_55
+    21300112: Purple Monkey Idle_56
+    21300114: Purple Monkey Idle_57
+    21300116: Purple Monkey Idle_58
+    21300118: Purple Monkey Idle_59
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -84,11 +84,11 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -111,7 +111,7 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
@@ -119,7 +119,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
@@ -127,7 +127,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
@@ -135,7 +135,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: tvOS
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
@@ -143,7 +143,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
@@ -151,7 +151,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Tizen
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
@@ -159,7 +159,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Windows Store Apps
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
@@ -167,7 +167,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
@@ -175,7 +175,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Samsung TV
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
@@ -186,780 +186,780 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gorilla Idle_0
+      name: Purple Monkey Idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1896
-        width: 142
-        height: 152
+        y: 889
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_1
+      name: Purple Monkey Idle_1
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1896
-        width: 142
-        height: 152
+        x: 88
+        y: 889
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_2
+      name: Purple Monkey Idle_2
       rect:
         serializedVersion: 2
-        x: 284
-        y: 1896
-        width: 142
-        height: 152
+        x: 176
+        y: 889
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_3
+      name: Purple Monkey Idle_3
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1896
-        width: 142
-        height: 152
+        x: 264
+        y: 889
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_4
+      name: Purple Monkey Idle_4
       rect:
         serializedVersion: 2
-        x: 568
-        y: 1896
-        width: 142
-        height: 152
+        x: 352
+        y: 889
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_5
+      name: Purple Monkey Idle_5
       rect:
         serializedVersion: 2
-        x: 710
-        y: 1896
-        width: 142
-        height: 152
+        x: 440
+        y: 889
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_6
+      name: Purple Monkey Idle_6
       rect:
         serializedVersion: 2
-        x: 852
-        y: 1896
-        width: 142
-        height: 152
+        x: 528
+        y: 889
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_7
+      name: Purple Monkey Idle_7
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1896
-        width: 142
-        height: 152
+        x: 616
+        y: 889
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_8
+      name: Purple Monkey Idle_8
       rect:
         serializedVersion: 2
-        x: 1136
-        y: 1896
-        width: 142
-        height: 152
+        x: 704
+        y: 889
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_9
+      name: Purple Monkey Idle_9
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 1896
-        width: 142
-        height: 152
+        x: 792
+        y: 889
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_10
+      name: Purple Monkey Idle_10
       rect:
         serializedVersion: 2
-        x: 1420
-        y: 1896
-        width: 142
-        height: 152
+        x: 880
+        y: 889
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_11
-      rect:
-        serializedVersion: 2
-        x: 1562
-        y: 1896
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_12
-      rect:
-        serializedVersion: 2
-        x: 1704
-        y: 1896
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_13
-      rect:
-        serializedVersion: 2
-        x: 1846
-        y: 1896
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_14
+      name: Purple Monkey Idle_11
       rect:
         serializedVersion: 2
         x: 0
-        y: 1744
-        width: 142
-        height: 152
+        y: 754
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_15
+      name: Purple Monkey Idle_12
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1744
-        width: 142
-        height: 152
+        x: 88
+        y: 754
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_16
+      name: Purple Monkey Idle_13
       rect:
         serializedVersion: 2
-        x: 284
-        y: 1744
-        width: 142
-        height: 152
+        x: 176
+        y: 754
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_17
+      name: Purple Monkey Idle_14
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1744
-        width: 142
-        height: 152
+        x: 264
+        y: 754
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_18
+      name: Purple Monkey Idle_15
       rect:
         serializedVersion: 2
-        x: 568
-        y: 1744
-        width: 142
-        height: 152
+        x: 352
+        y: 754
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_19
+      name: Purple Monkey Idle_16
       rect:
         serializedVersion: 2
-        x: 710
-        y: 1744
-        width: 142
-        height: 152
+        x: 440
+        y: 754
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_20
+      name: Purple Monkey Idle_17
       rect:
         serializedVersion: 2
-        x: 852
-        y: 1744
-        width: 142
-        height: 152
+        x: 528
+        y: 754
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_21
+      name: Purple Monkey Idle_18
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1744
-        width: 142
-        height: 152
+        x: 616
+        y: 754
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_22
+      name: Purple Monkey Idle_19
       rect:
         serializedVersion: 2
-        x: 1136
-        y: 1744
-        width: 142
-        height: 152
+        x: 704
+        y: 754
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_23
+      name: Purple Monkey Idle_20
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 1744
-        width: 142
-        height: 152
+        x: 792
+        y: 754
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_24
+      name: Purple Monkey Idle_21
       rect:
         serializedVersion: 2
-        x: 1420
-        y: 1744
-        width: 142
-        height: 152
+        x: 880
+        y: 754
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_25
-      rect:
-        serializedVersion: 2
-        x: 1562
-        y: 1744
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_26
-      rect:
-        serializedVersion: 2
-        x: 1704
-        y: 1744
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_27
-      rect:
-        serializedVersion: 2
-        x: 1846
-        y: 1744
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_28
+      name: Purple Monkey Idle_22
       rect:
         serializedVersion: 2
         x: 0
-        y: 1592
-        width: 142
-        height: 152
+        y: 619
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_29
+      name: Purple Monkey Idle_23
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1592
-        width: 142
-        height: 152
+        x: 88
+        y: 619
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_30
+      name: Purple Monkey Idle_24
       rect:
         serializedVersion: 2
-        x: 284
-        y: 1592
-        width: 142
-        height: 152
+        x: 176
+        y: 619
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_31
+      name: Purple Monkey Idle_25
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1592
-        width: 142
-        height: 152
+        x: 264
+        y: 619
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_32
+      name: Purple Monkey Idle_26
       rect:
         serializedVersion: 2
-        x: 568
-        y: 1592
-        width: 142
-        height: 152
+        x: 352
+        y: 619
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_33
+      name: Purple Monkey Idle_27
       rect:
         serializedVersion: 2
-        x: 710
-        y: 1592
-        width: 142
-        height: 152
+        x: 440
+        y: 619
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_34
+      name: Purple Monkey Idle_28
       rect:
         serializedVersion: 2
-        x: 852
-        y: 1592
-        width: 142
-        height: 152
+        x: 528
+        y: 619
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_35
+      name: Purple Monkey Idle_29
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1592
-        width: 142
-        height: 152
+        x: 616
+        y: 619
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_36
+      name: Purple Monkey Idle_30
       rect:
         serializedVersion: 2
-        x: 1136
-        y: 1592
-        width: 142
-        height: 152
+        x: 704
+        y: 619
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_37
+      name: Purple Monkey Idle_31
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 1592
-        width: 142
-        height: 152
+        x: 792
+        y: 619
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_38
+      name: Purple Monkey Idle_32
       rect:
         serializedVersion: 2
-        x: 1420
-        y: 1592
-        width: 142
-        height: 152
+        x: 880
+        y: 619
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_39
-      rect:
-        serializedVersion: 2
-        x: 1562
-        y: 1592
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_40
-      rect:
-        serializedVersion: 2
-        x: 1704
-        y: 1592
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_41
-      rect:
-        serializedVersion: 2
-        x: 1846
-        y: 1592
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_42
+      name: Purple Monkey Idle_33
       rect:
         serializedVersion: 2
         x: 0
-        y: 1440
-        width: 142
-        height: 152
+        y: 484
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_43
+      name: Purple Monkey Idle_34
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1440
-        width: 142
-        height: 152
+        x: 88
+        y: 484
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_44
+      name: Purple Monkey Idle_35
       rect:
         serializedVersion: 2
-        x: 284
-        y: 1440
-        width: 142
-        height: 152
+        x: 176
+        y: 484
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_45
+      name: Purple Monkey Idle_36
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1440
-        width: 142
-        height: 152
+        x: 264
+        y: 484
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_46
+      name: Purple Monkey Idle_37
       rect:
         serializedVersion: 2
-        x: 568
-        y: 1440
-        width: 142
-        height: 152
+        x: 352
+        y: 484
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_47
+      name: Purple Monkey Idle_38
       rect:
         serializedVersion: 2
-        x: 710
-        y: 1440
-        width: 142
-        height: 152
+        x: 440
+        y: 484
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_48
+      name: Purple Monkey Idle_39
       rect:
         serializedVersion: 2
-        x: 852
-        y: 1440
-        width: 142
-        height: 152
+        x: 528
+        y: 484
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_49
+      name: Purple Monkey Idle_40
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1440
-        width: 142
-        height: 152
+        x: 616
+        y: 484
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_50
+      name: Purple Monkey Idle_41
       rect:
         serializedVersion: 2
-        x: 1136
-        y: 1440
-        width: 142
-        height: 152
+        x: 704
+        y: 484
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_51
+      name: Purple Monkey Idle_42
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 1440
-        width: 142
-        height: 152
+        x: 792
+        y: 484
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_52
+      name: Purple Monkey Idle_43
       rect:
         serializedVersion: 2
-        x: 1420
-        y: 1440
-        width: 142
-        height: 152
+        x: 880
+        y: 484
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_53
-      rect:
-        serializedVersion: 2
-        x: 1562
-        y: 1440
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_54
-      rect:
-        serializedVersion: 2
-        x: 1704
-        y: 1440
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_55
-      rect:
-        serializedVersion: 2
-        x: 1846
-        y: 1440
-        width: 142
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Idle_56
+      name: Purple Monkey Idle_44
       rect:
         serializedVersion: 2
         x: 0
-        y: 1288
-        width: 142
-        height: 152
+        y: 349
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_57
+      name: Purple Monkey Idle_45
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1288
-        width: 142
-        height: 152
+        x: 88
+        y: 349
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_58
+      name: Purple Monkey Idle_46
       rect:
         serializedVersion: 2
-        x: 284
-        y: 1288
-        width: 142
-        height: 152
+        x: 176
+        y: 349
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Idle_59
+      name: Purple Monkey Idle_47
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1288
-        width: 142
-        height: 152
+        x: 264
+        y: 349
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_48
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 349
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_49
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 349
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_50
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 349
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_51
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 349
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_52
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 349
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_53
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 349
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_54
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 349
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 214
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_56
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 214
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_57
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 214
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_58
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 214
+        width: 88
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Idle_59
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 214
+        width: 88
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
