@@ -23,7 +23,7 @@ public class LevelManager
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_2_5;
+    public static LevelID levelToLoad = LevelID.LEVEL_2_6;
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
     {
@@ -171,6 +171,15 @@ public class LevelManager
             {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_CLOSED,},
         }
         },
+        { LevelID.LEVEL_2_6, new Cell[,]{
+           {Cell.CELL_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_BOTTOM_CLOSED,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_CLOSED,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_CLOSED,},
+        }
+        },
 
 
     };
@@ -193,6 +202,7 @@ public class LevelManager
             { LevelID.LEVEL_2_3, new LevelScore(8) },
             { LevelID.LEVEL_2_4, new LevelScore(11 ) },
             { LevelID.LEVEL_2_5, new LevelScore(12) },
+            { LevelID.LEVEL_2_6, new LevelScore(11) },
         };
     public static Dictionary<LevelID, LevelID[]> LevelPrereq = new Dictionary<LevelID, LevelID[]>
         {
@@ -318,7 +328,7 @@ public class LevelManager
             { LevelID.LEVEL_1_2, new TutorialAction[] {
                 new TutorialAction("Hello again!", TutorialAction.Action.NONE),
                 new TutorialAction("This is Kongo. He is grumpy and wants to attack the Monkey.", TutorialAction.Action.NONE),
-                new TutorialAction("For every move the Monkey does, Kongo will try to follow in a direct path along the north-east and south-west line first.", TutorialAction.Action.NONE),
+                new TutorialAction("For every move the Monkey does, Kongo will try to follow in a direct path along the up-right and down-left line first.", TutorialAction.Action.NONE),
                 new TutorialAction("You have to try to confuse Kongo by making him walk into the rocks. Have fun!", TutorialAction.Action.NONE) } },
             { LevelID.LEVEL_1_3, new TutorialAction[] {
                 new TutorialAction("Hello again!", TutorialAction.Action.NONE),
@@ -332,7 +342,13 @@ public class LevelManager
             { LevelID.LEVEL_1_9, new TutorialAction[] {
                 new TutorialAction("Uh Oh! Kongo looks really mad.", TutorialAction.Action.NONE),
                 new TutorialAction("When Kongo is red, he can move two steps everytime the Monkey moves one.", TutorialAction.Action.NONE),
-                new TutorialAction("So be extra careful with your moves. Good luck!", TutorialAction.Action.NONE) } }
+                new TutorialAction("So be extra careful with your moves. Good luck!", TutorialAction.Action.NONE) } },
+            { LevelID.LEVEL_2_6, new TutorialAction[] {
+                new TutorialAction("Hello! Did you miss me?", TutorialAction.Action.NONE),
+                new TutorialAction("This is the Purple Monkey, because she's purple.", TutorialAction.Action.NONE),
+                new TutorialAction("She has a heart stuck on her hands, so she wants to hit the Monkey with some love.", TutorialAction.Action.NONE),
+                new TutorialAction("Just like Kongo, the Purple Monkey will follow the Monkey in a direct path.", TutorialAction.Action.NONE),
+                new TutorialAction("However, it will be along the up-left and down-right line first. Try moving and see what happens. Good luck!", TutorialAction.Action.NONE) } },
         };
 
 
