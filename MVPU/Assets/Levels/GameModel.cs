@@ -321,7 +321,7 @@ public class GameModel : MonoBehaviour
     {
         float newX = origin.x + entity.x * distance.x + entity.y * distance.x;
         float newY = origin.y + entity.y * -distance.y + entity.x * distance.y;
-        float newZ = newY;
+        float newZ = newY + (entity is Enemy ? -0.001f : 0); //Enemies should be infront of everyone
         return new Vector3(newX, newY, newZ);
     }
 
@@ -438,13 +438,13 @@ public class GameModel : MonoBehaviour
                 || Input.GetKeyDown(KeyCode.Escape)
                 || Input.GetKeyDown(KeyCode.Y)
                 || SwipeManager.IsSwipingUpLeft()
-                || SwipeManager.IsSwipingUp()
+               // || SwipeManager.IsSwipingUp()
                 || SwipeManager.IsSwipingDownLeft()
-                || SwipeManager.IsSwipingLeft()
+               // || SwipeManager.IsSwipingLeft()
                 || SwipeManager.IsSwipingDownRight()
-                || SwipeManager.IsSwipingDown()
+              //  || SwipeManager.IsSwipingDown()
                 || SwipeManager.IsSwipingUpRight()
-                || SwipeManager.IsSwipingRight()
+               // || SwipeManager.IsSwipingRight()
                 || doubleTapOccurred)
                 )
             {
@@ -462,22 +462,22 @@ public class GameModel : MonoBehaviour
                     bool unblocked = false;
                     if (actionAllowedFromTutorial == TutorialAction.Action.SWIPE || actionAllowedFromTutorial == TutorialAction.Action.ALL)
                     {
-                        if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft() || SwipeManager.IsSwipingUp())
+                        if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft() )//|| SwipeManager.IsSwipingUp())
                         {
                             unblocked = _player.Do_MoveUp();
                             AdvanceTutorial(true);
                         }
-                        else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft() || SwipeManager.IsSwipingLeft())
+                        else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft())// || SwipeManager.IsSwipingLeft())
                         {
                             unblocked = _player.Do_MoveLeft();
                             AdvanceTutorial(true);
                         }
-                        else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight() || SwipeManager.IsSwipingDown())
+                        else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight() )//|| SwipeManager.IsSwipingDown())
                         {
                             unblocked = _player.Do_MoveDown();
                             AdvanceTutorial(true);
                         }
-                        else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight() || SwipeManager.IsSwipingRight())
+                        else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight() )//|| SwipeManager.IsSwipingRight())
                         {
                             unblocked = _player.Do_MoveRight();
                             AdvanceTutorial(true);
