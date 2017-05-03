@@ -59,6 +59,10 @@ public class Tutorial : MonoBehaviour
             inGameHelp.Swipe();
         else if (action == TutorialAction.Action.TAP)
             inGameHelp.Tap();
+        else if (action == TutorialAction.Action.HENEMY)
+            inGameHelp.HEnemy();
+        else if (action == TutorialAction.Action.VENEMY)
+            inGameHelp.VEnemy();
         else 
             inGameHelp.Stop();
         return action;
@@ -70,7 +74,7 @@ public class Tutorial : MonoBehaviour
         {
 
             ShowTutorialMascot(true);
-            if (forceAdvance || tutorialIndex < 0 || _tutorialActionArr.Length > tutorialIndex && _tutorialActionArr[tutorialIndex].action == TutorialAction.Action.NONE)
+            if (forceAdvance || tutorialIndex < 0 || _tutorialActionArr.Length > tutorialIndex && TutorialAction.isNoAction(_tutorialActionArr[tutorialIndex].action))
             {
                 tutorialIndex++;
                 if (tutorialIndex < 0)
@@ -83,7 +87,7 @@ public class Tutorial : MonoBehaviour
                     tutorialButton.gameObject.SetActive(true);
                     tutorialText.text = _tutorialActionArr[tutorialIndex].text;
                     TutorialAction.Action action = _tutorialActionArr[tutorialIndex].action;
-                    tutorial2Text.text = action == TutorialAction.Action.NONE ? "Tap here to continue" : "Follow tutorial instructions";
+                    tutorial2Text.text = TutorialAction.isNoAction(action) ? "Tap here to continue" : "Follow tutorial instructions";
                     return action;
                 }
                 else

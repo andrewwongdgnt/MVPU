@@ -27,6 +27,14 @@ public class InGameHelp : MonoBehaviour {
     {
         anim.SetTrigger("Swipe");
     }
+    public void HEnemy()
+    {
+        anim.SetTrigger("HEnemy");
+    }
+    public void VEnemy()
+    {
+        anim.SetTrigger("VEnemy");
+    }
 
 
 }

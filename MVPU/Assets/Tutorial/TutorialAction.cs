@@ -5,7 +5,7 @@ public class TutorialAction  {
 
     public enum Action
     {
-        NONE, ALL,SWIPE, TAP
+        NONE, ALL,SWIPE, TAP, HENEMY, VENEMY
     }
 
     private string _text;
@@ -30,5 +30,10 @@ public class TutorialAction  {
     {
         _text = text;
         _action = action;
+    }
+
+    public static bool isNoAction(Action action)
+    {
+        return action == Action.NONE || action == Action.HENEMY || action == Action.VENEMY;
     }
 }

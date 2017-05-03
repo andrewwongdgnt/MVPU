@@ -409,7 +409,7 @@ public class GameModel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale > 0 && actionAllowedFromTutorial != TutorialAction.Action.NONE)
+        if (Time.timeScale > 0 && !TutorialAction.isNoAction(actionAllowedFromTutorial))
         {
             bool userInteractionAllowed = UserInteractionAllowed();
 

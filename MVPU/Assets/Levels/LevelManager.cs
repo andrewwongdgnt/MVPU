@@ -23,7 +23,7 @@ public class LevelManager
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_1_1;
+    public static LevelID levelToLoad = LevelID.LEVEL_2_6;
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
     {
@@ -328,7 +328,7 @@ public class LevelManager
             { LevelID.LEVEL_1_2, new TutorialAction[] {
                 new TutorialAction("Hello again!", TutorialAction.Action.NONE),
                 new TutorialAction("This is Kongo. He is grumpy and wants to attack the Monkey.", TutorialAction.Action.NONE),
-                new TutorialAction("For every move the Monkey does, Kongo will try to follow in a direct path along the up-right and down-left line first.", TutorialAction.Action.NONE),
+                new TutorialAction("For every move the Monkey does, Kongo will try to follow along the blue path first and the red path second.", TutorialAction.Action.HENEMY),
                 new TutorialAction("You have to try to confuse Kongo by making him walk into the rocks. Have fun!", TutorialAction.Action.NONE) } },
             { LevelID.LEVEL_1_3, new TutorialAction[] {
                 new TutorialAction("Hello again!", TutorialAction.Action.NONE),
@@ -348,7 +348,7 @@ public class LevelManager
                 new TutorialAction("This is the Purple Monkey, because she's purple.", TutorialAction.Action.NONE),
                 new TutorialAction("She has a heart stuck on her hands, so she wants to hit the Monkey with some love.", TutorialAction.Action.NONE),
                 new TutorialAction("Just like Kongo, the Purple Monkey will follow the Monkey in a direct path.", TutorialAction.Action.NONE),
-                new TutorialAction("However, it will be along the up-left and down-right line first. Try moving and see what happens. Good luck!", TutorialAction.Action.NONE) } },
+                new TutorialAction("But along the red path first and the blue path second. Try moving and see what happens. Good luck!", TutorialAction.Action.VENEMY) } },
         };
 
 
