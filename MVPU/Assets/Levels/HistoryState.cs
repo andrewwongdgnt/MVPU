@@ -24,4 +24,8 @@ public class HistoryState {
     {
         get; set;
     }
+    public Dictionary<string, object>[] wallArrState
+    {
+        get; set;
+    }
 }

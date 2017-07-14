@@ -104,7 +104,7 @@ public class GameModel : MonoBehaviour
             return _goal.x;
         }
     }
-
+    
     public float goalY
     {
 
@@ -152,6 +152,19 @@ public class GameModel : MonoBehaviour
             Array.ForEach(_keyArr, k =>
             {
                 k.gameModel = this;
+            });
+        }
+    }
+
+    private Wall[] _wallArr;
+    public Wall[] wallArr
+    {
+        set
+        {
+            _wallArr = value;
+            Array.ForEach(_wallArr, w =>
+            {
+                w.gameModel = this;
             });
         }
     }
@@ -217,13 +230,17 @@ public class GameModel : MonoBehaviour
         {
             _keyArr[i].RestoreState(historyState.keyArrState[i]);
         }
+        for (int i = 0; i < _wallArr.Length; i++)
+        {
+            _wallArr[i].RestoreState(historyState.wallArrState[i]);
+        }
         SetViewForEntities();
     }
 
     private void AddToHistory()
     {
         scoringModel.AddMove();
-        undoManager.AddToHistory(_player, _goal, _enemyArr, _bombArr, _keyArr);
+        undoManager.AddToHistory(_player, _goal, _enemyArr, _bombArr, _keyArr, _wallArr);
     }
 
     public void UpdateScoreText(int score, int bestScore)
@@ -265,7 +282,8 @@ public class GameModel : MonoBehaviour
     private Triple<int, int, Entity> gameEndInfo;
 
     private List<Pair<int, int>> blockedEnemiesList = new List<Pair<int, int>>();
-    private List<Triple<int, int, Bomb>> bombedEnemiesList = new List<Triple<int, int, Bomb>>();
+    private List<Triple<int, int, Bomb>> bombList = new List<Triple<int, int, Bomb>>();
+    private List<Triple<int, int, Wall>> wallList = new List<Triple<int, int, Wall>>();
 
 
     public void Commence()
@@ -291,7 +309,7 @@ public class GameModel : MonoBehaviour
 
         scoringModel = new ScoringModel(levelScore, this);
         undoManager = new UndoManager();
-        undoManager.AddInitialState(_player, _goal, _enemyArr, _bombArr, _keyArr);
+        undoManager.AddInitialState(_player, _goal, _enemyArr, _bombArr, _keyArr, _wallArr);
 
         AdvanceTutorial();
 
@@ -314,6 +332,10 @@ public class GameModel : MonoBehaviour
         Array.ForEach(_keyArr, k =>
         {
             SetViewForKey(k);
+        });
+        Array.ForEach(_wallArr, w =>
+        {
+            SetViewForWall(w);
         });
     }
 
@@ -367,9 +389,14 @@ public class GameModel : MonoBehaviour
             color.a = key.consumed ? 0f : 1f;
 
             s.material.color = color;
-        });
-        
+        });        
     }
+
+    private void SetViewForWall(Wall wall, bool animate = false)
+    {
+        wall.StartAnimation(animate);
+    }
+
     private void UpdateAnimationCompleteListWith(bool value)
     {
         for (int i = 0; i < animationComplete.Count; i++)
@@ -457,7 +484,8 @@ public class GameModel : MonoBehaviour
                     UpdateAnimationCompleteListWith(false);
                     dozedEnemiesList.Clear();
                     blockedEnemiesList.Clear();
-                    bombedEnemiesList.Clear();
+                    bombList.Clear();
+                    wallList.Clear();
 
                     bool unblocked = false;
                     if (actionAllowedFromTutorial == TutorialAction.Action.SWIPE || actionAllowedFromTutorial == TutorialAction.Action.ALL)
@@ -704,15 +732,60 @@ public class GameModel : MonoBehaviour
 
             enemy.inactive = true;
 
-            bombedEnemiesList.Add(new Triple<int, int, Bomb>(GetOrder(enemy), stepOrder, bomb));
+            bombList.Add(new Triple<int, int, Bomb>(GetOrder(enemy), stepOrder, bomb));
 
         }
+    }
+
+    public void CheckForKey(Entity entity, int stepOrder)
+    {
+        Key key = Array.Find(_keyArr, k => k.x == entity.x && k.y == entity.y);
+        if (key!=null && !key.consumed && (entity is Player || (entity is Enemy && key.usableByEnemy))){
+
+            IWalker walker;
+            if (entity is Player)
+                walker = (Player)entity;
+            else 
+                walker = (Enemy)entity;
+
+
+            if (key.numOfUses > 0)
+                key.numOfUses--;
+            if (key.numOfUses == 0)
+                key.consumed = true;
+
+            Array.ForEach(_wallArr, wall => {
+
+
+                for (int kIndex = 0; kIndex<wall.keyRelationshipIndexArr.Length; kIndex++)
+                {
+                    if (key == _keyArr[kIndex])
+                    {
+                        bool firstRetractedState = wall.retracted;
+                        wall.locksOpened[kIndex] = !wall.locksOpened[kIndex];
+                        bool secondRetractedState = wall.retracted;
+
+                        //state changed
+                        if (firstRetractedState!= secondRetractedState)
+                            wallList.Add(new Triple<int, int, Wall>(GetOrder(walker), stepOrder, wall));
+                        break;
+                    }
+                }
+               
+            });
+        }
+    }
+
+    public Entity.Direction CheckForUnretractedWall(int x, int y)
+    {
+        Wall wall = Array.Find(_wallArr, w => w.x == x && w.y == y);
+        return wall != null && !wall.retracted ? wall.blocking : Entity.Direction.NONE;
     }
 
     public void AnimateGameObject(IWalker walker, Entity.Direction direction, int stepOrder)
     {
         int order = GetOrder(walker);
-        if (walker is Enemy && ((Enemy)walker).inactive && !bombedEnemiesList.Exists(bo => bo.first == order && bo.second == stepOrder))
+        if (walker is Enemy && ((Enemy)walker).inactive && !bombList.Exists(bo => bo.first == order && bo.second == stepOrder))
         {
             Enemy enemy = (Enemy)walker;
 
@@ -798,13 +871,13 @@ public class GameModel : MonoBehaviour
             }
 
             //update view of bombed enemies and bomb
-            Triple<int, int, Bomb> bombedEnemyInfo = bombedEnemiesList.Find(bo => bo.first == order && bo.second == stepOrder);
-            if (bombedEnemyInfo != null && bombedEnemyInfo.third != null)
+            Triple<int, int, Bomb> bombedInfo = bombList.Find(bo => bo.first == order && bo.second == stepOrder);
+            if (bombedInfo != null && bombedInfo.third != null)
             {
                 if (walker is Enemy)
                     SetViewForEnemy((Enemy)walker, true);
 
-                Bomb bomb = bombedEnemyInfo.third;
+                Bomb bomb = bombedInfo.third;
                 SetViewForBomb(bomb);
             }
 
@@ -814,6 +887,15 @@ public class GameModel : MonoBehaviour
             {
                 Enemy dozedEnemy = dozedEnemyInfo.third;
                 SetViewForEnemy(dozedEnemy, true);
+
+            }
+
+            //update view of Walls
+            Triple<int, int, Wall> wallInfo = wallList.Find(w => w.first == order && w.second == stepOrder);
+            if (wallInfo != null && wallInfo.third != null)
+            {
+                Wall wall = wallInfo.third;
+                SetViewForWall(wall, true);
 
             }
         }

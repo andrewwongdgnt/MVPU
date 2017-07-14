@@ -74,9 +74,15 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
 
         if (y > 0 && !_gameModel.grid[y, x].topBlocked)
         {
-            y--;
-            return true;
+            Direction directionOfBlockingForCurrentWall = _gameModel.CheckForUnretractedWall(x, y);
+            Direction directionOfBlockingForAboveWall = _gameModel.CheckForUnretractedWall(x, y - 1);
+            if (directionOfBlockingForCurrentWall != Direction.UP && directionOfBlockingForAboveWall != Direction.DOWN)
+            {
+                y--;
+                return true;
+            }
         }
+        
         return false;
     }
 
@@ -85,8 +91,13 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
     {
         if (x > 0 && !_gameModel.grid[y, x].leftBlocked)
         {
-            x--;
-            return true;
+            Direction directionOfBlockingForCurrentWall = _gameModel.CheckForUnretractedWall(x, y);
+            Direction directionOfBlockingForLeftWall = _gameModel.CheckForUnretractedWall(x - 1, y);
+            if (directionOfBlockingForCurrentWall != Direction.LEFT && directionOfBlockingForLeftWall != Direction.RIGHT)
+            {
+                x--;
+                return true;
+            }
         }
         return false;
     }
@@ -95,8 +106,13 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
     {
         if (y < _gameModel.grid.GetLength(0) - 1 && !_gameModel.grid[y, x].bottomBlocked)
         {
-            y++;
-            return true;
+            Direction directionOfBlockingForCurrentWall = _gameModel.CheckForUnretractedWall(x, y);
+            Direction directionOfBlockingForBelowWall = _gameModel.CheckForUnretractedWall(x, y + 1);
+            if (directionOfBlockingForCurrentWall != Direction.DOWN && directionOfBlockingForBelowWall != Direction.UP)
+            {
+                y++;
+                return true;
+            }
         }
         return false;
     }
@@ -105,8 +121,13 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
     {
         if (x < _gameModel.grid.GetLength(1) - 1 && !_gameModel.grid[y, x].rightBlocked)
         {
-            x++;
-            return true;
+            Direction directionOfBlockingForCurrentWall = _gameModel.CheckForUnretractedWall(x, y);
+            Direction directionOfBlockingForRightWall = _gameModel.CheckForUnretractedWall(x + 1, y);
+            if (directionOfBlockingForCurrentWall != Direction.RIGHT && directionOfBlockingForRightWall != Direction.LEFT)
+            {
+                x++;
+                return true;
+            }
         }
         return false;
     }

@@ -31,6 +31,9 @@ public class LevelModel : MonoBehaviour
     public Key[] keyArr;
     public Location[] keyLocationArr;
 
+    public Wall[] wallArr;
+    public Location[] wallLocationArr;
+
     [Tooltip("The base distance from one cell to another in the X direction")]
     public float baseDistanceX = MAGIC_DISTANCE_NUMBER;
 
@@ -46,11 +49,13 @@ public class LevelModel : MonoBehaviour
             GameObject[] entity = GameObject.FindGameObjectsWithTag("Entity");
             Array.ForEach(entity, ent =>
             {
+
                 if (ent.GetComponent<Player>() != player 
                 && ent.GetComponent<Goal>() != goal 
                 && !Array.Exists(enemyArr, en => en == ent.GetComponent<Enemy>()) 
                 && !Array.Exists(bombArr, bo => bo == ent.GetComponent<Bomb>())
-                && !Array.Exists(keyArr, k => k == ent.GetComponent<Key>()))
+                && !Array.Exists(keyArr, k => k == ent.GetComponent<Key>())
+                && !Array.Exists(wallArr, k => k == ent.GetComponent<Wall>()))
                 {
                     ent.SetActive(false);
                 }
@@ -106,6 +111,13 @@ public class LevelModel : MonoBehaviour
                 keyArr[i].gameObject.transform.localScale = new Vector3(scale, scale, scale);
             }
             gameModel.keyArr = keyArr;
+
+            for (int i = 0; i < wallLocationArr.Length; i++)
+            {
+                wallArr[i].x = wallLocationArr[i].x;
+                wallArr[i].y = wallLocationArr[i].y;
+            }
+            gameModel.wallArr = wallArr;
 
             gameModel.currentLevelId = levelID;
 
