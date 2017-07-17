@@ -118,7 +118,8 @@ public class Enemy : Entity, IWalker, IAttacker
                         direction = TryToMoveUpOrDownForEnemy(playerY, direction);
                     }
                 }
-                _gameModel.CheckForKey(this, i);
+
+                _gameModel.CheckForKey(this, direction, i);
                 _gameModel.CheckForEndGame(this, i);
                 if (dozer)
                     _gameModel.CheckIfOtherEnemiesGotDozed(this, i);

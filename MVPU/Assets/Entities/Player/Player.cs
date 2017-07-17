@@ -52,7 +52,7 @@ public class Player : Entity, IWalker
         if (!unblocked)
             return false;
 
-        _gameModel.CheckForKey(this, 0);
+        _gameModel.CheckForKey(this, direction, 0);
         _gameModel.CheckForEndGame(this, 0);
         _gameModel.AnimateGameObject(this, direction, 0);
         if (direction!=Direction.NONE)

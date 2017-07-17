@@ -737,10 +737,42 @@ public class GameModel : MonoBehaviour
         }
     }
 
-    public void CheckForKey(Entity entity, int stepOrder)
+    public void CheckForKey(Entity entity, Entity.Direction direction, int stepOrder, Entity.Direction checkingForHoldingKeysDirection = Entity.Direction.NONE)
     {
-        Key key = Array.Find(_keyArr, k => k.x == entity.x && k.y == entity.y);
-        if (key!=null && !key.consumed && (entity is Player || (entity is Enemy && key.usableByEnemy))){
+
+        if (direction == Entity.Direction.NONE)
+            return;
+
+        int xModifier = 0;
+        int yModifier = 0;
+        if (checkingForHoldingKeysDirection == Entity.Direction.NONE)
+        {
+            Entity.Direction direction2 = Entity.Direction.DOWN;
+            if (direction == Entity.Direction.UP)
+                direction2 = Entity.Direction.DOWN;
+            if (direction == Entity.Direction.DOWN)
+                direction2 = Entity.Direction.UP;
+            if (direction == Entity.Direction.LEFT)
+                direction2 = Entity.Direction.RIGHT;
+            if (direction == Entity.Direction.RIGHT)
+                direction2 = Entity.Direction.LEFT;
+
+            CheckForKey(entity, direction, stepOrder, direction2);
+        }
+        else if (checkingForHoldingKeysDirection == Entity.Direction.UP)
+            yModifier = -1;
+        else if (checkingForHoldingKeysDirection == Entity.Direction.DOWN)
+            yModifier = 1;
+        else if (checkingForHoldingKeysDirection == Entity.Direction.LEFT)
+            xModifier = -1;
+        else if (checkingForHoldingKeysDirection == Entity.Direction.RIGHT)
+            xModifier = 1;
+
+        bool checkingForHoldingKeys = checkingForHoldingKeysDirection != Entity.Direction.NONE;
+        Key key = Array.Find(_keyArr, k => k.x == entity.x+ xModifier && k.y == entity.y+ yModifier);
+        if (key!=null && !key.consumed
+            && ((checkingForHoldingKeys && key.hold) || !checkingForHoldingKeys) 
+            && (entity is Player || (entity is Enemy && key.usableByEnemy))){
 
             IWalker walker;
             if (entity is Player)
@@ -757,12 +789,14 @@ public class GameModel : MonoBehaviour
             Array.ForEach(_wallArr, wall => {
 
 
-                for (int kIndex = 0; kIndex<wall.keyRelationshipIndexArr.Length; kIndex++)
+                for (int lIndex = 0; lIndex<wall.keyRelationshipIndexArr.Length; lIndex++)
                 {
-                    if (key == _keyArr[kIndex])
+                    Wall.KeyRelationship keyRelationship = wall.keyRelationshipIndexArr[lIndex];                    
+
+                    if (Array.Exists(keyRelationship.arr, kIndex => key == _keyArr[kIndex]))
                     {
                         bool firstRetractedState = wall.retracted;
-                        wall.locksOpened[kIndex] = !wall.locksOpened[kIndex];
+                        wall.locksOpened[lIndex] = !wall.locksOpened[lIndex];
                         bool secondRetractedState = wall.retracted;
 
                         //state changed
@@ -871,33 +905,43 @@ public class GameModel : MonoBehaviour
             }
 
             //update view of bombed enemies and bomb
-            Triple<int, int, Bomb> bombedInfo = bombList.Find(bo => bo.first == order && bo.second == stepOrder);
-            if (bombedInfo != null && bombedInfo.third != null)
+            List<Triple<int, int, Bomb>> bombInfoList = bombList.FindAll(bo => bo.first == order && bo.second == stepOrder);
+            bombInfoList.ForEach(bombInfo =>
             {
-                if (walker is Enemy)
-                    SetViewForEnemy((Enemy)walker, true);
+                if (bombInfo != null && bombInfo.third != null)
+                {
+                    if (walker is Enemy)
+                        SetViewForEnemy((Enemy)walker, true);
 
-                Bomb bomb = bombedInfo.third;
-                SetViewForBomb(bomb);
-            }
+                    Bomb bomb = bombInfo.third;
+                    SetViewForBomb(bomb);
+                }
+            });
 
             //update view of dozed enemies
-            Triple<int, int, Enemy> dozedEnemyInfo = dozedEnemiesList.Find(d => d.first == order && d.second == stepOrder);
-            if (dozedEnemyInfo != null && dozedEnemyInfo.third != null)
+            List<Triple<int, int, Enemy>> dozedEnemyInfoList = dozedEnemiesList.FindAll(d => d.first == order && d.second == stepOrder);
+            dozedEnemyInfoList.ForEach(dozedEnemyInfo =>
             {
-                Enemy dozedEnemy = dozedEnemyInfo.third;
-                SetViewForEnemy(dozedEnemy, true);
+                if (dozedEnemyInfo != null && dozedEnemyInfo.third != null)
+                {
+                    Enemy dozedEnemy = dozedEnemyInfo.third;
+                    SetViewForEnemy(dozedEnemy, true);
 
-            }
+                }
+            });
 
             //update view of Walls
-            Triple<int, int, Wall> wallInfo = wallList.Find(w => w.first == order && w.second == stepOrder);
-            if (wallInfo != null && wallInfo.third != null)
+            List<Triple<int, int, Wall>> wallInfoList = wallList.FindAll(w => w.first == order && w.second == stepOrder);
+            wallInfoList.ForEach(wallInfo =>
             {
-                Wall wall = wallInfo.third;
-                SetViewForWall(wall, true);
+ 
+                if (wallInfo != null && wallInfo.third != null)
+                {
+                    Wall wall = wallInfo.third;
+                    SetViewForWall(wall, true);
 
-            }
+                }
+            });
         }
 
 
