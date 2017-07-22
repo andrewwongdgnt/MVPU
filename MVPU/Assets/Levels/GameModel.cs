@@ -283,6 +283,7 @@ public class GameModel : MonoBehaviour
 
     private List<Pair<int, int>> blockedEnemiesList = new List<Pair<int, int>>();
     private List<Triple<int, int, Bomb>> bombList = new List<Triple<int, int, Bomb>>();
+    private List<Triple<int, int, Key>> keyList = new List<Triple<int, int, Key>>();
     private List<Triple<int, int, Wall>> wallList = new List<Triple<int, int, Wall>>();
 
 
@@ -343,7 +344,7 @@ public class GameModel : MonoBehaviour
     {
         float newX = origin.x + entity.x * distance.x + entity.y * distance.x;
         float newY = origin.y + entity.y * -distance.y + entity.x * distance.y;
-        float newZ = newY + (entity is Enemy ? -0.001f : 0); //Enemies should be infront of everyone
+        float newZ = newY + (!(entity is Player) ? -0.001f : 0); //Everything should be infront of the player... I think
         return new Vector3(newX, newY, newZ);
     }
 
@@ -378,15 +379,19 @@ public class GameModel : MonoBehaviour
 
         bomb.GetComponent<SpriteRenderer>().material.color = color2;
     }
-    private void SetViewForKey(Key key)
+    private void SetViewForKey(Key key, bool consumedAnimation = false)
     {
 
         key.transform.position = GetPositionForEntity(key);
+        if (consumedAnimation)
+            key.StartConsumedAnimation();
+        else
+            key.StopConsumedAnimation();
         SpriteRenderer[] sprites = key.GetComponentsInChildren<SpriteRenderer>();
         Array.ForEach(sprites, s =>
         {
             Color color = s.material.color;
-            color.a = key.consumed ? 0f : 1f;
+            color.a = key.consumed && !consumedAnimation ? 0f : 1f;
 
             s.material.color = color;
         });        
@@ -485,6 +490,7 @@ public class GameModel : MonoBehaviour
                     dozedEnemiesList.Clear();
                     blockedEnemiesList.Clear();
                     bombList.Clear();
+                    keyList.Clear();
                     wallList.Clear();
 
                     bool unblocked = false;
@@ -786,6 +792,8 @@ public class GameModel : MonoBehaviour
             if (key.numOfUses == 0)
                 key.consumed = true;
 
+            keyList.Add(new Triple<int, int, Key>(GetOrder(walker), stepOrder, key));
+
             Array.ForEach(_wallArr, wall => {
 
 
@@ -926,6 +934,19 @@ public class GameModel : MonoBehaviour
                 {
                     Enemy dozedEnemy = dozedEnemyInfo.third;
                     SetViewForEnemy(dozedEnemy, true);
+
+                }
+            });
+
+            //update view of Keys
+            List<Triple<int, int, Key>> keyInfoList = keyList.FindAll(w => w.first == order && w.second == stepOrder);
+            keyInfoList.ForEach(keyInfo =>
+            {
+
+                if (keyInfo != null && keyInfo.third != null)
+                {
+                    Key key = keyInfo.third;
+                    SetViewForKey(key, true);
 
                 }
             });

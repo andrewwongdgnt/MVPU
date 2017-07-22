@@ -7,13 +7,19 @@ public class Key : Entity
 
     public bool usableByEnemy;
     public bool hold;
+    [Tooltip("-1 for infinite uses")]
     public int numOfUses;
 
     public bool consumed
     {
         get; set;
     }
-    
+
+    // Use this for initialization
+    void Start()
+    {
+        Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " usableByEnemy=" + usableByEnemy + " hold=" + hold + " numOfUses=" + numOfUses + " consumed=" + consumed);
+    }
 
     protected override void BuildAdditionalStateDict(Dictionary<string, object> dict)
     {
@@ -36,10 +42,15 @@ public class Key : Entity
                 consumed = (bool)entry.Value;
         }
     }    
-    
-    // Use this for initialization
-    void Start()
+
+   
+    public void StartConsumedAnimation()
     {
-        Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " usableByEnemy=" + usableByEnemy + " hold=" + hold + " numOfUses=" + numOfUses + " consumed=" + consumed);
+        animator.SetBool("Consumed", true);
     }
+    public void StopConsumedAnimation()
+    {
+        animator.SetBool("Consumed", false);
+    }
+
 }
