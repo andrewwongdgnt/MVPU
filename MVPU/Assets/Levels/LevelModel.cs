@@ -8,7 +8,7 @@ public class LevelModel : MonoBehaviour
     private static readonly float MAGIC_DISTANCE_NUMBER = 1.1275f; //Check the width of each isometric square in the flash file
 
     public LevelManager.LevelID levelID;
-
+    public Material mat;
     public GameModel gameModel;
 
     public Tutorial tutorial;
@@ -45,6 +45,9 @@ public class LevelModel : MonoBehaviour
     {
         if (LevelManager.levelToLoad == levelID)
         {
+            //Update skybox
+            RenderSettings.skybox = mat;
+
             //Disable entities not related to this level
             GameObject[] entity = GameObject.FindGameObjectsWithTag("Entity");
             Array.ForEach(entity, ent =>
