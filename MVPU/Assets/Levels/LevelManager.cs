@@ -23,7 +23,7 @@ public class LevelManager
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_3_2;
+    public static LevelID levelToLoad = LevelID.LEVEL_2_7;
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
     {
@@ -261,7 +261,7 @@ public class LevelManager
             { LevelID.LEVEL_2_5, new LevelScore(12) },
             { LevelID.LEVEL_2_6, new LevelScore(11) },
             { LevelID.LEVEL_2_7, new LevelScore(12) },
-            { LevelID.LEVEL_2_8, new LevelScore(20) },
+            { LevelID.LEVEL_2_8, new LevelScore(15) },
             { LevelID.LEVEL_2_9, new LevelScore(15) },
             { LevelID.LEVEL_2_10, new LevelScore(24) },
             { LevelID.LEVEL_3_1, new LevelScore(12) },
