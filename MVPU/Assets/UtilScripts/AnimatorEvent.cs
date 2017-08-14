@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class AnimatorEvent : MonoBehaviour {
 
+    public GameModel gameModel;
     //-------------------------
     //
     //  Entities
     //
     //-------------------------
-    public Player player;
-    public GameModel gameModel;
 
+
+    public Enemy enemy;
     public void EnemyAttackEvent()
     {
-        if (player!=null)
-            player.StartDieAnimation();
+        if (gameModel.player != null)
+            gameModel.player.StartDieAnimation();
+      AudioManager.PlaySFX(enemy.audioSource, enemy.sfxHitClip);
     }
 
     public void PlayerDiedEvent()

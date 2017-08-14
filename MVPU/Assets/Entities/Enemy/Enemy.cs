@@ -9,6 +9,7 @@ public class Enemy : Entity, IWalker, IAttacker
     public bool verticalOrientation;
     public int stepsPerMove;
     public bool dozer;
+    public AudioClip sfxHitClip;
 
     public bool inactive
     {

@@ -9,10 +9,10 @@ public class LevelModel : MonoBehaviour
 
     public LevelManager.LevelID levelID;
     public Material mat;
-    public GameModel gameModel;
 
     public Tutorial tutorial;
-    
+
+    public AudioClip musicClip;
 
     public Player player;
     public Location playerLocation;
@@ -45,6 +45,7 @@ public class LevelModel : MonoBehaviour
     {
         if (LevelManager.levelToLoad == levelID)
         {
+     
             //Update skybox
             RenderSettings.skybox = mat;
 
@@ -65,7 +66,11 @@ public class LevelModel : MonoBehaviour
             });
 
             gameObject.SetActive(true);
-           
+
+
+            GameModel gameModel = GameObject.Find("Game").GetComponent<GameModel>();
+
+
             gameModel.levelScore = LevelManager.LevelScoreMap[levelID];
 
             Coordinate distance = new Coordinate();
@@ -123,6 +128,8 @@ public class LevelModel : MonoBehaviour
             gameModel.wallArr = wallArr;
 
             gameModel.currentLevelId = levelID;
+
+            gameModel.currentLevelMusic = musicClip;
 
             if (SettingsManager.IsTutorialOn())
             {

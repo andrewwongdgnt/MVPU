@@ -25,6 +25,9 @@ public class GameModel : MonoBehaviour
     public Text scoreGuiText;
     public Text bestScoreGuiText;
 
+    public AudioSource audioSource;
+    public AudioClip pauseMusicClip;
+
     public TutorialAction.Action actionAllowedFromTutorial
     {
         get; set;
@@ -68,6 +71,10 @@ public class GameModel : MonoBehaviour
         {
             _player = value;
             _player.gameModel = this;
+        }
+        get
+        {
+            return _player;
         }
     }
 
@@ -179,6 +186,16 @@ public class GameModel : MonoBehaviour
         }
     }
 
+    private AudioClip _currentLevelMusic;
+    public AudioClip currentLevelMusic
+    {
+
+        set
+        {
+            _currentLevelMusic = value;
+        }
+    }
+
 
     public void Undo(bool removeLastState)
     {
@@ -267,6 +284,14 @@ public class GameModel : MonoBehaviour
         StartCoroutine(setActionAllowedFromTutorialWithDelay(actionAllowed));
     }
 
+    public void PlayMusic()
+    {
+        if (Time.timeScale > 0)
+            AudioManager.PlayMusic(audioSource, _currentLevelMusic);
+        else
+            AudioManager.PlayMusic(audioSource, pauseMusicClip);
+    }
+
     private IEnumerator setActionAllowedFromTutorialWithDelay(TutorialAction.Action actionAllowed)
     {
         actionAllowedFromTutorial = TutorialAction.Action.NONE;
@@ -313,6 +338,9 @@ public class GameModel : MonoBehaviour
         undoManager.AddInitialState(_player, _goal, _enemyArr, _bombArr, _keyArr, _wallArr);
 
         AdvanceTutorial();
+
+        //Play Music
+        PlayMusic();
 
     }
 
@@ -441,6 +469,7 @@ public class GameModel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayMusic();
         if (Time.timeScale > 0 && !TutorialAction.isNoAction(actionAllowedFromTutorial))
         {
             bool userInteractionAllowed = UserInteractionAllowed();
@@ -577,7 +606,7 @@ public class GameModel : MonoBehaviour
                     _player.StartDieAnimation(true);
                     attacker.StartAttackAnimation();
                     FaceHorizontally(attacker.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
-                } else
+                } else //from bomb
                 {
                     _player.StartDieAnimation();
                 }

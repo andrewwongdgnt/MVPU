@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
 {
 
-
+    
     public enum Direction
     {
         NONE, UP, LEFT, DOWN, RIGHT,
@@ -23,8 +23,8 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
     {
         get;set;
     }
+    public AudioSource audioSource;
     public Animator animator;
-
 
     protected GameModel _gameModel;
     public GameModel gameModel
