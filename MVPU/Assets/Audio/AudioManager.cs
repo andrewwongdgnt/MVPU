@@ -17,8 +17,6 @@ public class AudioManager  {
     {
         if (audioSource == null || audioClip == null)
             return;
-        if (audioClip == audioSource.clip)
-            return;
         audioSource.volume = SettingsManager.GetMusicVolume() / 100;
         audioSource.loop = true;
         PlayAudio(audioSource, audioClip);

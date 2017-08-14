@@ -25,7 +25,8 @@ public class GameModel : MonoBehaviour
     public Text scoreGuiText;
     public Text bestScoreGuiText;
 
-    public AudioSource audioSource;
+    public AudioSource currentLevelAudioSource;
+    public AudioSource pauseAudioSource;
     public AudioClip pauseMusicClip;
 
     public TutorialAction.Action actionAllowedFromTutorial
@@ -287,9 +288,19 @@ public class GameModel : MonoBehaviour
     public void PlayMusic()
     {
         if (Time.timeScale > 0)
-            AudioManager.PlayMusic(audioSource, _currentLevelMusic);
+        {
+            pauseAudioSource.Stop();
+           currentLevelAudioSource.UnPause();
+            if (!currentLevelAudioSource.isPlaying)
+            AudioManager.PlayMusic(currentLevelAudioSource, _currentLevelMusic);
+        }
         else
-            AudioManager.PlayMusic(audioSource, pauseMusicClip);
+        {
+            currentLevelAudioSource.Pause();
+           pauseAudioSource.UnPause();
+            if (!pauseAudioSource.isPlaying)
+                AudioManager.PlayMusic(pauseAudioSource, pauseMusicClip);
+        }
     }
 
     private IEnumerator setActionAllowedFromTutorialWithDelay(TutorialAction.Action actionAllowed)
@@ -606,7 +617,7 @@ public class GameModel : MonoBehaviour
                     _player.StartDieAnimation(true);
                     attacker.StartAttackAnimation();
                     FaceHorizontally(attacker.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
-                } else //from bomb
+                } else //from bomb 
                 {
                     _player.StartDieAnimation();
                 }
