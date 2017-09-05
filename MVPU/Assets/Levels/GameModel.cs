@@ -383,7 +383,7 @@ public class GameModel : MonoBehaviour
     {
         float newX = origin.x + entity.x * distance.x + entity.y * distance.x;
         float newY = origin.y + entity.y * -distance.y + entity.x * distance.y;
-        float newZ = newY + (!(entity is Player) ? -0.001f : 0); //Everything should be infront of the player... I think
+        float newZ = newY + (entity is Player ? 0 : entity is Enemy ? -0.0001f : -0.002f); //Player is behind enemies, enemies are behind everything else.
         return new Vector3(newX, newY, newZ);
     }
 
@@ -392,11 +392,11 @@ public class GameModel : MonoBehaviour
         Look(player, player.facingDirection);
         player.transform.position = GetPositionForEntity(player);
     }
-    private void SetViewForEnemy(Enemy enemy, bool dozeAnimation=false)
+    private void SetViewForEnemy(Enemy enemy, bool animate=false)
     {
         enemy.transform.position = GetPositionForEntity(enemy);
         Look(enemy, enemy.facingDirection);
-        if (dozeAnimation)
+        if (animate)
             enemy.StartDozedAnimation();
         else
             enemy.StopDozedAnimation();
@@ -404,7 +404,7 @@ public class GameModel : MonoBehaviour
         Array.ForEach(sprites, s =>
         {
             Color color = s.material.color;
-            color.a = enemy.inactive && !dozeAnimation ? 0f : 1f;
+            color.a = enemy.inactive && !animate ? 0f : 1f;
 
             s.material.color = color;
         });
@@ -418,19 +418,26 @@ public class GameModel : MonoBehaviour
 
         bomb.GetComponent<SpriteRenderer>().material.color = color2;
     }
-    private void SetViewForKey(Key key, bool consumedAnimation = false)
+    private void SetViewForKey(Key key, bool animate = false)
     {
 
         key.transform.position = GetPositionForEntity(key);
-        if (consumedAnimation)
-            key.StartConsumedAnimation();
+        if (animate)
+        {
+            if (key.consumed)
+                key.StartConsumedAnimation();
+            else
+                key.StartUsedAnimation();
+        }
         else
+        {
             key.StopConsumedAnimation();
+        }
         SpriteRenderer[] sprites = key.GetComponentsInChildren<SpriteRenderer>();
         Array.ForEach(sprites, s =>
         {
             Color color = s.material.color;
-            color.a = key.consumed && !consumedAnimation ? 0f : 1f;
+            color.a = key.consumed && !animate ? 0f : 1f;
 
             s.material.color = color;
         });        

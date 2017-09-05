@@ -255,6 +255,15 @@ public class LevelManager
             {Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,},
         }
         },
+        { LevelID.LEVEL_3_5, new Cell[,]{
+           {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
+            {Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_TOP_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+        }
+        },
 
 
     };
@@ -286,6 +295,7 @@ public class LevelManager
             { LevelID.LEVEL_3_2, new LevelScore(16) },
             { LevelID.LEVEL_3_3, new LevelScore(21) },
             { LevelID.LEVEL_3_4, new LevelScore(22) },
+            { LevelID.LEVEL_3_5, new LevelScore(7) },
         };
     public static Dictionary<LevelID, LevelID[]> LevelPrereq = new Dictionary<LevelID, LevelID[]>
         {
@@ -434,7 +444,7 @@ public class LevelManager
                 new TutorialAction("But along the red path first and the blue path second. Try moving and see what happens. Good luck!", TutorialAction.Action.VENEMY) } },
             { LevelID.LEVEL_2_8, new TutorialAction[] {
                 new TutorialAction("Oh look! The Purple Monkey's love level has risen.", TutorialAction.Action.NONE),
-                new TutorialAction("When the Purple Monkey looks more pinkish, that means she can move two steps per one move from the Monkey.", TutorialAction.Action.NONE),
+                new TutorialAction("When the Purple Monkey is red, that means she can move two steps per one move from the Monkey.", TutorialAction.Action.NONE),
                 new TutorialAction("Good luck again!", TutorialAction.Action.NONE) } },
         };
 

@@ -1,49 +1,99 @@
 fileFormatVersion: 2
-guid: b0d795406223ff74d82f04783b1fafc8
-timeCreated: 1504580030
+guid: f487e272ddb15d24c8bf09e5818031e7
+timeCreated: 1504582452
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Silver Key Idle_0
-    21300002: Silver Key Idle_1
-    21300004: Silver Key Idle_2
-    21300006: Silver Key Idle_3
-    21300008: Silver Key Idle_4
-    21300010: Silver Key Idle_5
-    21300012: Silver Key Idle_6
-    21300014: Silver Key Idle_7
-    21300016: Silver Key Idle_8
-    21300018: Silver Key Idle_9
-    21300020: Silver Key Idle_10
-    21300022: Silver Key Idle_11
-    21300024: Silver Key Idle_12
-    21300026: Silver Key Idle_13
-    21300028: Silver Key Idle_14
-    21300030: Silver Key Idle_15
-    21300032: Silver Key Idle_16
-    21300034: Silver Key Idle_17
-    21300036: Silver Key Idle_18
-    21300038: Silver Key Idle_19
-    21300040: Silver Key Idle_20
-    21300042: Silver Key Idle_21
-    21300044: Silver Key Idle_22
-    21300046: Silver Key Idle_23
-    21300048: Silver Key Idle_24
-    21300050: Silver Key Idle_25
-    21300052: Silver Key Idle_26
-    21300054: Silver Key Idle_27
-    21300056: Silver Key Idle_28
-    21300058: Silver Key Idle_29
-    21300060: Silver Key Idle_30
-    21300062: Silver Key Idle_31
-    21300064: Silver Key Idle_32
-    21300066: Silver Key Idle_33
-    21300068: Silver Key Idle_34
-    21300070: Silver Key Idle_35
-    21300072: Silver Key Idle_36
-    21300074: Silver Key Idle_37
-    21300076: Silver Key Idle_38
-    21300078: Silver Key Idle_39
+    21300000: Gold Key Consumed_0
+    21300002: Gold Key Consumed_1
+    21300004: Gold Key Consumed_2
+    21300006: Gold Key Consumed_3
+    21300008: Gold Key Consumed_4
+    21300010: Gold Key Consumed_5
+    21300012: Gold Key Consumed_6
+    21300014: Gold Key Consumed_7
+    21300016: Gold Key Consumed_8
+    21300018: Gold Key Consumed_9
+    21300020: Gold Key Consumed_10
+    21300022: Gold Key Consumed_11
+    21300024: Gold Key Consumed_12
+    21300026: Gold Key Consumed_13
+    21300028: Gold Key Consumed_14
+    21300030: Gold Key Consumed_15
+    21300032: Gold Key Consumed_16
+    21300034: Gold Key Consumed_17
+    21300036: Gold Key Consumed_18
+    21300038: Gold Key Consumed_19
+    21300040: Gold Key Consumed_20
+    21300042: Gold Key Consumed_21
+    21300044: Gold Key Consumed_22
+    21300046: Gold Key Consumed_23
+    21300048: Gold Key Consumed_24
+    21300050: Gold Key Consumed_25
+    21300052: Gold Key Consumed_26
+    21300054: Gold Key Consumed_27
+    21300056: Gold Key Consumed_28
+    21300058: Gold Key Consumed_29
+    21300060: Gold Key Consumed_30
+    21300062: Gold Key Consumed_31
+    21300064: Gold Key Consumed_32
+    21300066: Gold Key Consumed_33
+    21300068: Gold Key Consumed_34
+    21300070: Gold Key Consumed_35
+    21300072: Gold Key Consumed_36
+    21300074: Gold Key Consumed_37
+    21300076: Gold Key Consumed_38
+    21300078: Gold Key Consumed_39
+    21300080: Gold Key Consumed_40
+    21300082: Gold Key Consumed_41
+    21300084: Gold Key Consumed_42
+    21300086: Gold Key Consumed_43
+    21300088: Gold Key Consumed_44
+    21300090: Gold Key Used_0
+    21300092: Gold Key Used_1
+    21300094: Gold Key Used_2
+    21300096: Gold Key Used_3
+    21300098: Gold Key Used_4
+    21300100: Gold Key Used_5
+    21300102: Gold Key Used_6
+    21300104: Gold Key Used_7
+    21300106: Gold Key Used_8
+    21300108: Gold Key Used_9
+    21300110: Gold Key Used_10
+    21300112: Gold Key Used_11
+    21300114: Gold Key Used_12
+    21300116: Gold Key Used_13
+    21300118: Gold Key Used_14
+    21300120: Gold Key Used_15
+    21300122: Gold Key Used_16
+    21300124: Gold Key Used_17
+    21300126: Gold Key Used_18
+    21300128: Gold Key Used_19
+    21300130: Gold Key Used_20
+    21300132: Gold Key Used_21
+    21300134: Gold Key Used_22
+    21300136: Gold Key Used_23
+    21300138: Gold Key Used_24
+    21300140: Gold Key Used_25
+    21300142: Gold Key Used_26
+    21300144: Gold Key Used_27
+    21300146: Gold Key Used_28
+    21300148: Gold Key Used_29
+    21300150: Gold Key Used_30
+    21300152: Gold Key Used_31
+    21300154: Gold Key Used_32
+    21300156: Gold Key Used_33
+    21300158: Gold Key Used_34
+    21300160: Gold Key Used_35
+    21300162: Gold Key Used_36
+    21300164: Gold Key Used_37
+    21300166: Gold Key Used_38
+    21300168: Gold Key Used_39
+    21300170: Gold Key Used_40
+    21300172: Gold Key Used_41
+    21300174: Gold Key Used_42
+    21300176: Gold Key Used_43
+    21300178: Gold Key Used_44
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -166,7 +216,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Silver Key Idle_0
+      name: Gold Key Used_0
       rect:
         serializedVersion: 2
         x: 0
@@ -179,7 +229,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_1
+      name: Gold Key Used_1
       rect:
         serializedVersion: 2
         x: 128
@@ -192,7 +242,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_2
+      name: Gold Key Used_2
       rect:
         serializedVersion: 2
         x: 256
@@ -205,7 +255,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_3
+      name: Gold Key Used_3
       rect:
         serializedVersion: 2
         x: 384
@@ -218,7 +268,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_4
+      name: Gold Key Used_4
       rect:
         serializedVersion: 2
         x: 512
@@ -231,7 +281,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_5
+      name: Gold Key Used_5
       rect:
         serializedVersion: 2
         x: 640
@@ -244,7 +294,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_6
+      name: Gold Key Used_6
       rect:
         serializedVersion: 2
         x: 768
@@ -257,7 +307,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_7
+      name: Gold Key Used_7
       rect:
         serializedVersion: 2
         x: 0
@@ -270,7 +320,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_8
+      name: Gold Key Used_8
       rect:
         serializedVersion: 2
         x: 128
@@ -283,7 +333,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_9
+      name: Gold Key Used_9
       rect:
         serializedVersion: 2
         x: 256
@@ -296,7 +346,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_10
+      name: Gold Key Used_10
       rect:
         serializedVersion: 2
         x: 384
@@ -309,7 +359,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_11
+      name: Gold Key Used_11
       rect:
         serializedVersion: 2
         x: 512
@@ -322,7 +372,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_12
+      name: Gold Key Used_12
       rect:
         serializedVersion: 2
         x: 640
@@ -335,7 +385,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_13
+      name: Gold Key Used_13
       rect:
         serializedVersion: 2
         x: 768
@@ -348,7 +398,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_14
+      name: Gold Key Used_14
       rect:
         serializedVersion: 2
         x: 0
@@ -361,7 +411,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_15
+      name: Gold Key Used_15
       rect:
         serializedVersion: 2
         x: 128
@@ -374,7 +424,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_16
+      name: Gold Key Used_16
       rect:
         serializedVersion: 2
         x: 256
@@ -387,7 +437,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_17
+      name: Gold Key Used_17
       rect:
         serializedVersion: 2
         x: 384
@@ -400,7 +450,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_18
+      name: Gold Key Used_18
       rect:
         serializedVersion: 2
         x: 512
@@ -413,7 +463,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_19
+      name: Gold Key Used_19
       rect:
         serializedVersion: 2
         x: 640
@@ -426,7 +476,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_20
+      name: Gold Key Used_20
       rect:
         serializedVersion: 2
         x: 768
@@ -439,7 +489,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_21
+      name: Gold Key Used_21
       rect:
         serializedVersion: 2
         x: 0
@@ -452,7 +502,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_22
+      name: Gold Key Used_22
       rect:
         serializedVersion: 2
         x: 128
@@ -465,7 +515,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_23
+      name: Gold Key Used_23
       rect:
         serializedVersion: 2
         x: 256
@@ -478,7 +528,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_24
+      name: Gold Key Used_24
       rect:
         serializedVersion: 2
         x: 384
@@ -491,7 +541,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_25
+      name: Gold Key Used_25
       rect:
         serializedVersion: 2
         x: 512
@@ -504,7 +554,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_26
+      name: Gold Key Used_26
       rect:
         serializedVersion: 2
         x: 640
@@ -517,7 +567,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_27
+      name: Gold Key Used_27
       rect:
         serializedVersion: 2
         x: 768
@@ -530,7 +580,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_28
+      name: Gold Key Used_28
       rect:
         serializedVersion: 2
         x: 0
@@ -543,7 +593,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_29
+      name: Gold Key Used_29
       rect:
         serializedVersion: 2
         x: 128
@@ -556,7 +606,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_30
+      name: Gold Key Used_30
       rect:
         serializedVersion: 2
         x: 256
@@ -569,7 +619,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_31
+      name: Gold Key Used_31
       rect:
         serializedVersion: 2
         x: 384
@@ -582,7 +632,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_32
+      name: Gold Key Used_32
       rect:
         serializedVersion: 2
         x: 512
@@ -595,7 +645,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_33
+      name: Gold Key Used_33
       rect:
         serializedVersion: 2
         x: 640
@@ -608,7 +658,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_34
+      name: Gold Key Used_34
       rect:
         serializedVersion: 2
         x: 768
@@ -621,7 +671,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_35
+      name: Gold Key Used_35
       rect:
         serializedVersion: 2
         x: 0
@@ -634,7 +684,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_36
+      name: Gold Key Used_36
       rect:
         serializedVersion: 2
         x: 128
@@ -647,7 +697,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_37
+      name: Gold Key Used_37
       rect:
         serializedVersion: 2
         x: 256
@@ -660,7 +710,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_38
+      name: Gold Key Used_38
       rect:
         serializedVersion: 2
         x: 384
@@ -673,11 +723,76 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Silver Key Idle_39
+      name: Gold Key Used_39
       rect:
         serializedVersion: 2
         x: 512
         y: 128
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Gold Key Used_40
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Gold Key Used_41
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Gold Key Used_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Gold Key Used_43
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Gold Key Used_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
         width: 128
         height: 64
       alignment: 0

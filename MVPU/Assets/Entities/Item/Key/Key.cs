@@ -52,5 +52,9 @@ public class Key : Entity
     {
         animator.SetBool("Consumed", false);
     }
+    public void StartUsedAnimation()
+    {
+        animator.SetTrigger("Used");
+    }
 
 }
