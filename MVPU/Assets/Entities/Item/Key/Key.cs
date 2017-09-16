@@ -10,6 +10,8 @@ public class Key : Entity
     [Tooltip("-1 for infinite uses")]
     public int numOfUses;
 
+    public enum Animation { None, Used, Consumed }
+
     public bool consumed
     {
         get; set;

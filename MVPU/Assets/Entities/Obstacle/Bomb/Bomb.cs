@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Bomb : Entity, IAttacker {
 
+    public enum Animation { None, Explode }
 
 
     public bool affectsEnemy;

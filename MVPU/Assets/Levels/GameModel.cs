@@ -313,14 +313,14 @@ public class GameModel : MonoBehaviour
 
 
     private List<List<bool>> animationComplete = new List<List<bool>>();
-    private List<Triple<int, int, Enemy>> dozedEnemiesList = new List<Triple<int, int, Enemy>>();
+    private List<Triple<int, int, Enemy>> fallenEnemiesList = new List<Triple<int, int, Enemy>>();
     //if Entity is null, that means the player has won
     private Triple<int, int, Entity> gameEndInfo;
 
     private List<Pair<int, int>> blockedEnemiesList = new List<Pair<int, int>>();
-    private List<Triple<int, int, Bomb>> bombList = new List<Triple<int, int, Bomb>>();
-    private List<Triple<int, int, Key>> keyList = new List<Triple<int, int, Key>>();
-    private List<Triple<int, int, Wall>> wallList = new List<Triple<int, int, Wall>>();
+    private List<Quadruple<int, int, Bomb, Bomb.Animation>> bombList = new List<Quadruple<int, int, Bomb, Bomb.Animation>>();
+    private List<Quadruple<int, int, Key, Key.Animation>> keyList = new List<Quadruple<int, int, Key, Key.Animation>>();
+    private List<Quadruple<int, int, Wall, Wall.Animation>> wallList = new List<Quadruple<int, int, Wall, Wall.Animation>>();
 
 
     public void Commence()
@@ -418,13 +418,13 @@ public class GameModel : MonoBehaviour
 
         bomb.GetComponent<SpriteRenderer>().material.color = color2;
     }
-    private void SetViewForKey(Key key, bool animate = false)
+    private void SetViewForKey(Key key, Key.Animation keyAnimation = Key.Animation.None)
     {
 
         key.transform.position = GetPositionForEntity(key);
-        if (animate)
+        if (keyAnimation != Key.Animation.None)
         {
-            if (key.consumed)
+            if (keyAnimation == Key.Animation.Consumed)
                 key.StartConsumedAnimation();
             else
                 key.StartUsedAnimation();
@@ -437,15 +437,29 @@ public class GameModel : MonoBehaviour
         Array.ForEach(sprites, s =>
         {
             Color color = s.material.color;
-            color.a = key.consumed && !animate ? 0f : 1f;
+            color.a = key.consumed && keyAnimation == Key.Animation.None ? 0f : 1f;
 
             s.material.color = color;
         });        
     }
 
-    private void SetViewForWall(Wall wall, bool animate = false)
+    private void SetViewForWall(Wall wall, Wall.Animation wallAnimation = Wall.Animation.None)
     {
-        wall.StartAnimation(animate);
+        bool animate = wallAnimation != Wall.Animation.None;
+        if (animate)
+        {
+            if (wallAnimation == Wall.Animation.Retract)
+                wall.StartRetract(animate);
+            else
+                wall.StopRetract(animate);
+        }
+        else
+        {
+            if (!wall.retracted)
+                wall.StartRetract(animate);
+            else
+                wall.StopRetract(animate);
+        }
     }
 
     private void UpdateAnimationCompleteListWith(bool value)
@@ -534,7 +548,7 @@ public class GameModel : MonoBehaviour
                 else
                 {
                     UpdateAnimationCompleteListWith(false);
-                    dozedEnemiesList.Clear();
+                    fallenEnemiesList.Clear();
                     blockedEnemiesList.Clear();
                     bombList.Clear();
                     keyList.Clear();
@@ -763,7 +777,7 @@ public class GameModel : MonoBehaviour
         {
             dozedEnemy.inactive = true;
 
-            dozedEnemiesList.Add(new Triple<int, int, Enemy>(GetOrder(enemy), stepOrder, dozedEnemy));
+            fallenEnemiesList.Add(new Triple<int, int, Enemy>(GetOrder(enemy), stepOrder, dozedEnemy));
 
         }
     }
@@ -785,7 +799,7 @@ public class GameModel : MonoBehaviour
 
             enemy.inactive = true;
 
-            bombList.Add(new Triple<int, int, Bomb>(GetOrder(enemy), stepOrder, bomb));
+            bombList.Add(new Quadruple<int, int, Bomb, Bomb.Animation>(GetOrder(enemy), stepOrder, bomb, Bomb.Animation.Explode));
 
         }
     }
@@ -839,7 +853,9 @@ public class GameModel : MonoBehaviour
             if (key.numOfUses == 0)
                 key.consumed = true;
 
-            keyList.Add(new Triple<int, int, Key>(GetOrder(walker), stepOrder, key));
+            Key.Animation keyAnimation = key.consumed ? Key.Animation.Consumed : Key.Animation.Used;
+
+            keyList.Add(new Quadruple<int, int, Key, Key.Animation>(GetOrder(walker), stepOrder, key, keyAnimation));
 
             Array.ForEach(_wallArr, wall => {
 
@@ -855,8 +871,11 @@ public class GameModel : MonoBehaviour
                         bool secondRetractedState = wall.retracted;
 
                         //state changed
-                        if (firstRetractedState!= secondRetractedState)
-                            wallList.Add(new Triple<int, int, Wall>(GetOrder(walker), stepOrder, wall));
+                        if (firstRetractedState != secondRetractedState)
+                        {
+                            Wall.Animation wallAnimation = wall.retracted ? Wall.Animation.DontRetract : Wall.Animation.Retract;
+                            wallList.Add(new Quadruple<int, int, Wall, Wall.Animation>(GetOrder(walker), stepOrder, wall, wallAnimation));
+                        }
                         break;
                     }
                 }
@@ -958,58 +977,61 @@ public class GameModel : MonoBehaviour
                 UpdateAnimationCompleteListWith(true);
                 HandleEndGamePhase();
             }
-
-            //update view of bombed enemies and bomb
-            List<Triple<int, int, Bomb>> bombInfoList = bombList.FindAll(bo => bo.first == order && bo.second == stepOrder);
-            bombInfoList.ForEach(bombInfo =>
-            {
-                if (bombInfo != null && bombInfo.third != null)
-                {
-                    if (walker is Enemy)
-                        SetViewForEnemy((Enemy)walker, true);
-
-                    Bomb bomb = bombInfo.third;
-                    SetViewForBomb(bomb);
-                }
-            });
-
-            //update view of dozed enemies
-            List<Triple<int, int, Enemy>> dozedEnemyInfoList = dozedEnemiesList.FindAll(d => d.first == order && d.second == stepOrder);
-            dozedEnemyInfoList.ForEach(dozedEnemyInfo =>
-            {
-                if (dozedEnemyInfo != null && dozedEnemyInfo.third != null)
-                {
-                    Enemy dozedEnemy = dozedEnemyInfo.third;
-                    SetViewForEnemy(dozedEnemy, true);
-
-                }
-            });
-
-            //update view of Keys
-            List<Triple<int, int, Key>> keyInfoList = keyList.FindAll(w => w.first == order && w.second == stepOrder);
-            keyInfoList.ForEach(keyInfo =>
+            else
             {
 
-                if (keyInfo != null && keyInfo.third != null)
+                //update view of bombed enemies and bomb
+                List<Quadruple<int, int, Bomb, Bomb.Animation>> bombInfoList = bombList.FindAll(bo => bo.first == order && bo.second == stepOrder);
+                bombInfoList.ForEach(bombInfo =>
                 {
-                    Key key = keyInfo.third;
-                    SetViewForKey(key, true);
+                    if (bombInfo != null && bombInfo.third != null)
+                    {
+                        if (walker is Enemy)
+                            SetViewForEnemy((Enemy)walker, true);
 
-                }
-            });
+                        SetViewForBomb(bombInfo.third);
+                    }
+                });
 
-            //update view of Walls
-            List<Triple<int, int, Wall>> wallInfoList = wallList.FindAll(w => w.first == order && w.second == stepOrder);
-            wallInfoList.ForEach(wallInfo =>
-            {
- 
-                if (wallInfo != null && wallInfo.third != null)
+                //update view of dozed enemies
+                List<Triple<int, int, Enemy>> dozedEnemyInfoList = fallenEnemiesList.FindAll(d => d.first == order && d.second == stepOrder);
+                dozedEnemyInfoList.ForEach(dozedEnemyInfo =>
                 {
-                    Wall wall = wallInfo.third;
-                    SetViewForWall(wall, true);
+                    if (dozedEnemyInfo != null && dozedEnemyInfo.third != null)
+                    {
+                        Enemy dozedEnemy = dozedEnemyInfo.third;
+                        SetViewForEnemy(dozedEnemy, true);
 
-                }
-            });
+                    }
+                });
+
+                //update view of Keys
+                List<Quadruple<int, int, Key, Key.Animation>> keyInfoList = keyList.FindAll(w => w.first == order && w.second == stepOrder);
+                keyInfoList.ForEach(keyInfo =>
+                {
+
+                    if (keyInfo != null && keyInfo.third != null)
+                    {
+
+                        SetViewForKey(keyInfo.third, keyInfo.fourth);
+
+                    }
+                });
+
+                //update view of Walls
+                List<Quadruple<int, int, Wall, Wall.Animation>> wallInfoList = wallList.FindAll(w => w.first == order && w.second == stepOrder);
+                wallInfoList.ForEach(wallInfo =>
+                {
+
+                    if (wallInfo != null && wallInfo.third != null)
+                    {
+                        SetViewForWall(wallInfo.third, wallInfo.fourth);
+
+                    }
+                });
+            }
+
+            
         }
 
 

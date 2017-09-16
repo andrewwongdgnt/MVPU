@@ -21,6 +21,8 @@ public class Wall : Entity
 
     public bool[] locksOpened;
 
+    public enum Animation { None,Retract, DontRetract }
+
     public bool retracted
     {
         get
@@ -51,13 +53,17 @@ public class Wall : Entity
             
 
         }
-    }    
-    
-   
+    }
 
-    public void StartAnimation(bool animate)
+    public void StopRetract(bool animate)
     {
         animator.SetBool("Immediate", !animate);
-        animator.SetBool("Off", retracted);
+        animator.SetBool("Off", true);
+    }
+
+    public void StartRetract(bool animate)
+    {
+        animator.SetBool("Immediate", !animate);
+        animator.SetBool("Off", false);
     }
 }

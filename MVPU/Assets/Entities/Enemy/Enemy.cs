@@ -11,6 +11,8 @@ public class Enemy : Entity, IWalker, IAttacker
     public bool dozer;
     public AudioClip sfxHitClip;
 
+    public enum Animation { Dozed, Slipped }
+
     public bool inactive
     {
         get; set;
@@ -120,7 +122,7 @@ public class Enemy : Entity, IWalker, IAttacker
                     }
                 }
 
-                _gameModel.CheckForKey(this, direction, i);
+                _gameModel.CheckForKey(this, blocked ? Direction.NONE : direction, i);
                 _gameModel.CheckForEndGame(this, i);
                 if (dozer)
                     _gameModel.CheckIfOtherEnemiesGotDozed(this, i);
