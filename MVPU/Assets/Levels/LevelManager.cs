@@ -23,7 +23,7 @@ public class LevelManager
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_3_6;
+    public static LevelID levelToLoad = LevelID.LEVEL_3_7;
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
     {
@@ -273,6 +273,15 @@ public class LevelManager
             {Cell.CELL_RIGHT_CLOSED,Cell.CELL_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,},
         }
         },
+        { LevelID.LEVEL_3_7, new Cell[,]{
+           {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+        }
+        },
 
 
     };
@@ -306,6 +315,7 @@ public class LevelManager
             { LevelID.LEVEL_3_4, new LevelScore(22) },
             { LevelID.LEVEL_3_5, new LevelScore(7) },
             { LevelID.LEVEL_3_6, new LevelScore(12) },
+            { LevelID.LEVEL_3_7, new LevelScore(13) },
         };
     public static Dictionary<LevelID, LevelID[]> LevelPrereq = new Dictionary<LevelID, LevelID[]>
         {
