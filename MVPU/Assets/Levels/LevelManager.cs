@@ -345,7 +345,7 @@ public class LevelManager
             { LevelID.LEVEL_3_7, new LevelScore(16) },
             { LevelID.LEVEL_3_8, new LevelScore(13) },
             { LevelID.LEVEL_3_9, new LevelScore(15) },
-            { LevelID.LEVEL_3_10, new LevelScore(4) },
+            { LevelID.LEVEL_3_10, new LevelScore(23) },
         };
     public static Dictionary<LevelID, LevelID[]> LevelPrereq = new Dictionary<LevelID, LevelID[]>
         {
