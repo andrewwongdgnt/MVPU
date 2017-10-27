@@ -17,24 +17,10 @@ public class Tutorial : MonoBehaviour
 
     private int tutorialIndex = -1;
     private TutorialAction[] _tutorialActionArr;
-    public TutorialAction[] tutorialActionArr
-    {
-        set
-        {
-            _tutorialActionArr = value;
-        }
-    }
 
-
-    // Use this for initialization
-    void Start()
+    public void Init(TutorialAction[] tutorialActionArr)
     {
-        StartCoroutine(SetObjectsActiveStatusAfterDelay());
-    }
-
-    IEnumerator SetObjectsActiveStatusAfterDelay()
-    {
-        yield return 0;
+        _tutorialActionArr = tutorialActionArr;
         bool tutorialEnded = _tutorialActionArr == null;
         tutorialButton.gameObject.SetActive(!tutorialEnded);
         ShowTutorialMascot(!tutorialEnded);

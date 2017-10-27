@@ -23,7 +23,8 @@ public class LevelManager
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_3_4;
+    public static LevelID levelToLoad = LevelID.LEVEL_4_1;
+    public static bool unlockAllLevels = true;
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
     {
@@ -309,6 +310,16 @@ public class LevelManager
             {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
         }
         },
+        { LevelID.LEVEL_4_1, new Cell[,]{
+           {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+        }
+        },
 
 
     };
@@ -346,6 +357,7 @@ public class LevelManager
             { LevelID.LEVEL_3_8, new LevelScore(13) },
             { LevelID.LEVEL_3_9, new LevelScore(15) },
             { LevelID.LEVEL_3_10, new LevelScore(23) },
+            { LevelID.LEVEL_4_1, new LevelScore(2) },
         };
     public static Dictionary<LevelID, LevelID[]> LevelPrereq = new Dictionary<LevelID, LevelID[]>
         {
@@ -496,6 +508,13 @@ public class LevelManager
                 new TutorialAction("Oh look! The Purple Monkey's love level has risen.", TutorialAction.Action.NONE),
                 new TutorialAction("When the Purple Monkey is red, that means she can move two steps per one move from the Monkey.", TutorialAction.Action.NONE),
                 new TutorialAction("Good luck again!", TutorialAction.Action.NONE) } },
+            { LevelID.LEVEL_4_1, new TutorialAction[] {
+                new TutorialAction("Hello!", TutorialAction.Action.NONE),
+                new TutorialAction("My name is Coco.", TutorialAction.Action.NONE),
+                new TutorialAction("...", TutorialAction.Action.NONE),
+                new TutorialAction("Hello!", TutorialAction.Action.NONE),
+                new TutorialAction("I ate some bananas and left the peels everywhere.", TutorialAction.Action.NONE),
+                new TutorialAction("Sorry! Try not to step on them.", TutorialAction.Action.NONE) } },
         };
 
 

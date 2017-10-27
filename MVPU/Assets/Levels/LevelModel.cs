@@ -50,8 +50,8 @@ public class LevelModel : MonoBehaviour
             RenderSettings.skybox = mat;
 
             //Disable entities not related to this level
-            GameObject[] entity = GameObject.FindGameObjectsWithTag("Entity");
-            Array.ForEach(entity, ent =>
+            GameObject[] entities = GameObject.FindGameObjectsWithTag("Entity");
+            Array.ForEach(entities, ent =>
             {
 
                 if (ent.GetComponent<Player>() != player 
@@ -131,12 +131,33 @@ public class LevelModel : MonoBehaviour
 
             gameModel.currentLevelMusic = musicClip;
 
+
+            //Disable entities not related to this level
+            GameObject[] tutorialEntities = GameObject.FindGameObjectsWithTag("TutorialEntity");
+            Array.ForEach(tutorialEntities, tEnt =>
+            {
+                if (tEnt.GetComponent<Tutorial>() != tutorial)
+                {
+                    tEnt.SetActive(false);
+                }
+            });
+
+            bool tutorialObjectsOn = false;
             if (SettingsManager.IsTutorialOn())
             {
                 if (tutorial != null)
-                    tutorial.tutorialActionArr = LevelManager.TutorialContent.ContainsKey(levelID) ? LevelManager.TutorialContent[levelID] : null;
+                {
+                    tutorialObjectsOn = true;
+                    tutorial.Init(LevelManager.TutorialContent.ContainsKey(levelID) ? LevelManager.TutorialContent[levelID] : null);
+                }
                 gameModel.tutorial = tutorial;
             }
+
+            GameObject[] tutorialGameObjects = GameObject.FindGameObjectsWithTag("Tutorial");
+            Array.ForEach(tutorialGameObjects, tGo =>
+            {
+                tGo.SetActive(tutorialObjectsOn);
+            });
 
             gameModel.Commence();
         }

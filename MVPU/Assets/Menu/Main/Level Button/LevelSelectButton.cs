@@ -47,7 +47,7 @@ public class LevelSelectButton : MonoBehaviour
             btn.interactable = levelPrereqs.Length == 0 || Array.Exists(levelPrereqs, l =>
                   SaveStateManager.LoadLevel(l) != null
                 )
-                || false; // override this for testing purposes: True to unlock all levels, False for normal rules;
+                || LevelManager.unlockAllLevels; // override this for testing purposes: True to unlock all levels, False for normal rules;
 
             if (!btn.interactable)
             {
