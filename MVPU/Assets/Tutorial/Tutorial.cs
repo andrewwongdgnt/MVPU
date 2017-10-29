@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Linq;
-using UnityEngine.SceneManagement;
 using System;
-using System.Collections.Generic;
 using UnityEngine.UI;
+
 
 public class Tutorial : MonoBehaviour
 {
@@ -14,6 +11,7 @@ public class Tutorial : MonoBehaviour
     public Text tutorialText;
     public Text tutorial2Text;
     public InGameHelp inGameHelp;
+    public Color tutorialTextColor;
 
     private int tutorialIndex = -1;
     private TutorialAction[] _tutorialActionArr;
@@ -23,6 +21,9 @@ public class Tutorial : MonoBehaviour
         _tutorialActionArr = tutorialActionArr;
         bool tutorialEnded = _tutorialActionArr == null;
         tutorialButton.gameObject.SetActive(!tutorialEnded);
+        tutorialText.color = tutorialTextColor;
+        tutorial2Text.color = tutorialTextColor;
+
         ShowTutorialMascot(!tutorialEnded);
 
     }

@@ -510,11 +510,11 @@ public class LevelManager
                 new TutorialAction("Good luck again!", TutorialAction.Action.NONE) } },
             { LevelID.LEVEL_4_1, new TutorialAction[] {
                 new TutorialAction("Hello!", TutorialAction.Action.NONE),
-                new TutorialAction("My name is Coco.", TutorialAction.Action.NONE),
+                new TutorialAction("My name is Coco and I like bananas.", TutorialAction.Action.NONE),
+                new TutorialAction("They are so yummy in my tummy!", TutorialAction.Action.NONE),
                 new TutorialAction("...", TutorialAction.Action.NONE),
-                new TutorialAction("Hello!", TutorialAction.Action.NONE),
-                new TutorialAction("I ate some bananas and left the peels everywhere.", TutorialAction.Action.NONE),
-                new TutorialAction("Sorry! Try not to step on them.", TutorialAction.Action.NONE) } },
+                new TutorialAction("Yay!", TutorialAction.Action.NONE),
+                new TutorialAction("I ate some but I forgot to clean up. Oops, sorry! Don't step on them or else you'll slip", TutorialAction.Action.NONE) } },
         };
 
 
