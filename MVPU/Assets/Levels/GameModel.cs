@@ -203,7 +203,9 @@ public class GameModel : MonoBehaviour
         endGameMenu.HideEndGameMenu();
         if (UserInteractionAllowed())
         {
-            HistoryState historyState = undoManager.Undo(removeLastState);
+            HistoryState historyState = undoManager.Undo();
+            if (removeLastState)
+                undoManager.RemoveLastState();
             if (historyState == null)
                 historyState = undoManager.initialHistoryState;
 
@@ -392,31 +394,51 @@ public class GameModel : MonoBehaviour
         Look(player, player.facingDirection);
         player.transform.position = GetPositionForEntity(player);
     }
-    private void SetViewForEnemy(Enemy enemy, bool animate=false)
+    private void SetViewForEnemy(Enemy enemy, string animationName= null)
     {
         enemy.transform.position = GetPositionForEntity(enemy);
         Look(enemy, enemy.facingDirection);
-        if (animate)
-            enemy.StartDozedAnimation();
+        if (animationName != null)
+        {
+            enemy.StartDieAnimation(animationName);
+        }
         else
-            enemy.StopDozedAnimation();
+        {
+            enemy.StopDieAnimation();
+        }
         SpriteRenderer[] sprites = enemy.GetComponentsInChildren<SpriteRenderer>();
         Array.ForEach(sprites, s =>
         {
             Color color = s.material.color;
-            color.a = enemy.inactive && !animate ? 0f : 1f;
+            color.a = enemy.inactive && animationName == null ? 0f : 1f;
 
             s.material.color = color;
         });
     }
 
-    private void SetViewForBomb(Bomb bomb)
+    private void SetViewForBomb(Bomb bomb, Entity.Direction direction = Entity.Direction.RIGHT, Bomb.Animation bombAnimation = Bomb.Animation.None)
     {
         bomb.transform.position = GetPositionForEntity(bomb);
-        Color color2 = bomb.GetComponent<SpriteRenderer>().material.color;
-        color2.a = bomb.inactive ? 0.0f : 1f;
+        Look(bomb, bomb.facingDirection);
+        if (bombAnimation != Bomb.Animation.None)
+        {
+            FaceHorizontally(bomb, direction);
+            if (bombAnimation == Bomb.Animation.Explode)
+                bomb.StartAttackAnimation(); 
+        }
+        else
+        {
+            bomb.StopAttackAnimation();
+        }
+        SpriteRenderer[] sprites = bomb.GetComponentsInChildren<SpriteRenderer>();
+        Array.ForEach(sprites, s =>
+        {
+            Color color = s.material.color;
+            color.a = bomb.inactive && bombAnimation == Bomb.Animation.None ? 0.0f : 1f;
 
-        bomb.GetComponent<SpriteRenderer>().material.color = color2;
+            s.material.color = color;
+        });
+
     }
     private void SetViewForKey(Key key, Key.Animation keyAnimation = Key.Animation.None)
     {
@@ -632,16 +654,22 @@ public class GameModel : MonoBehaviour
             }
             else
             {
-                Debug.Log(_currentLevelId + ": Game Over");                
+                Debug.Log(_currentLevelId + ": Game Over");
+
                 if (attacker!=null)
                 {
-                    _player.StartDieAnimation(true);
+                    _player.StartDieAnimation(attacker.GetPlayerLoseAnimationName(), attacker is Enemy);
                     attacker.StartAttackAnimation();
-                    FaceHorizontally(attacker.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
-                } else //from bomb 
-                {
-                    _player.StartDieAnimation();
-                }
+                    Entity.Direction attackerDir =  _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT;
+                    if (!(attacker is Enemy))
+                    {
+                        if (attackerDir == Entity.Direction.RIGHT)
+                            attackerDir = Entity.Direction.LEFT;
+                        else
+                            attackerDir = Entity.Direction.RIGHT;
+                    }
+                    FaceHorizontally(attacker.entity, attackerDir);
+                } 
             }
         }
     }
@@ -689,10 +717,8 @@ public class GameModel : MonoBehaviour
     }
 
 
-    private void Look(IWalker walker, Entity.Direction direction)
+    private void Look(Entity entity, Entity.Direction direction)
     {
-
-        Entity entity = walker.entity;
 
         if (direction == Entity.Direction.LEFT || direction == Entity.Direction.UP)
         {
@@ -948,7 +974,7 @@ public class GameModel : MonoBehaviour
             Entity entity = walker.entity;
 
             //Update sprite to face the proper direction
-            Look(walker, direction);
+            Look(walker.entity, direction);
 
             walker.StartWalkAnimation();
 
@@ -987,9 +1013,12 @@ public class GameModel : MonoBehaviour
                     if (bombInfo != null && bombInfo.third != null)
                     {
                         if (walker is Enemy)
-                            SetViewForEnemy((Enemy)walker, true);
+                        {
+                            SetViewForEnemy((Enemy)walker, bombInfo.third.GetPlayerLoseAnimationName());
+                        }
+                        Entity.Direction bombDirection = walker.entity.facingDirection == Entity.Direction.LEFT || walker.entity.facingDirection == Entity.Direction.UP ? Entity.Direction.LEFT : Entity.Direction.RIGHT;
 
-                        SetViewForBomb(bombInfo.third);
+                        SetViewForBomb(bombInfo.third, bombDirection, Bomb.Animation.Explode);
                     }
                 });
 
@@ -1000,7 +1029,7 @@ public class GameModel : MonoBehaviour
                     if (dozedEnemyInfo != null && dozedEnemyInfo.third != null)
                     {
                         Enemy dozedEnemy = dozedEnemyInfo.third;
-                        SetViewForEnemy(dozedEnemy, true);
+                        SetViewForEnemy(dozedEnemy, dozedEnemy.GetPlayerLoseAnimationName());
 
                     }
                 });

@@ -514,7 +514,7 @@ public class LevelManager
                 new TutorialAction("They are so yummy in my tummy!", TutorialAction.Action.NONE),
                 new TutorialAction("...", TutorialAction.Action.NONE),
                 new TutorialAction("Yay!", TutorialAction.Action.NONE),
-                new TutorialAction("I ate some but I forgot to clean up. Oops, sorry! Don't step on them or else you'll slip", TutorialAction.Action.NONE) } },
+                new TutorialAction("I ate some but I forgot to clean up. Oops, sorry! Don't step on them or else you'll slip.", TutorialAction.Action.NONE) } },
         };
 
 

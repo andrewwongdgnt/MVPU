@@ -11,7 +11,7 @@ public class Enemy : Entity, IWalker, IAttacker
     public bool dozer;
     public AudioClip sfxHitClip;
 
-    public enum Animation { Dozed, Slipped }
+    public enum Animation { None, Dozed, Slipped }
 
     public bool inactive
     {
@@ -216,6 +216,10 @@ public class Enemy : Entity, IWalker, IAttacker
         return false;
     }
 
+    public string GetPlayerLoseAnimationName()
+    {
+        return "Dead";
+    }
 
     public void StartWalkAnimation()
     {
@@ -227,13 +231,14 @@ public class Enemy : Entity, IWalker, IAttacker
     }
 
 
-    public void StartDozedAnimation()
+    public void StartDieAnimation(string name)
     {
-        animator.SetBool("Dozed", true);
+        animator.SetBool(name, true);
     }
-    public void StopDozedAnimation()
+    public void StopDieAnimation()
     {
-        animator.SetBool("Dozed", false);
+        animator.SetBool("Dead", false);
+        animator.SetBool("Slip", false);
     }
     public void StartAttackAnimation()
     {

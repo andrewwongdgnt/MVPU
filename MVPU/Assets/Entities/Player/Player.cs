@@ -72,9 +72,9 @@ public class Player : Entity, IWalker
         animator.SetBool("HorizontalWalk", false);
     }
 
-    public void StartDieAnimation(bool showOnlyFirstFrame = false)
+    public void StartDieAnimation(string name, bool showOnlyFirstFrame = false)
     {
-        animator.SetBool("Dead", true);
+        animator.SetBool(name, true);
         animator.speed = showOnlyFirstFrame ? 0 : 1;
     }
 
@@ -82,6 +82,7 @@ public class Player : Entity, IWalker
     public void StopDieAnimation()
     {
         animator.SetBool("Dead", false);
+        animator.SetBool("Slip", false);
 
     }
 

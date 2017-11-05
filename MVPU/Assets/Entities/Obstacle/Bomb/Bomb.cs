@@ -6,7 +6,7 @@ public class Bomb : Entity, IAttacker {
 
     public enum Animation { None, Explode }
 
-
+    public string playerLoseAnimationName;
     public bool affectsEnemy;
     public bool affectsPlayer;
     public int numOfUses;
@@ -16,8 +16,6 @@ public class Bomb : Entity, IAttacker {
         get;set;
     }
 
-    //TODO: maybe allow this, come back later
-    //public int radius;
 
     protected override void BuildAdditionalStateDict(Dictionary<string, object> dict)
     {
@@ -46,19 +44,17 @@ public class Bomb : Entity, IAttacker {
         Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " affectsEnemy=" + affectsEnemy + " affectsPlayer="+ affectsPlayer+ " numOfUses="+ numOfUses+ " inactive="+ inactive);
     }
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public string GetPlayerLoseAnimationName()
+    {
+        return playerLoseAnimationName;
+    }
 
     public void StartAttackAnimation()
     {
-        //TODO: uncomment when animator exists
-        //animator.SetBool("Attack", true);
+        animator.SetBool("Attack", true);
     }
     public void StopAttackAnimation()
     {
-        //TODO: uncomment when animator exists
-        //animator.SetBool("Attack", false);
+        animator.SetBool("Attack", false);
     }
 }

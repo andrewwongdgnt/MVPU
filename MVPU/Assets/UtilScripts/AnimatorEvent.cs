@@ -16,7 +16,7 @@ public class AnimatorEvent : MonoBehaviour {
     public void EnemyAttackEvent()
     {
         if (gameModel.player != null)
-            gameModel.player.StartDieAnimation();
+            gameModel.player.StartDieAnimation(enemy.GetPlayerLoseAnimationName());
         AudioManager.PlaySFX(enemy.audioSource, enemy.sfxHitClip);
     }
 

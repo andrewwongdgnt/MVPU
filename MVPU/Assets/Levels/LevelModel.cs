@@ -109,6 +109,7 @@ public class LevelModel : MonoBehaviour
                 bombArr[i].x = bombLocationArr[i].x;
                 bombArr[i].y = bombLocationArr[i].y;
                 bombArr[i].gameObject.transform.localScale = new Vector3(scale, scale, scale);
+                bombArr[i].facingDirection = Entity.Direction.RIGHT;
             }
             gameModel.bombArr = bombArr;
 
@@ -157,6 +158,11 @@ public class LevelModel : MonoBehaviour
             Array.ForEach(tutorialGameObjects, tGo =>
             {
                 tGo.SetActive(tutorialObjectsOn);
+            });
+            GameObject[] tutorialEntityGameObjects = GameObject.FindGameObjectsWithTag("TutorialEntity");
+            Array.ForEach(tutorialEntityGameObjects, teGo =>
+            {
+                teGo.SetActive(tutorialObjectsOn);
             });
 
             gameModel.Commence();

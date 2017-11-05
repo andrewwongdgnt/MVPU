@@ -71,7 +71,7 @@ public class UndoManager
         return historyState;
     }
 
-    public HistoryState Undo(bool removeLastState)
+    public HistoryState Undo()
     {
         if (currentHistoryIndex >= 0)
         {
@@ -79,13 +79,16 @@ public class UndoManager
             if (currentHistoryIndex >= 0)
             {
                 HistoryState historyState = history[currentHistoryIndex];
-                if (removeLastState)
-                    history.RemoveAt(history.Count - 1);
                 return historyState;
             }
 
         }
         return null;
+    }
+
+    public void RemoveLastState()
+    {
+        history.RemoveAt(history.Count - 1);
     }
 
     public HistoryState Redo()

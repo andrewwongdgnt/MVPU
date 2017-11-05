@@ -10,4 +10,6 @@ public interface IAttacker : IEntityObtainer
     void StartAttackAnimation();
     void StopAttackAnimation();
 
+    string GetPlayerLoseAnimationName();
+
 }
