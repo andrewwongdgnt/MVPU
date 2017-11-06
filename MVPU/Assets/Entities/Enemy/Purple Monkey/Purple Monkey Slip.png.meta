@@ -1,0 +1,692 @@
+fileFormatVersion: 2
+guid: 50073553ab71a7d4ab9ec8e47f336482
+timeCreated: 1509941404
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Purple Monkey Slip_0
+    21300002: Purple Monkey Slip_1
+    21300004: Purple Monkey Slip_2
+    21300006: Purple Monkey Slip_3
+    21300008: Purple Monkey Slip_4
+    21300010: Purple Monkey Slip_5
+    21300012: Purple Monkey Slip_6
+    21300014: Purple Monkey Slip_7
+    21300016: Purple Monkey Slip_8
+    21300018: Purple Monkey Slip_9
+    21300020: Purple Monkey Slip_10
+    21300022: Purple Monkey Slip_11
+    21300024: Purple Monkey Slip_12
+    21300026: Purple Monkey Slip_13
+    21300028: Purple Monkey Slip_14
+    21300030: Purple Monkey Slip_15
+    21300032: Purple Monkey Slip_16
+    21300034: Purple Monkey Slip_17
+    21300036: Purple Monkey Slip_18
+    21300038: Purple Monkey Slip_19
+    21300040: Purple Monkey Slip_20
+    21300042: Purple Monkey Slip_21
+    21300044: Purple Monkey Slip_22
+    21300046: Purple Monkey Slip_23
+    21300048: Purple Monkey Slip_24
+    21300050: Purple Monkey Slip_25
+    21300052: Purple Monkey Slip_26
+    21300054: Purple Monkey Slip_27
+    21300056: Purple Monkey Slip_28
+    21300058: Purple Monkey Slip_29
+    21300060: Purple Monkey Slip_30
+    21300062: Purple Monkey Slip_31
+    21300064: Purple Monkey Slip_32
+    21300066: Purple Monkey Slip_33
+    21300068: Purple Monkey Slip_34
+    21300070: Purple Monkey Slip_35
+    21300072: Purple Monkey Slip_36
+    21300074: Purple Monkey Slip_37
+    21300076: Purple Monkey Slip_38
+    21300078: Purple Monkey Slip_39
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: tvOS
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Tizen
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Samsung TV
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Purple Monkey Slip_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_1
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_2
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_3
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_4
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_5
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_6
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_7
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_8
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_9
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_10
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_11
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_12
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_13
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 1871
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_15
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_16
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_17
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_18
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_19
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_20
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_21
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_22
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_23
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_24
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_25
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_26
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_27
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 1694
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_29
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_30
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_31
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_32
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_33
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_34
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_35
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_36
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_37
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_38
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Purple Monkey Slip_39
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 1517
+        width: 145
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
