@@ -1016,7 +1016,7 @@ public class GameModel : MonoBehaviour
                         {
                             SetViewForEnemy((Enemy)walker, bombInfo.third.GetPlayerLoseAnimationName());
                         }
-                        Entity.Direction bombDirection = walker.entity.facingDirection == Entity.Direction.LEFT || walker.entity.facingDirection == Entity.Direction.UP ? Entity.Direction.LEFT : Entity.Direction.RIGHT;
+                        Entity.Direction bombDirection = direction == Entity.Direction.LEFT || direction == Entity.Direction.UP ? Entity.Direction.LEFT : Entity.Direction.RIGHT;
 
                         SetViewForBomb(bombInfo.third, bombDirection, Bomb.Animation.Explode);
                     }
