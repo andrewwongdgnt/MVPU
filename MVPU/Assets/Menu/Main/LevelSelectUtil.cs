@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LevelSelectManager
+public class LevelSelectUtil
 {
 
     public static readonly int MAX_WORLD_INDEX=9;

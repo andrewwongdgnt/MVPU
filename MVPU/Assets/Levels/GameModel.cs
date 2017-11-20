@@ -177,8 +177,8 @@ public class GameModel : MonoBehaviour
         }
     }
 
-    private LevelManager.LevelID _currentLevelId;
-    public LevelManager.LevelID currentLevelId
+    private LevelUtil.LevelID _currentLevelId;
+    public LevelUtil.LevelID currentLevelId
     {
 
         set
@@ -294,14 +294,14 @@ public class GameModel : MonoBehaviour
             pauseAudioSource.Stop();
            currentLevelAudioSource.UnPause();
             if (!currentLevelAudioSource.isPlaying)
-            AudioManager.PlayMusic(currentLevelAudioSource, _currentLevelMusic);
+            AudioUtil.PlayMusic(currentLevelAudioSource, _currentLevelMusic);
         }
         else
         {
             currentLevelAudioSource.Pause();
            pauseAudioSource.UnPause();
             if (!pauseAudioSource.isPlaying)
-                AudioManager.PlayMusic(pauseAudioSource, pauseMusicClip);
+                AudioUtil.PlayMusic(pauseAudioSource, pauseMusicClip);
         }
     }
 
@@ -647,7 +647,6 @@ public class GameModel : MonoBehaviour
             if (winning)
             {
                 Debug.Log(_currentLevelId + ": Game win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.GetResult());
-                SaveStateManager.SaveLevel(_currentLevelId, scoringModel.numberOfMoves);
                 _player.StartWinAnimation();
                 _goal.StartWinAnimation();
                 FaceHorizontally(_goal.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
@@ -982,7 +981,7 @@ public class GameModel : MonoBehaviour
             if (blockedEnemyInfo == null)
             {
   
-                float speedMultiplier = SettingsManager.GetEntitySpeedMultipler();
+                float speedMultiplier = SettingsUtil.GetEntitySpeedMultipler();
 
                 while (entity.transform.position != end)
                 {

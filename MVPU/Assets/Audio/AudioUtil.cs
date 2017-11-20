@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager  {
+public class AudioUtil  {
 
     public static void PlaySFX(AudioSource audioSource, AudioClip audioClip)
     {
         if (audioSource == null || audioClip == null)
             return;
-        audioSource.volume = SettingsManager.GetSFXVolume() / 100;
+        audioSource.volume = SettingsUtil.GetSFXVolume() / 100;
         audioSource.loop = false;
         PlayAudio(audioSource, audioClip);
     }
@@ -17,7 +17,7 @@ public class AudioManager  {
     {
         if (audioSource == null || audioClip == null)
             return;
-        audioSource.volume = SettingsManager.GetMusicVolume() / 100;
+        audioSource.volume = SettingsUtil.GetMusicVolume() / 100;
         audioSource.loop = true;
         PlayAudio(audioSource, audioClip);
     }

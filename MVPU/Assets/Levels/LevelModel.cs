@@ -7,7 +7,7 @@ public class LevelModel : MonoBehaviour
 
     private static readonly float MAGIC_DISTANCE_NUMBER = 1.1275f; //Check the width of each isometric square in the flash file
 
-    public LevelManager.LevelID levelID;
+    public LevelUtil.LevelID levelID;
     public Material mat;
 
     public Tutorial tutorial;
@@ -43,7 +43,7 @@ public class LevelModel : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (LevelManager.levelToLoad == levelID)
+        if (LevelUtil.levelToLoad == levelID)
         {
      
             //Update skybox
@@ -71,7 +71,7 @@ public class LevelModel : MonoBehaviour
             GameModel gameModel = GameObject.Find("Game").GetComponent<GameModel>();
 
 
-            gameModel.levelScore = LevelManager.LevelScoreMap[levelID];
+            gameModel.levelScore = LevelUtil.LevelScoreMap[levelID];
 
             Coordinate distance = new Coordinate();
             distance.x = baseDistanceX;
@@ -79,7 +79,7 @@ public class LevelModel : MonoBehaviour
             gameModel.distance = distance;
             gameModel.origin = origin;
 
-            gameModel.grid = LevelManager.LevelGridMap[levelID];
+            gameModel.grid = LevelUtil.LevelGridMap[levelID];
 
             float scale = baseDistanceX / MAGIC_DISTANCE_NUMBER;
 
@@ -144,12 +144,12 @@ public class LevelModel : MonoBehaviour
             });
 
             bool tutorialObjectsOn = false;
-            if (SettingsManager.IsTutorialOn())
+            if (SettingsUtil.IsTutorialOn())
             {
                 if (tutorial != null)
                 {
                     tutorialObjectsOn = true;
-                    tutorial.Init(LevelManager.TutorialContent.ContainsKey(levelID) ? LevelManager.TutorialContent[levelID] : null);
+                    tutorial.Init(LevelUtil.TutorialContent.ContainsKey(levelID) ? LevelUtil.TutorialContent[levelID] : null);
                 }
                 gameModel.tutorial = tutorial;
             }

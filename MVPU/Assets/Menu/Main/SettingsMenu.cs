@@ -11,33 +11,33 @@ public class SettingsMenu : MonoBehaviour {
     public Slider sfxVolume;
     void Start()
     {
-        tutorialToggle.isOn = SettingsManager.IsTutorialOn();
-        entitySpeedMultiplier.value = SettingsManager.GetEntitySpeedMultipler();
-        musicVolume.value = SettingsManager.GetMusicVolume();
-        sfxVolume.value = SettingsManager.GetSFXVolume();
+        tutorialToggle.isOn = SettingsUtil.IsTutorialOn();
+        entitySpeedMultiplier.value = SettingsUtil.GetEntitySpeedMultipler();
+        musicVolume.value = SettingsUtil.GetMusicVolume();
+        sfxVolume.value = SettingsUtil.GetSFXVolume();
     }
 
 	public void ToggleTutorial (bool value) {
         Debug.Log("Tutorial is "+ (value ? "on" : "off"));
-        SettingsManager.SetTutorial(value);
+        SettingsUtil.SetTutorial(value);
     }
 
     public void EntitySpeed (float speed)
     {
         Debug.Log("Entity Speed is " + (speed));
-        SettingsManager.SetEntitySpeedMultiplier(speed);
+        SettingsUtil.SetEntitySpeedMultiplier(speed);
     }
 
     public void MusicVolume(float value)
     {
         Debug.Log("Music volume is " + (value));
-        SettingsManager.SetMusicVolume(value);
+        SettingsUtil.SetMusicVolume(value);
     }
 
     public void SFXVolume(float value)
     {
         Debug.Log("SFX volume is " + (value));
-        SettingsManager.SetSFXVolume(value);
+        SettingsUtil.SetSFXVolume(value);
     }
 
 }

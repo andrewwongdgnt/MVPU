@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class LevelManager
+public class LevelUtil
 {
 
     public enum LevelID

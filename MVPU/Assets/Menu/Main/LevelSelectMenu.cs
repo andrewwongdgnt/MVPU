@@ -43,13 +43,13 @@ public class LevelSelectMenu : MonoBehaviour {
 
     void UpdateLevelSelectButton(LevelSelectButton levelSelectButton)
     {
-        levelSelectButton.label.text = (LevelSelectManager.GetCurrentWorld() * 10 + levelSelectButton.levelIndex + 1).ToString();
+        levelSelectButton.label.text = (LevelSelectUtil.GetCurrentWorld() * 10 + levelSelectButton.levelIndex + 1).ToString();
         levelSelectButton.UpdateStars();
     }
 
     public void ChangeWorld(bool up)
     {
-        LevelSelectManager.ChangeWorld(up);
+        LevelSelectUtil.ChangeWorld(up);
 
         UpdateAllLevelSelectButtons();
     }

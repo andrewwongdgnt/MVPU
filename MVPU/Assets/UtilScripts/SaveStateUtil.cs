@@ -2,11 +2,11 @@
 using System.Collections;
 using SimpleJSON;
 
-public class SaveStateManager  {
+public class SaveStateUtil  {
 
     static string MOVE_COUNT_KEY = "moveCount";
 
-	public static void SaveLevel (LevelManager.LevelID levelId, int moveCount) {
+	public static void SaveLevel (LevelUtil.LevelID levelId, int moveCount) {
 
         string jsonString = PlayerPrefs.GetString(levelId.ToString());
         JSONNode savedNode = JSON.Parse(jsonString);
@@ -24,7 +24,7 @@ public class SaveStateManager  {
         PlayerPrefs.SetString(levelId.ToString(), node.ToString());
     }
 
-    public static LevelState LoadLevel(LevelManager.LevelID levelId)
+    public static LevelState LoadLevel(LevelUtil.LevelID levelId)
     {
         string jsonString = PlayerPrefs.GetString(levelId.ToString());
         JSONNode node = JSON.Parse(jsonString);

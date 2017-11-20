@@ -24,30 +24,30 @@ public class LevelSelectButton : MonoBehaviour
     {
         UpdateStars();
     }
-    LevelManager.LevelID GetResolvedLevelId()
+    LevelUtil.LevelID GetResolvedLevelId()
     {
-        LevelManager.LevelID[] levelIds = LevelManager.WorldToLevelArr[levelIndex];
+        LevelUtil.LevelID[] levelIds = LevelUtil.WorldToLevelArr[levelIndex];
 
-        int currentWorldIndex = LevelSelectManager.GetCurrentWorld();
+        int currentWorldIndex = LevelSelectUtil.GetCurrentWorld();
         if (levelIds.Length > currentWorldIndex)
-            return levelIds[LevelSelectManager.GetCurrentWorld()];
+            return levelIds[LevelSelectUtil.GetCurrentWorld()];
         else
-            return LevelManager.LevelID.NO_LEVEL;
+            return LevelUtil.LevelID.NO_LEVEL;
 
     }
     public void UpdateStars()
     {
-        LevelManager.LevelID levelId = GetResolvedLevelId();
+        LevelUtil.LevelID levelId = GetResolvedLevelId();
 
-        if (levelId != LevelManager.LevelID.NO_LEVEL && levelId != LevelManager.LevelID.TEST_LEVEL)
+        if (levelId != LevelUtil.LevelID.NO_LEVEL && levelId != LevelUtil.LevelID.TEST_LEVEL)
         {
             Button btn = GetComponent<Button>();
-            LevelManager.LevelID[] levelPrereqs = LevelManager.LevelPrereq.ContainsKey(levelId) ? LevelManager.LevelPrereq[levelId] : new LevelManager.LevelID[] { };
+            LevelUtil.LevelID[] levelPrereqs = LevelUtil.LevelPrereq.ContainsKey(levelId) ? LevelUtil.LevelPrereq[levelId] : new LevelUtil.LevelID[] { };
 
             btn.interactable = levelPrereqs.Length == 0 || Array.Exists(levelPrereqs, l =>
-                  SaveStateManager.LoadLevel(l) != null
+                  SaveStateUtil.LoadLevel(l) != null
                 )
-                || LevelManager.unlockAllLevels; // override this for testing purposes: True to unlock all levels, False for normal rules;
+                || LevelUtil.unlockAllLevels;
 
             if (!btn.interactable)
             {
@@ -55,7 +55,7 @@ public class LevelSelectButton : MonoBehaviour
             }
             else
             {
-                SaveStateManager.LevelState levelState = SaveStateManager.LoadLevel(levelId);
+                SaveStateUtil.LevelState levelState = SaveStateUtil.LoadLevel(levelId);
                 if (levelState == null)
                 {
                     star1.sprite = star2.sprite = star3.sprite = starOff;
@@ -96,10 +96,10 @@ public class LevelSelectButton : MonoBehaviour
 
     public void GoToLevel()
     {
-        LevelManager.LevelID levelId = GetResolvedLevelId();
-        if (levelId != LevelManager.LevelID.NO_LEVEL)
+        LevelUtil.LevelID levelId = GetResolvedLevelId();
+        if (levelId != LevelUtil.LevelID.NO_LEVEL)
         {
-            LevelManager.levelToLoad = levelId;
+            LevelUtil.levelToLoad = levelId;
             SceneManager.LoadScene("Load Screen");
         }
     }

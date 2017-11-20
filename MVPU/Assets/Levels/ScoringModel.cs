@@ -53,9 +53,9 @@ public class ScoringModel
     {
         return GetResult(numberOfMoves, _levelScore);
     }
-    public static ScoreTypes GetResult(int numberOfMoves, LevelManager.LevelID levelId)
+    public static ScoreTypes GetResult(int numberOfMoves, LevelUtil.LevelID levelId)
     {
-        return GetResult(numberOfMoves, LevelManager.LevelScoreMap[levelId]);
+        return GetResult(numberOfMoves, LevelUtil.LevelScoreMap[levelId]);
     }
     public static ScoreTypes GetResult(int numberOfMoves, LevelScore levelScore)
     {
