@@ -106,8 +106,8 @@ MonoBehaviour:
     y: 30
     width: 1680
     height: 917
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 18008, y: 14042}
+  m_MinSize: {x: 681, y: 492}
+  m_MaxSize: {x: 18006, y: 14042}
   vertical: 0
   controlID: 136
 --- !u!114 &6
@@ -418,7 +418,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 74e2ffff60e3ffff9ae4ffffa4e4ffffbce4ffffc0fbffff00000000
+    m_ExpandedIDs: 5c97ffff3898ffff7299ffff7c99ffff9499ffffc0fbffff00000000ae3d0000e03d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -568,7 +568,7 @@ MonoBehaviour:
     width: 802
     height: 255
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: Util
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -577,20 +577,19 @@ MonoBehaviour:
     m_ScenePaths: []
     m_ShowAllHits: 0
     m_SearchArea: 0
-    m_Folders:
-    - Assets/Levels
+    m_Folders: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Levels
+  - Assets/UnityTestTools/Examples/IntegrationTestsFrameworkExamples/AngryBotsTests/Scripts/Managers
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Users\Owner\Unity games\MVPU\MVPU
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 306}
-    m_SelectedIDs: 50330000
-    m_LastClickedID: 13136
-    m_ExpandedIDs: 00000000e62600005e280000a0280000a4280000e0280000242d0000322d00003a2d0000b02d00004e3100006e310000c0310000c2310000c6320000f232000050330000d8330000f8330000763600007e3600002c38000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 1458}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 00000000e62600005e280000a0280000a4280000e02800004429000050290000242d0000322d00003a2d0000b02d00004e3100006e310000c0310000c2310000c6320000f232000050330000d8330000f833000038360000763600007e3600002c3800004639000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -670,7 +669,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 458}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 249
 --- !u!114 &19
