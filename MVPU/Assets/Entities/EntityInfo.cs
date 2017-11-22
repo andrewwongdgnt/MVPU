@@ -2,9 +2,10 @@
 using System.Collections;
 
 [System.Serializable]
-public class Location : System.Object
+public class EntityInfo : System.Object
 {
 
     public int x;
     public int y;
+    public Entity.Direction facingDirection;
 }

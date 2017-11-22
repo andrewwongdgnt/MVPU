@@ -15,24 +15,24 @@ public class LevelModel : MonoBehaviour
     public AudioClip musicClip;
 
     public Player player;
-    public Location playerLocation;
+    public EntityInfo playerLocation;
     public Entity.Direction playerFacingDirection;
 
     public Goal goal;
-    public Location goalLocation;
+    public EntityInfo goalLocation;
 
     public Enemy[] enemyArr;
-    public Location[] enemyLocationArr;
+    public EntityInfo[] enemyLocationArr;
     public Entity.Direction[] enemyFacingDirectionArr;
 
     public Bomb[] bombArr;
-    public Location[] bombLocationArr;
+    public EntityInfo[] bombLocationArr;
 
     public Key[] keyArr;
-    public Location[] keyLocationArr;
+    public EntityInfo[] keyLocationArr;
 
     public Wall[] wallArr;
-    public Location[] wallLocationArr;
+    public EntityInfo[] wallLocationArr;
 
     [Tooltip("The base distance from one cell to another in the X direction")]
     public float baseDistanceX = MAGIC_DISTANCE_NUMBER;
