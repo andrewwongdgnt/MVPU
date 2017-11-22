@@ -14,24 +14,16 @@ public class LevelModel : MonoBehaviour
 
     public AudioClip musicClip;
 
-    public Player player;
     public PlayerInfo playerLocation;
-    public Entity.Direction playerFacingDirection;
 
-    public Goal goal;
     public GoalInfo goalLocation;
 
-    public Enemy[] enemyArr;
     public EnemyInfo[] enemyLocationArr;
-    public Entity.Direction[] enemyFacingDirectionArr;
 
-    public Bomb[] bombArr;
     public BombInfo[] bombLocationArr;
 
-    public Key[] keyArr;
     public KeyInfo[] keyLocationArr;
 
-    public Wall[] wallArr;
     public WallInfo[] wallLocationArr;
 
     [Tooltip("The base distance from one cell to another in the X direction")]
@@ -45,25 +37,10 @@ public class LevelModel : MonoBehaviour
     {
         if (LevelUtil.levelToLoad == levelID)
         {
-     
+
             //Update skybox
             RenderSettings.skybox = mat;
 
-            //Disable entities not related to this level
-            GameObject[] entities = GameObject.FindGameObjectsWithTag("Entity");
-            Array.ForEach(entities, ent =>
-            {
-
-                if (ent.GetComponent<Player>() != player 
-                && ent.GetComponent<Goal>() != goal 
-                && !Array.Exists(enemyArr, en => en == ent.GetComponent<Enemy>()) 
-                && !Array.Exists(bombArr, bo => bo == ent.GetComponent<Bomb>())
-                && !Array.Exists(keyArr, k => k == ent.GetComponent<Key>())
-                && !Array.Exists(wallArr, k => k == ent.GetComponent<Wall>()))
-                {
-                    ent.SetActive(false);
-                }
-            });
 
             gameObject.SetActive(true);
 
@@ -83,48 +60,65 @@ public class LevelModel : MonoBehaviour
 
             float scale = baseDistanceX / MAGIC_DISTANCE_NUMBER;
 
+            Player player = Instantiate(playerLocation.player);
             player.x = playerLocation.x;
             player.y = playerLocation.y;
-            player.facingDirection = playerFacingDirection==Entity.Direction.NONE ? Entity.Direction.RIGHT : playerFacingDirection ;
-            player.gameObject.transform.localScale = new Vector3(scale,scale,scale);
+            player.facingDirection = playerLocation.facingDirection == Entity.Direction.NONE ? Entity.Direction.RIGHT : playerLocation.facingDirection;
+            player.gameObject.transform.localScale = new Vector3(scale, scale, scale);
             gameModel.player = player;
 
+            Goal goal = Instantiate(goalLocation.goal);
             goal.x = goalLocation.x;
             goal.y = goalLocation.y;
             goal.gameObject.transform.localScale = new Vector3(scale, scale, scale);
             gameModel.goal = goal;
 
+            Enemy[] enemyArr = new Enemy[enemyLocationArr.Length];
             for (int i = 0; i < enemyLocationArr.Length; i++)
             {
-                enemyArr[i].x = enemyLocationArr[i].x;
-                enemyArr[i].y = enemyLocationArr[i].y;
-                enemyArr[i].facingDirection = enemyFacingDirectionArr.Length <= i || enemyFacingDirectionArr[i] == Entity.Direction.NONE ? Entity.Direction.RIGHT : enemyFacingDirectionArr[i];
+                Enemy enemy = Instantiate(enemyLocationArr[i].enemy);
+                enemy.x = enemyLocationArr[i].x;
+                enemy.y = enemyLocationArr[i].y;
+                enemy.gameObject.transform.localScale = new Vector3(scale, scale, scale);
+                enemy.facingDirection = enemyLocationArr.Length <= i || enemyLocationArr[i].facingDirection == Entity.Direction.NONE ? Entity.Direction.RIGHT : enemyLocationArr[i].facingDirection;
 
-                enemyArr[i].gameObject.transform.localScale = new Vector3(scale, scale, scale);
+                enemyArr[i] = enemy;
             }
             gameModel.enemyArr = enemyArr;
 
+            Bomb[] bombArr = new Bomb[bombLocationArr.Length];
             for (int i = 0; i < bombLocationArr.Length; i++)
             {
-                bombArr[i].x = bombLocationArr[i].x;
-                bombArr[i].y = bombLocationArr[i].y;
-                bombArr[i].gameObject.transform.localScale = new Vector3(scale, scale, scale);
-                bombArr[i].facingDirection = Entity.Direction.RIGHT;
+                Bomb bomb = Instantiate(bombLocationArr[i].bomb);
+                bomb.x = bombLocationArr[i].x;
+                bomb.y = bombLocationArr[i].y;
+                bomb.gameObject.transform.localScale = new Vector3(scale, scale, scale);
+                bomb.facingDirection = Entity.Direction.RIGHT;
+
+                bombArr[i] = bomb;
             }
             gameModel.bombArr = bombArr;
 
+            Key[] keyArr = new Key[keyLocationArr.Length];
             for (int i = 0; i < keyLocationArr.Length; i++)
             {
-                keyArr[i].x = keyLocationArr[i].x;
-                keyArr[i].y = keyLocationArr[i].y;
-                keyArr[i].gameObject.transform.localScale = new Vector3(scale, scale, scale);
+                Key key = Instantiate(keyLocationArr[i].key);
+                key.x = keyLocationArr[i].x;
+                key.y = keyLocationArr[i].y;
+                key.gameObject.transform.localScale = new Vector3(scale, scale, scale);
+
+                keyArr[i] = key;
             }
             gameModel.keyArr = keyArr;
 
+            Wall[] wallArr = new Wall[wallLocationArr.Length];
             for (int i = 0; i < wallLocationArr.Length; i++)
             {
-                wallArr[i].x = wallLocationArr[i].x;
-                wallArr[i].y = wallLocationArr[i].y;
+                Wall wall = Instantiate(wallLocationArr[i].wall);
+                wall.x = wallLocationArr[i].x;
+                wall.y = wallLocationArr[i].y;
+
+                wallArr[i] = wall;
             }
             gameModel.wallArr = wallArr;
 
@@ -172,7 +166,7 @@ public class LevelModel : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    
+
 
 
 
