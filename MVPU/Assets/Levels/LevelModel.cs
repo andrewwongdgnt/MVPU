@@ -73,12 +73,14 @@ public class LevelModel : MonoBehaviour
         player.facingDirection = playerInfo.facingDirection == Entity.Direction.NONE ? Entity.Direction.RIGHT : playerInfo.facingDirection;
         player.gameObject.transform.localScale = new Vector3(scale, scale, scale);
         gameModel.player = player;
+        SetGameModelToAnimatorEvent(player.GetComponentInChildren<AnimatorEvent>(), gameModel);        
 
         Goal goal = Instantiate(goalInfo.goal);
         goal.x = goalInfo.x;
         goal.y = goalInfo.y;
         goal.gameObject.transform.localScale = new Vector3(scale, scale, scale);
         gameModel.goal = goal;
+        SetGameModelToAnimatorEvent(goal.GetComponentInChildren<AnimatorEvent>(), gameModel);
 
         Enemy[] enemyArr = new Enemy[enemyInfos.Length];
         for (int i = 0; i < enemyInfos.Length; i++)
@@ -88,6 +90,7 @@ public class LevelModel : MonoBehaviour
             enemy.y = enemyInfos[i].y;
             enemy.gameObject.transform.localScale = new Vector3(scale, scale, scale);
             enemy.facingDirection = enemyInfos.Length <= i || enemyInfos[i].facingDirection == Entity.Direction.NONE ? Entity.Direction.RIGHT : enemyInfos[i].facingDirection;
+            SetGameModelToAnimatorEvent(enemy.GetComponentInChildren<AnimatorEvent>(), gameModel);
 
             enemyArr[i] = enemy;
         }
@@ -171,7 +174,11 @@ public class LevelModel : MonoBehaviour
 
     }
 
-
-
-
+    private void  SetGameModelToAnimatorEvent(AnimatorEvent animatorEvent, GameModel gameModel)
+    {
+        if (animatorEvent != null)
+        {
+            animatorEvent.gameModel = gameModel;
+        }
+    }
 }

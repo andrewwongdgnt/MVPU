@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimatorEvent : MonoBehaviour {
 
-    public GameModel gameModel;
+    public GameModel gameModel { private get; set; }
     //-------------------------
     //
     //  Entities
@@ -15,20 +15,17 @@ public class AnimatorEvent : MonoBehaviour {
     public Enemy enemy;
     public void EnemyAttackEvent()
     {
-        if (gameModel.player != null)
-            gameModel.player.StartDieAnimation(enemy.GetPlayerLoseAnimationName());
+        gameModel.player.StartDieAnimation(enemy.GetPlayerLoseAnimationName());
         AudioUtil.PlaySFX(enemy.audioSource, enemy.sfxHitClip);
     }
 
     public void PlayerDiedEvent()
     {
-        if (gameModel != null)
-            gameModel.ShowLoseMenu();
+        gameModel.ShowLoseMenu();
     }
 
     public void PlayerWinEvent()
     {
-        if (gameModel != null)
-            gameModel.ShowWinMenu();
+        gameModel.ShowWinMenu();
     }
 }
