@@ -5,8 +5,9 @@ using System.Collections.Generic;
 public class Bomb : Entity, IAttacker {
 
     public enum Animation { None, Explode }
+    public enum WalkerDeathAnimation {Slip }
 
-    public string playerLoseAnimationName;
+    public WalkerDeathAnimation walkerDeathAnimation;
     public bool affectsEnemy;
     public bool affectsPlayer;
     public int numOfUses;
@@ -46,7 +47,13 @@ public class Bomb : Entity, IAttacker {
 	
     public string GetPlayerLoseAnimationName()
     {
-        return playerLoseAnimationName;
+        switch (walkerDeathAnimation)
+        {
+            case WalkerDeathAnimation.Slip:
+            default:
+                return "Slip";
+
+        }
     }
 
     public void StartAttackAnimation()

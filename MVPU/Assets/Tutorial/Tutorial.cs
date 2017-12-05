@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    public enum TutorialEnum { None, Chomp, Coco };
+    public enum TutorialEnum { None, Chomp, Coco, Muffin };
 
     public TutorialEnum tutorialType;
     public Animator anim;
