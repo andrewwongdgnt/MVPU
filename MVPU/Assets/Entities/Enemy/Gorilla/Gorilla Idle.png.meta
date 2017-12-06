@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6183106c43a4d82448da640146d90b61
-timeCreated: 1480743558
+timeCreated: 1512548778
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -113,7 +113,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,7 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,7 +129,7 @@ TextureImporter:
   - buildTarget: iPhone
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -137,7 +137,7 @@ TextureImporter:
   - buildTarget: tvOS
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -145,7 +145,7 @@ TextureImporter:
   - buildTarget: Android
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -153,7 +153,7 @@ TextureImporter:
   - buildTarget: Tizen
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -161,7 +161,7 @@ TextureImporter:
   - buildTarget: Windows Store Apps
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -169,7 +169,7 @@ TextureImporter:
   - buildTarget: WebGL
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -177,7 +177,7 @@ TextureImporter:
   - buildTarget: Samsung TV
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -190,9 +190,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1896
-        width: 142
-        height: 152
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: Gorilla Idle_1
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1896
-        width: 142
-        height: 152
+        x: 146
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: Gorilla Idle_2
       rect:
         serializedVersion: 2
-        x: 284
-        y: 1896
-        width: 142
-        height: 152
+        x: 292
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: Gorilla Idle_3
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1896
-        width: 142
-        height: 152
+        x: 438
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: Gorilla Idle_4
       rect:
         serializedVersion: 2
-        x: 568
-        y: 1896
-        width: 142
-        height: 152
+        x: 584
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,10 +254,10 @@ TextureImporter:
       name: Gorilla Idle_5
       rect:
         serializedVersion: 2
-        x: 710
-        y: 1896
-        width: 142
-        height: 152
+        x: 730
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: Gorilla Idle_6
       rect:
         serializedVersion: 2
-        x: 852
-        y: 1896
-        width: 142
-        height: 152
+        x: 876
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +280,10 @@ TextureImporter:
       name: Gorilla Idle_7
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1896
-        width: 142
-        height: 152
+        x: 1022
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +293,10 @@ TextureImporter:
       name: Gorilla Idle_8
       rect:
         serializedVersion: 2
-        x: 1136
-        y: 1896
-        width: 142
-        height: 152
+        x: 1168
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,10 +306,10 @@ TextureImporter:
       name: Gorilla Idle_9
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 1896
-        width: 142
-        height: 152
+        x: 1314
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,10 +319,10 @@ TextureImporter:
       name: Gorilla Idle_10
       rect:
         serializedVersion: 2
-        x: 1420
-        y: 1896
-        width: 142
-        height: 152
+        x: 1460
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,10 +332,10 @@ TextureImporter:
       name: Gorilla Idle_11
       rect:
         serializedVersion: 2
-        x: 1562
-        y: 1896
-        width: 142
-        height: 152
+        x: 1606
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,10 +345,10 @@ TextureImporter:
       name: Gorilla Idle_12
       rect:
         serializedVersion: 2
-        x: 1704
-        y: 1896
-        width: 142
-        height: 152
+        x: 1752
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,10 +358,10 @@ TextureImporter:
       name: Gorilla Idle_13
       rect:
         serializedVersion: 2
-        x: 1846
-        y: 1896
-        width: 142
-        height: 152
+        x: 1898
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,9 +372,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1744
-        width: 142
-        height: 152
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,10 +384,10 @@ TextureImporter:
       name: Gorilla Idle_15
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1744
-        width: 142
-        height: 152
+        x: 146
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,10 +397,10 @@ TextureImporter:
       name: Gorilla Idle_16
       rect:
         serializedVersion: 2
-        x: 284
-        y: 1744
-        width: 142
-        height: 152
+        x: 292
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,10 +410,10 @@ TextureImporter:
       name: Gorilla Idle_17
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1744
-        width: 142
-        height: 152
+        x: 438
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,10 +423,10 @@ TextureImporter:
       name: Gorilla Idle_18
       rect:
         serializedVersion: 2
-        x: 568
-        y: 1744
-        width: 142
-        height: 152
+        x: 584
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,10 +436,10 @@ TextureImporter:
       name: Gorilla Idle_19
       rect:
         serializedVersion: 2
-        x: 710
-        y: 1744
-        width: 142
-        height: 152
+        x: 730
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,10 +449,10 @@ TextureImporter:
       name: Gorilla Idle_20
       rect:
         serializedVersion: 2
-        x: 852
-        y: 1744
-        width: 142
-        height: 152
+        x: 876
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: Gorilla Idle_21
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1744
-        width: 142
-        height: 152
+        x: 1022
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,10 +475,10 @@ TextureImporter:
       name: Gorilla Idle_22
       rect:
         serializedVersion: 2
-        x: 1136
-        y: 1744
-        width: 142
-        height: 152
+        x: 1168
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,10 +488,10 @@ TextureImporter:
       name: Gorilla Idle_23
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 1744
-        width: 142
-        height: 152
+        x: 1314
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -501,10 +501,10 @@ TextureImporter:
       name: Gorilla Idle_24
       rect:
         serializedVersion: 2
-        x: 1420
-        y: 1744
-        width: 142
-        height: 152
+        x: 1460
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -514,10 +514,10 @@ TextureImporter:
       name: Gorilla Idle_25
       rect:
         serializedVersion: 2
-        x: 1562
-        y: 1744
-        width: 142
-        height: 152
+        x: 1606
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -527,10 +527,10 @@ TextureImporter:
       name: Gorilla Idle_26
       rect:
         serializedVersion: 2
-        x: 1704
-        y: 1744
-        width: 142
-        height: 152
+        x: 1752
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,10 +540,10 @@ TextureImporter:
       name: Gorilla Idle_27
       rect:
         serializedVersion: 2
-        x: 1846
-        y: 1744
-        width: 142
-        height: 152
+        x: 1898
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -554,9 +554,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1592
-        width: 142
-        height: 152
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,10 +566,10 @@ TextureImporter:
       name: Gorilla Idle_29
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1592
-        width: 142
-        height: 152
+        x: 146
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -579,10 +579,10 @@ TextureImporter:
       name: Gorilla Idle_30
       rect:
         serializedVersion: 2
-        x: 284
-        y: 1592
-        width: 142
-        height: 152
+        x: 292
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -592,10 +592,10 @@ TextureImporter:
       name: Gorilla Idle_31
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1592
-        width: 142
-        height: 152
+        x: 438
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -605,10 +605,10 @@ TextureImporter:
       name: Gorilla Idle_32
       rect:
         serializedVersion: 2
-        x: 568
-        y: 1592
-        width: 142
-        height: 152
+        x: 584
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -618,10 +618,10 @@ TextureImporter:
       name: Gorilla Idle_33
       rect:
         serializedVersion: 2
-        x: 710
-        y: 1592
-        width: 142
-        height: 152
+        x: 730
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -631,10 +631,10 @@ TextureImporter:
       name: Gorilla Idle_34
       rect:
         serializedVersion: 2
-        x: 852
-        y: 1592
-        width: 142
-        height: 152
+        x: 876
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -644,10 +644,10 @@ TextureImporter:
       name: Gorilla Idle_35
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1592
-        width: 142
-        height: 152
+        x: 1022
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -657,10 +657,10 @@ TextureImporter:
       name: Gorilla Idle_36
       rect:
         serializedVersion: 2
-        x: 1136
-        y: 1592
-        width: 142
-        height: 152
+        x: 1168
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -670,10 +670,10 @@ TextureImporter:
       name: Gorilla Idle_37
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 1592
-        width: 142
-        height: 152
+        x: 1314
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -683,10 +683,10 @@ TextureImporter:
       name: Gorilla Idle_38
       rect:
         serializedVersion: 2
-        x: 1420
-        y: 1592
-        width: 142
-        height: 152
+        x: 1460
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -696,10 +696,10 @@ TextureImporter:
       name: Gorilla Idle_39
       rect:
         serializedVersion: 2
-        x: 1562
-        y: 1592
-        width: 142
-        height: 152
+        x: 1606
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -709,10 +709,10 @@ TextureImporter:
       name: Gorilla Idle_40
       rect:
         serializedVersion: 2
-        x: 1704
-        y: 1592
-        width: 142
-        height: 152
+        x: 1752
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -722,10 +722,10 @@ TextureImporter:
       name: Gorilla Idle_41
       rect:
         serializedVersion: 2
-        x: 1846
-        y: 1592
-        width: 142
-        height: 152
+        x: 1898
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -736,9 +736,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1440
-        width: 142
-        height: 152
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -748,10 +748,10 @@ TextureImporter:
       name: Gorilla Idle_43
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1440
-        width: 142
-        height: 152
+        x: 146
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -761,10 +761,10 @@ TextureImporter:
       name: Gorilla Idle_44
       rect:
         serializedVersion: 2
-        x: 284
-        y: 1440
-        width: 142
-        height: 152
+        x: 292
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -774,10 +774,10 @@ TextureImporter:
       name: Gorilla Idle_45
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1440
-        width: 142
-        height: 152
+        x: 438
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -787,10 +787,10 @@ TextureImporter:
       name: Gorilla Idle_46
       rect:
         serializedVersion: 2
-        x: 568
-        y: 1440
-        width: 142
-        height: 152
+        x: 584
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -800,10 +800,10 @@ TextureImporter:
       name: Gorilla Idle_47
       rect:
         serializedVersion: 2
-        x: 710
-        y: 1440
-        width: 142
-        height: 152
+        x: 730
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -813,10 +813,10 @@ TextureImporter:
       name: Gorilla Idle_48
       rect:
         serializedVersion: 2
-        x: 852
-        y: 1440
-        width: 142
-        height: 152
+        x: 876
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -826,10 +826,10 @@ TextureImporter:
       name: Gorilla Idle_49
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1440
-        width: 142
-        height: 152
+        x: 1022
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -839,10 +839,10 @@ TextureImporter:
       name: Gorilla Idle_50
       rect:
         serializedVersion: 2
-        x: 1136
-        y: 1440
-        width: 142
-        height: 152
+        x: 1168
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -852,10 +852,10 @@ TextureImporter:
       name: Gorilla Idle_51
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 1440
-        width: 142
-        height: 152
+        x: 1314
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -865,10 +865,10 @@ TextureImporter:
       name: Gorilla Idle_52
       rect:
         serializedVersion: 2
-        x: 1420
-        y: 1440
-        width: 142
-        height: 152
+        x: 1460
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -878,10 +878,10 @@ TextureImporter:
       name: Gorilla Idle_53
       rect:
         serializedVersion: 2
-        x: 1562
-        y: 1440
-        width: 142
-        height: 152
+        x: 1606
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -891,10 +891,10 @@ TextureImporter:
       name: Gorilla Idle_54
       rect:
         serializedVersion: 2
-        x: 1704
-        y: 1440
-        width: 142
-        height: 152
+        x: 1752
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -904,10 +904,10 @@ TextureImporter:
       name: Gorilla Idle_55
       rect:
         serializedVersion: 2
-        x: 1846
-        y: 1440
-        width: 142
-        height: 152
+        x: 1898
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -918,9 +918,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1288
-        width: 142
-        height: 152
+        y: 1268
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -930,10 +930,10 @@ TextureImporter:
       name: Gorilla Idle_57
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1288
-        width: 142
-        height: 152
+        x: 146
+        y: 1268
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -943,10 +943,10 @@ TextureImporter:
       name: Gorilla Idle_58
       rect:
         serializedVersion: 2
-        x: 284
-        y: 1288
-        width: 142
-        height: 152
+        x: 292
+        y: 1268
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -956,10 +956,10 @@ TextureImporter:
       name: Gorilla Idle_59
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1288
-        width: 142
-        height: 152
+        x: 438
+        y: 1268
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

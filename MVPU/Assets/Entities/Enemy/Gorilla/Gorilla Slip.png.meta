@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3525ba619d95a1f499efa817aec55971
-timeCreated: 1480918072
+timeCreated: 1512548972
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -78,7 +78,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -86,7 +86,7 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +94,7 @@ TextureImporter:
   - buildTarget: iPhone
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -102,7 +102,7 @@ TextureImporter:
   - buildTarget: tvOS
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,7 +110,7 @@ TextureImporter:
   - buildTarget: Android
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,7 +118,7 @@ TextureImporter:
   - buildTarget: Tizen
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,7 +126,7 @@ TextureImporter:
   - buildTarget: Windows Store Apps
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,7 +134,7 @@ TextureImporter:
   - buildTarget: WebGL
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,7 +142,7 @@ TextureImporter:
   - buildTarget: Samsung TV
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -155,9 +155,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1841
-        width: 190
-        height: 207
+        y: 1822
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,10 +167,10 @@ TextureImporter:
       name: Gorilla Slip_1
       rect:
         serializedVersion: 2
-        x: 190
-        y: 1841
-        width: 190
-        height: 207
+        x: 201
+        y: 1822
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,10 +180,10 @@ TextureImporter:
       name: Gorilla Slip_2
       rect:
         serializedVersion: 2
-        x: 380
-        y: 1841
-        width: 190
-        height: 207
+        x: 402
+        y: 1822
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: Gorilla Slip_3
       rect:
         serializedVersion: 2
-        x: 570
-        y: 1841
-        width: 190
-        height: 207
+        x: 603
+        y: 1822
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: Gorilla Slip_4
       rect:
         serializedVersion: 2
-        x: 760
-        y: 1841
-        width: 190
-        height: 207
+        x: 804
+        y: 1822
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: Gorilla Slip_5
       rect:
         serializedVersion: 2
-        x: 950
-        y: 1841
-        width: 190
-        height: 207
+        x: 1005
+        y: 1822
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,10 +232,10 @@ TextureImporter:
       name: Gorilla Slip_6
       rect:
         serializedVersion: 2
-        x: 1140
-        y: 1841
-        width: 190
-        height: 207
+        x: 1206
+        y: 1822
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +245,10 @@ TextureImporter:
       name: Gorilla Slip_7
       rect:
         serializedVersion: 2
-        x: 1330
-        y: 1841
-        width: 190
-        height: 207
+        x: 1407
+        y: 1822
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +258,10 @@ TextureImporter:
       name: Gorilla Slip_8
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 1841
-        width: 190
-        height: 207
+        x: 1608
+        y: 1822
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +271,10 @@ TextureImporter:
       name: Gorilla Slip_9
       rect:
         serializedVersion: 2
-        x: 1710
-        y: 1841
-        width: 190
-        height: 207
+        x: 1809
+        y: 1822
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,9 +285,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1634
-        width: 190
-        height: 207
+        y: 1596
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,10 +297,10 @@ TextureImporter:
       name: Gorilla Slip_11
       rect:
         serializedVersion: 2
-        x: 190
-        y: 1634
-        width: 190
-        height: 207
+        x: 201
+        y: 1596
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +310,10 @@ TextureImporter:
       name: Gorilla Slip_12
       rect:
         serializedVersion: 2
-        x: 380
-        y: 1634
-        width: 190
-        height: 207
+        x: 402
+        y: 1596
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,10 +323,10 @@ TextureImporter:
       name: Gorilla Slip_13
       rect:
         serializedVersion: 2
-        x: 570
-        y: 1634
-        width: 190
-        height: 207
+        x: 603
+        y: 1596
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,10 +336,10 @@ TextureImporter:
       name: Gorilla Slip_14
       rect:
         serializedVersion: 2
-        x: 760
-        y: 1634
-        width: 190
-        height: 207
+        x: 804
+        y: 1596
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,10 +349,10 @@ TextureImporter:
       name: Gorilla Slip_15
       rect:
         serializedVersion: 2
-        x: 950
-        y: 1634
-        width: 190
-        height: 207
+        x: 1005
+        y: 1596
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,10 +362,10 @@ TextureImporter:
       name: Gorilla Slip_16
       rect:
         serializedVersion: 2
-        x: 1140
-        y: 1634
-        width: 190
-        height: 207
+        x: 1206
+        y: 1596
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -375,10 +375,10 @@ TextureImporter:
       name: Gorilla Slip_17
       rect:
         serializedVersion: 2
-        x: 1330
-        y: 1634
-        width: 190
-        height: 207
+        x: 1407
+        y: 1596
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,10 +388,10 @@ TextureImporter:
       name: Gorilla Slip_18
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 1634
-        width: 190
-        height: 207
+        x: 1608
+        y: 1596
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -401,10 +401,10 @@ TextureImporter:
       name: Gorilla Slip_19
       rect:
         serializedVersion: 2
-        x: 1710
-        y: 1634
-        width: 190
-        height: 207
+        x: 1809
+        y: 1596
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,9 +415,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1427
-        width: 190
-        height: 207
+        y: 1370
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -427,10 +427,10 @@ TextureImporter:
       name: Gorilla Slip_21
       rect:
         serializedVersion: 2
-        x: 190
-        y: 1427
-        width: 190
-        height: 207
+        x: 201
+        y: 1370
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,10 +440,10 @@ TextureImporter:
       name: Gorilla Slip_22
       rect:
         serializedVersion: 2
-        x: 380
-        y: 1427
-        width: 190
-        height: 207
+        x: 402
+        y: 1370
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,10 +453,10 @@ TextureImporter:
       name: Gorilla Slip_23
       rect:
         serializedVersion: 2
-        x: 570
-        y: 1427
-        width: 190
-        height: 207
+        x: 603
+        y: 1370
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,10 +466,10 @@ TextureImporter:
       name: Gorilla Slip_24
       rect:
         serializedVersion: 2
-        x: 760
-        y: 1427
-        width: 190
-        height: 207
+        x: 804
+        y: 1370
+        width: 201
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

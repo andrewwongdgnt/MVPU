@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f658eb18339c20c44a65bea588bffe26
-timeCreated: 1493007371
+timeCreated: 1512547239
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -49,6 +49,19 @@ TextureImporter:
     21300084: Purple Monkey Faint_42
     21300086: Purple Monkey Faint_43
     21300088: Purple Monkey Faint_44
+    21300090: Purple Monkey Faint_45
+    21300092: Purple Monkey Faint_46
+    21300094: Purple Monkey Faint_47
+    21300096: Purple Monkey Faint_48
+    21300098: Purple Monkey Faint_49
+    21300100: Purple Monkey Faint_50
+    21300102: Purple Monkey Faint_51
+    21300104: Purple Monkey Faint_52
+    21300106: Purple Monkey Faint_53
+    21300108: Purple Monkey Faint_54
+    21300110: Purple Monkey Faint_55
+    21300112: Purple Monkey Faint_56
+    21300114: Purple Monkey Faint_57
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -96,7 +109,7 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -104,7 +117,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -112,7 +125,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: iPhone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -120,7 +133,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: tvOS
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -128,7 +141,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Android
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -136,7 +149,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Tizen
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -144,7 +157,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Windows Store Apps
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -152,7 +165,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: WebGL
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -160,7 +173,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Samsung TV
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -175,9 +188,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 880
-        width: 143
-        height: 144
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,10 +200,10 @@ TextureImporter:
       name: Purple Monkey Faint_1
       rect:
         serializedVersion: 2
-        x: 143
-        y: 880
-        width: 143
-        height: 144
+        x: 150
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,10 +213,10 @@ TextureImporter:
       name: Purple Monkey Faint_2
       rect:
         serializedVersion: 2
-        x: 286
-        y: 880
-        width: 143
-        height: 144
+        x: 300
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,10 +226,10 @@ TextureImporter:
       name: Purple Monkey Faint_3
       rect:
         serializedVersion: 2
-        x: 429
-        y: 880
-        width: 143
-        height: 144
+        x: 450
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +239,10 @@ TextureImporter:
       name: Purple Monkey Faint_4
       rect:
         serializedVersion: 2
-        x: 572
-        y: 880
-        width: 143
-        height: 144
+        x: 600
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +252,10 @@ TextureImporter:
       name: Purple Monkey Faint_5
       rect:
         serializedVersion: 2
-        x: 715
-        y: 880
-        width: 143
-        height: 144
+        x: 750
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +265,10 @@ TextureImporter:
       name: Purple Monkey Faint_6
       rect:
         serializedVersion: 2
-        x: 858
-        y: 880
-        width: 143
-        height: 144
+        x: 900
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +278,10 @@ TextureImporter:
       name: Purple Monkey Faint_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 736
-        width: 143
-        height: 144
+        x: 1050
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +291,10 @@ TextureImporter:
       name: Purple Monkey Faint_8
       rect:
         serializedVersion: 2
-        x: 143
-        y: 736
-        width: 143
-        height: 144
+        x: 1200
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +304,10 @@ TextureImporter:
       name: Purple Monkey Faint_9
       rect:
         serializedVersion: 2
-        x: 286
-        y: 736
-        width: 143
-        height: 144
+        x: 1350
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,10 +317,10 @@ TextureImporter:
       name: Purple Monkey Faint_10
       rect:
         serializedVersion: 2
-        x: 429
-        y: 736
-        width: 143
-        height: 144
+        x: 1500
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,10 +330,10 @@ TextureImporter:
       name: Purple Monkey Faint_11
       rect:
         serializedVersion: 2
-        x: 572
-        y: 736
-        width: 143
-        height: 144
+        x: 1650
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,10 +343,10 @@ TextureImporter:
       name: Purple Monkey Faint_12
       rect:
         serializedVersion: 2
-        x: 715
-        y: 736
-        width: 143
-        height: 144
+        x: 1800
+        y: 1897
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,10 +356,10 @@ TextureImporter:
       name: Purple Monkey Faint_13
       rect:
         serializedVersion: 2
-        x: 858
-        y: 736
-        width: 143
-        height: 144
+        x: 0
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,10 +369,10 @@ TextureImporter:
       name: Purple Monkey Faint_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 592
-        width: 143
-        height: 144
+        x: 150
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,10 +382,10 @@ TextureImporter:
       name: Purple Monkey Faint_15
       rect:
         serializedVersion: 2
-        x: 143
-        y: 592
-        width: 143
-        height: 144
+        x: 300
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,10 +395,10 @@ TextureImporter:
       name: Purple Monkey Faint_16
       rect:
         serializedVersion: 2
-        x: 286
-        y: 592
-        width: 143
-        height: 144
+        x: 450
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,10 +408,10 @@ TextureImporter:
       name: Purple Monkey Faint_17
       rect:
         serializedVersion: 2
-        x: 429
-        y: 592
-        width: 143
-        height: 144
+        x: 600
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -408,10 +421,10 @@ TextureImporter:
       name: Purple Monkey Faint_18
       rect:
         serializedVersion: 2
-        x: 572
-        y: 592
-        width: 143
-        height: 144
+        x: 750
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -421,10 +434,10 @@ TextureImporter:
       name: Purple Monkey Faint_19
       rect:
         serializedVersion: 2
-        x: 715
-        y: 592
-        width: 143
-        height: 144
+        x: 900
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -434,10 +447,10 @@ TextureImporter:
       name: Purple Monkey Faint_20
       rect:
         serializedVersion: 2
-        x: 858
-        y: 592
-        width: 143
-        height: 144
+        x: 1050
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,10 +460,10 @@ TextureImporter:
       name: Purple Monkey Faint_21
       rect:
         serializedVersion: 2
-        x: 0
-        y: 448
-        width: 143
-        height: 144
+        x: 1200
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,10 +473,10 @@ TextureImporter:
       name: Purple Monkey Faint_22
       rect:
         serializedVersion: 2
-        x: 143
-        y: 448
-        width: 143
-        height: 144
+        x: 1350
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -473,10 +486,10 @@ TextureImporter:
       name: Purple Monkey Faint_23
       rect:
         serializedVersion: 2
-        x: 286
-        y: 448
-        width: 143
-        height: 144
+        x: 1500
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -486,10 +499,10 @@ TextureImporter:
       name: Purple Monkey Faint_24
       rect:
         serializedVersion: 2
-        x: 429
-        y: 448
-        width: 143
-        height: 144
+        x: 1650
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,10 +512,10 @@ TextureImporter:
       name: Purple Monkey Faint_25
       rect:
         serializedVersion: 2
-        x: 572
-        y: 448
-        width: 143
-        height: 144
+        x: 1800
+        y: 1746
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -512,10 +525,10 @@ TextureImporter:
       name: Purple Monkey Faint_26
       rect:
         serializedVersion: 2
-        x: 715
-        y: 448
-        width: 143
-        height: 144
+        x: 0
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,10 +538,10 @@ TextureImporter:
       name: Purple Monkey Faint_27
       rect:
         serializedVersion: 2
-        x: 858
-        y: 448
-        width: 143
-        height: 144
+        x: 150
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -538,10 +551,10 @@ TextureImporter:
       name: Purple Monkey Faint_28
       rect:
         serializedVersion: 2
-        x: 0
-        y: 304
-        width: 143
-        height: 144
+        x: 300
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -551,10 +564,10 @@ TextureImporter:
       name: Purple Monkey Faint_29
       rect:
         serializedVersion: 2
-        x: 143
-        y: 304
-        width: 143
-        height: 144
+        x: 450
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -564,10 +577,10 @@ TextureImporter:
       name: Purple Monkey Faint_30
       rect:
         serializedVersion: 2
-        x: 286
-        y: 304
-        width: 143
-        height: 144
+        x: 600
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -577,10 +590,10 @@ TextureImporter:
       name: Purple Monkey Faint_31
       rect:
         serializedVersion: 2
-        x: 429
-        y: 304
-        width: 143
-        height: 144
+        x: 750
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -590,10 +603,10 @@ TextureImporter:
       name: Purple Monkey Faint_32
       rect:
         serializedVersion: 2
-        x: 572
-        y: 304
-        width: 143
-        height: 144
+        x: 900
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -603,10 +616,10 @@ TextureImporter:
       name: Purple Monkey Faint_33
       rect:
         serializedVersion: 2
-        x: 715
-        y: 304
-        width: 143
-        height: 144
+        x: 1050
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -616,10 +629,10 @@ TextureImporter:
       name: Purple Monkey Faint_34
       rect:
         serializedVersion: 2
-        x: 858
-        y: 304
-        width: 143
-        height: 144
+        x: 1200
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -629,10 +642,10 @@ TextureImporter:
       name: Purple Monkey Faint_35
       rect:
         serializedVersion: 2
-        x: 0
-        y: 160
-        width: 143
-        height: 144
+        x: 1350
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -642,10 +655,10 @@ TextureImporter:
       name: Purple Monkey Faint_36
       rect:
         serializedVersion: 2
-        x: 143
-        y: 160
-        width: 143
-        height: 144
+        x: 1500
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -655,10 +668,10 @@ TextureImporter:
       name: Purple Monkey Faint_37
       rect:
         serializedVersion: 2
-        x: 286
-        y: 160
-        width: 143
-        height: 144
+        x: 1650
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -668,10 +681,10 @@ TextureImporter:
       name: Purple Monkey Faint_38
       rect:
         serializedVersion: 2
-        x: 429
-        y: 160
-        width: 143
-        height: 144
+        x: 1800
+        y: 1595
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -681,10 +694,10 @@ TextureImporter:
       name: Purple Monkey Faint_39
       rect:
         serializedVersion: 2
-        x: 572
-        y: 160
-        width: 143
-        height: 144
+        x: 0
+        y: 1444
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -694,10 +707,10 @@ TextureImporter:
       name: Purple Monkey Faint_40
       rect:
         serializedVersion: 2
-        x: 715
-        y: 160
-        width: 143
-        height: 144
+        x: 150
+        y: 1444
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -707,10 +720,10 @@ TextureImporter:
       name: Purple Monkey Faint_41
       rect:
         serializedVersion: 2
-        x: 858
-        y: 160
-        width: 143
-        height: 144
+        x: 300
+        y: 1444
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -720,10 +733,10 @@ TextureImporter:
       name: Purple Monkey Faint_42
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 143
-        height: 144
+        x: 450
+        y: 1444
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -733,10 +746,10 @@ TextureImporter:
       name: Purple Monkey Faint_43
       rect:
         serializedVersion: 2
-        x: 143
-        y: 16
-        width: 143
-        height: 144
+        x: 600
+        y: 1444
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -746,10 +759,10 @@ TextureImporter:
       name: Purple Monkey Faint_44
       rect:
         serializedVersion: 2
-        x: 286
-        y: 16
-        width: 143
-        height: 144
+        x: 750
+        y: 1444
+        width: 150
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

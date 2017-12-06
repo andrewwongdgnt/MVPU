@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 795ecc0df1f72b04298c90bd6d57d97e
-timeCreated: 1502086730
+timeCreated: 1512547089
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -39,6 +39,7 @@ TextureImporter:
     21300064: Purple Monkey Hit_32
     21300066: Purple Monkey Hit_33
     21300068: Purple Monkey Hit_34
+    21300070: Purple Monkey Hit_35
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -88,7 +89,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,7 +97,7 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,7 +105,7 @@ TextureImporter:
   - buildTarget: iPhone
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,7 +113,7 @@ TextureImporter:
   - buildTarget: tvOS
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -120,7 +121,7 @@ TextureImporter:
   - buildTarget: Android
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -128,7 +129,7 @@ TextureImporter:
   - buildTarget: Tizen
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,7 +137,7 @@ TextureImporter:
   - buildTarget: Windows Store Apps
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -144,7 +145,7 @@ TextureImporter:
   - buildTarget: WebGL
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -152,7 +153,7 @@ TextureImporter:
   - buildTarget: Samsung TV
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -165,9 +166,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 877
-        width: 155
-        height: 147
+        y: 868
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,10 +178,10 @@ TextureImporter:
       name: Purple Monkey Hit_1
       rect:
         serializedVersion: 2
-        x: 155
-        y: 877
-        width: 155
-        height: 147
+        x: 161
+        y: 868
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +191,10 @@ TextureImporter:
       name: Purple Monkey Hit_2
       rect:
         serializedVersion: 2
-        x: 310
-        y: 877
-        width: 155
-        height: 147
+        x: 322
+        y: 868
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +204,10 @@ TextureImporter:
       name: Purple Monkey Hit_3
       rect:
         serializedVersion: 2
-        x: 465
-        y: 877
-        width: 155
-        height: 147
+        x: 483
+        y: 868
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +217,10 @@ TextureImporter:
       name: Purple Monkey Hit_4
       rect:
         serializedVersion: 2
-        x: 620
-        y: 877
-        width: 155
-        height: 147
+        x: 644
+        y: 868
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,10 +230,10 @@ TextureImporter:
       name: Purple Monkey Hit_5
       rect:
         serializedVersion: 2
-        x: 775
-        y: 877
-        width: 155
-        height: 147
+        x: 805
+        y: 868
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,9 +244,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 730
-        width: 155
-        height: 147
+        y: 712
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,10 +256,10 @@ TextureImporter:
       name: Purple Monkey Hit_7
       rect:
         serializedVersion: 2
-        x: 155
-        y: 730
-        width: 155
-        height: 147
+        x: 161
+        y: 712
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +269,10 @@ TextureImporter:
       name: Purple Monkey Hit_8
       rect:
         serializedVersion: 2
-        x: 310
-        y: 730
-        width: 155
-        height: 147
+        x: 322
+        y: 712
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +282,10 @@ TextureImporter:
       name: Purple Monkey Hit_9
       rect:
         serializedVersion: 2
-        x: 465
-        y: 730
-        width: 155
-        height: 147
+        x: 483
+        y: 712
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +295,10 @@ TextureImporter:
       name: Purple Monkey Hit_10
       rect:
         serializedVersion: 2
-        x: 620
-        y: 730
-        width: 155
-        height: 147
+        x: 644
+        y: 712
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +308,10 @@ TextureImporter:
       name: Purple Monkey Hit_11
       rect:
         serializedVersion: 2
-        x: 775
-        y: 730
-        width: 155
-        height: 147
+        x: 805
+        y: 712
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,9 +322,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 583
-        width: 155
-        height: 147
+        y: 556
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,10 +334,10 @@ TextureImporter:
       name: Purple Monkey Hit_13
       rect:
         serializedVersion: 2
-        x: 155
-        y: 583
-        width: 155
-        height: 147
+        x: 161
+        y: 556
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,10 +347,10 @@ TextureImporter:
       name: Purple Monkey Hit_14
       rect:
         serializedVersion: 2
-        x: 310
-        y: 583
-        width: 155
-        height: 147
+        x: 322
+        y: 556
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,10 +360,10 @@ TextureImporter:
       name: Purple Monkey Hit_15
       rect:
         serializedVersion: 2
-        x: 465
-        y: 583
-        width: 155
-        height: 147
+        x: 483
+        y: 556
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,10 +373,10 @@ TextureImporter:
       name: Purple Monkey Hit_16
       rect:
         serializedVersion: 2
-        x: 620
-        y: 583
-        width: 155
-        height: 147
+        x: 644
+        y: 556
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,10 +386,10 @@ TextureImporter:
       name: Purple Monkey Hit_17
       rect:
         serializedVersion: 2
-        x: 775
-        y: 583
-        width: 155
-        height: 147
+        x: 805
+        y: 556
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,9 +400,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 436
-        width: 155
-        height: 147
+        y: 400
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,10 +412,10 @@ TextureImporter:
       name: Purple Monkey Hit_19
       rect:
         serializedVersion: 2
-        x: 155
-        y: 436
-        width: 155
-        height: 147
+        x: 161
+        y: 400
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,10 +425,10 @@ TextureImporter:
       name: Purple Monkey Hit_20
       rect:
         serializedVersion: 2
-        x: 310
-        y: 436
-        width: 155
-        height: 147
+        x: 322
+        y: 400
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,10 +438,10 @@ TextureImporter:
       name: Purple Monkey Hit_21
       rect:
         serializedVersion: 2
-        x: 465
-        y: 436
-        width: 155
-        height: 147
+        x: 483
+        y: 400
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,10 +451,10 @@ TextureImporter:
       name: Purple Monkey Hit_22
       rect:
         serializedVersion: 2
-        x: 620
-        y: 436
-        width: 155
-        height: 147
+        x: 644
+        y: 400
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -463,10 +464,10 @@ TextureImporter:
       name: Purple Monkey Hit_23
       rect:
         serializedVersion: 2
-        x: 775
-        y: 436
-        width: 155
-        height: 147
+        x: 805
+        y: 400
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -477,9 +478,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 289
-        width: 155
-        height: 147
+        y: 244
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,10 +490,10 @@ TextureImporter:
       name: Purple Monkey Hit_25
       rect:
         serializedVersion: 2
-        x: 155
-        y: 289
-        width: 155
-        height: 147
+        x: 161
+        y: 244
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,10 +503,10 @@ TextureImporter:
       name: Purple Monkey Hit_26
       rect:
         serializedVersion: 2
-        x: 310
-        y: 289
-        width: 155
-        height: 147
+        x: 322
+        y: 244
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -515,10 +516,10 @@ TextureImporter:
       name: Purple Monkey Hit_27
       rect:
         serializedVersion: 2
-        x: 465
-        y: 289
-        width: 155
-        height: 147
+        x: 483
+        y: 244
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -528,10 +529,10 @@ TextureImporter:
       name: Purple Monkey Hit_28
       rect:
         serializedVersion: 2
-        x: 620
-        y: 289
-        width: 155
-        height: 147
+        x: 644
+        y: 244
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,10 +542,10 @@ TextureImporter:
       name: Purple Monkey Hit_29
       rect:
         serializedVersion: 2
-        x: 775
-        y: 289
-        width: 155
-        height: 147
+        x: 805
+        y: 244
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -555,9 +556,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 142
-        width: 155
-        height: 147
+        y: 88
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -567,10 +568,10 @@ TextureImporter:
       name: Purple Monkey Hit_31
       rect:
         serializedVersion: 2
-        x: 155
-        y: 142
-        width: 155
-        height: 147
+        x: 161
+        y: 88
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,10 +581,10 @@ TextureImporter:
       name: Purple Monkey Hit_32
       rect:
         serializedVersion: 2
-        x: 310
-        y: 142
-        width: 155
-        height: 147
+        x: 322
+        y: 88
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -593,10 +594,10 @@ TextureImporter:
       name: Purple Monkey Hit_33
       rect:
         serializedVersion: 2
-        x: 465
-        y: 142
-        width: 155
-        height: 147
+        x: 483
+        y: 88
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -606,10 +607,10 @@ TextureImporter:
       name: Purple Monkey Hit_34
       rect:
         serializedVersion: 2
-        x: 620
-        y: 142
-        width: 155
-        height: 147
+        x: 644
+        y: 88
+        width: 161
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

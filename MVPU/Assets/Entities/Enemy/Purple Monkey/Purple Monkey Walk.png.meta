@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 920335b65af1e8c4491f6e357cfa5811
-timeCreated: 1493004854
+timeCreated: 1512547777
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -150,9 +150,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 886
-        width: 112
-        height: 138
+        y: 878
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: Purple Monkey Walk_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 886
-        width: 112
-        height: 138
+        x: 120
+        y: 878
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: Purple Monkey Walk_2
       rect:
         serializedVersion: 2
-        x: 224
-        y: 886
-        width: 112
-        height: 138
+        x: 240
+        y: 878
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,10 +188,10 @@ TextureImporter:
       name: Purple Monkey Walk_3
       rect:
         serializedVersion: 2
-        x: 336
-        y: 886
-        width: 112
-        height: 138
+        x: 360
+        y: 878
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +201,10 @@ TextureImporter:
       name: Purple Monkey Walk_4
       rect:
         serializedVersion: 2
-        x: 448
-        y: 886
-        width: 112
-        height: 138
+        x: 480
+        y: 878
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: Purple Monkey Walk_5
       rect:
         serializedVersion: 2
-        x: 560
-        y: 886
-        width: 112
-        height: 138
+        x: 600
+        y: 878
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +227,10 @@ TextureImporter:
       name: Purple Monkey Walk_6
       rect:
         serializedVersion: 2
-        x: 672
-        y: 886
-        width: 112
-        height: 138
+        x: 720
+        y: 878
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +240,10 @@ TextureImporter:
       name: Purple Monkey Walk_7
       rect:
         serializedVersion: 2
-        x: 784
-        y: 886
-        width: 112
-        height: 138
+        x: 840
+        y: 878
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,10 +253,10 @@ TextureImporter:
       name: Purple Monkey Walk_8
       rect:
         serializedVersion: 2
-        x: 896
-        y: 886
-        width: 112
-        height: 138
+        x: 0
+        y: 732
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,10 +266,10 @@ TextureImporter:
       name: Purple Monkey Walk_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 748
-        width: 112
-        height: 138
+        x: 120
+        y: 732
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +279,10 @@ TextureImporter:
       name: Purple Monkey Walk_10
       rect:
         serializedVersion: 2
-        x: 112
-        y: 748
-        width: 112
-        height: 138
+        x: 240
+        y: 732
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,10 +292,10 @@ TextureImporter:
       name: Purple Monkey Walk_11
       rect:
         serializedVersion: 2
-        x: 224
-        y: 748
-        width: 112
-        height: 138
+        x: 360
+        y: 732
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,10 +305,10 @@ TextureImporter:
       name: Purple Monkey Walk_12
       rect:
         serializedVersion: 2
-        x: 336
-        y: 748
-        width: 112
-        height: 138
+        x: 480
+        y: 732
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,10 +318,10 @@ TextureImporter:
       name: Purple Monkey Walk_13
       rect:
         serializedVersion: 2
-        x: 448
-        y: 748
-        width: 112
-        height: 138
+        x: 600
+        y: 732
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +331,10 @@ TextureImporter:
       name: Purple Monkey Walk_14
       rect:
         serializedVersion: 2
-        x: 560
-        y: 748
-        width: 112
-        height: 138
+        x: 720
+        y: 732
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,10 +344,10 @@ TextureImporter:
       name: Purple Monkey Walk_15
       rect:
         serializedVersion: 2
-        x: 672
-        y: 748
-        width: 112
-        height: 138
+        x: 840
+        y: 732
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,10 +357,10 @@ TextureImporter:
       name: Purple Monkey Walk_16
       rect:
         serializedVersion: 2
-        x: 784
-        y: 748
-        width: 112
-        height: 138
+        x: 0
+        y: 586
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,10 +370,10 @@ TextureImporter:
       name: Purple Monkey Walk_17
       rect:
         serializedVersion: 2
-        x: 896
-        y: 748
-        width: 112
-        height: 138
+        x: 120
+        y: 586
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,10 +383,10 @@ TextureImporter:
       name: Purple Monkey Walk_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 610
-        width: 112
-        height: 138
+        x: 240
+        y: 586
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,10 +396,10 @@ TextureImporter:
       name: Purple Monkey Walk_19
       rect:
         serializedVersion: 2
-        x: 112
-        y: 610
-        width: 112
-        height: 138
+        x: 360
+        y: 586
+        width: 120
+        height: 146
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

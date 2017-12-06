@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 831705703ddd4ab4f827e677122d9757
-timeCreated: 1488602907
+timeCreated: 1512550697
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -73,7 +73,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 512
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -81,7 +81,7 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 512
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,7 +89,7 @@ TextureImporter:
   - buildTarget: iPhone
     maxTextureSize: 512
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,7 +97,7 @@ TextureImporter:
   - buildTarget: tvOS
     maxTextureSize: 512
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,7 +105,7 @@ TextureImporter:
   - buildTarget: Android
     maxTextureSize: 512
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +113,7 @@ TextureImporter:
   - buildTarget: Tizen
     maxTextureSize: 512
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,7 @@ TextureImporter:
   - buildTarget: Windows Store Apps
     maxTextureSize: 512
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,7 +129,7 @@ TextureImporter:
   - buildTarget: WebGL
     maxTextureSize: 512
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -137,7 +137,7 @@ TextureImporter:
   - buildTarget: Samsung TV
     maxTextureSize: 512
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -150,9 +150,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 420
-        width: 75
-        height: 92
+        y: 411
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: Penguin Celebrate_1
       rect:
         serializedVersion: 2
-        x: 75
-        y: 420
-        width: 75
-        height: 92
+        x: 81
+        y: 411
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: Penguin Celebrate_2
       rect:
         serializedVersion: 2
-        x: 150
-        y: 420
-        width: 75
-        height: 92
+        x: 162
+        y: 411
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,10 +188,10 @@ TextureImporter:
       name: Penguin Celebrate_3
       rect:
         serializedVersion: 2
-        x: 225
-        y: 420
-        width: 75
-        height: 92
+        x: 243
+        y: 411
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +201,10 @@ TextureImporter:
       name: Penguin Celebrate_4
       rect:
         serializedVersion: 2
-        x: 300
-        y: 420
-        width: 75
-        height: 92
+        x: 324
+        y: 411
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: Penguin Celebrate_5
       rect:
         serializedVersion: 2
-        x: 375
-        y: 420
-        width: 75
-        height: 92
+        x: 405
+        y: 411
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,9 +228,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 328
-        width: 75
-        height: 92
+        y: 310
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +240,10 @@ TextureImporter:
       name: Penguin Celebrate_7
       rect:
         serializedVersion: 2
-        x: 75
-        y: 328
-        width: 75
-        height: 92
+        x: 81
+        y: 310
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,10 +253,10 @@ TextureImporter:
       name: Penguin Celebrate_8
       rect:
         serializedVersion: 2
-        x: 150
-        y: 328
-        width: 75
-        height: 92
+        x: 162
+        y: 310
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,10 +266,10 @@ TextureImporter:
       name: Penguin Celebrate_9
       rect:
         serializedVersion: 2
-        x: 225
-        y: 328
-        width: 75
-        height: 92
+        x: 243
+        y: 310
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +279,10 @@ TextureImporter:
       name: Penguin Celebrate_10
       rect:
         serializedVersion: 2
-        x: 300
-        y: 328
-        width: 75
-        height: 92
+        x: 324
+        y: 310
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,10 +292,10 @@ TextureImporter:
       name: Penguin Celebrate_11
       rect:
         serializedVersion: 2
-        x: 375
-        y: 328
-        width: 75
-        height: 92
+        x: 405
+        y: 310
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,9 +306,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 236
-        width: 75
-        height: 92
+        y: 209
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,10 +318,10 @@ TextureImporter:
       name: Penguin Celebrate_13
       rect:
         serializedVersion: 2
-        x: 75
-        y: 236
-        width: 75
-        height: 92
+        x: 81
+        y: 209
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +331,10 @@ TextureImporter:
       name: Penguin Celebrate_14
       rect:
         serializedVersion: 2
-        x: 150
-        y: 236
-        width: 75
-        height: 92
+        x: 162
+        y: 209
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,10 +344,10 @@ TextureImporter:
       name: Penguin Celebrate_15
       rect:
         serializedVersion: 2
-        x: 225
-        y: 236
-        width: 75
-        height: 92
+        x: 243
+        y: 209
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,10 +357,10 @@ TextureImporter:
       name: Penguin Celebrate_16
       rect:
         serializedVersion: 2
-        x: 300
-        y: 236
-        width: 75
-        height: 92
+        x: 324
+        y: 209
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,10 +370,10 @@ TextureImporter:
       name: Penguin Celebrate_17
       rect:
         serializedVersion: 2
-        x: 375
-        y: 236
-        width: 75
-        height: 92
+        x: 405
+        y: 209
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,9 +384,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
-        width: 75
-        height: 92
+        y: 108
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,10 +396,10 @@ TextureImporter:
       name: Penguin Celebrate_19
       rect:
         serializedVersion: 2
-        x: 75
-        y: 144
-        width: 75
-        height: 92
+        x: 81
+        y: 108
+        width: 81
+        height: 101
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

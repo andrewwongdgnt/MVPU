@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 50073553ab71a7d4ab9ec8e47f336482
-timeCreated: 1509941404
+timeCreated: 1512547346
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -93,7 +93,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,7 +101,7 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,7 +109,7 @@ TextureImporter:
   - buildTarget: iPhone
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,7 +117,7 @@ TextureImporter:
   - buildTarget: tvOS
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,7 +125,7 @@ TextureImporter:
   - buildTarget: Android
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -133,7 +133,7 @@ TextureImporter:
   - buildTarget: Tizen
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -141,7 +141,7 @@ TextureImporter:
   - buildTarget: Windows Store Apps
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,7 +149,7 @@ TextureImporter:
   - buildTarget: WebGL
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -157,7 +157,7 @@ TextureImporter:
   - buildTarget: Samsung TV
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -170,9 +170,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1871
-        width: 145
-        height: 177
+        y: 1847
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: Purple Monkey Slip_1
       rect:
         serializedVersion: 2
-        x: 145
-        y: 1871
-        width: 145
-        height: 177
+        x: 176
+        y: 1847
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: Purple Monkey Slip_2
       rect:
         serializedVersion: 2
-        x: 290
-        y: 1871
-        width: 145
-        height: 177
+        x: 352
+        y: 1847
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,10 +208,10 @@ TextureImporter:
       name: Purple Monkey Slip_3
       rect:
         serializedVersion: 2
-        x: 435
-        y: 1871
-        width: 145
-        height: 177
+        x: 528
+        y: 1847
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,10 +221,10 @@ TextureImporter:
       name: Purple Monkey Slip_4
       rect:
         serializedVersion: 2
-        x: 580
-        y: 1871
-        width: 145
-        height: 177
+        x: 704
+        y: 1847
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +234,10 @@ TextureImporter:
       name: Purple Monkey Slip_5
       rect:
         serializedVersion: 2
-        x: 725
-        y: 1871
-        width: 145
-        height: 177
+        x: 880
+        y: 1847
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: Purple Monkey Slip_6
       rect:
         serializedVersion: 2
-        x: 870
-        y: 1871
-        width: 145
-        height: 177
+        x: 1056
+        y: 1847
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,10 +260,10 @@ TextureImporter:
       name: Purple Monkey Slip_7
       rect:
         serializedVersion: 2
-        x: 1015
-        y: 1871
-        width: 145
-        height: 177
+        x: 1232
+        y: 1847
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: Purple Monkey Slip_8
       rect:
         serializedVersion: 2
-        x: 1160
-        y: 1871
-        width: 145
-        height: 177
+        x: 1408
+        y: 1847
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: Purple Monkey Slip_9
       rect:
         serializedVersion: 2
-        x: 1305
-        y: 1871
-        width: 145
-        height: 177
+        x: 1584
+        y: 1847
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,10 +299,10 @@ TextureImporter:
       name: Purple Monkey Slip_10
       rect:
         serializedVersion: 2
-        x: 1450
-        y: 1871
-        width: 145
-        height: 177
+        x: 1760
+        y: 1847
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,10 +312,10 @@ TextureImporter:
       name: Purple Monkey Slip_11
       rect:
         serializedVersion: 2
-        x: 1595
-        y: 1871
-        width: 145
-        height: 177
+        x: 0
+        y: 1646
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,10 +325,10 @@ TextureImporter:
       name: Purple Monkey Slip_12
       rect:
         serializedVersion: 2
-        x: 1740
-        y: 1871
-        width: 145
-        height: 177
+        x: 176
+        y: 1646
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,10 +338,10 @@ TextureImporter:
       name: Purple Monkey Slip_13
       rect:
         serializedVersion: 2
-        x: 1885
-        y: 1871
-        width: 145
-        height: 177
+        x: 352
+        y: 1646
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,10 +351,10 @@ TextureImporter:
       name: Purple Monkey Slip_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1694
-        width: 145
-        height: 177
+        x: 528
+        y: 1646
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,10 +364,10 @@ TextureImporter:
       name: Purple Monkey Slip_15
       rect:
         serializedVersion: 2
-        x: 145
-        y: 1694
-        width: 145
-        height: 177
+        x: 704
+        y: 1646
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,10 +377,10 @@ TextureImporter:
       name: Purple Monkey Slip_16
       rect:
         serializedVersion: 2
-        x: 290
-        y: 1694
-        width: 145
-        height: 177
+        x: 880
+        y: 1646
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,10 +390,10 @@ TextureImporter:
       name: Purple Monkey Slip_17
       rect:
         serializedVersion: 2
-        x: 435
-        y: 1694
-        width: 145
-        height: 177
+        x: 1056
+        y: 1646
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +403,10 @@ TextureImporter:
       name: Purple Monkey Slip_18
       rect:
         serializedVersion: 2
-        x: 580
-        y: 1694
-        width: 145
-        height: 177
+        x: 1232
+        y: 1646
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,10 +416,10 @@ TextureImporter:
       name: Purple Monkey Slip_19
       rect:
         serializedVersion: 2
-        x: 725
-        y: 1694
-        width: 145
-        height: 177
+        x: 1408
+        y: 1646
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -429,10 +429,10 @@ TextureImporter:
       name: Purple Monkey Slip_20
       rect:
         serializedVersion: 2
-        x: 870
-        y: 1694
-        width: 145
-        height: 177
+        x: 1584
+        y: 1646
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -442,10 +442,10 @@ TextureImporter:
       name: Purple Monkey Slip_21
       rect:
         serializedVersion: 2
-        x: 1015
-        y: 1694
-        width: 145
-        height: 177
+        x: 1760
+        y: 1646
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -455,10 +455,10 @@ TextureImporter:
       name: Purple Monkey Slip_22
       rect:
         serializedVersion: 2
-        x: 1160
-        y: 1694
-        width: 145
-        height: 177
+        x: 0
+        y: 1445
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -468,10 +468,10 @@ TextureImporter:
       name: Purple Monkey Slip_23
       rect:
         serializedVersion: 2
-        x: 1305
-        y: 1694
-        width: 145
-        height: 177
+        x: 176
+        y: 1445
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,10 +481,10 @@ TextureImporter:
       name: Purple Monkey Slip_24
       rect:
         serializedVersion: 2
-        x: 1450
-        y: 1694
-        width: 145
-        height: 177
+        x: 352
+        y: 1445
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -494,10 +494,10 @@ TextureImporter:
       name: Purple Monkey Slip_25
       rect:
         serializedVersion: 2
-        x: 1595
-        y: 1694
-        width: 145
-        height: 177
+        x: 528
+        y: 1445
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -507,10 +507,10 @@ TextureImporter:
       name: Purple Monkey Slip_26
       rect:
         serializedVersion: 2
-        x: 1740
-        y: 1694
-        width: 145
-        height: 177
+        x: 704
+        y: 1445
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,10 +520,10 @@ TextureImporter:
       name: Purple Monkey Slip_27
       rect:
         serializedVersion: 2
-        x: 1885
-        y: 1694
-        width: 145
-        height: 177
+        x: 880
+        y: 1445
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -533,10 +533,10 @@ TextureImporter:
       name: Purple Monkey Slip_28
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1517
-        width: 145
-        height: 177
+        x: 1056
+        y: 1445
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -546,10 +546,10 @@ TextureImporter:
       name: Purple Monkey Slip_29
       rect:
         serializedVersion: 2
-        x: 145
-        y: 1517
-        width: 145
-        height: 177
+        x: 1232
+        y: 1445
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,10 +559,10 @@ TextureImporter:
       name: Purple Monkey Slip_30
       rect:
         serializedVersion: 2
-        x: 290
-        y: 1517
-        width: 145
-        height: 177
+        x: 1408
+        y: 1445
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -572,10 +572,10 @@ TextureImporter:
       name: Purple Monkey Slip_31
       rect:
         serializedVersion: 2
-        x: 435
-        y: 1517
-        width: 145
-        height: 177
+        x: 1584
+        y: 1445
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -585,10 +585,10 @@ TextureImporter:
       name: Purple Monkey Slip_32
       rect:
         serializedVersion: 2
-        x: 580
-        y: 1517
-        width: 145
-        height: 177
+        x: 1760
+        y: 1445
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -598,10 +598,10 @@ TextureImporter:
       name: Purple Monkey Slip_33
       rect:
         serializedVersion: 2
-        x: 725
-        y: 1517
-        width: 145
-        height: 177
+        x: 0
+        y: 1244
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -611,10 +611,10 @@ TextureImporter:
       name: Purple Monkey Slip_34
       rect:
         serializedVersion: 2
-        x: 870
-        y: 1517
-        width: 145
-        height: 177
+        x: 176
+        y: 1244
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -624,10 +624,10 @@ TextureImporter:
       name: Purple Monkey Slip_35
       rect:
         serializedVersion: 2
-        x: 1015
-        y: 1517
-        width: 145
-        height: 177
+        x: 352
+        y: 1244
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -637,10 +637,10 @@ TextureImporter:
       name: Purple Monkey Slip_36
       rect:
         serializedVersion: 2
-        x: 1160
-        y: 1517
-        width: 145
-        height: 177
+        x: 528
+        y: 1244
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -650,10 +650,10 @@ TextureImporter:
       name: Purple Monkey Slip_37
       rect:
         serializedVersion: 2
-        x: 1305
-        y: 1517
-        width: 145
-        height: 177
+        x: 704
+        y: 1244
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -663,10 +663,10 @@ TextureImporter:
       name: Purple Monkey Slip_38
       rect:
         serializedVersion: 2
-        x: 1450
-        y: 1517
-        width: 145
-        height: 177
+        x: 880
+        y: 1244
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -676,10 +676,10 @@ TextureImporter:
       name: Purple Monkey Slip_39
       rect:
         serializedVersion: 2
-        x: 1595
-        y: 1517
-        width: 145
-        height: 177
+        x: 1056
+        y: 1244
+        width: 176
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

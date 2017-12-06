@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: bc3194c55ebb26d4d91fb57ad26ecea9
-timeCreated: 1480747404
+timeCreated: 1512548845
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -76,7 +76,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -84,7 +84,7 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -92,7 +92,7 @@ TextureImporter:
   - buildTarget: iPhone
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +100,7 @@ TextureImporter:
   - buildTarget: tvOS
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,7 @@ TextureImporter:
   - buildTarget: Android
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,7 +116,7 @@ TextureImporter:
   - buildTarget: Tizen
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,7 +124,7 @@ TextureImporter:
   - buildTarget: Windows Store Apps
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,7 +132,7 @@ TextureImporter:
   - buildTarget: WebGL
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -140,7 +140,7 @@ TextureImporter:
   - buildTarget: Samsung TV
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -153,9 +153,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 866
-        width: 149
-        height: 158
+        y: 863
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,10 +165,10 @@ TextureImporter:
       name: Gorilla Walk_1
       rect:
         serializedVersion: 2
-        x: 149
-        y: 866
-        width: 149
-        height: 158
+        x: 161
+        y: 863
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: Gorilla Walk_2
       rect:
         serializedVersion: 2
-        x: 298
-        y: 866
-        width: 149
-        height: 158
+        x: 322
+        y: 863
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: Gorilla Walk_3
       rect:
         serializedVersion: 2
-        x: 447
-        y: 866
-        width: 149
-        height: 158
+        x: 483
+        y: 863
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: Gorilla Walk_4
       rect:
         serializedVersion: 2
-        x: 596
-        y: 866
-        width: 149
-        height: 158
+        x: 644
+        y: 863
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +217,10 @@ TextureImporter:
       name: Gorilla Walk_5
       rect:
         serializedVersion: 2
-        x: 745
-        y: 866
-        width: 149
-        height: 158
+        x: 805
+        y: 863
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,9 +231,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 708
-        width: 149
-        height: 158
+        y: 702
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,10 +243,10 @@ TextureImporter:
       name: Gorilla Walk_7
       rect:
         serializedVersion: 2
-        x: 149
-        y: 708
-        width: 149
-        height: 158
+        x: 161
+        y: 702
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Gorilla Walk_8
       rect:
         serializedVersion: 2
-        x: 298
-        y: 708
-        width: 149
-        height: 158
+        x: 322
+        y: 702
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,10 +269,10 @@ TextureImporter:
       name: Gorilla Walk_9
       rect:
         serializedVersion: 2
-        x: 447
-        y: 708
-        width: 149
-        height: 158
+        x: 483
+        y: 702
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,10 +282,10 @@ TextureImporter:
       name: Gorilla Walk_10
       rect:
         serializedVersion: 2
-        x: 596
-        y: 708
-        width: 149
-        height: 158
+        x: 644
+        y: 702
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,10 +295,10 @@ TextureImporter:
       name: Gorilla Walk_11
       rect:
         serializedVersion: 2
-        x: 745
-        y: 708
-        width: 149
-        height: 158
+        x: 805
+        y: 702
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,9 +309,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 550
-        width: 149
-        height: 158
+        y: 541
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,10 +321,10 @@ TextureImporter:
       name: Gorilla Walk_13
       rect:
         serializedVersion: 2
-        x: 149
-        y: 550
-        width: 149
-        height: 158
+        x: 161
+        y: 541
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,10 +334,10 @@ TextureImporter:
       name: Gorilla Walk_14
       rect:
         serializedVersion: 2
-        x: 298
-        y: 550
-        width: 149
-        height: 158
+        x: 322
+        y: 541
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,10 +347,10 @@ TextureImporter:
       name: Gorilla Walk_15
       rect:
         serializedVersion: 2
-        x: 447
-        y: 550
-        width: 149
-        height: 158
+        x: 483
+        y: 541
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,10 +360,10 @@ TextureImporter:
       name: Gorilla Walk_16
       rect:
         serializedVersion: 2
-        x: 596
-        y: 550
-        width: 149
-        height: 158
+        x: 644
+        y: 541
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,10 +373,10 @@ TextureImporter:
       name: Gorilla Walk_17
       rect:
         serializedVersion: 2
-        x: 745
-        y: 550
-        width: 149
-        height: 158
+        x: 805
+        y: 541
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,9 +387,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 392
-        width: 149
-        height: 158
+        y: 380
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,10 +399,10 @@ TextureImporter:
       name: Gorilla Walk_19
       rect:
         serializedVersion: 2
-        x: 149
-        y: 392
-        width: 149
-        height: 158
+        x: 161
+        y: 380
+        width: 161
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

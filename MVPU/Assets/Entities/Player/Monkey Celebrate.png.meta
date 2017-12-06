@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0d02374bd1a17384bb5932a2c14fea57
-timeCreated: 1492994018
+timeCreated: 1512549614
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -73,7 +73,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -81,7 +81,7 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,7 +89,7 @@ TextureImporter:
   - buildTarget: iPhone
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,7 +97,7 @@ TextureImporter:
   - buildTarget: tvOS
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,7 +105,7 @@ TextureImporter:
   - buildTarget: Android
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +113,7 @@ TextureImporter:
   - buildTarget: Tizen
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,7 @@ TextureImporter:
   - buildTarget: Windows Store Apps
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,7 +129,7 @@ TextureImporter:
   - buildTarget: WebGL
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -137,7 +137,7 @@ TextureImporter:
   - buildTarget: Samsung TV
     maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -150,9 +150,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 895
-        width: 114
-        height: 129
+        y: 883
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: Monkey Celebrate_1
       rect:
         serializedVersion: 2
-        x: 114
-        y: 895
-        width: 114
-        height: 129
+        x: 126
+        y: 883
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: Monkey Celebrate_2
       rect:
         serializedVersion: 2
-        x: 228
-        y: 895
-        width: 114
-        height: 129
+        x: 252
+        y: 883
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,10 +188,10 @@ TextureImporter:
       name: Monkey Celebrate_3
       rect:
         serializedVersion: 2
-        x: 342
-        y: 895
-        width: 114
-        height: 129
+        x: 378
+        y: 883
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +201,10 @@ TextureImporter:
       name: Monkey Celebrate_4
       rect:
         serializedVersion: 2
-        x: 456
-        y: 895
-        width: 114
-        height: 129
+        x: 504
+        y: 883
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: Monkey Celebrate_5
       rect:
         serializedVersion: 2
-        x: 570
-        y: 895
-        width: 114
-        height: 129
+        x: 630
+        y: 883
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +227,10 @@ TextureImporter:
       name: Monkey Celebrate_6
       rect:
         serializedVersion: 2
-        x: 684
-        y: 895
-        width: 114
-        height: 129
+        x: 756
+        y: 883
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +240,10 @@ TextureImporter:
       name: Monkey Celebrate_7
       rect:
         serializedVersion: 2
-        x: 798
-        y: 895
-        width: 114
-        height: 129
+        x: 882
+        y: 883
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,9 +254,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 766
-        width: 114
-        height: 129
+        y: 742
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,10 +266,10 @@ TextureImporter:
       name: Monkey Celebrate_9
       rect:
         serializedVersion: 2
-        x: 114
-        y: 766
-        width: 114
-        height: 129
+        x: 126
+        y: 742
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +279,10 @@ TextureImporter:
       name: Monkey Celebrate_10
       rect:
         serializedVersion: 2
-        x: 228
-        y: 766
-        width: 114
-        height: 129
+        x: 252
+        y: 742
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,10 +292,10 @@ TextureImporter:
       name: Monkey Celebrate_11
       rect:
         serializedVersion: 2
-        x: 342
-        y: 766
-        width: 114
-        height: 129
+        x: 378
+        y: 742
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,10 +305,10 @@ TextureImporter:
       name: Monkey Celebrate_12
       rect:
         serializedVersion: 2
-        x: 456
-        y: 766
-        width: 114
-        height: 129
+        x: 504
+        y: 742
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,10 +318,10 @@ TextureImporter:
       name: Monkey Celebrate_13
       rect:
         serializedVersion: 2
-        x: 570
-        y: 766
-        width: 114
-        height: 129
+        x: 630
+        y: 742
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +331,10 @@ TextureImporter:
       name: Monkey Celebrate_14
       rect:
         serializedVersion: 2
-        x: 684
-        y: 766
-        width: 114
-        height: 129
+        x: 756
+        y: 742
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,10 +344,10 @@ TextureImporter:
       name: Monkey Celebrate_15
       rect:
         serializedVersion: 2
-        x: 798
-        y: 766
-        width: 114
-        height: 129
+        x: 882
+        y: 742
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,9 +358,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 637
-        width: 114
-        height: 129
+        y: 601
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,10 +370,10 @@ TextureImporter:
       name: Monkey Celebrate_17
       rect:
         serializedVersion: 2
-        x: 114
-        y: 637
-        width: 114
-        height: 129
+        x: 126
+        y: 601
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,10 +383,10 @@ TextureImporter:
       name: Monkey Celebrate_18
       rect:
         serializedVersion: 2
-        x: 228
-        y: 637
-        width: 114
-        height: 129
+        x: 252
+        y: 601
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,10 +396,10 @@ TextureImporter:
       name: Monkey Celebrate_19
       rect:
         serializedVersion: 2
-        x: 342
-        y: 637
-        width: 114
-        height: 129
+        x: 378
+        y: 601
+        width: 126
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

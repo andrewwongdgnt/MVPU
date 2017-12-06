@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 14873415fcae3fc46bdbe6f96802fa1b
-timeCreated: 1480396914
+timeCreated: 1512550255
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -24,12 +24,12 @@ TextureImporter:
     21300034: Monkey Walk_17
     21300036: Monkey Walk_18
     21300038: Monkey Walk_19
-  serializedVersion: 2
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -41,10 +41,8 @@ TextureImporter:
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 2048
@@ -55,9 +53,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -65,10 +61,87 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: tvOS
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Tizen
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Samsung TV
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -77,9 +150,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
-        width: 128
-        height: 128
+        y: 888
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -89,10 +162,10 @@ TextureImporter:
       name: Monkey Walk_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 128
-        height: 128
+        x: 101
+        y: 888
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,10 +175,10 @@ TextureImporter:
       name: Monkey Walk_2
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
-        width: 128
-        height: 128
+        x: 202
+        y: 888
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,10 +188,10 @@ TextureImporter:
       name: Monkey Walk_3
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
-        width: 128
-        height: 128
+        x: 303
+        y: 888
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +201,10 @@ TextureImporter:
       name: Monkey Walk_4
       rect:
         serializedVersion: 2
-        x: 512
-        y: 128
-        width: 128
-        height: 128
+        x: 404
+        y: 888
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +214,10 @@ TextureImporter:
       name: Monkey Walk_5
       rect:
         serializedVersion: 2
-        x: 640
-        y: 128
-        width: 128
-        height: 128
+        x: 505
+        y: 888
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +227,10 @@ TextureImporter:
       name: Monkey Walk_6
       rect:
         serializedVersion: 2
-        x: 768
-        y: 128
-        width: 128
-        height: 128
+        x: 606
+        y: 888
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,10 +240,10 @@ TextureImporter:
       name: Monkey Walk_7
       rect:
         serializedVersion: 2
-        x: 896
-        y: 128
-        width: 128
-        height: 128
+        x: 707
+        y: 888
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,10 +253,10 @@ TextureImporter:
       name: Monkey Walk_8
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 128
-        width: 128
-        height: 128
+        x: 808
+        y: 888
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +266,10 @@ TextureImporter:
       name: Monkey Walk_9
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 128
-        width: 128
-        height: 128
+        x: 909
+        y: 888
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +279,10 @@ TextureImporter:
       name: Monkey Walk_10
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 128
-        width: 128
-        height: 128
+        x: 0
+        y: 752
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +292,10 @@ TextureImporter:
       name: Monkey Walk_11
       rect:
         serializedVersion: 2
-        x: 1408
-        y: 128
-        width: 128
-        height: 128
+        x: 101
+        y: 752
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,10 +305,10 @@ TextureImporter:
       name: Monkey Walk_12
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 128
-        width: 128
-        height: 128
+        x: 202
+        y: 752
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +318,10 @@ TextureImporter:
       name: Monkey Walk_13
       rect:
         serializedVersion: 2
-        x: 1664
-        y: 128
-        width: 128
-        height: 128
+        x: 303
+        y: 752
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +331,10 @@ TextureImporter:
       name: Monkey Walk_14
       rect:
         serializedVersion: 2
-        x: 1792
-        y: 128
-        width: 128
-        height: 128
+        x: 404
+        y: 752
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +344,10 @@ TextureImporter:
       name: Monkey Walk_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
+        x: 505
+        y: 752
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,10 +357,10 @@ TextureImporter:
       name: Monkey Walk_16
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
+        x: 606
+        y: 752
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,10 +370,10 @@ TextureImporter:
       name: Monkey Walk_17
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 128
+        x: 707
+        y: 752
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +383,10 @@ TextureImporter:
       name: Monkey Walk_18
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 128
+        x: 808
+        y: 752
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,10 +396,10 @@ TextureImporter:
       name: Monkey Walk_19
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
+        x: 909
+        y: 752
+        width: 101
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
