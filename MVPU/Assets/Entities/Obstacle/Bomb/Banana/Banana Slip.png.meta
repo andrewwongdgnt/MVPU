@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9cdb24cf7b82c354ead1e29b63f7b643
-timeCreated: 1509587181
+timeCreated: 1512972206
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -23,6 +23,7 @@ TextureImporter:
     21300032: Banana Slip_16
     21300034: Banana Slip_17
     21300036: Banana Slip_18
+    21300038: Banana Slip_19
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -70,73 +71,73 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: tvOS
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Tizen
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Windows Store Apps
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Samsung TV
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,9 +150,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 894
-        width: 142
-        height: 130
+        y: 893
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +162,10 @@ TextureImporter:
       name: Banana Slip_1
       rect:
         serializedVersion: 2
-        x: 142
-        y: 894
-        width: 142
-        height: 130
+        x: 131
+        y: 893
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +175,10 @@ TextureImporter:
       name: Banana Slip_2
       rect:
         serializedVersion: 2
-        x: 284
-        y: 894
-        width: 142
-        height: 130
+        x: 262
+        y: 893
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,10 +188,10 @@ TextureImporter:
       name: Banana Slip_3
       rect:
         serializedVersion: 2
-        x: 426
-        y: 894
-        width: 142
-        height: 130
+        x: 393
+        y: 893
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,10 +201,10 @@ TextureImporter:
       name: Banana Slip_4
       rect:
         serializedVersion: 2
-        x: 568
-        y: 894
-        width: 142
-        height: 130
+        x: 524
+        y: 893
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,10 +214,10 @@ TextureImporter:
       name: Banana Slip_5
       rect:
         serializedVersion: 2
-        x: 710
-        y: 894
-        width: 142
-        height: 130
+        x: 655
+        y: 893
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +227,10 @@ TextureImporter:
       name: Banana Slip_6
       rect:
         serializedVersion: 2
-        x: 852
-        y: 894
-        width: 142
-        height: 130
+        x: 786
+        y: 893
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,9 +241,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 764
-        width: 142
-        height: 130
+        y: 762
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +253,10 @@ TextureImporter:
       name: Banana Slip_8
       rect:
         serializedVersion: 2
-        x: 142
-        y: 764
-        width: 142
-        height: 130
+        x: 131
+        y: 762
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +266,10 @@ TextureImporter:
       name: Banana Slip_9
       rect:
         serializedVersion: 2
-        x: 284
-        y: 764
-        width: 142
-        height: 130
+        x: 262
+        y: 762
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +279,10 @@ TextureImporter:
       name: Banana Slip_10
       rect:
         serializedVersion: 2
-        x: 426
-        y: 764
-        width: 142
-        height: 130
+        x: 393
+        y: 762
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +292,10 @@ TextureImporter:
       name: Banana Slip_11
       rect:
         serializedVersion: 2
-        x: 568
-        y: 764
-        width: 142
-        height: 130
+        x: 524
+        y: 762
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,10 +305,10 @@ TextureImporter:
       name: Banana Slip_12
       rect:
         serializedVersion: 2
-        x: 710
-        y: 764
-        width: 142
-        height: 130
+        x: 655
+        y: 762
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,10 +318,10 @@ TextureImporter:
       name: Banana Slip_13
       rect:
         serializedVersion: 2
-        x: 852
-        y: 764
-        width: 142
-        height: 130
+        x: 786
+        y: 762
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,9 +332,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 634
-        width: 142
-        height: 130
+        y: 631
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,10 +344,10 @@ TextureImporter:
       name: Banana Slip_15
       rect:
         serializedVersion: 2
-        x: 142
-        y: 634
-        width: 142
-        height: 130
+        x: 131
+        y: 631
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,10 +357,10 @@ TextureImporter:
       name: Banana Slip_16
       rect:
         serializedVersion: 2
-        x: 284
-        y: 634
-        width: 142
-        height: 130
+        x: 262
+        y: 631
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,10 +370,10 @@ TextureImporter:
       name: Banana Slip_17
       rect:
         serializedVersion: 2
-        x: 426
-        y: 634
-        width: 142
-        height: 130
+        x: 393
+        y: 631
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,10 +383,23 @@ TextureImporter:
       name: Banana Slip_18
       rect:
         serializedVersion: 2
-        x: 568
-        y: 634
-        width: 142
-        height: 130
+        x: 524
+        y: 631
+        width: 131
+        height: 131
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Banana Slip_19
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 631
+        width: 131
+        height: 131
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
