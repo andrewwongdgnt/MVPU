@@ -23,7 +23,7 @@ public class LevelUtil
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_4_4;
+    public static LevelID levelToLoad = LevelID.LEVEL_4_2;
     public static bool unlockAllLevels = true;
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
@@ -321,8 +321,8 @@ public class LevelUtil
         }
         },
         { LevelID.LEVEL_4_2, new Cell[,]{
-           {Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,},
-            {Cell.CELL_BOTTOM_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_TOP_LEFT_CLOSED,},
+           {Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_BOTTOM_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
             {Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
             {Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,},
             {Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_RIGHT_CLOSED,Cell.CELL_TOP_LEFT_BOTTOM_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,},
@@ -408,7 +408,7 @@ public class LevelUtil
             { LevelID.LEVEL_3_9, new LevelScore(15) },
             { LevelID.LEVEL_3_10, new LevelScore(23) },
             { LevelID.LEVEL_4_1, new LevelScore(17) },
-            { LevelID.LEVEL_4_2, new LevelScore(56) },
+            { LevelID.LEVEL_4_2, new LevelScore(34) },
             { LevelID.LEVEL_4_3, new LevelScore(22) },
             { LevelID.LEVEL_4_4, new LevelScore(22) },
             { LevelID.LEVEL_4_5, new LevelScore(25) },
