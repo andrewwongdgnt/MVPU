@@ -588,6 +588,10 @@ public class LevelUtil
                 new TutorialAction("I'm sorry for his mess. I marked them with a red pin so the Monkey won't slip when he gets close.", TutorialAction.Action.NONE),
                 new TutorialAction("I couldn't get them all though, and I'm not sure if anyone else will notice the red flags.", TutorialAction.Action.NONE),
                 new TutorialAction("Ok bye now! I still need to find Coco.", TutorialAction.Action.NONE) } },
+            { LevelID.LEVEL_4_7, new TutorialAction[] {
+                new TutorialAction("I found Coco!", TutorialAction.Action.NONE),
+                new TutorialAction("There is still a mess everywhere but I am pooped and Coco is full from bananas.", TutorialAction.Action.NONE),
+                new TutorialAction("So we're just going to sit here and watch the sunrise. Bye now!", TutorialAction.Action.NONE) } },
         };
 
 
