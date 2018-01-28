@@ -451,8 +451,7 @@ public class GameModel : MonoBehaviour
             else
                 key.StartUsedAnimation();
         }
-        else
-        {
+        else if (key.numOfUses > 0) { 
             key.StopConsumedAnimation();
         }
         SpriteRenderer[] sprites = key.GetComponentsInChildren<SpriteRenderer>();
@@ -647,6 +646,7 @@ public class GameModel : MonoBehaviour
             if (winning)
             {
                 Debug.Log(_currentLevelId + ": Game win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.GetResult());
+                SaveStateUtil.SaveLevel(_currentLevelId, scoringModel.numberOfMoves);
                 _player.StartWinAnimation();
                 _goal.StartWinAnimation();
                 FaceHorizontally(_goal.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
