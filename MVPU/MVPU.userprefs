@@ -1,9 +1,8 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameModel.cs">
+﻿<Properties StartupItem="MVPU.Plugins.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Levels\LevelUtil.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameModel.cs" Line="177" Column="36" />
-      <File FileName="Assets\Scripts\Level1_1.cs" Line="1" Column="1" />
+      <File FileName="Assets\Levels\LevelUtil.cs" Line="11" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
