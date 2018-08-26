@@ -444,21 +444,29 @@ public class GameModel : MonoBehaviour
     {
 
         key.transform.position = GetPositionForEntity(key);
-        if (keyAnimation != Key.Animation.None)
+        bool animate = keyAnimation != Key.Animation.None;
+        if (animate)
         {
             if (keyAnimation == Key.Animation.Consumed)
                 key.StartConsumedAnimation();
-            else
+            else if (!key.hold)
                 key.StartUsedAnimation();
         }
         else if (key.numOfUses > 0) { 
             key.StopConsumedAnimation();
         }
+        if (key.hold)
+        {
+            if (keyAnimation == Key.Animation.On || key.on)
+                key.StartOnAnimation(animate);
+            else if (keyAnimation == Key.Animation.Off || !key.on)
+                key.StopOnAnimation(animate);
+        }
         SpriteRenderer[] sprites = key.GetComponentsInChildren<SpriteRenderer>();
         Array.ForEach(sprites, s =>
         {
             Color color = s.material.color;
-            color.a = key.consumed && keyAnimation == Key.Animation.None ? 0f : 1f;
+            color.a = key.consumed && !animate ? 0f : 1f;
 
             s.material.color = color;
         });        
@@ -866,19 +874,24 @@ public class GameModel : MonoBehaviour
             && ((checkingForHoldingKeys && key.hold) || !checkingForHoldingKeys) 
             && (entity is Player || (entity is Enemy && key.usableByEnemy))){
 
-            IWalker walker;
-            if (entity is Player)
-                walker = (Player)entity;
-            else 
-                walker = (Enemy)entity;
-
-
+            IWalker walker= (IWalker) entity;
+            
             if (key.numOfUses > 0)
                 key.numOfUses--;
             if (key.numOfUses == 0)
                 key.consumed = true;
+            if (key.hold)
+                key.on = !key.on;
 
-            Key.Animation keyAnimation = key.consumed ? Key.Animation.Consumed : Key.Animation.Used;
+            Key.Animation keyAnimation;
+            if (key.consumed)
+                keyAnimation= Key.Animation.Consumed;
+            else if (key.hold && key.on)
+                keyAnimation = Key.Animation.On;
+            else if (key.hold && !key.on)
+                keyAnimation = Key.Animation.Off;
+            else
+                keyAnimation = Key.Animation.Used;
 
             keyList.Add(new Quadruple<int, int, Key, Key.Animation>(GetOrder(walker), stepOrder, key, keyAnimation));
 

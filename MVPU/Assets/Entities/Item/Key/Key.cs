@@ -10,9 +10,14 @@ public class Key : Entity
     [Tooltip("-1 for infinite uses")]
     public int numOfUses;
 
-    public enum Animation { None, Used, Consumed }
+    public enum Animation { None, Used, Consumed, On, Off }
 
     public bool consumed
+    {
+        get; set;
+    }
+
+    public bool on
     {
         get; set;
     }
@@ -20,7 +25,7 @@ public class Key : Entity
     // Use this for initialization
     void Start()
     {
-        Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " usableByEnemy=" + usableByEnemy + " hold=" + hold + " numOfUses=" + numOfUses + " consumed=" + consumed);
+        Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " usableByEnemy=" + usableByEnemy + " hold=" + hold + " numOfUses=" + numOfUses + " consumed=" + consumed + " on=" + on);
     }
 
     protected override void BuildAdditionalStateDict(Dictionary<string, object> dict)
@@ -29,6 +34,7 @@ public class Key : Entity
         dict.Add("hold", hold);
         dict.Add("numOfUses", numOfUses);
         dict.Add("consumed", consumed);
+        dict.Add("on", on);
     }
     protected override void RestoreAdditionalState(Dictionary<string, object> dict)
     {
@@ -42,6 +48,8 @@ public class Key : Entity
                 numOfUses = (int)entry.Value;
             else if (entry.Key == "consumed" && entry.Value is bool)
                 consumed = (bool)entry.Value;
+            else if (entry.Key == "on" && entry.Value is bool)
+                on = (bool)entry.Value;
         }
     }    
 
@@ -57,6 +65,18 @@ public class Key : Entity
     public void StartUsedAnimation()
     {
         animator.SetTrigger("Used");
+    }
+
+    public void StartOnAnimation(bool animate)
+    {
+        animator.SetBool("Immediate", !animate);
+        animator.SetBool("On", true);
+    }
+
+    public void StopOnAnimation(bool animate)
+    {
+        animator.SetBool("Immediate", !animate);
+        animator.SetBool("On", false);
     }
 
 }
