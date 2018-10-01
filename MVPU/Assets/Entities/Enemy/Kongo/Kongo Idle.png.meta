@@ -1,73 +1,133 @@
 fileFormatVersion: 2
-guid: 68cb0ae5b1e453e4c919c2de4a7afc80
-timeCreated: 1512549176
+guid: 6183106c43a4d82448da640146d90b61
+timeCreated: 1538376922
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Gorilla Faint_0
-    21300002: Gorilla Faint_1
-    21300004: Gorilla Faint_2
-    21300006: Gorilla Faint_3
-    21300008: Gorilla Faint_4
-    21300010: Gorilla Faint_5
-    21300012: Gorilla Faint_6
-    21300014: Gorilla Faint_7
-    21300016: Gorilla Faint_8
-    21300018: Gorilla Faint_9
-    21300020: Gorilla Faint_10
-    21300022: Gorilla Faint_11
-    21300024: Gorilla Faint_12
-    21300026: Gorilla Faint_13
-    21300028: Gorilla Faint_14
-    21300030: Gorilla Faint_15
-    21300032: Gorilla Faint_16
-    21300034: Gorilla Faint_17
-    21300036: Gorilla Faint_18
-    21300038: Gorilla Faint_19
-    21300040: Gorilla Faint_20
-    21300042: Gorilla Faint_21
-    21300044: Gorilla Faint_22
-    21300046: Gorilla Faint_23
-    21300048: Gorilla Faint_24
-    21300050: Gorilla Faint_25
-    21300052: Gorilla Faint_26
-    21300054: Gorilla Faint_27
-    21300056: Gorilla Faint_28
-    21300058: Gorilla Faint_29
-    21300060: Gorilla Faint_30
-    21300062: Gorilla Faint_31
-    21300064: Gorilla Faint_32
-    21300066: Gorilla Faint_33
-    21300068: Gorilla Faint_34
-    21300070: Gorilla Faint_35
-    21300072: Gorilla Faint_36
-    21300074: Gorilla Faint_37
-    21300076: Gorilla Faint_38
-    21300078: Gorilla Faint_39
-    21300080: Gorilla Faint_40
-    21300082: Gorilla Faint_41
-    21300084: Gorilla Faint_42
-    21300086: Gorilla Faint_43
-    21300088: Gorilla Faint_44
-    21300090: Gorilla Faint_45
-    21300092: Gorilla Faint_46
-    21300094: Gorilla Faint_47
-    21300096: Gorilla Faint_48
-    21300098: Gorilla Faint_49
-    21300100: Gorilla Faint_50
-    21300102: Gorilla Faint_51
-    21300104: Gorilla Faint_52
-    21300106: Gorilla Faint_53
-    21300108: Gorilla Faint_54
-    21300110: Gorilla Faint_55
-    21300112: Gorilla Faint_56
-    21300114: Gorilla Faint_57
-    21300116: Gorilla Faint_58
-    21300118: Gorilla Faint_59
+    21300000: Gorilla Idle_0
+    21300002: Gorilla Idle_1
+    21300004: Gorilla Idle_2
+    21300006: Gorilla Idle_3
+    21300008: Gorilla Idle_4
+    21300010: Gorilla Idle_5
+    21300012: Gorilla Idle_6
+    21300014: Gorilla Idle_7
+    21300016: Gorilla Idle_8
+    21300018: Gorilla Idle_9
+    21300020: Gorilla Idle_10
+    21300022: Gorilla Idle_11
+    21300024: Gorilla Idle_12
+    21300026: Gorilla Idle_13
+    21300028: Gorilla Idle_14
+    21300030: Gorilla Idle_15
+    21300032: Gorilla Idle_16
+    21300034: Gorilla Idle_17
+    21300036: Gorilla Idle_18
+    21300038: Gorilla Idle_19
+    21300040: Gorilla Idle_20
+    21300042: Gorilla Idle_21
+    21300044: Gorilla Idle_22
+    21300046: Gorilla Idle_23
+    21300048: Gorilla Idle_24
+    21300050: Gorilla Idle_25
+    21300052: Gorilla Idle_26
+    21300054: Gorilla Idle_27
+    21300056: Gorilla Idle_28
+    21300058: Gorilla Idle_29
+    21300060: Gorilla Idle_30
+    21300062: Gorilla Idle_31
+    21300064: Gorilla Idle_32
+    21300066: Gorilla Idle_33
+    21300068: Gorilla Idle_34
+    21300070: Gorilla Idle_35
+    21300072: Gorilla Idle_36
+    21300074: Gorilla Idle_37
+    21300076: Gorilla Idle_38
+    21300078: Gorilla Idle_39
+    21300080: Gorilla Idle_40
+    21300082: Gorilla Idle_41
+    21300084: Gorilla Idle_42
+    21300086: Gorilla Idle_43
+    21300088: Gorilla Idle_44
+    21300090: Gorilla Idle_45
+    21300092: Gorilla Idle_46
+    21300094: Gorilla Idle_47
+    21300096: Gorilla Idle_48
+    21300098: Gorilla Idle_49
+    21300100: Gorilla Idle_50
+    21300102: Gorilla Idle_51
+    21300104: Gorilla Idle_52
+    21300106: Gorilla Idle_53
+    21300108: Gorilla Idle_54
+    21300110: Gorilla Idle_55
+    21300112: Gorilla Idle_56
+    21300114: Gorilla Idle_57
+    21300116: Gorilla Idle_58
+    21300118: Gorilla Idle_59
+    21300120: Kongo Idle_0
+    21300122: Kongo Idle_1
+    21300124: Kongo Idle_2
+    21300126: Kongo Idle_3
+    21300128: Kongo Idle_4
+    21300130: Kongo Idle_5
+    21300132: Kongo Idle_6
+    21300134: Kongo Idle_7
+    21300136: Kongo Idle_8
+    21300138: Kongo Idle_9
+    21300140: Kongo Idle_10
+    21300142: Kongo Idle_11
+    21300144: Kongo Idle_12
+    21300146: Kongo Idle_13
+    21300148: Kongo Idle_14
+    21300150: Kongo Idle_15
+    21300152: Kongo Idle_16
+    21300154: Kongo Idle_17
+    21300156: Kongo Idle_18
+    21300158: Kongo Idle_19
+    21300160: Kongo Idle_20
+    21300162: Kongo Idle_21
+    21300164: Kongo Idle_22
+    21300166: Kongo Idle_23
+    21300168: Kongo Idle_24
+    21300170: Kongo Idle_25
+    21300172: Kongo Idle_26
+    21300174: Kongo Idle_27
+    21300176: Kongo Idle_28
+    21300178: Kongo Idle_29
+    21300180: Kongo Idle_30
+    21300182: Kongo Idle_31
+    21300184: Kongo Idle_32
+    21300186: Kongo Idle_33
+    21300188: Kongo Idle_34
+    21300190: Kongo Idle_35
+    21300192: Kongo Idle_36
+    21300194: Kongo Idle_37
+    21300196: Kongo Idle_38
+    21300198: Kongo Idle_39
+    21300200: Kongo Idle_40
+    21300202: Kongo Idle_41
+    21300204: Kongo Idle_42
+    21300206: Kongo Idle_43
+    21300208: Kongo Idle_44
+    21300210: Kongo Idle_45
+    21300212: Kongo Idle_46
+    21300214: Kongo Idle_47
+    21300216: Kongo Idle_48
+    21300218: Kongo Idle_49
+    21300220: Kongo Idle_50
+    21300222: Kongo Idle_51
+    21300224: Kongo Idle_52
+    21300226: Kongo Idle_53
+    21300228: Kongo Idle_54
+    21300230: Kongo Idle_55
+    21300232: Kongo Idle_56
+    21300234: Kongo Idle_57
+    21300236: Kongo Idle_58
+    21300238: Kongo Idle_59
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -84,11 +144,11 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -186,780 +246,780 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gorilla Faint_0
+      name: Kongo Idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1862
-        width: 201
-        height: 186
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_1
+      name: Kongo Idle_1
       rect:
         serializedVersion: 2
-        x: 201
-        y: 1862
-        width: 201
-        height: 186
+        x: 146
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_2
+      name: Kongo Idle_2
       rect:
         serializedVersion: 2
-        x: 402
-        y: 1862
-        width: 201
-        height: 186
+        x: 292
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_3
+      name: Kongo Idle_3
       rect:
         serializedVersion: 2
-        x: 603
-        y: 1862
-        width: 201
-        height: 186
+        x: 438
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_4
+      name: Kongo Idle_4
       rect:
         serializedVersion: 2
-        x: 804
-        y: 1862
-        width: 201
-        height: 186
+        x: 584
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_5
+      name: Kongo Idle_5
       rect:
         serializedVersion: 2
-        x: 1005
-        y: 1862
-        width: 201
-        height: 186
+        x: 730
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_6
+      name: Kongo Idle_6
       rect:
         serializedVersion: 2
-        x: 1206
-        y: 1862
-        width: 201
-        height: 186
+        x: 876
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_7
+      name: Kongo Idle_7
       rect:
         serializedVersion: 2
-        x: 1407
-        y: 1862
-        width: 201
-        height: 186
+        x: 1022
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_8
+      name: Kongo Idle_8
       rect:
         serializedVersion: 2
-        x: 1608
-        y: 1862
-        width: 201
-        height: 186
+        x: 1168
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_9
+      name: Kongo Idle_9
       rect:
         serializedVersion: 2
-        x: 1809
-        y: 1862
-        width: 201
-        height: 186
+        x: 1314
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_10
+      name: Kongo Idle_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1676
-        width: 201
-        height: 186
+        x: 1460
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_11
+      name: Kongo Idle_11
       rect:
         serializedVersion: 2
-        x: 201
-        y: 1676
-        width: 201
-        height: 186
+        x: 1606
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_12
+      name: Kongo Idle_12
       rect:
         serializedVersion: 2
-        x: 402
-        y: 1676
-        width: 201
-        height: 186
+        x: 1752
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_13
+      name: Kongo Idle_13
       rect:
         serializedVersion: 2
-        x: 603
-        y: 1676
-        width: 201
-        height: 186
+        x: 1898
+        y: 1892
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_14
-      rect:
-        serializedVersion: 2
-        x: 804
-        y: 1676
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_15
-      rect:
-        serializedVersion: 2
-        x: 1005
-        y: 1676
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_16
-      rect:
-        serializedVersion: 2
-        x: 1206
-        y: 1676
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_17
-      rect:
-        serializedVersion: 2
-        x: 1407
-        y: 1676
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_18
-      rect:
-        serializedVersion: 2
-        x: 1608
-        y: 1676
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_19
-      rect:
-        serializedVersion: 2
-        x: 1809
-        y: 1676
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_20
+      name: Kongo Idle_14
       rect:
         serializedVersion: 2
         x: 0
-        y: 1490
-        width: 201
-        height: 186
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_21
+      name: Kongo Idle_15
       rect:
         serializedVersion: 2
-        x: 201
-        y: 1490
-        width: 201
-        height: 186
+        x: 146
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_22
+      name: Kongo Idle_16
       rect:
         serializedVersion: 2
-        x: 402
-        y: 1490
-        width: 201
-        height: 186
+        x: 292
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_23
+      name: Kongo Idle_17
       rect:
         serializedVersion: 2
-        x: 603
-        y: 1490
-        width: 201
-        height: 186
+        x: 438
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_24
+      name: Kongo Idle_18
       rect:
         serializedVersion: 2
-        x: 804
-        y: 1490
-        width: 201
-        height: 186
+        x: 584
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_25
+      name: Kongo Idle_19
       rect:
         serializedVersion: 2
-        x: 1005
-        y: 1490
-        width: 201
-        height: 186
+        x: 730
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_26
+      name: Kongo Idle_20
       rect:
         serializedVersion: 2
-        x: 1206
-        y: 1490
-        width: 201
-        height: 186
+        x: 876
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_27
+      name: Kongo Idle_21
       rect:
         serializedVersion: 2
-        x: 1407
-        y: 1490
-        width: 201
-        height: 186
+        x: 1022
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_28
+      name: Kongo Idle_22
       rect:
         serializedVersion: 2
-        x: 1608
-        y: 1490
-        width: 201
-        height: 186
+        x: 1168
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_29
+      name: Kongo Idle_23
       rect:
         serializedVersion: 2
-        x: 1809
-        y: 1490
-        width: 201
-        height: 186
+        x: 1314
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_30
+      name: Kongo Idle_24
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1304
-        width: 201
-        height: 186
+        x: 1460
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_31
+      name: Kongo Idle_25
       rect:
         serializedVersion: 2
-        x: 201
-        y: 1304
-        width: 201
-        height: 186
+        x: 1606
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_32
+      name: Kongo Idle_26
       rect:
         serializedVersion: 2
-        x: 402
-        y: 1304
-        width: 201
-        height: 186
+        x: 1752
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_33
+      name: Kongo Idle_27
       rect:
         serializedVersion: 2
-        x: 603
-        y: 1304
-        width: 201
-        height: 186
+        x: 1898
+        y: 1736
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_34
-      rect:
-        serializedVersion: 2
-        x: 804
-        y: 1304
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_35
-      rect:
-        serializedVersion: 2
-        x: 1005
-        y: 1304
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_36
-      rect:
-        serializedVersion: 2
-        x: 1206
-        y: 1304
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_37
-      rect:
-        serializedVersion: 2
-        x: 1407
-        y: 1304
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_38
-      rect:
-        serializedVersion: 2
-        x: 1608
-        y: 1304
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_39
-      rect:
-        serializedVersion: 2
-        x: 1809
-        y: 1304
-        width: 201
-        height: 186
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Faint_40
+      name: Kongo Idle_28
       rect:
         serializedVersion: 2
         x: 0
-        y: 1118
-        width: 201
-        height: 186
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_41
+      name: Kongo Idle_29
       rect:
         serializedVersion: 2
-        x: 201
-        y: 1118
-        width: 201
-        height: 186
+        x: 146
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_42
+      name: Kongo Idle_30
       rect:
         serializedVersion: 2
-        x: 402
-        y: 1118
-        width: 201
-        height: 186
+        x: 292
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_43
+      name: Kongo Idle_31
       rect:
         serializedVersion: 2
-        x: 603
-        y: 1118
-        width: 201
-        height: 186
+        x: 438
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_44
+      name: Kongo Idle_32
       rect:
         serializedVersion: 2
-        x: 804
-        y: 1118
-        width: 201
-        height: 186
+        x: 584
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_45
+      name: Kongo Idle_33
       rect:
         serializedVersion: 2
-        x: 1005
-        y: 1118
-        width: 201
-        height: 186
+        x: 730
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_46
+      name: Kongo Idle_34
       rect:
         serializedVersion: 2
-        x: 1206
-        y: 1118
-        width: 201
-        height: 186
+        x: 876
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_47
+      name: Kongo Idle_35
       rect:
         serializedVersion: 2
-        x: 1407
-        y: 1118
-        width: 201
-        height: 186
+        x: 1022
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_48
+      name: Kongo Idle_36
       rect:
         serializedVersion: 2
-        x: 1608
-        y: 1118
-        width: 201
-        height: 186
+        x: 1168
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_49
+      name: Kongo Idle_37
       rect:
         serializedVersion: 2
-        x: 1809
-        y: 1118
-        width: 201
-        height: 186
+        x: 1314
+        y: 1580
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_50
+      name: Kongo Idle_38
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1580
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_39
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1580
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_40
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 1580
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_41
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 1580
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_42
       rect:
         serializedVersion: 2
         x: 0
-        y: 932
-        width: 201
-        height: 186
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_51
+      name: Kongo Idle_43
       rect:
         serializedVersion: 2
-        x: 201
-        y: 932
-        width: 201
-        height: 186
+        x: 146
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_52
+      name: Kongo Idle_44
       rect:
         serializedVersion: 2
-        x: 402
-        y: 932
-        width: 201
-        height: 186
+        x: 292
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_53
+      name: Kongo Idle_45
       rect:
         serializedVersion: 2
-        x: 603
-        y: 932
-        width: 201
-        height: 186
+        x: 438
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_54
+      name: Kongo Idle_46
       rect:
         serializedVersion: 2
-        x: 804
-        y: 932
-        width: 201
-        height: 186
+        x: 584
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_55
+      name: Kongo Idle_47
       rect:
         serializedVersion: 2
-        x: 1005
-        y: 932
-        width: 201
-        height: 186
+        x: 730
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_56
+      name: Kongo Idle_48
       rect:
         serializedVersion: 2
-        x: 1206
-        y: 932
-        width: 201
-        height: 186
+        x: 876
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_57
+      name: Kongo Idle_49
       rect:
         serializedVersion: 2
-        x: 1407
-        y: 932
-        width: 201
-        height: 186
+        x: 1022
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_58
+      name: Kongo Idle_50
       rect:
         serializedVersion: 2
-        x: 1608
-        y: 932
-        width: 201
-        height: 186
+        x: 1168
+        y: 1424
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Faint_59
+      name: Kongo Idle_51
       rect:
         serializedVersion: 2
-        x: 1809
-        y: 932
-        width: 201
-        height: 186
+        x: 1314
+        y: 1424
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_52
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1424
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_53
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1424
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_54
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 1424
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_55
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 1424
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1268
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_57
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1268
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_58
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1268
+        width: 146
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Idle_59
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1268
+        width: 146
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

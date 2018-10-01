@@ -1,36 +1,63 @@
 fileFormatVersion: 2
-guid: bc3194c55ebb26d4d91fb57ad26ecea9
-timeCreated: 1512548845
+guid: 76d25f86b2e9f4a4f832d8aaa60f38c1
+timeCreated: 1538376853
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Gorilla Walk_0
-    21300002: Gorilla Walk_1
-    21300004: Gorilla Walk_2
-    21300006: Gorilla Walk_3
-    21300008: Gorilla Walk_4
-    21300010: Gorilla Walk_5
-    21300012: Gorilla Walk_6
-    21300014: Gorilla Walk_7
-    21300016: Gorilla Walk_8
-    21300018: Gorilla Walk_9
-    21300020: Gorilla Walk_10
-    21300022: Gorilla Walk_11
-    21300024: Gorilla Walk_12
-    21300026: Gorilla Walk_13
-    21300028: Gorilla Walk_14
-    21300030: Gorilla Walk_15
-    21300032: Gorilla Walk_16
-    21300034: Gorilla Walk_17
-    21300036: Gorilla Walk_18
-    21300038: Gorilla Walk_19
-    21300040: Gorilla Walk_20
-    21300042: Gorilla Walk_21
-    21300044: Gorilla Walk_22
+    21300000: Gorilla Hit_0
+    21300002: Gorilla Hit_1
+    21300004: Gorilla Hit_2
+    21300006: Gorilla Hit_3
+    21300008: Gorilla Hit_4
+    21300010: Gorilla Hit_5
+    21300012: Gorilla Hit_6
+    21300014: Gorilla Hit_7
+    21300016: Gorilla Hit_8
+    21300018: Gorilla Hit_9
+    21300020: Gorilla Hit_10
+    21300022: Gorilla Hit_11
+    21300024: Gorilla Hit_12
+    21300026: Gorilla Hit_13
+    21300028: Gorilla Hit_14
+    21300030: Gorilla Hit_15
+    21300032: Gorilla Hit_16
+    21300034: Gorilla Hit_17
+    21300036: Gorilla Hit_18
+    21300038: Gorilla Hit_19
+    21300040: Gorilla Hit_20
+    21300042: Gorilla Hit_21
+    21300044: Gorilla Hit_22
+    21300046: Gorilla Hit_23
+    21300048: Gorilla Hit_24
+    21300050: Kongo Hit_0
+    21300052: Kongo Hit_1
+    21300054: Kongo Hit_2
+    21300056: Kongo Hit_3
+    21300058: Kongo Hit_4
+    21300060: Kongo Hit_5
+    21300062: Kongo Hit_6
+    21300064: Kongo Hit_7
+    21300066: Kongo Hit_8
+    21300068: Kongo Hit_9
+    21300070: Kongo Hit_10
+    21300072: Kongo Hit_11
+    21300074: Kongo Hit_12
+    21300076: Kongo Hit_13
+    21300078: Kongo Hit_14
+    21300080: Kongo Hit_15
+    21300082: Kongo Hit_16
+    21300084: Kongo Hit_17
+    21300086: Kongo Hit_18
+    21300088: Kongo Hit_19
+    21300090: Kongo Hit_20
+    21300092: Kongo Hit_21
+    21300094: Kongo Hit_22
+    21300096: Kongo Hit_23
+    21300098: Kongo Hit_24
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -47,11 +74,11 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -3
-  maxTextureSize: 1024
+  textureFormat: 1
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -74,7 +101,7 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -82,7 +109,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -90,7 +117,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: iPhone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -98,7 +125,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: tvOS
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -106,7 +133,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Android
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -114,7 +141,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Tizen
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -122,7 +149,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Windows Store Apps
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -130,7 +157,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: WebGL
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -138,7 +165,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Samsung TV
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -149,260 +176,325 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gorilla Walk_0
+      name: Kongo Hit_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 863
-        width: 161
-        height: 161
+        y: 1892
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_1
+      name: Kongo Hit_1
       rect:
         serializedVersion: 2
-        x: 161
-        y: 863
-        width: 161
-        height: 161
+        x: 211
+        y: 1892
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_2
+      name: Kongo Hit_2
       rect:
         serializedVersion: 2
-        x: 322
-        y: 863
-        width: 161
-        height: 161
+        x: 422
+        y: 1892
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_3
+      name: Kongo Hit_3
       rect:
         serializedVersion: 2
-        x: 483
-        y: 863
-        width: 161
-        height: 161
+        x: 633
+        y: 1892
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_4
+      name: Kongo Hit_4
       rect:
         serializedVersion: 2
-        x: 644
-        y: 863
-        width: 161
-        height: 161
+        x: 844
+        y: 1892
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_5
+      name: Kongo Hit_5
       rect:
         serializedVersion: 2
-        x: 805
-        y: 863
-        width: 161
-        height: 161
+        x: 1055
+        y: 1892
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_6
+      name: Kongo Hit_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 702
-        width: 161
-        height: 161
+        x: 1266
+        y: 1892
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_7
+      name: Kongo Hit_7
       rect:
         serializedVersion: 2
-        x: 161
-        y: 702
-        width: 161
-        height: 161
+        x: 1477
+        y: 1892
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_8
+      name: Kongo Hit_8
       rect:
         serializedVersion: 2
-        x: 322
-        y: 702
-        width: 161
-        height: 161
+        x: 1688
+        y: 1892
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_9
-      rect:
-        serializedVersion: 2
-        x: 483
-        y: 702
-        width: 161
-        height: 161
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Walk_10
-      rect:
-        serializedVersion: 2
-        x: 644
-        y: 702
-        width: 161
-        height: 161
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Walk_11
-      rect:
-        serializedVersion: 2
-        x: 805
-        y: 702
-        width: 161
-        height: 161
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gorilla Walk_12
+      name: Kongo Hit_9
       rect:
         serializedVersion: 2
         x: 0
-        y: 541
-        width: 161
-        height: 161
+        y: 1736
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_13
+      name: Kongo Hit_10
       rect:
         serializedVersion: 2
-        x: 161
-        y: 541
-        width: 161
-        height: 161
+        x: 211
+        y: 1736
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_14
+      name: Kongo Hit_11
       rect:
         serializedVersion: 2
-        x: 322
-        y: 541
-        width: 161
-        height: 161
+        x: 422
+        y: 1736
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_15
+      name: Kongo Hit_12
       rect:
         serializedVersion: 2
-        x: 483
-        y: 541
-        width: 161
-        height: 161
+        x: 633
+        y: 1736
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_16
+      name: Kongo Hit_13
       rect:
         serializedVersion: 2
-        x: 644
-        y: 541
-        width: 161
-        height: 161
+        x: 844
+        y: 1736
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_17
+      name: Kongo Hit_14
       rect:
         serializedVersion: 2
-        x: 805
-        y: 541
-        width: 161
-        height: 161
+        x: 1055
+        y: 1736
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_18
+      name: Kongo Hit_15
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 1736
+        width: 211
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Hit_16
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 1736
+        width: 211
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Hit_17
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 1736
+        width: 211
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Hit_18
       rect:
         serializedVersion: 2
         x: 0
-        y: 380
-        width: 161
-        height: 161
+        y: 1580
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gorilla Walk_19
+      name: Kongo Hit_19
       rect:
         serializedVersion: 2
-        x: 161
-        y: 380
-        width: 161
-        height: 161
+        x: 211
+        y: 1580
+        width: 211
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Hit_20
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1580
+        width: 211
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Hit_21
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 1580
+        width: 211
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Hit_22
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 1580
+        width: 211
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Hit_23
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 1580
+        width: 211
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Kongo Hit_24
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 1580
+        width: 211
+        height: 156
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
