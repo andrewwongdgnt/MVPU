@@ -13,6 +13,8 @@ public class EndGameMenu : MonoBehaviour
     public Animator star2;
     public Animator star3;
 
+    public Image kongoConfused;
+
 
     // Use this for initialization
     void Start()
@@ -46,7 +48,8 @@ public class EndGameMenu : MonoBehaviour
 
 
     }
-    
+
+    //TODO dont think we need the bool "show"
     public void ShowLoseMenu(bool show)
     {
         StartCoroutine(ShowLoseMenuWithDelay(show));
@@ -66,16 +69,17 @@ public class EndGameMenu : MonoBehaviour
         }
     }
 
-
-    public void ShowWinMenu(bool show, ScoringModel.ScoreTypes scoreType)
+    //TODO dont think we need the bool "show"
+    public void ShowWinMenu(bool show, ScoringModel.ScoreTypes scoreType, bool showKongo)
     {
-        StartCoroutine(ShowWinMenuWithDelay(show, scoreType));
+        StartCoroutine(ShowWinMenuWithDelay(show, scoreType, showKongo));
     }
-    public IEnumerator ShowWinMenuWithDelay(bool show, ScoringModel.ScoreTypes scoreType)
+    public IEnumerator ShowWinMenuWithDelay(bool show, ScoringModel.ScoreTypes scoreType, bool showKongo)
     {
         yield return 30;
         Time.timeScale = show ? 0 : 1;
 
+        kongoConfused.enabled = showKongo;
 
         foreach (GameObject g in loseObjects)
         {

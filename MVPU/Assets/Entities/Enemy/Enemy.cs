@@ -10,8 +10,10 @@ public class Enemy : Entity, IWalker, IAttacker
     public int stepsPerMove;
     public bool dozer;
     public AudioClip sfxHitClip;
+    public EnemyEntity whoAmI;
 
     public enum Animation { None, Dozed, Slipped }
+    public enum EnemyEntity { KONGO, PURPLE_MONKEY }
 
     public bool inactive
     {

@@ -710,7 +710,8 @@ public class GameModel : MonoBehaviour
     {
         yield return new WaitForSeconds(WIN_ANIMATION_DELAY_IN_SECONDS);
         endGameAnimationPlaying = false;
-        endGameMenu.ShowWinMenu(true, ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId));
+        bool showKongo = _enemyArr.Any(e => e.whoAmI == Enemy.EnemyEntity.KONGO);
+        endGameMenu.ShowWinMenu(true, ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId), showKongo);
     }
 
 
