@@ -13,7 +13,12 @@ public class EndGameMenu : MonoBehaviour
     public Animator star2;
     public Animator star3;
 
-    public Image kongoConfused;
+    public Image winVariationKongo;
+    public Image winVariationPurpleMonkey;
+
+    public Image loseVariationPurpleMonkey1;
+    public Image loseVariationPurpleMonkey2;
+
 
 
     // Use this for initialization
@@ -50,14 +55,17 @@ public class EndGameMenu : MonoBehaviour
     }
 
     //TODO dont think we need the bool "show"
-    public void ShowLoseMenu(bool show)
+    public void ShowLoseMenu(bool show, bool showKongo, bool showPurpleMonkey)
     {
-        StartCoroutine(ShowLoseMenuWithDelay(show));
+        StartCoroutine(ShowLoseMenuWithDelay(show, showKongo, showPurpleMonkey));
     }
-    private IEnumerator ShowLoseMenuWithDelay(bool show)
+    private IEnumerator ShowLoseMenuWithDelay(bool show, bool showKongo, bool showPurpleMonkey)
     {
         yield return 30;
         Time.timeScale = show ? 0 : 1;
+
+        loseVariationPurpleMonkey1.enabled = showPurpleMonkey;
+        loseVariationPurpleMonkey2.enabled = showPurpleMonkey;
 
         foreach (GameObject g in winObjects)
         {
@@ -70,16 +78,17 @@ public class EndGameMenu : MonoBehaviour
     }
 
     //TODO dont think we need the bool "show"
-    public void ShowWinMenu(bool show, ScoringModel.ScoreTypes scoreType, bool showKongo)
+    public void ShowWinMenu(bool show, ScoringModel.ScoreTypes scoreType, bool showKongo, bool showPurpleMonkey)
     {
-        StartCoroutine(ShowWinMenuWithDelay(show, scoreType, showKongo));
+        StartCoroutine(ShowWinMenuWithDelay(show, scoreType, showKongo, showPurpleMonkey));
     }
-    public IEnumerator ShowWinMenuWithDelay(bool show, ScoringModel.ScoreTypes scoreType, bool showKongo)
+    public IEnumerator ShowWinMenuWithDelay(bool show, ScoringModel.ScoreTypes scoreType, bool showKongo, bool showPurpleMonkey)
     {
         yield return 30;
         Time.timeScale = show ? 0 : 1;
 
-        kongoConfused.enabled = showKongo;
+        winVariationKongo.enabled = showKongo;
+        winVariationPurpleMonkey.enabled = showPurpleMonkey;
 
         foreach (GameObject g in loseObjects)
         {

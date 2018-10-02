@@ -466,7 +466,7 @@ public class LevelUtil
             { LevelID.LEVEL_2_7, new LevelScore(12) },
             { LevelID.LEVEL_2_8, new LevelScore(15) },
             { LevelID.LEVEL_2_9, new LevelScore(15) },
-            { LevelID.LEVEL_2_10, new LevelScore(24) },
+            { LevelID.LEVEL_2_10, new LevelScore(23) },
             { LevelID.LEVEL_3_1, new LevelScore(12) },
             { LevelID.LEVEL_3_2, new LevelScore(16) },
             { LevelID.LEVEL_3_3, new LevelScore(21) },

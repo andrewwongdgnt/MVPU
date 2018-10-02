@@ -19,6 +19,7 @@ public class GameModel : MonoBehaviour
 
     private bool endGameAnimationPlaying;
     private bool allowShowEndGameMenu;
+    private IAttacker gameEndingKiller;
 
     public EndGameMenu endGameMenu;
 
@@ -647,7 +648,7 @@ public class GameModel : MonoBehaviour
         if (gameEndInfo != null)
         {
             bool winning = gameEndInfo.third==null;
-            IAttacker attacker = gameEndInfo.third is IAttacker ? (IAttacker)gameEndInfo.third : null;
+            gameEndingKiller = gameEndInfo.third is IAttacker ? (IAttacker)gameEndInfo.third : null;
             gameEndInfo = null;
            endGameAnimationPlaying = true;
             allowShowEndGameMenu = true;
@@ -663,19 +664,19 @@ public class GameModel : MonoBehaviour
             {
                 Debug.Log(_currentLevelId + ": Game Over");
 
-                if (attacker!=null)
+                if (gameEndingKiller!=null)
                 {
-                    _player.StartDieAnimation(attacker.GetPlayerLoseAnimationName(), attacker is Enemy);
-                    attacker.StartAttackAnimation();
+                    _player.StartDieAnimation(gameEndingKiller.GetPlayerLoseAnimationName(), gameEndingKiller is Enemy);
+                    gameEndingKiller.StartAttackAnimation();
                     Entity.Direction attackerDir =  _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT;
-                    if (!(attacker is Enemy))
+                    if (!(gameEndingKiller is Enemy))
                     {
                         if (attackerDir == Entity.Direction.RIGHT)
                             attackerDir = Entity.Direction.LEFT;
                         else
                             attackerDir = Entity.Direction.RIGHT;
                     }
-                    FaceHorizontally(attacker.entity, attackerDir);
+                    FaceHorizontally(gameEndingKiller.entity, attackerDir);
                 } 
             }
         }
@@ -694,7 +695,15 @@ public class GameModel : MonoBehaviour
     {
         yield return new WaitForSeconds(LOSE_ANIMATION_DELAY_IN_SECONDS);
         endGameAnimationPlaying = false;
-        endGameMenu.ShowLoseMenu(true);
+        bool showKongo = false;
+        bool showPurpleMonkey = false;
+        if (gameEndingKiller != null && gameEndingKiller is Enemy)
+        {
+            Enemy enemy = (Enemy) gameEndingKiller;
+            showKongo = enemy.whoAmI == Enemy.EnemyEntity.KONGO;
+            showPurpleMonkey = enemy.whoAmI == Enemy.EnemyEntity.PURPLE_MONKEY;            
+        }
+        endGameMenu.ShowLoseMenu(true, showKongo, showPurpleMonkey);
     }
 
     public void ShowWinMenu()
@@ -711,7 +720,8 @@ public class GameModel : MonoBehaviour
         yield return new WaitForSeconds(WIN_ANIMATION_DELAY_IN_SECONDS);
         endGameAnimationPlaying = false;
         bool showKongo = _enemyArr.Any(e => e.whoAmI == Enemy.EnemyEntity.KONGO);
-        endGameMenu.ShowWinMenu(true, ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId), showKongo);
+        bool showPurpleMonkey = _enemyArr.Any(e => e.whoAmI == Enemy.EnemyEntity.PURPLE_MONKEY);
+        endGameMenu.ShowWinMenu(true, ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId), showKongo, showPurpleMonkey);
     }
 
 
