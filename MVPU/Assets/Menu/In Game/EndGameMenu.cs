@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine.UI;
+using System;
 
 public class EndGameMenu : MonoBehaviour
 {
@@ -13,11 +14,11 @@ public class EndGameMenu : MonoBehaviour
     public Animator star2;
     public Animator star3;
 
-    public Image winVariationKongo;
-    public Image winVariationPurpleMonkey;
+    public Image[] winVariationKongoImages;
+    public Image[] winVariationPurpleMonkeyImages;
 
-    public Image loseVariationPurpleMonkey1;
-    public Image loseVariationPurpleMonkey2;
+    public Image[] loseVariationKongoImages;
+    public Image[] loseVariationPurpleMonkeyImages;
 
 
 
@@ -64,8 +65,8 @@ public class EndGameMenu : MonoBehaviour
         yield return 30;
         Time.timeScale = show ? 0 : 1;
 
-        loseVariationPurpleMonkey1.enabled = showPurpleMonkey;
-        loseVariationPurpleMonkey2.enabled = showPurpleMonkey;
+        Array.ForEach(loseVariationKongoImages, im => im.enabled = showKongo);
+        Array.ForEach(loseVariationPurpleMonkeyImages, im => im.enabled = showPurpleMonkey);
 
         foreach (GameObject g in winObjects)
         {
@@ -87,8 +88,8 @@ public class EndGameMenu : MonoBehaviour
         yield return 30;
         Time.timeScale = show ? 0 : 1;
 
-        winVariationKongo.enabled = showKongo;
-        winVariationPurpleMonkey.enabled = showPurpleMonkey;
+        Array.ForEach(winVariationKongoImages, im => im.enabled = showKongo);
+        Array.ForEach(winVariationPurpleMonkeyImages, im => im.enabled = showPurpleMonkey);
 
         foreach (GameObject g in loseObjects)
         {
