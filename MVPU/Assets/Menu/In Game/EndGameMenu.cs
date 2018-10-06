@@ -19,6 +19,7 @@ public class EndGameMenu : MonoBehaviour
 
     public Image[] loseVariationKongoImages;
     public Image[] loseVariationPurpleMonkeyImages;
+    public Image[] loseVariationNeutralImages;
 
 
 
@@ -67,6 +68,8 @@ public class EndGameMenu : MonoBehaviour
 
         Array.ForEach(loseVariationKongoImages, im => im.enabled = showKongo);
         Array.ForEach(loseVariationPurpleMonkeyImages, im => im.enabled = showPurpleMonkey);
+        Array.ForEach(loseVariationNeutralImages, im => im.enabled = !showKongo && !showPurpleMonkey);
+        
 
         foreach (GameObject g in winObjects)
         {
