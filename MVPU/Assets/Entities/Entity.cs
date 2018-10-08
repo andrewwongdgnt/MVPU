@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
-public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
+public abstract class Entity : MonoBehaviour, IUndoable, IEntity
 {
 
     
@@ -24,6 +25,7 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
         get;set;
     }
     public AudioSource audioSource;
+
     public Animator animator;
 
     protected GameModel _gameModel;
@@ -139,6 +141,13 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntityObtainer
         {
             return this;
         }
-    } 
+    }
 
+    AudioSource IAudioSourceObtainer.audioSource
+    {
+        get
+        {
+            return audioSource;
+        }
+    }
 }

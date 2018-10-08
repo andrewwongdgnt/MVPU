@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Player : Entity, IWalker
 {
+    public WalkerService.FootStepPair[] sfxFootSteps;
+
+    private WalkerService walkerService;
 
     // Use this for initialization
     void Start()
     {
         Debug.Log(this+" Created:" + " x=" + x + " y=" + y);
+        walkerService = new WalkerService(animator, sfxFootSteps);
     }
 
 
@@ -65,11 +70,16 @@ public class Player : Entity, IWalker
 
     public void StartWalkAnimation()
     {
-        animator.SetBool("HorizontalWalk", true);
+        walkerService.StartWalkAnimation();
     }
     public void StopWalkAnimation()
     {
-        animator.SetBool("HorizontalWalk", false);
+        walkerService.StopWalkAnimation();
+    }
+
+    public AudioClip GetSfxFootStep(LevelUtil.LevelType levelType)
+    {
+        return walkerService.GetSfxFootStep(levelType);
     }
 
     public void StartDieAnimation(string name, bool showOnlyFirstFrame = false)
@@ -97,5 +107,4 @@ public class Player : Entity, IWalker
         animator.SetBool("Win", false);
 
     }
-
 }

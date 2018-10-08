@@ -5,20 +5,16 @@ using UnityEngine;
 public class AnimatorEvent : MonoBehaviour {
 
     public GameModel gameModel { private get; set; }
-    //-------------------------
-    //
-    //  Entities
-    //
-    //-------------------------
 
-
-    public Enemy enemy;
-    public void EnemyAttackEvent()
+    //Attacker Section
+    public IAttacker attacker { private get; set; }
+    public void AttackerAttackEvent()
     {
-        gameModel.player.StartDieAnimation(enemy.GetPlayerLoseAnimationName());
-        AudioUtil.PlaySFX(enemy.audioSource, enemy.sfxHitClip);
+        gameModel.player.StartDieAnimation(attacker.GetPlayerLoseAnimationName());
+        AudioUtil.PlaySFX(attacker.audioSource, attacker.sfxHitClip);
     }
 
+    //Player Section
     public void PlayerDiedEvent()
     {
         gameModel.ShowLoseMenu();
@@ -27,5 +23,15 @@ public class AnimatorEvent : MonoBehaviour {
     public void PlayerWinEvent()
     {
         gameModel.ShowWinMenu();
+    }
+
+    //Walker Section
+    public IWalker walker { private get; set; }
+    public void WalkerFootStepEvent()
+    {
+        LevelUtil.LevelType levelType = gameModel.currentLevelType;
+        AudioClip sfxFootStep = walker.GetSfxFootStep(levelType);
+
+        AudioUtil.PlaySFX(walker.audioSource, sfxFootStep);
     }
 }

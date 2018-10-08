@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Bomb : Entity, IAttacker {
 
@@ -17,6 +18,7 @@ public class Bomb : Entity, IAttacker {
         get;set;
     }
 
+    private AttackerService attackerService;
 
     protected override void BuildAdditionalStateDict(Dictionary<string, object> dict)
     {
@@ -43,6 +45,7 @@ public class Bomb : Entity, IAttacker {
     // Use this for initialization
     void Start () {
         Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " affectsEnemy=" + affectsEnemy + " affectsPlayer="+ affectsPlayer+ " numOfUses="+ numOfUses+ " inactive="+ inactive);
+        attackerService = new AttackerService(animator);
     }
 	
     public string GetPlayerLoseAnimationName()
@@ -56,12 +59,21 @@ public class Bomb : Entity, IAttacker {
         }
     }
 
+
     public void StartAttackAnimation()
     {
-        animator.SetBool("Attack", true);
+        attackerService.StartAttackAnimation();
     }
     public void StopAttackAnimation()
     {
-        animator.SetBool("Attack", false);
+        attackerService.StopAttackAnimation();
+    }
+
+    AudioClip IAttacker.sfxHitClip
+    {
+        get
+        {
+            throw new NotImplementedException();
+        }
     }
 }

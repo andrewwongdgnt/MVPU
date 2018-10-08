@@ -10,6 +10,7 @@ public class Enemy : Entity, IWalker, IAttacker
     public int stepsPerMove;
     public bool dozer;
     public AudioClip sfxHitClip;
+    public WalkerService.FootStepPair[] sfxFootSteps;
     public EnemyEntity whoAmI;
 
     public enum Animation { None, Dozed, Slipped }
@@ -19,7 +20,10 @@ public class Enemy : Entity, IWalker, IAttacker
     {
         get; set;
     }
+
     private bool blocked;
+    private WalkerService walkerService;
+    private AttackerService attackerService;
 
     protected override void BuildAdditionalStateDict(Dictionary<string, object> dict)
     {
@@ -46,8 +50,9 @@ public class Enemy : Entity, IWalker, IAttacker
     // Use this for initialization
     void Start()
     {
-
         Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " verticalOrientation=" + verticalOrientation + " stepsPerMove=" + stepsPerMove + " dozer=" + dozer);
+        walkerService = new WalkerService(animator, sfxFootSteps);
+        attackerService = new AttackerService(animator);
     }
 
 
@@ -223,15 +228,26 @@ public class Enemy : Entity, IWalker, IAttacker
         return "Dead";
     }
 
+    AudioClip IAttacker.sfxHitClip
+    {
+        get
+        {
+            return sfxHitClip;
+        }
+    }
+
     public void StartWalkAnimation()
     {
-        animator.SetBool("HorizontalWalk", true);
+        walkerService.StartWalkAnimation();
     }
     public void StopWalkAnimation()
     {
-        animator.SetBool("HorizontalWalk", false);
+        walkerService.StopWalkAnimation();
     }
-
+    public AudioClip GetSfxFootStep(LevelUtil.LevelType levelType)
+    {
+        return walkerService.GetSfxFootStep(levelType);
+    }
 
     public void StartDieAnimation(string name)
     {
@@ -244,10 +260,10 @@ public class Enemy : Entity, IWalker, IAttacker
     }
     public void StartAttackAnimation()
     {
-        animator.SetBool("Attack", true);
+        attackerService.StartAttackAnimation();
     }
     public void StopAttackAnimation()
     {
-        animator.SetBool("Attack", false);
+        attackerService.StopAttackAnimation();
     }
 }

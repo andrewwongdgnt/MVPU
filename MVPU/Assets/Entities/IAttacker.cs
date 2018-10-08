@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IAttacker : IEntityObtainer
+public interface IAttacker : IEntity
 {
     //Obstacles can attack too.  EG, bomb will just blow up and banana will fly away
 
@@ -11,5 +11,10 @@ public interface IAttacker : IEntityObtainer
     void StopAttackAnimation();
 
     string GetPlayerLoseAnimationName();
+
+    AudioClip sfxHitClip
+    {
+        get;
+    }
 
 }

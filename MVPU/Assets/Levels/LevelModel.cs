@@ -73,14 +73,14 @@ public class LevelModel : MonoBehaviour
         player.facingDirection = playerInfo.facingDirection == Entity.Direction.NONE ? Entity.Direction.RIGHT : playerInfo.facingDirection;
         player.gameObject.transform.localScale = new Vector3(scale, scale, scale);
         gameModel.player = player;
-        SetGameModelToAnimatorEvent(player.GetComponentInChildren<AnimatorEvent>(), gameModel);        
+        SetGameModelToAnimatorEvent(player.GetComponentInChildren<AnimatorEvent>(), gameModel, player);        
 
         Goal goal = Instantiate(goalInfo.goal);
         goal.x = goalInfo.x;
         goal.y = goalInfo.y;
         goal.gameObject.transform.localScale = new Vector3(scale, scale, scale);
         gameModel.goal = goal;
-        SetGameModelToAnimatorEvent(goal.GetComponentInChildren<AnimatorEvent>(), gameModel);
+        SetGameModelToAnimatorEvent(goal.GetComponentInChildren<AnimatorEvent>(), gameModel, goal);
 
         Enemy[] enemyArr = new Enemy[enemyInfos.Length];
         for (int i = 0; i < enemyInfos.Length; i++)
@@ -90,7 +90,7 @@ public class LevelModel : MonoBehaviour
             enemy.y = enemyInfos[i].y;
             enemy.gameObject.transform.localScale = new Vector3(scale, scale, scale);
             enemy.facingDirection = enemyInfos.Length <= i || enemyInfos[i].facingDirection == Entity.Direction.NONE ? Entity.Direction.RIGHT : enemyInfos[i].facingDirection;
-            SetGameModelToAnimatorEvent(enemy.GetComponentInChildren<AnimatorEvent>(), gameModel);
+            SetGameModelToAnimatorEvent(enemy.GetComponentInChildren<AnimatorEvent>(), gameModel, enemy);
 
             enemyArr[i] = enemy;
         }
@@ -104,6 +104,7 @@ public class LevelModel : MonoBehaviour
             bomb.y = bombInfos[i].y;
             bomb.gameObject.transform.localScale = new Vector3(scale, scale, scale);
             bomb.facingDirection = Entity.Direction.RIGHT;
+            SetGameModelToAnimatorEvent(bomb.GetComponentInChildren<AnimatorEvent>(), gameModel, bomb);
 
             bombArr[i] = bomb;
         }
@@ -174,11 +175,20 @@ public class LevelModel : MonoBehaviour
 
     }
 
-    private void  SetGameModelToAnimatorEvent(AnimatorEvent animatorEvent, GameModel gameModel)
+    private void  SetGameModelToAnimatorEvent(AnimatorEvent animatorEvent, GameModel gameModel, Entity entity)
     {
         if (animatorEvent != null)
         {
             animatorEvent.gameModel = gameModel;
+        
+            if (entity is IAttacker)
+            {
+                animatorEvent.attacker = (IAttacker)entity;
+            }
+            if (entity is IWalker)
+            {
+                animatorEvent.walker = (IWalker)entity;
+            }
         }
     }
 }

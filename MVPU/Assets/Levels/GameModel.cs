@@ -186,7 +186,7 @@ public class GameModel : MonoBehaviour
         {
             _currentLevelId = value;
         }
-    }
+    }    
 
     private AudioClip _currentLevelMusic;
     public AudioClip currentLevelMusic
@@ -288,6 +288,14 @@ public class GameModel : MonoBehaviour
         StartCoroutine(setActionAllowedFromTutorialWithDelay(actionAllowed));
     }
 
+    private IEnumerator setActionAllowedFromTutorialWithDelay(TutorialAction.Action actionAllowed)
+    {
+        actionAllowedFromTutorial = TutorialAction.Action.NONE;
+        yield return 30;
+        actionAllowedFromTutorial = actionAllowed;
+
+    }
+
     public void PlayMusic()
     {
         if (Time.timeScale > 0)
@@ -306,14 +314,12 @@ public class GameModel : MonoBehaviour
         }
     }
 
-    private IEnumerator setActionAllowedFromTutorialWithDelay(TutorialAction.Action actionAllowed)
-    {
-        actionAllowedFromTutorial = TutorialAction.Action.NONE;
-        yield return 30;
-        actionAllowedFromTutorial = actionAllowed;
-
+    public LevelUtil.LevelType currentLevelType{
+        get
+        {
+            return LevelUtil.LevelToLevelType[_currentLevelId];
+        }
     }
-
 
     private List<List<bool>> animationComplete = new List<List<bool>>();
     private List<Triple<int, int, Enemy>> fallenEnemiesList = new List<Triple<int, int, Enemy>>();
@@ -512,6 +518,16 @@ public class GameModel : MonoBehaviour
             animationComplete[i] = step;
         }
     }
+
+    private bool AllAnimationsComplete()
+    {
+        return animationComplete.All(list => list.All(b => b));
+    }
+    private bool UserInteractionAllowed()
+    {
+        return AllAnimationsComplete() && !endGameAnimationPlaying;
+    }
+
     float touchDuration;
     Touch touch;
     bool doubleTapOccurred;
@@ -723,17 +739,6 @@ public class GameModel : MonoBehaviour
         bool showPurpleMonkey = _enemyArr.Any(e => e.whoAmI == Enemy.EnemyEntity.PURPLE_MONKEY);
         endGameMenu.ShowWinMenu(true, ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId), showKongo, showPurpleMonkey);
     }
-
-
-    private bool AllAnimationsComplete()
-    {
-        return animationComplete.All(list => list.All(b => b));
-    }
-    private bool UserInteractionAllowed()
-    {
-        return AllAnimationsComplete() && !endGameAnimationPlaying;
-    }
-
 
     private void Look(Entity entity, Entity.Direction direction)
     {
