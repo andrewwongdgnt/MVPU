@@ -10,9 +10,14 @@ public interface IAttacker : IEntity
     void StartAttackAnimation();
     void StopAttackAnimation();
 
-    string GetPlayerLoseAnimationName();
+    MortalService.DeathAnimation mortalDeathAnimation { get; }
 
     AudioClip sfxHitClip
+    {
+        get;
+    }
+
+    bool attackDelayed
     {
         get;
     }

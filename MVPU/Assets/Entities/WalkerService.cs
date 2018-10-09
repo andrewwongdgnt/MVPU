@@ -13,23 +13,23 @@ public class WalkerService
         public AudioClip[] footSteps;
     }
 
-    private Animator animator;
+    private IWalker walker;
     private Dictionary<LevelUtil.LevelType, AudioClip[]> sfxFootStepMap;
-    public WalkerService(Animator animator, FootStepPair[] sfxFootSteps)
+    public WalkerService(IWalker walker)
     {
-        this.animator = animator;
+        this.walker = walker;
         sfxFootStepMap = new Dictionary<LevelUtil.LevelType, AudioClip[]>();
-        Array.ForEach(sfxFootSteps, e => sfxFootStepMap.Add(e.levelType, e.footSteps));
+        Array.ForEach(walker.sfxFootSteps, e => sfxFootStepMap.Add(e.levelType, e.footSteps));
     }
 
     public void StartWalkAnimation()
     {
-        animator.SetBool("HorizontalWalk", true);
+        walker.animator.SetBool("HorizontalWalk", true);
     }
 
     public void StopWalkAnimation()
     {
-        animator.SetBool("HorizontalWalk", false);
+        walker.animator.SetBool("HorizontalWalk", false);
     }
 
     public AudioClip GetSfxFootStep(LevelUtil.LevelType levelType)

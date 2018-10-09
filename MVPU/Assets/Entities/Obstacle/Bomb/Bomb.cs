@@ -6,19 +6,36 @@ using System;
 public class Bomb : Entity, IAttacker {
 
     public enum Animation { None, Explode }
-    public enum WalkerDeathAnimation {Slip }
 
-    public WalkerDeathAnimation walkerDeathAnimation;
+    public MortalService.DeathAnimation mortalDeathAnimation;
     public bool affectsEnemy;
     public bool affectsPlayer;
     public int numOfUses;
+    public AudioClip sfxHitClip;
 
     public bool inactive
     {
         get;set;
     }
 
-    private AttackerService attackerService;
+    private AttackerService _attackerService;
+    private AttackerService attackerService
+    {
+        get
+        {
+            if (_attackerService == null)
+            {
+                _attackerService = new AttackerService(this);
+            }
+            return _attackerService;
+        }
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+        Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " affectsEnemy=" + affectsEnemy + " affectsPlayer=" + affectsPlayer + " numOfUses=" + numOfUses + " inactive=" + inactive);
+    }
 
     protected override void BuildAdditionalStateDict(Dictionary<string, object> dict)
     {
@@ -42,23 +59,9 @@ public class Bomb : Entity, IAttacker {
         }
     }
 
-    // Use this for initialization
-    void Start () {
-        Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " affectsEnemy=" + affectsEnemy + " affectsPlayer="+ affectsPlayer+ " numOfUses="+ numOfUses+ " inactive="+ inactive);
-        attackerService = new AttackerService(animator);
-    }
-	
-    public string GetPlayerLoseAnimationName()
-    {
-        switch (walkerDeathAnimation)
-        {
-            case WalkerDeathAnimation.Slip:
-            default:
-                return "Slip";
-
-        }
-    }
-
+    //---------------
+    // IAttacker Impl
+    //---------------
 
     public void StartAttackAnimation()
     {
@@ -73,7 +76,23 @@ public class Bomb : Entity, IAttacker {
     {
         get
         {
-            throw new NotImplementedException();
+            return sfxHitClip;
+        }
+    }
+
+    public bool attackDelayed
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+    MortalService.DeathAnimation IAttacker.mortalDeathAnimation
+    {
+        get
+        {
+            return mortalDeathAnimation;
         }
     }
 }

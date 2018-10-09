@@ -4,7 +4,7 @@ using System.Linq;
 using System;
 using System.Collections.Generic;
 
-public class Enemy : Entity, IWalker, IAttacker
+public class Enemy : Entity, IWalker, IAttacker, IMortal
 {
     public bool verticalOrientation;
     public int stepsPerMove;
@@ -12,6 +12,7 @@ public class Enemy : Entity, IWalker, IAttacker
     public AudioClip sfxHitClip;
     public WalkerService.FootStepPair[] sfxFootSteps;
     public EnemyEntity whoAmI;
+    public MortalService.DeathAnimation mortalDeathAnimation;
 
     public enum Animation { None, Dozed, Slipped }
     public enum EnemyEntity { KONGO, PURPLE_MONKEY }
@@ -22,9 +23,47 @@ public class Enemy : Entity, IWalker, IAttacker
     }
 
     private bool blocked;
-    private WalkerService walkerService;
-    private AttackerService attackerService;
+    private WalkerService _walkerService;
+    private WalkerService walkerService {
+        get {
+            if (_walkerService == null)
+            {
+                _walkerService = new WalkerService(this);
+            }
+            return _walkerService;
+        }
+    }
+    private AttackerService _attackerService;
+    private AttackerService attackerService
+    {
+        get
+        {
+            if (_attackerService == null)
+            {
+                _attackerService = new AttackerService(this);
+            }
+            return _attackerService;
+        }
+    }
+    private MortalService _mortalService;
+    private MortalService mortalService
+    {
+        get
+        {
+            if (_mortalService == null)
+            {
+                _mortalService = new MortalService(this);
+            }
+            return _mortalService;
+        }
+    }
 
+
+    // Use this for initialization
+    void Start()
+    {
+        Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " verticalOrientation=" + verticalOrientation + " stepsPerMove=" + stepsPerMove + " dozer=" + dozer);
+    }
     protected override void BuildAdditionalStateDict(Dictionary<string, object> dict)
     {
         dict.Add("verticalOrientation", verticalOrientation);
@@ -47,19 +86,11 @@ public class Enemy : Entity, IWalker, IAttacker
         }
     }
 
-    // Use this for initialization
-    void Start()
-    {
-        Debug.Log(this + " Created:" + " x=" + x + " y=" + y + " verticalOrientation=" + verticalOrientation + " stepsPerMove=" + stepsPerMove + " dozer=" + dozer);
-        walkerService = new WalkerService(animator, sfxFootSteps);
-        attackerService = new AttackerService(animator);
-    }
-
 
     public void Do_React()
     {
-        int playerX = _gameModel.playerX;
-        int playerY = _gameModel.playerY;
+        int playerX = _gameModel.player.x;
+        int playerY = _gameModel.player.y;
 
 
         for (int i = 0; i < stepsPerMove; i++)
@@ -223,16 +254,23 @@ public class Enemy : Entity, IWalker, IAttacker
         return false;
     }
 
-    public string GetPlayerLoseAnimationName()
-    {
-        return "Dead";
-    }
-
-    AudioClip IAttacker.sfxHitClip
+    public MortalService.DeathAnimation dozedDeathAnimation
     {
         get
         {
-            return sfxHitClip;
+            return mortalDeathAnimation;
+        }
+    } 
+
+    //---------------
+    // IWalker Impl
+    //---------------
+
+    WalkerService.FootStepPair[] IWalker.sfxFootSteps
+    {
+        get
+        {
+            return sfxFootSteps;
         }
     }
 
@@ -244,20 +282,23 @@ public class Enemy : Entity, IWalker, IAttacker
     {
         walkerService.StopWalkAnimation();
     }
-    public AudioClip GetSfxFootStep(LevelUtil.LevelType levelType)
+    public AudioClip GetResolvedSfxFootStep(LevelUtil.LevelType levelType)
     {
         return walkerService.GetSfxFootStep(levelType);
     }
 
-    public void StartDieAnimation(string name)
+    //---------------
+    // IAttacker Impl
+    //---------------
+
+    AudioClip IAttacker.sfxHitClip
     {
-        animator.SetBool(name, true);
+        get
+        {
+            return sfxHitClip;
+        }
     }
-    public void StopDieAnimation()
-    {
-        animator.SetBool("Dead", false);
-        animator.SetBool("Slip", false);
-    }
+
     public void StartAttackAnimation()
     {
         attackerService.StartAttackAnimation();
@@ -265,5 +306,34 @@ public class Enemy : Entity, IWalker, IAttacker
     public void StopAttackAnimation()
     {
         attackerService.StopAttackAnimation();
+    }
+
+    public bool attackDelayed
+    {
+        get
+        {
+            return true;
+        }
+    }
+
+    MortalService.DeathAnimation IAttacker.mortalDeathAnimation
+    {
+        get
+        {
+            return mortalDeathAnimation;
+        }
+    }
+
+    //---------------
+    // IMortal Impl
+    //---------------
+
+    public void StartDieAnimation(MortalService.DeathAnimation deathAnimation)
+    {
+        mortalService.StartDieAnimation(deathAnimation);
+    }
+    public void StopDieAnimation()
+    {
+        mortalService.StopDieAnimation();
     }
 }

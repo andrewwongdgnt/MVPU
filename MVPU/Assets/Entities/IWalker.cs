@@ -7,5 +7,7 @@ public interface IWalker : IEntity
 
     void StartWalkAnimation();
     void StopWalkAnimation();
-    AudioClip GetSfxFootStep(LevelUtil.LevelType levelType);
+    AudioClip GetResolvedSfxFootStep(LevelUtil.LevelType levelType);
+
+    WalkerService.FootStepPair[] sfxFootSteps { get; }
 }

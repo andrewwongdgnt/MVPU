@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IEntity : IEntityObtainer, IAudioSourceObtainer {
+public interface IEntity : IEntityObtainer, IAudioSourceObtainer, IAnimatorObtainer
+{
 
 
 }

@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class AttackerService  {
 
-    private Animator animator;
-    public AttackerService(Animator animator)
+    private IAttacker attacker;
+    public AttackerService(IAttacker attacker)
     {
-        this.animator = animator;
+        this.attacker = attacker;
     }
 
     public void StartAttackAnimation()
     {
-        animator.SetBool("Attack", true);
+        attacker.animator.SetBool("Attack", true);
     }
 
     public void StopAttackAnimation()
     {
-        animator.SetBool("Attack", false);
+        attacker.animator.SetBool("Attack", false);
     }
 }

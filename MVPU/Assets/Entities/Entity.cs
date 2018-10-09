@@ -150,4 +150,12 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntity
             return audioSource;
         }
     }
+
+    Animator IAnimatorObtainer.animator
+    {
+        get
+        {
+            return animator;
+        }
+    }
 }

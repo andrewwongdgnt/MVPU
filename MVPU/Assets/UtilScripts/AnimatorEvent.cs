@@ -10,7 +10,10 @@ public class AnimatorEvent : MonoBehaviour {
     public IAttacker attacker { private get; set; }
     public void AttackerAttackEvent()
     {
-        gameModel.player.StartDieAnimation(attacker.GetPlayerLoseAnimationName());
+        IMortal mortal = gameModel.findMortalInSamePositionAs(attacker.entity);
+        if (mortal == null)
+            return;
+        mortal.StartDieAnimation(attacker.mortalDeathAnimation);
         AudioUtil.PlaySFX(attacker.audioSource, attacker.sfxHitClip);
     }
 
@@ -30,7 +33,7 @@ public class AnimatorEvent : MonoBehaviour {
     public void WalkerFootStepEvent()
     {
         LevelUtil.LevelType levelType = gameModel.currentLevelType;
-        AudioClip sfxFootStep = walker.GetSfxFootStep(levelType);
+        AudioClip sfxFootStep = walker.GetResolvedSfxFootStep(levelType);
 
         AudioUtil.PlaySFX(walker.audioSource, sfxFootStep);
     }

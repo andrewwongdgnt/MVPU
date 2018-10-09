@@ -3,17 +3,39 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Player : Entity, IWalker
+public class Player : Entity, IWalker, IMortal
 {
     public WalkerService.FootStepPair[] sfxFootSteps;
 
-    private WalkerService walkerService;
+    private WalkerService _walkerService;
+    private WalkerService walkerService
+    {
+        get
+        {
+            if (_walkerService == null)
+            {
+                _walkerService = new WalkerService(this);
+            }
+            return _walkerService;
+        }
+    }
+    private MortalService _mortalService;
+    private MortalService mortalService
+    {
+        get
+        {
+            if (_mortalService == null)
+            {
+                _mortalService = new MortalService(this);
+            }
+            return _mortalService;
+        }
+    }
 
     // Use this for initialization
     void Start()
     {
         Debug.Log(this+" Created:" + " x=" + x + " y=" + y);
-        walkerService = new WalkerService(animator, sfxFootSteps);
     }
 
 
@@ -63,10 +85,13 @@ public class Player : Entity, IWalker
         if (direction!=Direction.NONE)
             facingDirection = direction;
         return true;
-        
+            
 
     }
 
+    //---------------
+    // IWalker Impl
+    //---------------
 
     public void StartWalkAnimation()
     {
@@ -76,24 +101,35 @@ public class Player : Entity, IWalker
     {
         walkerService.StopWalkAnimation();
     }
-
-    public AudioClip GetSfxFootStep(LevelUtil.LevelType levelType)
+    WalkerService.FootStepPair[] IWalker.sfxFootSteps
+    {
+        get
+        {
+            return sfxFootSteps;
+        }
+    }
+    public AudioClip GetResolvedSfxFootStep(LevelUtil.LevelType levelType)
     {
         return walkerService.GetSfxFootStep(levelType);
     }
 
-    public void StartDieAnimation(string name, bool showOnlyFirstFrame = false)
+    //---------------
+    // IMortal Impl
+    //---------------
+
+    public void StartDieAnimation(MortalService.DeathAnimation deathAnimation)
     {
-        animator.SetBool(name, true);
+        StartDieAnimation(deathAnimation, false);
+    }
+    public void StartDieAnimation(MortalService.DeathAnimation deathAnimation, bool showOnlyFirstFrame)
+    {
+        mortalService.StartDieAnimation(deathAnimation);
         animator.speed = showOnlyFirstFrame ? 0 : 1;
     }
 
-
     public void StopDieAnimation()
     {
-        animator.SetBool("Dead", false);
-        animator.SetBool("Slip", false);
-
+        mortalService.StopDieAnimation();
     }
 
     public void StartWinAnimation()

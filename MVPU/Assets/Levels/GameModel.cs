@@ -80,22 +80,6 @@ public class GameModel : MonoBehaviour
         }
     }
 
-    public int playerX
-    {
-        get
-        {
-            return _player.x;
-        }
-    }
-
-    public int playerY
-    {
-        get
-        {
-            return _player.y;
-        }
-    }
-
     private Goal _goal;
     public Goal goal
     {
@@ -105,25 +89,6 @@ public class GameModel : MonoBehaviour
             _goal.gameModel = this;
         }
     }
-
-    public float goalX
-    {
-        get
-        {
-            return _goal.x;
-        }
-    }
-    
-    public float goalY
-    {
-
-        get
-        {
-            return _goal.y;
-        }
-    }
-
-
     private Enemy[] _enemyArr;
     public Enemy[] enemyArr
     {
@@ -367,7 +332,7 @@ public class GameModel : MonoBehaviour
 
     private void SetViewForEntities()
     {
-        SetViewForPlayer(_player);
+        SetViewForPlayer();
         _goal.transform.position = GetPositionForEntity(_goal);
 
         Array.ForEach(_enemyArr, en =>
@@ -396,18 +361,18 @@ public class GameModel : MonoBehaviour
         return new Vector3(newX, newY, newZ);
     }
 
-    private void SetViewForPlayer(Player player)
+    private void SetViewForPlayer()
     {
-        Look(player, player.facingDirection);
-        player.transform.position = GetPositionForEntity(player);
+        Look(_player, _player.facingDirection);
+        _player.transform.position = GetPositionForEntity(_player);
     }
-    private void SetViewForEnemy(Enemy enemy, string animationName= null)
+    private void SetViewForEnemy(Enemy enemy, MortalService.DeathAnimation deathAnimation = MortalService.DeathAnimation.None)
     {
         enemy.transform.position = GetPositionForEntity(enemy);
         Look(enemy, enemy.facingDirection);
-        if (animationName != null)
+        if (deathAnimation != MortalService.DeathAnimation.None)
         {
-            enemy.StartDieAnimation(animationName);
+            enemy.StartDieAnimation(deathAnimation);
         }
         else
         {
@@ -417,7 +382,7 @@ public class GameModel : MonoBehaviour
         Array.ForEach(sprites, s =>
         {
             Color color = s.material.color;
-            color.a = enemy.inactive && animationName == null ? 0f : 1f;
+            color.a = enemy.inactive && deathAnimation == MortalService.DeathAnimation.None ? 0f : 1f;
 
             s.material.color = color;
         });
@@ -682,7 +647,7 @@ public class GameModel : MonoBehaviour
 
                 if (gameEndingKiller!=null)
                 {
-                    _player.StartDieAnimation(gameEndingKiller.GetPlayerLoseAnimationName(), gameEndingKiller is Enemy);
+                    _player.StartDieAnimation(gameEndingKiller.mortalDeathAnimation, gameEndingKiller.attackDelayed);
                     gameEndingKiller.StartAttackAnimation();
                     Entity.Direction attackerDir =  _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT;
                     if (!(gameEndingKiller is Enemy))
@@ -790,7 +755,7 @@ public class GameModel : MonoBehaviour
     {
         if (gameEndInfo == null)
         {
-            if (_player.x == goalX && _player.y == goalY)
+            if (_player.x == _goal.x && _player.y == _goal.y)
             {
                 gameEndInfo = new Triple<int, int, Entity>(GetOrder(_player), stepOrder, null);
 
@@ -944,6 +909,24 @@ public class GameModel : MonoBehaviour
         return wall != null && !wall.retracted ? wall.blocking : Entity.Direction.NONE;
     }
 
+    public IMortal findMortalInSamePositionAs(Entity entity)
+    {
+        //check for player
+        if (_player.x == entity.x && _player.y == entity.y)
+        {
+            return _player;
+        }
+
+        //check for rest of enemies
+        Enemy foundEnemy = Array.Find(_enemyArr, e => e.x == entity.x && e.y == entity.y);
+        if (foundEnemy != null)
+        {
+            return foundEnemy;
+        }
+
+        return null;
+    }
+
     public void AnimateGameObject(IWalker walker, Entity.Direction direction, int stepOrder)
     {
         int order = GetOrder(walker);
@@ -1042,7 +1025,7 @@ public class GameModel : MonoBehaviour
                     {
                         if (walker is Enemy)
                         {
-                            SetViewForEnemy((Enemy)walker, bombInfo.third.GetPlayerLoseAnimationName());
+                            SetViewForEnemy((Enemy)walker, bombInfo.third.mortalDeathAnimation);
                         }
                         Entity.Direction bombDirection = direction == Entity.Direction.LEFT || direction == Entity.Direction.UP ? Entity.Direction.LEFT : Entity.Direction.RIGHT;
 
@@ -1057,7 +1040,7 @@ public class GameModel : MonoBehaviour
                     if (dozedEnemyInfo != null && dozedEnemyInfo.third != null)
                     {
                         Enemy dozedEnemy = dozedEnemyInfo.third;
-                        SetViewForEnemy(dozedEnemy, dozedEnemy.GetPlayerLoseAnimationName());
+                        SetViewForEnemy(dozedEnemy, dozedEnemy.dozedDeathAnimation);
 
                     }
                 });
