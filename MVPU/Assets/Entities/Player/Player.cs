@@ -6,6 +6,7 @@ using System;
 public class Player : Entity, IWalker, IMortal
 {
     public WalkerService.FootStepPair[] sfxFootSteps;
+    public AudioClip sfxSlipThudClip;
 
     private WalkerService _walkerService;
     private WalkerService walkerService
@@ -130,6 +131,14 @@ public class Player : Entity, IWalker, IMortal
     public void StopDieAnimation()
     {
         mortalService.StopDieAnimation();
+    }
+
+    AudioClip IMortal.sfxSlipThudClip
+    {
+        get
+        {
+            return sfxSlipThudClip;
+        }
     }
 
     public void StartWinAnimation()

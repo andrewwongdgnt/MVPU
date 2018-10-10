@@ -37,4 +37,11 @@ public class AnimatorEvent : MonoBehaviour {
 
         AudioUtil.PlaySFX(walker.audioSource, sfxFootStep);
     }
+
+    //Mortal Section
+    public IMortal mortal { private get; set; }
+    public void MortalSlipThudEvent()
+    {
+        AudioUtil.PlaySFX(mortal.audioSource, mortal.sfxSlipThudClip);
+    }
 }

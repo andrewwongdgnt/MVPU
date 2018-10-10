@@ -7,4 +7,9 @@ public interface IMortal : IEntity
 
     void StartDieAnimation(MortalService.DeathAnimation deathAnimation);
     void StopDieAnimation();
+
+    AudioClip sfxSlipThudClip
+    {
+        get;
+    }
 }

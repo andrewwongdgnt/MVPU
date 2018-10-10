@@ -9,10 +9,12 @@ public class Enemy : Entity, IWalker, IAttacker, IMortal
     public bool verticalOrientation;
     public int stepsPerMove;
     public bool dozer;
-    public AudioClip sfxHitClip;
-    public WalkerService.FootStepPair[] sfxFootSteps;
     public EnemyEntity whoAmI;
     public MortalService.DeathAnimation mortalDeathAnimation;
+    public AudioClip sfxHitClip;
+    public WalkerService.FootStepPair[] sfxFootSteps;
+    public AudioClip sfxSlipThudClip;
+    
 
     public enum Animation { None, Dozed, Slipped }
     public enum EnemyEntity { KONGO, PURPLE_MONKEY }
@@ -335,5 +337,13 @@ public class Enemy : Entity, IWalker, IAttacker, IMortal
     public void StopDieAnimation()
     {
         mortalService.StopDieAnimation();
+    }
+
+    AudioClip IMortal.sfxSlipThudClip
+    {
+        get
+        {
+            return sfxSlipThudClip;
+        }
     }
 }

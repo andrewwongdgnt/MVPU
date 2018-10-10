@@ -7,11 +7,11 @@ public class Bomb : Entity, IAttacker {
 
     public enum Animation { None, Explode }
 
-    public MortalService.DeathAnimation mortalDeathAnimation;
     public bool affectsEnemy;
     public bool affectsPlayer;
     public int numOfUses;
     public AudioClip sfxHitClip;
+    public MortalService.DeathAnimation mortalDeathAnimation;
 
     public bool inactive
     {

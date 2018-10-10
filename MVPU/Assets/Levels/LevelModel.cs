@@ -189,6 +189,10 @@ public class LevelModel : MonoBehaviour
             {
                 animatorEvent.walker = (IWalker)entity;
             }
+            if (entity is IMortal)
+            {
+                animatorEvent.mortal = (IMortal)entity;
+            }
         }
     }
 }
