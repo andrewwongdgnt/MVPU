@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Key : Entity
+public class Key : Entity, IConsumable
 {
 
     public bool usableByEnemy;
@@ -20,6 +20,19 @@ public class Key : Entity
     public bool on
     {
         get; set;
+    }
+
+    private ConsumableService _consumableService;
+    private ConsumableService consumableService
+    {
+        get
+        {
+            if (_consumableService == null)
+            {
+                _consumableService = new ConsumableService(this);
+            }
+            return _consumableService;
+        }
     }
 
     // Use this for initialization
@@ -51,20 +64,23 @@ public class Key : Entity
             else if (entry.Key == "on" && entry.Value is bool)
                 on = (bool)entry.Value;
         }
-    }    
+    }
 
-   
+    //---------------
+    // IConsumable Impl
+    //---------------
+
     public void StartConsumedAnimation()
     {
-        animator.SetBool("Consumed", true);
+        consumableService.StartConsumedAnimation();
     }
     public void StopConsumedAnimation()
     {
-        animator.SetBool("Consumed", false);
+        consumableService.StopConsumedAnimation();
     }
     public void StartUsedAnimation()
     {
-        animator.SetTrigger("Used");
+        consumableService.StartUsedAnimation();
     }
 
     public void StartOnAnimation(bool animate)

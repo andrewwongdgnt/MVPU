@@ -60,7 +60,7 @@ public class Wall : Entity
         animator.SetBool("Immediate", !animate);
         animator.SetBool("Off", true);
     }
-
+     
     public void StartRetract(bool animate)
     {
         animator.SetBool("Immediate", !animate);
