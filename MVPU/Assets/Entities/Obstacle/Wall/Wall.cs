@@ -3,15 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Wall : Entity
+public class Wall : Entity, ISwitchable
 {
     [System.Serializable]
     public class KeyRelationship : System.Object
-    {
-
-
+    {        
         public int[] arr;
-
     }
 
     public Direction blocking;
@@ -28,6 +25,19 @@ public class Wall : Entity
         get
         {
             return Array.TrueForAll(locksOpened, l => l);
+        }
+    }
+
+    private SwitchableService _switchableService;
+    private SwitchableService switchableService
+    {
+        get
+        {
+            if (_switchableService == null)
+            {
+                _switchableService = new SwitchableService(this);
+            }
+            return _switchableService;
         }
     }
 
@@ -54,16 +64,18 @@ public class Wall : Entity
 
         }
     }
+    
+    //---------------
+    // ISwitchable Impl
+    //---------------
 
-    public void StopRetract(bool animate)
+    public void StartOnAnimation(bool animate)
     {
-        animator.SetBool("Immediate", !animate);
-        animator.SetBool("Off", true);
+        switchableService.StartOnAnimation(animate);
     }
-     
-    public void StartRetract(bool animate)
+
+    public void StopOnAnimation(bool animate)
     {
-        animator.SetBool("Immediate", !animate);
-        animator.SetBool("Off", false);
+        switchableService.StopOnAnimation(animate);
     }
 }

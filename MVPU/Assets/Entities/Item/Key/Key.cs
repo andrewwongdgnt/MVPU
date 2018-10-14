@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Key : Entity, IConsumable
+public class Key : Entity, IConsumable, ISwitchable
 {
 
     public bool usableByEnemy;
@@ -32,6 +32,19 @@ public class Key : Entity, IConsumable
                 _consumableService = new ConsumableService(this);
             }
             return _consumableService;
+        }
+    }
+
+    private SwitchableService _switchableService;
+    private SwitchableService switchableService
+    {
+        get
+        {
+            if (_switchableService == null)
+            {
+                _switchableService = new SwitchableService(this);
+            }
+            return _switchableService;
         }
     }
 
@@ -83,16 +96,18 @@ public class Key : Entity, IConsumable
         consumableService.StartUsedAnimation();
     }
 
+    //---------------
+    // ISwitchable Impl
+    //---------------
+
     public void StartOnAnimation(bool animate)
     {
-        animator.SetBool("Immediate", !animate);
-        animator.SetBool("On", true);
+        switchableService.StartOnAnimation(animate);
     }
 
     public void StopOnAnimation(bool animate)
     {
-        animator.SetBool("Immediate", !animate);
-        animator.SetBool("On", false);
+        switchableService.StopOnAnimation(animate);
     }
 
 }

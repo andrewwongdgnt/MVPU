@@ -450,16 +450,16 @@ public class GameModel : MonoBehaviour
         if (animate)
         {
             if (wallAnimation == Wall.Animation.Retract)
-                wall.StartRetract(animate);
+                wall.StartOnAnimation(animate);
             else
-                wall.StopRetract(animate);
+                wall.StopOnAnimation(animate);
         }
         else
         {
             if (!wall.retracted)
-                wall.StartRetract(animate);
+                wall.StartOnAnimation(animate);
             else
-                wall.StopRetract(animate);
+                wall.StopOnAnimation(animate);
         }
     }
 
