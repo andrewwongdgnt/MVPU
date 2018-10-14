@@ -449,7 +449,7 @@ public class GameModel : MonoBehaviour
         bool animate = wallAnimation != Wall.Animation.None;
         if (animate)
         {
-            if (wallAnimation == Wall.Animation.Retract)
+            if (wallAnimation == Wall.Animation.On)
                 wall.StartOnAnimation(animate);
             else
                 wall.StopOnAnimation(animate);
@@ -892,7 +892,7 @@ public class GameModel : MonoBehaviour
                         //state changed
                         if (firstRetractedState != secondRetractedState)
                         {
-                            Wall.Animation wallAnimation = wall.retracted ? Wall.Animation.DontRetract : Wall.Animation.Retract;
+                            Wall.Animation wallAnimation = wall.retracted ? Wall.Animation.Off : Wall.Animation.On;
                             wallList.Add(new Quadruple<int, int, Wall, Wall.Animation>(GetOrder(walker), stepOrder, wall, wallAnimation));
                         }
                         break;

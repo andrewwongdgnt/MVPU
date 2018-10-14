@@ -18,7 +18,7 @@ public class Wall : Entity, ISwitchable
 
     public bool[] locksOpened;
 
-    public enum Animation { None,Retract, DontRetract }
+    public enum Animation { None,On, Off }
 
     public bool retracted
     {
