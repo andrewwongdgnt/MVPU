@@ -44,4 +44,15 @@ public class AnimatorEvent : MonoBehaviour {
     {
         AudioUtil.PlaySFX(mortal.audioSource, mortal.sfxSlipThudClip);
     }
+
+    //Consumable Section
+    public IConsumable consumable { private get; set; }
+    public void ConsumableConsumedEvent()
+    {
+        AudioUtil.PlaySFX(consumable.audioSource, consumable.sfxConsumedClip);
+    }
+    public void ConsumableUsedEvent()
+    {
+        AudioUtil.PlaySFX(consumable.audioSource, consumable.sfxUsedClip);
+    }
 }

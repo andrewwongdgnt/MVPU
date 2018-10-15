@@ -117,6 +117,7 @@ public class LevelModel : MonoBehaviour
             key.x = keyInfos[i].x;
             key.y = keyInfos[i].y;
             key.gameObject.transform.localScale = new Vector3(scale, scale, scale);
+            SetGameModelToAnimatorEvent(key.GetComponentInChildren<AnimatorEvent>(), gameModel, key);
 
             keyArr[i] = key;
         }
@@ -192,6 +193,10 @@ public class LevelModel : MonoBehaviour
             if (entity is IMortal)
             {
                 animatorEvent.mortal = (IMortal)entity;
+            }
+            if (entity is IConsumable)
+            {
+                animatorEvent.consumable = (IConsumable)entity;
             }
         }
     }

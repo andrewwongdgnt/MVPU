@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Key : Entity, IConsumable, ISwitchable
 {
@@ -9,6 +10,8 @@ public class Key : Entity, IConsumable, ISwitchable
     public bool hold;
     [Tooltip("-1 for infinite uses")]
     public int numOfUses;
+    public AudioClip sfxConsumedClip;
+    public AudioClip sfxUsedClip;
 
     public enum Animation { None, Used, Consumed, On, Off }
 
@@ -94,6 +97,22 @@ public class Key : Entity, IConsumable, ISwitchable
     public void StartUsedAnimation()
     {
         consumableService.StartUsedAnimation();
+    }
+
+    AudioClip IConsumable.sfxUsedClip
+    {
+        get
+        {
+            return sfxUsedClip;
+        }
+    }
+
+    AudioClip IConsumable.sfxConsumedClip
+    {
+        get
+        {
+            return sfxConsumedClip;
+        }
     }
 
     //---------------
