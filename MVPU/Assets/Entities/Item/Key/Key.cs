@@ -12,6 +12,8 @@ public class Key : Entity, IConsumable, ISwitchable
     public int numOfUses;
     public AudioClip sfxConsumedClip;
     public AudioClip sfxUsedClip;
+    public AudioClip sfxTransitionOnClip;
+    public AudioClip sfxTransitionOffClip;
 
     public enum Animation { None, Used, Consumed, On, Off }
 
@@ -127,6 +129,22 @@ public class Key : Entity, IConsumable, ISwitchable
     public void StopOnAnimation(bool animate)
     {
         switchableService.StopOnAnimation(animate);
+    }
+
+    AudioClip ISwitchable.sfxTransitionOnClip
+    {
+        get
+        {
+            return sfxTransitionOnClip;
+        }
+    }
+
+    AudioClip ISwitchable.sfxTransitionOffClip
+    {
+        get
+        {
+            return sfxTransitionOffClip;
+        }
     }
 
 }

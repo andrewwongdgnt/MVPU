@@ -18,6 +18,9 @@ public class Wall : Entity, ISwitchable
 
     public bool[] locksOpened;
 
+    public AudioClip sfxTransitionOnClip;
+    public AudioClip sfxTransitionOffClip;
+
     public enum Animation { None,On, Off }
 
     public bool retracted
@@ -77,5 +80,21 @@ public class Wall : Entity, ISwitchable
     public void StopOnAnimation(bool animate)
     {
         switchableService.StopOnAnimation(animate);
+    }
+
+    AudioClip ISwitchable.sfxTransitionOnClip
+    {
+        get
+        {
+            return sfxTransitionOnClip;
+        }
+    }
+
+    AudioClip ISwitchable.sfxTransitionOffClip
+    {
+        get
+        {
+            return sfxTransitionOffClip;
+        }
     }
 }

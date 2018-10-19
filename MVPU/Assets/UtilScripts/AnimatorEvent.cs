@@ -55,4 +55,15 @@ public class AnimatorEvent : MonoBehaviour {
     {
         AudioUtil.PlaySFX(consumable.audioSource, consumable.sfxUsedClip);
     }
+
+    //Switchable Section
+    public ISwitchable switchable { private get; set; }
+    public void SwitchableTransitionOnEvent()
+    {
+        AudioUtil.PlaySFX(switchable.audioSource, switchable.sfxTransitionOnClip);
+    }
+    public void SwitchableTransitionOffEvent()
+    {
+        AudioUtil.PlaySFX(switchable.audioSource, switchable.sfxTransitionOffClip);
+    }
 }

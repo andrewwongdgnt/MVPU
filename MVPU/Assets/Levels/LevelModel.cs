@@ -198,6 +198,10 @@ public class LevelModel : MonoBehaviour
             {
                 animatorEvent.consumable = (IConsumable)entity;
             }
+            if (entity is ISwitchable)
+            {
+                animatorEvent.switchable = (ISwitchable)entity;
+            }
         }
     }
 }

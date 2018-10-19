@@ -7,4 +7,14 @@ public interface ISwitchable : IEntity {
     void StartOnAnimation(bool animate);
 
     void StopOnAnimation(bool animate);
+
+    AudioClip sfxTransitionOnClip
+    {
+        get;
+    }
+
+    AudioClip sfxTransitionOffClip
+    {
+        get;
+    }
 }
