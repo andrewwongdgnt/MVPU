@@ -5,6 +5,9 @@ using System.Linq;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
+    public AudioSource audioSource;
+    public AudioClip music;
+
     GameObject[] pauseObjects;
 
     // Use this for initialization
@@ -17,16 +20,6 @@ public class PauseMenu : MonoBehaviour {
         SetPause(false, 0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-           // SetPause(Time.timeScale > 0);
-
-        }
-    }
 
     //Need a delay so that the swipe manager doesn't pick up the taps as a swipe
     private IEnumerator SetPauseWithDelay(bool pause, int delay = 30)
@@ -47,6 +40,14 @@ public class PauseMenu : MonoBehaviour {
 
     public void SetPause(bool pause, int delay = 30)
     {
+        if (pause)
+        {
+            audioSource.UnPause();
+            if (!audioSource.isPlaying)
+                AudioUtil.PlayMusic(audioSource, music);
+        }
+        else
+            audioSource.Stop();
         StartCoroutine(SetPauseWithDelay(pause, delay));
 
     }

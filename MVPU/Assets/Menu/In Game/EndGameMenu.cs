@@ -21,6 +21,13 @@ public class EndGameMenu : MonoBehaviour
     public Image[] loseVariationPurpleMonkeyImages;
     public Image[] loseVariationNeutralImages;
 
+    public AudioSource musicAudioSource;
+    public AudioClip loseMusic;
+    public AudioClip winMusic;
+    public AudioSource sfxAudioSource;
+    public AudioClip loseSfx;
+    public AudioClip winSfx;
+
 
 
     // Use this for initialization
@@ -38,6 +45,8 @@ public class EndGameMenu : MonoBehaviour
     {
         yield return delay;
         Time.timeScale = 1;
+
+        musicAudioSource.Stop();
 
         foreach (GameObject g in winObjects)
         {
@@ -66,6 +75,9 @@ public class EndGameMenu : MonoBehaviour
         yield return 30;
         Time.timeScale = show ? 0 : 1;
 
+        playMusic(show, loseMusic);
+        AudioUtil.PlaySFX(sfxAudioSource, loseSfx);
+
         Array.ForEach(loseVariationKongoImages, im => im.enabled = showKongo);
         Array.ForEach(loseVariationPurpleMonkeyImages, im => im.enabled = showPurpleMonkey);
         Array.ForEach(loseVariationNeutralImages, im => im.enabled = !showKongo && !showPurpleMonkey);
@@ -90,6 +102,9 @@ public class EndGameMenu : MonoBehaviour
     {
         yield return 30;
         Time.timeScale = show ? 0 : 1;
+
+        playMusic(show, winMusic);
+        AudioUtil.PlaySFX(sfxAudioSource, winSfx);
 
         Array.ForEach(winVariationKongoImages, im => im.enabled = showKongo);
         Array.ForEach(winVariationPurpleMonkeyImages, im => im.enabled = showPurpleMonkey);
@@ -142,5 +157,14 @@ public class EndGameMenu : MonoBehaviour
                 star3.SetBool("StarSpecial", true);
             }
         }
+    }
+
+    private void playMusic(bool show, AudioClip music)
+    {
+        
+            musicAudioSource.UnPause();
+            if (!musicAudioSource.isPlaying)
+                AudioUtil.PlayMusic(musicAudioSource, music);
+        
     }
 }

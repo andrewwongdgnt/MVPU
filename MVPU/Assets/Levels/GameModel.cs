@@ -27,8 +27,6 @@ public class GameModel : MonoBehaviour
     public Text bestScoreGuiText;
 
     public AudioSource currentLevelAudioSource;
-    public AudioSource pauseAudioSource;
-    public AudioClip pauseMusicClip;
 
     public TutorialAction.Action actionAllowedFromTutorial
     {
@@ -265,7 +263,6 @@ public class GameModel : MonoBehaviour
     {
         if (Time.timeScale > 0)
         {
-            pauseAudioSource.Stop();
            currentLevelAudioSource.UnPause();
             if (!currentLevelAudioSource.isPlaying)
             AudioUtil.PlayMusic(currentLevelAudioSource, _currentLevelMusic);
@@ -273,9 +270,6 @@ public class GameModel : MonoBehaviour
         else
         {
             currentLevelAudioSource.Pause();
-           pauseAudioSource.UnPause();
-            if (!pauseAudioSource.isPlaying)
-                AudioUtil.PlayMusic(pauseAudioSource, pauseMusicClip);
         }
     }
 
