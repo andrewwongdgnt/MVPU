@@ -66,4 +66,14 @@ public class AnimatorEvent : MonoBehaviour {
     {
         AudioUtil.PlaySFX(switchable.audioSource, switchable.sfxTransitionOffClip);
     }
+
+    //Celebrator Section
+    public ICelebrator celebrator { private get; set; }
+    public void CelebratorCelebrateStepEvent()
+    {
+        LevelUtil.LevelType levelType = gameModel.currentLevelType;
+        AudioClip sfxCelebrateStep = celebrator.GetResolvedSfxCelebrateStep(levelType);
+
+        AudioUtil.PlaySFX(celebrator.audioSource, sfxCelebrateStep);
+    }
 }

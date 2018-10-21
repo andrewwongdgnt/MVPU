@@ -1,24 +1,54 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Goal : Entity
+public class Goal : Entity, ICelebrator
 {
 
-	// Use this for initialization
-	void Start () {
+    public LevelTypeAudioPair[] sfxCelebrateSteps;
+
+    private CelebratorService _celebratorService;
+    private CelebratorService celebratorService
+    {
+        get
+        {
+            if (_celebratorService == null)
+            {
+                _celebratorService = new CelebratorService(this);
+            }
+            return _celebratorService;
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
         Debug.Log(this + " Created:" + " x=" + x + " y=" + y);
     }
 
+    //---------------
+    // ICelebrator Impl
+    //---------------
+
     public void StartWinAnimation()
     {
-        animator.SetBool("Win", true);
+        celebratorService.StartWinAnimation();
     }
 
 
     public void StopWinAnimation()
     {
-        animator.SetBool("Win", false);
+        celebratorService.StopWinAnimation();
 
+    }
+    public AudioClip GetResolvedSfxCelebrateStep(LevelUtil.LevelType levelType)
+    {
+        return celebratorService.GetSfxCelebrateStep(levelType);
+    }
+    LevelTypeAudioPair[] ICelebrator.sfxCelebrateSteps
+    {
+        get
+        {
+            return sfxCelebrateSteps;
+        }
     }
 
 }

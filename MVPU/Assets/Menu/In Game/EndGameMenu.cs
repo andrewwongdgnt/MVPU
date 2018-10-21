@@ -47,6 +47,7 @@ public class EndGameMenu : MonoBehaviour
         Time.timeScale = 1;
 
         musicAudioSource.Stop();
+        sfxAudioSource.Stop();
 
         foreach (GameObject g in winObjects)
         {

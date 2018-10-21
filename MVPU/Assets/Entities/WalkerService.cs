@@ -6,20 +6,13 @@ using UnityEngine;
 public class WalkerService
 {
 
-    [Serializable]
-    public struct FootStepPair
-    {
-        public LevelUtil.LevelType levelType;
-        public AudioClip[] footSteps;
-    }
-
     private IWalker walker;
     private Dictionary<LevelUtil.LevelType, AudioClip[]> sfxFootStepMap;
     public WalkerService(IWalker walker)
     {
         this.walker = walker;
         sfxFootStepMap = new Dictionary<LevelUtil.LevelType, AudioClip[]>();
-        Array.ForEach(walker.sfxFootSteps, e => sfxFootStepMap.Add(e.levelType, e.footSteps));
+        Array.ForEach(walker.sfxFootSteps, e => sfxFootStepMap.Add(e.levelType, e.audioClips));
     }
 
     public void StartWalkAnimation()
@@ -34,8 +27,8 @@ public class WalkerService
 
     public AudioClip GetSfxFootStep(LevelUtil.LevelType levelType)
     {
-        AudioClip[] footsteps = sfxFootStepMap[levelType];
-        int index = UnityEngine.Random.Range(0, footsteps.Length);
-        return footsteps[index];
+        AudioClip[] footSteps = sfxFootStepMap[levelType];
+        int index = UnityEngine.Random.Range(0, footSteps.Length);
+        return footSteps[index];
     }
 }

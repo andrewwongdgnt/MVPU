@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Player : Entity, IWalker, IMortal
+public class Player : Entity, IWalker, IMortal, ICelebrator
 {
-    public WalkerService.FootStepPair[] sfxFootSteps;
+    public LevelTypeAudioPair[] sfxFootSteps;
     public AudioClip sfxSlipThudClip;
+    public LevelTypeAudioPair[] sfxCelebrateSteps;
 
     private WalkerService _walkerService;
     private WalkerService walkerService
@@ -30,6 +31,19 @@ public class Player : Entity, IWalker, IMortal
                 _mortalService = new MortalService(this);
             }
             return _mortalService;
+        }
+    }
+
+    private CelebratorService _celebratorService;
+    private CelebratorService celebratorService
+    {
+        get
+        {
+            if (_celebratorService == null)
+            {
+                _celebratorService = new CelebratorService(this);
+            }
+            return _celebratorService;
         }
     }
 
@@ -102,7 +116,7 @@ public class Player : Entity, IWalker, IMortal
     {
         walkerService.StopWalkAnimation();
     }
-    WalkerService.FootStepPair[] IWalker.sfxFootSteps
+    LevelTypeAudioPair[] IWalker.sfxFootSteps
     {
         get
         {
@@ -141,15 +155,30 @@ public class Player : Entity, IWalker, IMortal
         }
     }
 
+    //---------------
+    // ICelebrator Impl
+    //---------------
+
     public void StartWinAnimation()
     {
-        animator.SetBool("Win", true);
+        celebratorService.StartWinAnimation();
     }
 
 
     public void StopWinAnimation()
     {
-        animator.SetBool("Win", false);
+        celebratorService.StopWinAnimation();
 
+    }
+    public AudioClip GetResolvedSfxCelebrateStep(LevelUtil.LevelType levelType)
+    {
+        return celebratorService.GetSfxCelebrateStep(levelType);
+    }
+    LevelTypeAudioPair[] ICelebrator.sfxCelebrateSteps
+    {
+        get
+        {
+            return sfxCelebrateSteps;
+        }
     }
 }

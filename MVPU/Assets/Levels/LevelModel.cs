@@ -202,6 +202,10 @@ public class LevelModel : MonoBehaviour
             {
                 animatorEvent.switchable = (ISwitchable)entity;
             }
+            if (entity is ICelebrator)
+            {
+                animatorEvent.celebrator = (ICelebrator)entity;
+            }
         }
     }
 }

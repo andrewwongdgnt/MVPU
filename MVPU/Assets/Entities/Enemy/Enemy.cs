@@ -12,7 +12,7 @@ public class Enemy : Entity, IWalker, IAttacker, IMortal
     public EnemyEntity whoAmI;
     public MortalService.DeathAnimation mortalDeathAnimation;
     public AudioClip sfxHitClip;
-    public WalkerService.FootStepPair[] sfxFootSteps;
+    public LevelTypeAudioPair[] sfxFootSteps;
     public AudioClip sfxSlipThudClip;
     
 
@@ -268,7 +268,7 @@ public class Enemy : Entity, IWalker, IAttacker, IMortal
     // IWalker Impl
     //---------------
 
-    WalkerService.FootStepPair[] IWalker.sfxFootSteps
+    LevelTypeAudioPair[] IWalker.sfxFootSteps
     {
         get
         {

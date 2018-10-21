@@ -27,6 +27,9 @@ public class GameModel : MonoBehaviour
     public Text bestScoreGuiText;
 
     public AudioSource currentLevelAudioSource;
+    public AudioSource sfxAudioSource;
+
+    public AudioClip goalReachedSfx;
 
     public TutorialAction.Action actionAllowedFromTutorial
     {
@@ -634,6 +637,7 @@ public class GameModel : MonoBehaviour
                 _player.StartWinAnimation();
                 _goal.StartWinAnimation();
                 FaceHorizontally(_goal.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
+                AudioUtil.PlaySFX(sfxAudioSource, goalReachedSfx);
             }
             else
             {
