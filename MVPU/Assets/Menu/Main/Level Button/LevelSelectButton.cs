@@ -88,12 +88,6 @@ public class LevelSelectButton : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void GoToLevel()
     {
         LevelUtil.LevelID levelId = GetResolvedLevelId();

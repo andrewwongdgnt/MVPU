@@ -9,6 +9,7 @@ public class SettingsMenu : MonoBehaviour {
     public Slider entitySpeedMultiplier;
     public Slider musicVolume;
     public Slider sfxVolume;
+    public AudioSource musicAudioSource;
     void Start()
     {
         tutorialToggle.isOn = SettingsUtil.IsTutorialOn();
@@ -32,6 +33,7 @@ public class SettingsMenu : MonoBehaviour {
     {
         Debug.Log("Music volume is " + (value));
         SettingsUtil.SetMusicVolume(value);
+        musicAudioSource.volume = value / 100;
     }
 
     public void SFXVolume(float value)
