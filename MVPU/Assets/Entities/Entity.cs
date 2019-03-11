@@ -76,9 +76,9 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntity
 
         if (y > 0 && !_gameModel.grid[y, x].topBlocked)
         {
-            Direction directionOfBlockingForCurrentWall = _gameModel.CheckForUnretractedWall(x, y);
-            Direction directionOfBlockingForAboveWall = _gameModel.CheckForUnretractedWall(x, y - 1);
-            if (directionOfBlockingForCurrentWall != Direction.UP && directionOfBlockingForAboveWall != Direction.DOWN)
+            bool directionOfBlockingForCurrentWallIsUp = _gameModel.CheckIfUnretractedWallIsBlocker(x, y, Direction.UP);
+            bool directionOfBlockingForAboveWallIsDown = _gameModel.CheckIfUnretractedWallIsBlocker(x, y - 1, Direction.DOWN);
+            if (!directionOfBlockingForCurrentWallIsUp && !directionOfBlockingForAboveWallIsDown)
             {
                 y--;
                 return true;
@@ -93,9 +93,9 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntity
     {
         if (x > 0 && !_gameModel.grid[y, x].leftBlocked)
         {
-            Direction directionOfBlockingForCurrentWall = _gameModel.CheckForUnretractedWall(x, y);
-            Direction directionOfBlockingForLeftWall = _gameModel.CheckForUnretractedWall(x - 1, y);
-            if (directionOfBlockingForCurrentWall != Direction.LEFT && directionOfBlockingForLeftWall != Direction.RIGHT)
+            bool directionOfBlockingForCurrentWallIsLeft = _gameModel.CheckIfUnretractedWallIsBlocker(x, y, Direction.LEFT);
+            bool directionOfBlockingForLeftWallIsRight = _gameModel.CheckIfUnretractedWallIsBlocker(x - 1, y, Direction.RIGHT);
+            if (!directionOfBlockingForCurrentWallIsLeft && !directionOfBlockingForLeftWallIsRight)
             {
                 x--;
                 return true;
@@ -108,9 +108,9 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntity
     {
         if (y < _gameModel.grid.GetLength(0) - 1 && !_gameModel.grid[y, x].bottomBlocked)
         {
-            Direction directionOfBlockingForCurrentWall = _gameModel.CheckForUnretractedWall(x, y);
-            Direction directionOfBlockingForBelowWall = _gameModel.CheckForUnretractedWall(x, y + 1);
-            if (directionOfBlockingForCurrentWall != Direction.DOWN && directionOfBlockingForBelowWall != Direction.UP)
+            bool directionOfBlockingForCurrentWallIsDown = _gameModel.CheckIfUnretractedWallIsBlocker(x, y, Direction.DOWN);
+            bool directionOfBlockingForBelowWallIsUp = _gameModel.CheckIfUnretractedWallIsBlocker(x, y + 1, Direction.UP);
+            if (!directionOfBlockingForCurrentWallIsDown && !directionOfBlockingForBelowWallIsUp )
             {
                 y++;
                 return true;
@@ -123,9 +123,9 @@ public abstract class Entity : MonoBehaviour, IUndoable, IEntity
     {
         if (x < _gameModel.grid.GetLength(1) - 1 && !_gameModel.grid[y, x].rightBlocked)
         {
-            Direction directionOfBlockingForCurrentWall = _gameModel.CheckForUnretractedWall(x, y);
-            Direction directionOfBlockingForRightWall = _gameModel.CheckForUnretractedWall(x + 1, y);
-            if (directionOfBlockingForCurrentWall != Direction.RIGHT && directionOfBlockingForRightWall != Direction.LEFT)
+            bool directionOfBlockingForCurrentWallIsRight = _gameModel.CheckIfUnretractedWallIsBlocker(x, y, Direction.RIGHT);
+            bool directionOfBlockingForRightWallIsLeft = _gameModel.CheckIfUnretractedWallIsBlocker(x + 1, y, Direction.LEFT);
+            if (!directionOfBlockingForCurrentWallIsRight && !directionOfBlockingForRightWallIsLeft)
             {
                 x++;
                 return true;

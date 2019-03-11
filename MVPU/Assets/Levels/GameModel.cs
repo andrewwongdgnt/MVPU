@@ -901,10 +901,9 @@ public class GameModel : MonoBehaviour
         }
     }
 
-    public Entity.Direction CheckForUnretractedWall(int x, int y)
+    public bool CheckIfUnretractedWallIsBlocker(int x, int y, Entity.Direction dirToCheck)
     {
-        Wall wall = Array.Find(_wallArr, w => w.x == x && w.y == y);
-        return wall != null && !wall.retracted ? wall.blocking : Entity.Direction.NONE;
+        return Array.Exists(_wallArr, w => w.x == x && w.y == y && !w.retracted && w.blocking==dirToCheck);
     }
 
     public IMortal findMortalInSamePositionAs(Entity entity)

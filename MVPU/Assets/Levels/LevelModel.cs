@@ -116,6 +116,8 @@ public class LevelModel : MonoBehaviour
             Key key = Instantiate(keyInfos[i].key);
             key.x = keyInfos[i].x;
             key.y = keyInfos[i].y;
+            if (key.hold)
+                key.on = keyInfos[i].pressed;
             key.gameObject.transform.localScale = new Vector3(scale, scale, scale);
             SetGameModelToAnimatorEvent(key.GetComponentInChildren<AnimatorEvent>(), gameModel, key);
 

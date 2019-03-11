@@ -5,4 +5,5 @@ using UnityEngine;
 public class KeyInfo : EntityInfo {
 
     public Key key;
+    public bool pressed;
 }
