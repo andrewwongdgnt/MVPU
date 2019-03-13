@@ -23,7 +23,7 @@ public class LevelUtil
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_5_5;
+    public static LevelID levelToLoad = LevelID.LEVEL_5_6;
     public static bool unlockAllLevels = true;
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
@@ -460,6 +460,16 @@ public class LevelUtil
            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
         }
         },
+        { LevelID.LEVEL_5_6, new Cell[,]{
+           {Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,},
+           {Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_BOTTOM_CLOSED,Cell.CELL_TOP_BOTTOM_CLOSED,Cell.CELL_TOP_BOTTOM_CLOSED,},
+           {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_RIGHT_CLOSED,Cell.CELL_CLOSED,},
+           {Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_CLOSED,},
+           {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_TOP_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,},
+           {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_BOTTOM_CLOSED,},
+           {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,},
+        }
+        },
 
     };
 
@@ -511,6 +521,7 @@ public class LevelUtil
             { LevelID.LEVEL_5_3, new LevelScore(39) },
             { LevelID.LEVEL_5_4, new LevelScore(24) },
             { LevelID.LEVEL_5_5, new LevelScore(37) },
+            { LevelID.LEVEL_5_6, new LevelScore(15) },
         };
     public static Dictionary<LevelID, LevelID[]> LevelPrereq = new Dictionary<LevelID, LevelID[]>
         {
@@ -679,6 +690,9 @@ public class LevelUtil
                 new TutorialAction("I found Coco!", TutorialAction.Action.NONE),
                 new TutorialAction("There is still a mess everywhere but I am pooped and Coco is full from bananas.", TutorialAction.Action.NONE),
                 new TutorialAction("So we're just going to sit here and watch the sunrise. Bye now!", TutorialAction.Action.NONE) } },
+              { LevelID.LEVEL_5_1, new TutorialAction[] {
+                new TutorialAction("Oh look a flower!", TutorialAction.Action.NONE),
+                new TutorialAction("Step on it! I want to see what happens.", TutorialAction.Action.NONE) } },
         };
 
     public enum LevelType
