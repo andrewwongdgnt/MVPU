@@ -22,7 +22,7 @@ public class LevelSelectButton : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        UpdateStars();
+        UpdateDisplay();
     }
     LevelUtil.LevelID GetResolvedLevelId()
     {
@@ -35,7 +35,7 @@ public class LevelSelectButton : MonoBehaviour
             return LevelUtil.LevelID.NO_LEVEL;
 
     }
-    public void UpdateStars()
+    public void UpdateDisplay()
     {
         LevelUtil.LevelID levelId = GetResolvedLevelId();
 
@@ -44,10 +44,9 @@ public class LevelSelectButton : MonoBehaviour
             Button btn = GetComponent<Button>();
             LevelUtil.LevelID[] levelPrereqs = LevelUtil.LevelPrereq.ContainsKey(levelId) ? LevelUtil.LevelPrereq[levelId] : new LevelUtil.LevelID[] { };
 
-            btn.interactable = levelPrereqs.Length == 0 || Array.Exists(levelPrereqs, l =>
+            btn.interactable = LevelUtil.unlockAllLevels || LevelSelectUtil.GetCurrentWorld() < LevelUtil.UNAVAILABLE_WORLD_START_INDEX && (levelPrereqs.Length == 0 || Array.Exists(levelPrereqs, l =>
                   SaveStateUtil.LoadLevel(l) != null
-                )
-                || LevelUtil.unlockAllLevels;
+                ));
 
             if (!btn.interactable)
             {

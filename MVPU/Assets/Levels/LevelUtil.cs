@@ -24,7 +24,8 @@ public class LevelUtil
 
     //meant to be mutable
     public static LevelID levelToLoad = LevelID.LEVEL_5_10;
-    public static bool unlockAllLevels = true;
+    public static bool unlockAllLevels = false;
+    public static int UNAVAILABLE_WORLD_START_INDEX = 5;
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
     {

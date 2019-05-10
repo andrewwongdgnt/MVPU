@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelSelectMenu : MonoBehaviour {
 
@@ -15,10 +17,13 @@ public class LevelSelectMenu : MonoBehaviour {
     public LevelSelectButton levelSelectButton9;
     public LevelSelectButton levelSelectButton10;
 
+    public Text levelsComingSoonTxt;
+
     // Use this for initialization
     void Start()
     {
         UpdateAllLevelSelectButtons();
+        DisplayWorldComingSoonMessage();
     }
 
     // Update is called once per frame
@@ -44,7 +49,7 @@ public class LevelSelectMenu : MonoBehaviour {
     void UpdateLevelSelectButton(LevelSelectButton levelSelectButton)
     {
         levelSelectButton.label.text = (LevelSelectUtil.GetCurrentWorld() * 10 + levelSelectButton.levelIndex + 1).ToString();
-        levelSelectButton.UpdateStars();
+        levelSelectButton.UpdateDisplay();
     }
 
     public void ChangeWorld(bool up)
@@ -52,5 +57,11 @@ public class LevelSelectMenu : MonoBehaviour {
         LevelSelectUtil.ChangeWorld(up);
 
         UpdateAllLevelSelectButtons();
+        DisplayWorldComingSoonMessage();
+    }
+
+    private void DisplayWorldComingSoonMessage()
+    {
+        levelsComingSoonTxt.gameObject.SetActive(LevelSelectUtil.GetCurrentWorld() >= LevelUtil.UNAVAILABLE_WORLD_START_INDEX);
     }
 }

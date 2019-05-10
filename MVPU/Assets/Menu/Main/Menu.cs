@@ -7,16 +7,13 @@ public class Menu : MonoBehaviour
 {
 
     public Text title;
+    public GameObject levelSelectGroup;
+    public GameObject settingsGroup;
 
-    private GameObject[] level_arr;
-    private GameObject[] settings_arr;
 
     // Use this for initialization
     void Start()
     {
-
-        settings_arr = GameObject.FindGameObjectsWithTag("Settings");
-        level_arr = GameObject.FindGameObjectsWithTag("Level");
         GoToLevelSelect();
     }
 
@@ -29,19 +26,20 @@ public class Menu : MonoBehaviour
     public void GoToSettings()
     {
         title.text = "Settings";
-        DeactivateObjects(settings: false);
+        DeactivateObjects(exclusion: settingsGroup);
     }
 
     public void GoToLevelSelect()
     {
 
         title.text = "Level Select";
-        DeactivateObjects(level: false, world:false);
+        DeactivateObjects(exclusion: levelSelectGroup);
     }
 
-    private void DeactivateObjects(bool settings = true, bool level = true, bool world = true)
+    private void DeactivateObjects(GameObject exclusion)
     {
-        Array.ForEach(settings_arr, go => go.SetActive(!settings));
-        Array.ForEach(level_arr, go => go.SetActive(!level));
+
+        levelSelectGroup.SetActive(levelSelectGroup == exclusion);
+        settingsGroup.SetActive(settingsGroup == exclusion);
     }
 }
