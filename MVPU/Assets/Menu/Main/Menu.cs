@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
     public Text title;
     public GameObject levelSelectGroup;
     public GameObject settingsGroup;
+    public GameObject creditsGroup;
 
 
     // Use this for initialization
@@ -36,10 +37,18 @@ public class Menu : MonoBehaviour
         DeactivateObjects(exclusion: levelSelectGroup);
     }
 
+    public void GoToCredits()
+    {
+
+        title.text = "Credits";
+        DeactivateObjects(exclusion: creditsGroup);
+    }
+
     private void DeactivateObjects(GameObject exclusion)
     {
 
         levelSelectGroup.SetActive(levelSelectGroup == exclusion);
         settingsGroup.SetActive(settingsGroup == exclusion);
+        creditsGroup.SetActive(creditsGroup == exclusion);
     }
 }
