@@ -90,12 +90,12 @@ namespace UnityTest.IntegrationTests
 
             AssetDatabase.Refresh();
 
-            if (!string.IsNullOrEmpty(result))
-            {
-                if (InternalEditorUtility.inBatchMode)
-                    EditorApplication.Exit(Batch.returnCodeRunError);
-                return;
-            }
+           // if (!string.IsNullOrEmpty(result))
+           // {
+           //     if (InternalEditorUtility.inBatchMode)
+           //         EditorApplication.Exit(Batch.returnCodeRunError);
+           //     return;
+           // }
 
             if (configuration.sendResultsOverNetwork)
                 NetworkResultsReceiver.StartReceiver(configuration);

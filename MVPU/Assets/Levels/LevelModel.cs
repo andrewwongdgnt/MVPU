@@ -157,7 +157,7 @@ public class LevelModel : MonoBehaviour
             if (tutorial != null)
             {
                 tutorialObjectsOn = true;
-                tutorial.Init(LevelUtil.TutorialContent.ContainsKey(levelID) ? LevelUtil.TutorialContent[levelID] : null);
+                tutorial.Init(LevelUtil.TutorialContent.ContainsKey(levelID) ? LevelUtil.TutorialContent[levelID].second : null);
             }
             gameModel.tutorial = tutorial;
         }

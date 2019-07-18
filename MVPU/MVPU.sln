@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVPU.Plugins", "MVPU.Plugins.csproj", "{E3B52332-163B-F2DD-A5BE-6654D9E23B8C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVPU", "MVPU.csproj", "{B0F4D21A-D983-D3ED-2872-1C022B82C3BF}"

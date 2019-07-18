@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
     public Text title;
     public GameObject levelSelectGroup;
     public GameObject settingsGroup;
+    public GameObject helpGroup;
     public GameObject creditsGroup;
 
 
@@ -18,11 +19,7 @@ public class Menu : MonoBehaviour
         GoToLevelSelect();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+   
 
     public void GoToSettings()
     {
@@ -37,6 +34,13 @@ public class Menu : MonoBehaviour
         DeactivateObjects(exclusion: levelSelectGroup);
     }
 
+    public void GoToHelp()
+    {
+
+        title.text = "How to play";
+        DeactivateObjects(exclusion: helpGroup);
+    }
+
     public void GoToCredits()
     {
 
@@ -49,6 +53,7 @@ public class Menu : MonoBehaviour
 
         levelSelectGroup.SetActive(levelSelectGroup == exclusion);
         settingsGroup.SetActive(settingsGroup == exclusion);
+        helpGroup.SetActive(helpGroup == exclusion);
         creditsGroup.SetActive(creditsGroup == exclusion);
     }
 }

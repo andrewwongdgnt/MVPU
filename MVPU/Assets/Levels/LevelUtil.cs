@@ -681,63 +681,74 @@ public class LevelUtil
             { LevelID.LEVEL_10_9, new LevelID[] { LevelID.LEVEL_10_8 } },
             { LevelID.LEVEL_10_10, new LevelID[] { LevelID.LEVEL_10_9 } },
         };
-    public static Dictionary<LevelID, TutorialAction[]> TutorialContent = new Dictionary<LevelID, TutorialAction[]>
+    public static Dictionary<LevelID, Pair<string, TutorialAction[]>> TutorialContent = new Dictionary<LevelID, Pair<string, TutorialAction[]>>
         {
-            { LevelID.LEVEL_1_1, new TutorialAction[] {
+            { LevelID.LEVEL_1_1, new Pair<string, TutorialAction[]>("Level 1 - Basic movement",
+                new TutorialAction[] {
                 new TutorialAction("Hello!", TutorialAction.Action.NONE),
                 new TutorialAction("My name is Chomp and I'm here to help you reunite the Monkey and Penguin.", TutorialAction.Action.NONE),
                 new TutorialAction("To do that, you must move the Monkey along the grid while avoiding the rocks.", TutorialAction.Action.NONE),
-                new TutorialAction("Swipe the screen to move the Monkey. Good luck!.", TutorialAction.Action.SWIPE) } },
+                new TutorialAction("Swipe the screen to move the Monkey. Good luck!.", TutorialAction.Action.SWIPE) } ) },
 
-            { LevelID.LEVEL_1_2, new TutorialAction[] {
+            { LevelID.LEVEL_1_2, new Pair<string,  TutorialAction[]> ("Level 2 - Kongo movement",
+                new TutorialAction[]{
                 new TutorialAction("Hello again!", TutorialAction.Action.NONE),
                 new TutorialAction("This is Kongo. He is grumpy and wants to attack the Monkey.", TutorialAction.Action.NONE),
                 new TutorialAction("For every move the Monkey does, Kongo will try to follow along the blue path first and the red path second.", TutorialAction.Action.HENEMY),
-                new TutorialAction("You have to try to confuse Kongo by making him walk into the rocks. Have fun!", TutorialAction.Action.NONE) } },
-            { LevelID.LEVEL_1_3, new TutorialAction[] {
+                new TutorialAction("You have to try to confuse Kongo by making him walk into the rocks. Have fun!", TutorialAction.Action.NONE) } ) },
+            { LevelID.LEVEL_1_3, new Pair<string, TutorialAction[]> ("Level 3 - Basic movements 2",
+                new TutorialAction[]{
                 new TutorialAction("Hello again!", TutorialAction.Action.NONE),
                 new TutorialAction("Sometimes it is better to just not move at all and let Kongo walk into a trap.", TutorialAction.Action.NONE),
-                new TutorialAction("Double tap on the screen to skip your move. Then head for the Penguin!", TutorialAction.Action.TAP) } },
-            { LevelID.LEVEL_1_7, new TutorialAction[] {
+                new TutorialAction("Double tap on the screen to skip your move. Then head for the Penguin!", TutorialAction.Action.TAP) } ) },
+            { LevelID.LEVEL_1_7, new Pair<string, TutorialAction[]>("Level 7 - Two Kongos",  
+                new TutorialAction[]{
                 new TutorialAction("Hello again!", TutorialAction.Action.NONE),
                 new TutorialAction("Looks like there are two Kongos, which means double the danger.", TutorialAction.Action.NONE),
                 new TutorialAction("But not to worry! There is still a way to get the Monkey to the Penguin.", TutorialAction.Action.NONE),
-                new TutorialAction("If you can get one Kongo to run into the other, only one will come out. Give it a try!", TutorialAction.Action.NONE) } },
-            { LevelID.LEVEL_1_9, new TutorialAction[] {
+                new TutorialAction("If you can get one Kongo to run into the other, only one will come out. Give it a try!", TutorialAction.Action.NONE) } ) },
+            { LevelID.LEVEL_1_9, new Pair<string, TutorialAction[]>("Level 9 - Angry Kongo movement",
+                new TutorialAction[] {
                 new TutorialAction("Uh Oh! Kongo looks really mad.", TutorialAction.Action.NONE),
                 new TutorialAction("When Kongo is red, he can move two steps everytime the Monkey moves one.", TutorialAction.Action.NONE),
-                new TutorialAction("So be extra careful with your moves. Good luck!", TutorialAction.Action.NONE) } },
-            { LevelID.LEVEL_2_6, new TutorialAction[] {
+                new TutorialAction("So be extra careful with your moves. Good luck!", TutorialAction.Action.NONE) } ) },
+            { LevelID.LEVEL_2_6, new Pair<string, TutorialAction[]>("Level 16 - Purple Monkey movement", 
+                new TutorialAction[] {
                 new TutorialAction("Hello! Did you miss me?", TutorialAction.Action.NONE),
                 new TutorialAction("This is the Purple Monkey, because she's purple.", TutorialAction.Action.NONE),
                 new TutorialAction("She has a heart stuck on her hands, so she wants to hit the Monkey with some love.", TutorialAction.Action.NONE),
                 new TutorialAction("Just like Kongo, the Purple Monkey will follow the Monkey in a direct path.", TutorialAction.Action.NONE),
-                new TutorialAction("But along the red path first and the blue path second. Try moving and see what happens. Good luck!", TutorialAction.Action.VENEMY) } },
-            { LevelID.LEVEL_2_8, new TutorialAction[] {
+                new TutorialAction("But along the red path first and the blue path second. Try moving and see what happens. Good luck!", TutorialAction.Action.VENEMY) } ) },
+            { LevelID.LEVEL_2_8, new Pair<string, TutorialAction[]>("Level 18 - Loving Purple Monkey movement",
+                new TutorialAction[]{
                 new TutorialAction("Oh look! The Purple Monkey's love level has risen.", TutorialAction.Action.NONE),
                 new TutorialAction("When the Purple Monkey is red, that means she can move two steps per one move from the Monkey.", TutorialAction.Action.NONE),
-                new TutorialAction("Good luck again!", TutorialAction.Action.NONE) } },
-            { LevelID.LEVEL_4_1, new TutorialAction[] {
+                new TutorialAction("Good luck again!", TutorialAction.Action.NONE) } ) },
+            { LevelID.LEVEL_4_1, new Pair<string, TutorialAction[]>("Level 31 - Banana obstacle",
+                new TutorialAction[] {
                 new TutorialAction("Hello!", TutorialAction.Action.NONE),
                 new TutorialAction("My name is Coco and I like bananas.", TutorialAction.Action.NONE),
                 new TutorialAction("They are so yummy in my tummy!", TutorialAction.Action.NONE),
                 new TutorialAction("...", TutorialAction.Action.NONE),
                 new TutorialAction("Yay!", TutorialAction.Action.NONE),
-                new TutorialAction("I ate some but I forgot to clean up. Oops, sorry! Don't step on them or else you'll slip.", TutorialAction.Action.NONE) } },
-            { LevelID.LEVEL_4_4, new TutorialAction[] {
+                new TutorialAction("I ate some but I forgot to clean up. Oops, sorry! Don't step on them or else you'll slip.", TutorialAction.Action.NONE) } ) },
+            { LevelID.LEVEL_4_4, new Pair<string, TutorialAction[]>("Level 34 - Pinned banana obstacle",
+                new TutorialAction[] {
                 new TutorialAction("Hi There!", TutorialAction.Action.NONE),
                 new TutorialAction("My name is Muffin and I'm looking for Coco. Have you seen him?", TutorialAction.Action.NONE),
                 new TutorialAction("I saw all these banana peels so he must be near by.", TutorialAction.Action.NONE),
                 new TutorialAction("I'm sorry for his mess. I marked them with a red pin so the Monkey won't slip when he gets close.", TutorialAction.Action.NONE),
                 new TutorialAction("I couldn't get them all though, and I'm not sure if anyone else will notice the red flags.", TutorialAction.Action.NONE),
-                new TutorialAction("Ok bye now! I still need to find Coco.", TutorialAction.Action.NONE) } },
-            { LevelID.LEVEL_4_7, new TutorialAction[] {
+                new TutorialAction("Ok bye now! I still need to find Coco.", TutorialAction.Action.NONE) } ) },
+            { LevelID.LEVEL_4_7, new Pair<string, TutorialAction[]>(null,
+                new TutorialAction[]{
                 new TutorialAction("I found Coco!", TutorialAction.Action.NONE),
                 new TutorialAction("There is still a mess everywhere but I am pooped and Coco is full from bananas.", TutorialAction.Action.NONE),
-                new TutorialAction("So we're just going to sit here and watch the sunrise. Bye now!", TutorialAction.Action.NONE) } },
-              { LevelID.LEVEL_5_1, new TutorialAction[] {
+                new TutorialAction("So we're just going to sit here and watch the sunrise. Bye now!", TutorialAction.Action.NONE) } ) },
+              { LevelID.LEVEL_5_1, new Pair<string, TutorialAction[]> (null,
+                  new TutorialAction[]{
                 new TutorialAction("Oh look a flower!", TutorialAction.Action.NONE),
-                new TutorialAction("Step on it! I want to see what happens.", TutorialAction.Action.NONE) } },
+                new TutorialAction("Step on it! I want to see what happens.", TutorialAction.Action.NONE) } )},
         };
 
     public enum LevelType
