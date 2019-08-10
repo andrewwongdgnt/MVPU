@@ -18,9 +18,9 @@ public class HelpIndicatorMenu : MonoBehaviour
         List<string> tutorialContent = getTutorialContent();
         string instructions = tutorialContent.Count == 0 ? PLAY : REPLAY;
         text.text = instructions + "\n" + string.Join("\n", tutorialContent.ToArray());
-        float height =  text.preferredHeight;
+        float height = text.preferredHeight;
 
-        content.sizeDelta = new Vector2(0, height + -text.rectTransform.anchoredPosition.y*2);
+        content.sizeDelta = new Vector2(0, height + -text.rectTransform.anchoredPosition.y * 2);
 
     }
 

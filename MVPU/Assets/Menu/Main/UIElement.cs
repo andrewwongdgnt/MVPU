@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIElement : MonoBehaviour {
+public class UIElement : MonoBehaviour
+{
 
     public AudioSource audioSource;
     public AudioClip sfx;

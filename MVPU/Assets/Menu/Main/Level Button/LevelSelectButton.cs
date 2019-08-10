@@ -42,11 +42,9 @@ public class LevelSelectButton : MonoBehaviour
         if (levelId != LevelUtil.LevelID.NO_LEVEL && levelId != LevelUtil.LevelID.TEST_LEVEL)
         {
             Button btn = GetComponent<Button>();
-            LevelUtil.LevelID[] levelPrereqs = LevelUtil.LevelPrereq.ContainsKey(levelId) ? LevelUtil.LevelPrereq[levelId] : new LevelUtil.LevelID[] { };
+            LevelUtil.LevelID levelPrereq = LevelUtil.LevelPrereq.ContainsKey(levelId) ? LevelUtil.LevelPrereq[levelId].first : LevelUtil.LevelID.NO_LEVEL;
 
-            btn.interactable = LevelSelectUtil.GetCurrentWorld() < LevelUtil.UNAVAILABLE_WORLD_START_INDEX && (LevelUtil.unlockFirst50Levels || levelPrereqs.Length == 0 || Array.Exists(levelPrereqs, l =>
-                  SaveStateUtil.LoadLevel(l) != null
-                ));
+            btn.interactable = LevelSelectUtil.GetCurrentWorld() < LevelUtil.UNAVAILABLE_WORLD_START_INDEX && (LevelUtil.unlockFirst50Levels || levelPrereq == LevelUtil.LevelID.NO_LEVEL || SaveStateUtil.LoadLevel(levelPrereq) != null);
 
             if (!btn.interactable)
             {
