@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class EndGameMenu : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class EndGameMenu : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GameObject[] endGameMenuItems = GameObject.FindGameObjectsWithTag("WinLose").Concat(GameObject.FindGameObjectsWithTag("GenericMenu")).ToArray();
+        GameObject[] endGameMenuItems = GameObject.FindGameObjectsWithTag("GenericMenu").ToArray();
         winObjects = GameObject.FindGameObjectsWithTag("Win").Concat(endGameMenuItems).ToArray();
         loseObjects = GameObject.FindGameObjectsWithTag("Lose").Concat(endGameMenuItems).ToArray();
 

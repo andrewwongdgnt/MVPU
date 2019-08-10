@@ -23,8 +23,8 @@ public class LevelUtil
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_1_4;
-    public static bool unlockFirst50Levels = false;
+    public static LevelID levelToLoad = LevelID.LEVEL_1_10;
+    public static bool unlockFirst50Levels = true;
     public static int UNAVAILABLE_WORLD_START_INDEX = 5;
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
@@ -697,7 +697,7 @@ public class LevelUtil
                 new TutorialAction("This is Kongo. He is grumpy and wants to attack the Monkey.", TutorialAction.Action.NONE),
                 new TutorialAction("For every move the Monkey does, Kongo will try to follow along the blue path first and the red path second.", TutorialAction.Action.HENEMY),
                 new TutorialAction("You have to try to confuse Kongo by making him walk into the rocks. Have fun!", TutorialAction.Action.NONE) } ) },
-            { LevelID.LEVEL_1_3, new Pair<string, TutorialAction[]> ("Level 3 - Basic movements 2",
+            { LevelID.LEVEL_1_3, new Pair<string, TutorialAction[]> ("Level 3 - Basic movement part 2",
                 new TutorialAction[]{
                 new TutorialAction("Hello again!", TutorialAction.Action.NONE),
                 new TutorialAction("Sometimes it is better to just not move at all and let Kongo walk into a trap.", TutorialAction.Action.NONE),
@@ -713,6 +713,11 @@ public class LevelUtil
                 new TutorialAction("Uh Oh! Kongo looks really mad.", TutorialAction.Action.NONE),
                 new TutorialAction("When Kongo is red, he can move two steps everytime the Monkey moves one.", TutorialAction.Action.NONE),
                 new TutorialAction("So be extra careful with your moves. Good luck!", TutorialAction.Action.NONE) } ) },
+            { LevelID.LEVEL_1_10, new Pair<string, TutorialAction[]>("Level 7 - Two Kongos part 2",
+                new TutorialAction[] {
+                new TutorialAction("I have some new information!", TutorialAction.Action.NONE),
+                new TutorialAction("You know how these two Kongos are different? If they hit each other, the second one to go in always win.", TutorialAction.Action.NONE),
+                new TutorialAction("Wasn't that important? Now you'll be able to win.", TutorialAction.Action.NONE) } ) },
             { LevelID.LEVEL_2_6, new Pair<string, TutorialAction[]>("Level 16 - Purple Monkey movement",
                 new TutorialAction[] {
                 new TutorialAction("Hello! Did you miss me?", TutorialAction.Action.NONE),

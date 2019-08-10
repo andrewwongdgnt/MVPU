@@ -64,5 +64,11 @@ public class PauseMenu : MonoBehaviour {
     }
 
 
+    public void NextLevel()
+    {
+        LevelUtil.levelToLoad = LevelUtil.LevelPrereq[LevelUtil.levelToLoad].second;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 
 }
