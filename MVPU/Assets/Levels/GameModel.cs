@@ -171,7 +171,7 @@ public class GameModel : MonoBehaviour
         if (UserInteractionAllowed())
         {
             HistoryState historyState = undoManager.Undo();
-            if (removeLastState)
+            if (removeLastState) // EG For undoing after level has been beaten
                 undoManager.RemoveLastState();
             if (historyState == null)
                 historyState = undoManager.initialHistoryState;
@@ -179,7 +179,18 @@ public class GameModel : MonoBehaviour
             scoringModel.SubtractMove();
 
             RestoreStateToEntities(historyState);
+            StartCoroutine("UndoCoroutine");
         }
+    }
+
+    private bool undoPressed;
+    private IEnumerator UndoCoroutine()
+    {
+        undoPressed = true;
+
+        yield return new WaitForSeconds(DOUBLE_TAP_DELAY+0.2f);
+
+        undoPressed = false;
     }
 
     public void Redo()
@@ -490,9 +501,9 @@ public class GameModel : MonoBehaviour
         return AllAnimationsComplete() && !endGameAnimationPlaying;
     }
 
-    float touchDuration;
-    Touch touch;
-    bool doubleTapOccurred;
+    private float touchDuration;
+    private Touch touch;
+    private bool doubleTapOccurred;
 
     private IEnumerator singleOrDouble()
     {
@@ -517,7 +528,7 @@ public class GameModel : MonoBehaviour
             //Check for double tap
             if (userInteractionAllowed)
             {
-                if (Input.touchCount > 0)
+                if (Input.touchCount > 0 && !undoPressed)
                 { //if there is any touch
                     touchDuration += Time.deltaTime;
                     touch = Input.GetTouch(0);
@@ -539,13 +550,9 @@ public class GameModel : MonoBehaviour
                 || Input.GetKeyDown(KeyCode.Escape)
                 || Input.GetKeyDown(KeyCode.Y)
                 || SwipeManager.IsSwipingUpLeft()
-               // || SwipeManager.IsSwipingUp()
                 || SwipeManager.IsSwipingDownLeft()
-               // || SwipeManager.IsSwipingLeft()
                 || SwipeManager.IsSwipingDownRight()
-              //  || SwipeManager.IsSwipingDown()
                 || SwipeManager.IsSwipingUpRight()
-               // || SwipeManager.IsSwipingRight()
                 || doubleTapOccurred)
                 )
             {
