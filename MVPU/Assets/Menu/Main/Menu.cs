@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour
     public GameObject settingsGroup;
     public GameObject helpGroup;
     public GameObject creditsGroup;
+    public GameObject storeGroup;
 
 
     // Use this for initialization
@@ -48,6 +49,13 @@ public class Menu : MonoBehaviour
         DeactivateObjects(exclusion: creditsGroup);
     }
 
+    public void GoToStore()
+    {
+
+        title.text = "Store";
+        DeactivateObjects(exclusion: storeGroup);
+    }
+
     private void DeactivateObjects(GameObject exclusion)
     {
 
@@ -55,5 +63,6 @@ public class Menu : MonoBehaviour
         settingsGroup.SetActive(settingsGroup == exclusion);
         helpGroup.SetActive(helpGroup == exclusion);
         creditsGroup.SetActive(creditsGroup == exclusion);
+        storeGroup.SetActive(storeGroup == exclusion);
     }
 }

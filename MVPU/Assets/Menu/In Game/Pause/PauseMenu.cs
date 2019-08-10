@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Linq;
-using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
     public AudioSource audioSource;
@@ -63,4 +62,7 @@ public class PauseMenu : MonoBehaviour {
         SetPause(false);
         SceneManager.LoadScene("Main");
     }
+
+
+
 }
