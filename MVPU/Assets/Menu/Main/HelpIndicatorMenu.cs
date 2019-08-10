@@ -9,17 +9,22 @@ public class HelpIndicatorMenu : MonoBehaviour
     public RectTransform content;
     public RectTransform textContent;
 
+    private const string REPLAY = "Replay levels to relearn how to play";
+    private const string PLAY = "Play levels to learn how to play";
+
     void Start()
     {
         Text text = textContent.GetComponent<Text>();
-        text.text = text.text +"\n"+populateTextContent();
+        List<string> tutorialContent = getTutorialContent();
+        string instructions = tutorialContent.Count == 0 ? PLAY : REPLAY;
+        text.text = instructions + "\n" + string.Join("\n", tutorialContent.ToArray());
         float height =  text.preferredHeight;
 
-        content.sizeDelta = new Vector2(content.rect.width, height + -text.rectTransform.anchoredPosition.y*2);
+        content.sizeDelta = new Vector2(0, height + -text.rectTransform.anchoredPosition.y*2);
 
     }
 
-    private string populateTextContent()
+    private List<string> getTutorialContent()
     {
         List<string> content = new List<string>();
         foreach (LevelUtil.LevelID levelId in LevelUtil.TutorialContent.Keys)
@@ -30,6 +35,6 @@ public class HelpIndicatorMenu : MonoBehaviour
             }
 
         }
-        return string.Join("\n", content.ToArray()); ;
+        return content;
     }
 }
