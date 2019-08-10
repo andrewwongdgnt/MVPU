@@ -63,7 +63,7 @@ public class Tutorial : MonoBehaviour
         {
 
             ShowTutorialMascot(true);
-            if (forceAdvance || tutorialIndex < 0 || _tutorialActionArr.Length > tutorialIndex && TutorialAction.isNoAction(_tutorialActionArr[tutorialIndex].action))
+            if (forceAdvance || tutorialIndex < 0 || _tutorialActionArr.Length > tutorialIndex)
             {
                 tutorialIndex++;
                 if (tutorialIndex < 0)
@@ -76,7 +76,7 @@ public class Tutorial : MonoBehaviour
                     tutorialButton.gameObject.SetActive(true);
                     tutorialText.text = _tutorialActionArr[tutorialIndex].text;
                     TutorialAction.Action action = _tutorialActionArr[tutorialIndex].action;
-                    tutorial2Text.text = TutorialAction.isNoAction(action) ? "Tap here to continue" : "Follow tutorial instructions";
+                    tutorial2Text.text = TutorialAction.isNoAction(action) ? "Tap here to continue" : "Tap here or follow tutorial instructions";
                     return action;
                 }
                 else

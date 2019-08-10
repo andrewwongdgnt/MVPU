@@ -152,7 +152,7 @@ public class GameModel : MonoBehaviour
         {
             _currentLevelId = value;
         }
-    }    
+    }
 
     private AudioClip _currentLevelMusic;
     public AudioClip currentLevelMusic
@@ -188,7 +188,7 @@ public class GameModel : MonoBehaviour
     {
         undoPressed = true;
 
-        yield return new WaitForSeconds(DOUBLE_TAP_DELAY+0.2f);
+        yield return new WaitForSeconds(DOUBLE_TAP_DELAY + 0.2f);
 
         undoPressed = false;
     }
@@ -277,9 +277,9 @@ public class GameModel : MonoBehaviour
     {
         if (Time.timeScale > 0)
         {
-           currentLevelAudioSource.UnPause();
+            currentLevelAudioSource.UnPause();
             if (!currentLevelAudioSource.isPlaying)
-            AudioUtil.PlayMusic(currentLevelAudioSource, _currentLevelMusic);
+                AudioUtil.PlayMusic(currentLevelAudioSource, _currentLevelMusic);
         }
         else
         {
@@ -287,7 +287,8 @@ public class GameModel : MonoBehaviour
         }
     }
 
-    public LevelUtil.LevelType currentLevelType{
+    public LevelUtil.LevelType currentLevelType
+    {
         get
         {
             return LevelUtil.LevelToLevelType[_currentLevelId];
@@ -404,7 +405,7 @@ public class GameModel : MonoBehaviour
         {
             FaceHorizontally(bomb, direction);
             if (bombAnimation == Bomb.Animation.Explode)
-                bomb.StartAttackAnimation(); 
+                bomb.StartAttackAnimation();
         }
         else
         {
@@ -432,7 +433,8 @@ public class GameModel : MonoBehaviour
             else if (!key.hold)
                 key.StartUsedAnimation();
         }
-        else if (key.numOfUses > 0) { 
+        else if (key.numOfUses > 0)
+        {
             key.StopConsumedAnimation();
         }
         if (key.hold)
@@ -449,7 +451,7 @@ public class GameModel : MonoBehaviour
             color.a = key.consumed && !animate ? 0f : 1f;
 
             s.material.color = color;
-        });        
+        });
     }
 
     private void SetViewForWall(Wall wall, Wall.Animation wallAnimation = Wall.Animation.None)
@@ -572,22 +574,22 @@ public class GameModel : MonoBehaviour
                     bool unblocked = false;
                     if (actionAllowedFromTutorial == TutorialAction.Action.SWIPE || actionAllowedFromTutorial == TutorialAction.Action.ALL)
                     {
-                        if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft() )//|| SwipeManager.IsSwipingUp())
+                        if (Input.GetAxis("Vertical") > 0 || SwipeManager.IsSwipingUpLeft())
                         {
                             unblocked = _player.Do_MoveUp();
                             AdvanceTutorial(true);
                         }
-                        else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft())// || SwipeManager.IsSwipingLeft())
+                        else if (Input.GetAxis("Horizontal") < 0 || SwipeManager.IsSwipingDownLeft())
                         {
                             unblocked = _player.Do_MoveLeft();
                             AdvanceTutorial(true);
                         }
-                        else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight() )//|| SwipeManager.IsSwipingDown())
+                        else if (Input.GetAxis("Vertical") < 0 || SwipeManager.IsSwipingDownRight())
                         {
                             unblocked = _player.Do_MoveDown();
                             AdvanceTutorial(true);
                         }
-                        else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight() )//|| SwipeManager.IsSwipingRight())
+                        else if (Input.GetAxis("Horizontal") > 0 || SwipeManager.IsSwipingUpRight())
                         {
                             unblocked = _player.Do_MoveRight();
                             AdvanceTutorial(true);
@@ -632,10 +634,10 @@ public class GameModel : MonoBehaviour
     {
         if (gameEndInfo != null)
         {
-            bool winning = gameEndInfo.third==null;
+            bool winning = gameEndInfo.third == null;
             gameEndingKiller = gameEndInfo.third is IAttacker ? (IAttacker)gameEndInfo.third : null;
             gameEndInfo = null;
-           endGameAnimationPlaying = true;
+            endGameAnimationPlaying = true;
             allowShowEndGameMenu = true;
             if (winning)
             {
@@ -650,11 +652,11 @@ public class GameModel : MonoBehaviour
             {
                 Debug.Log(_currentLevelId + ": Game Over");
 
-                if (gameEndingKiller!=null)
+                if (gameEndingKiller != null)
                 {
                     _player.StartDieAnimation(gameEndingKiller.mortalDeathAnimation, gameEndingKiller.attackDelayed);
                     gameEndingKiller.StartAttackAnimation();
-                    Entity.Direction attackerDir =  _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT;
+                    Entity.Direction attackerDir = _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT;
                     if (!(gameEndingKiller is Enemy))
                     {
                         if (attackerDir == Entity.Direction.RIGHT)
@@ -663,7 +665,7 @@ public class GameModel : MonoBehaviour
                             attackerDir = Entity.Direction.RIGHT;
                     }
                     FaceHorizontally(gameEndingKiller.entity, attackerDir);
-                } 
+                }
             }
         }
     }
@@ -685,9 +687,9 @@ public class GameModel : MonoBehaviour
         bool showPurpleMonkey = false;
         if (gameEndingKiller != null && gameEndingKiller is Enemy)
         {
-            Enemy enemy = (Enemy) gameEndingKiller;
+            Enemy enemy = (Enemy)gameEndingKiller;
             showKongo = enemy.whoAmI == Enemy.EnemyEntity.KONGO;
-            showPurpleMonkey = enemy.whoAmI == Enemy.EnemyEntity.PURPLE_MONKEY;            
+            showPurpleMonkey = enemy.whoAmI == Enemy.EnemyEntity.PURPLE_MONKEY;
         }
         endGameMenu.ShowLoseMenu(true, showKongo, showPurpleMonkey);
     }
@@ -728,12 +730,12 @@ public class GameModel : MonoBehaviour
     private void FaceHorizontally(Entity entity, Entity.Direction direction)
     {
 
-        if (direction == Entity.Direction.LEFT )
+        if (direction == Entity.Direction.LEFT)
         {
             entity.transform.localScale = new Vector3(Math.Abs(entity.transform.localScale.x) * -1, entity.transform.localScale.y, entity.transform.localScale.z);
         }
 
-        if (direction == Entity.Direction.RIGHT )
+        if (direction == Entity.Direction.RIGHT)
         {
             entity.transform.localScale = new Vector3(Math.Abs(entity.transform.localScale.x), entity.transform.localScale.y, entity.transform.localScale.z);
         }
@@ -782,7 +784,7 @@ public class GameModel : MonoBehaviour
                     }
                 }
                 //Walker walks into player to cause lose state
-                else if (_player.x == walker.entity.x && _player.y == walker.entity.y )
+                else if (_player.x == walker.entity.x && _player.y == walker.entity.y)
                     gameEndInfo = new Triple<int, int, Entity>(GetOrder(walker), stepOrder, walker.entity);
 
             }
@@ -855,13 +857,14 @@ public class GameModel : MonoBehaviour
             xModifier = 1;
 
         bool checkingForHoldingKeys = checkingForHoldingKeysDirection != Entity.Direction.NONE;
-        Key key = Array.Find(_keyArr, k => k.x == entity.x+ xModifier && k.y == entity.y+ yModifier);
-        if (key!=null && !key.consumed
-            && ((checkingForHoldingKeys && key.hold) || !checkingForHoldingKeys) 
-            && (entity is Player || (entity is Enemy && key.usableByEnemy))){
+        Key key = Array.Find(_keyArr, k => k.x == entity.x + xModifier && k.y == entity.y + yModifier);
+        if (key != null && !key.consumed
+            && ((checkingForHoldingKeys && key.hold) || !checkingForHoldingKeys)
+            && (entity is Player || (entity is Enemy && key.usableByEnemy)))
+        {
 
-            IWalker walker= (IWalker) entity;
-            
+            IWalker walker = (IWalker)entity;
+
             if (key.numOfUses > 0)
                 key.numOfUses--;
             if (key.numOfUses == 0)
@@ -871,7 +874,7 @@ public class GameModel : MonoBehaviour
 
             Key.Animation keyAnimation;
             if (key.consumed)
-                keyAnimation= Key.Animation.Consumed;
+                keyAnimation = Key.Animation.Consumed;
             else if (key.hold && key.on)
                 keyAnimation = Key.Animation.On;
             else if (key.hold && !key.on)
@@ -881,12 +884,13 @@ public class GameModel : MonoBehaviour
 
             keyList.Add(new Quadruple<int, int, Key, Key.Animation>(GetOrder(walker), stepOrder, key, keyAnimation));
 
-            Array.ForEach(_wallArr, wall => {
+            Array.ForEach(_wallArr, wall =>
+            {
 
 
-                for (int lIndex = 0; lIndex<wall.keyRelationshipIndexArr.Length; lIndex++)
+                for (int lIndex = 0; lIndex < wall.keyRelationshipIndexArr.Length; lIndex++)
                 {
-                    Wall.KeyRelationship keyRelationship = wall.keyRelationshipIndexArr[lIndex];                    
+                    Wall.KeyRelationship keyRelationship = wall.keyRelationshipIndexArr[lIndex];
 
                     if (Array.Exists(keyRelationship.arr, kIndex => key == _keyArr[kIndex]))
                     {
@@ -903,14 +907,14 @@ public class GameModel : MonoBehaviour
                         break;
                     }
                 }
-               
+
             });
         }
     }
 
     public bool CheckIfUnretractedWallIsBlocker(int x, int y, Entity.Direction dirToCheck)
     {
-        return Array.Exists(_wallArr, w => w.x == x && w.y == y && !w.retracted && w.blocking==dirToCheck);
+        return Array.Exists(_wallArr, w => w.x == x && w.y == y && !w.retracted && w.blocking == dirToCheck);
     }
 
     public IMortal findMortalInSamePositionAs(Entity entity)
@@ -996,7 +1000,7 @@ public class GameModel : MonoBehaviour
             Pair<int, int> blockedEnemyInfo = blockedEnemiesList.Find(b => b.first == order && b.second == stepOrder);
             if (blockedEnemyInfo == null)
             {
-  
+
                 float speedMultiplier = SettingsUtil.GetEntitySpeedMultipler();
 
                 while (entity.transform.position != end)
@@ -1075,7 +1079,7 @@ public class GameModel : MonoBehaviour
                 });
             }
 
-            
+
         }
 
 

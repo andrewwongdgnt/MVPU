@@ -23,7 +23,7 @@ public class LevelUtil
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_1_10;
+    public static LevelID levelToLoad = LevelID.LEVEL_1_1;
     public static bool unlockFirst50Levels = true;
     public static int UNAVAILABLE_WORLD_START_INDEX = 5;
 
@@ -716,7 +716,7 @@ public class LevelUtil
             { LevelID.LEVEL_1_10, new Pair<string, TutorialAction[]>("Level 7 - Two Kongos part 2",
                 new TutorialAction[] {
                 new TutorialAction("I have some new information!", TutorialAction.Action.NONE),
-                new TutorialAction("You know how these two Kongos are different? If they hit each other, the second one to go in always win.", TutorialAction.Action.NONE),
+                new TutorialAction("You know how these two Kongos are different? If they hit each other, the second one to go in always wins.", TutorialAction.Action.NONE),
                 new TutorialAction("Wasn't that important? Now you'll be able to win.", TutorialAction.Action.NONE) } ) },
             { LevelID.LEVEL_2_6, new Pair<string, TutorialAction[]>("Level 16 - Purple Monkey movement",
                 new TutorialAction[] {
