@@ -23,7 +23,7 @@ public class LevelUtil
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_5_10;
+    public static LevelID levelToLoad = LevelID.LEVEL_1_4;
     public static bool unlockAllLevels = false;
     public static int UNAVAILABLE_WORLD_START_INDEX = 5;
 
@@ -78,9 +78,9 @@ public class LevelUtil
         { LevelID.LEVEL_1_4, new Cell[,]{
             {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_CLOSED,Cell.CELL_CLOSED,},
             {Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_TOP_RIGHT_CLOSED,Cell.CELL_CLOSED,},
-            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_TOP_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,},
-            {Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_TOP_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,},
             {Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,},
         }
         },
         { LevelID.LEVEL_1_5, new Cell[,]{
@@ -520,7 +520,7 @@ public class LevelUtil
             { LevelID.LEVEL_1_1, new LevelScore(6) },
             { LevelID.LEVEL_1_2, new LevelScore(8) },
             { LevelID.LEVEL_1_3, new LevelScore(9) },
-            { LevelID.LEVEL_1_4, new LevelScore(11) },
+            { LevelID.LEVEL_1_4, new LevelScore(10) },
             { LevelID.LEVEL_1_5, new LevelScore(9) },
             { LevelID.LEVEL_1_6, new LevelScore(10) },
             { LevelID.LEVEL_1_7, new LevelScore(9) },
