@@ -76,4 +76,12 @@ public class AnimatorEvent : MonoBehaviour {
 
         AudioUtil.PlaySFX(celebrator.audioSource, sfxCelebrateStep);
     }
+
+    //Generic audio event
+    public AudioSource genericAudioSource { private get; set; }
+    public AudioClip genericAudioClip { private get; set; }
+    public void AudioEvent()
+    {
+        AudioUtil.PlaySFX(genericAudioSource, genericAudioClip);
+    }
 }

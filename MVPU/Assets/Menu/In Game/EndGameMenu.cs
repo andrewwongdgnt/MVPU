@@ -11,9 +11,7 @@ public class EndGameMenu : MonoBehaviour
     GameObject[] winObjects;
     GameObject[] loseObjects;
 
-    public Animator star1;
-    public Animator star2;
-    public Animator star3;
+    public RatingBoard ratingBoard;
 
     public Image[] winVariationKongoImages;
     public Image[] winVariationPurpleMonkeyImages;
@@ -120,45 +118,9 @@ public class EndGameMenu : MonoBehaviour
             g.SetActive(show);
         }
 
-        star1.SetBool("StarOff", true);
-        star2.SetBool("StarOff", true);
-        star3.SetBool("StarOff", true);
-        star1.SetBool("StarOff", false);
-        star2.SetBool("StarOff", false);
-        star3.SetBool("StarOff", false);
+        ratingBoard.Display(scoreType);
 
-        if (scoreType != ScoringModel.ScoreTypes.NONE)
-        {
-            if (scoreType == ScoringModel.ScoreTypes.ADEQUATE)
-            {
-                yield return new WaitForSecondsRealtime(.5f);
-                star1.SetBool("StarOn", true);
-            }
-            else if (scoreType == ScoringModel.ScoreTypes.GOOD)
-            {
-                yield return new WaitForSecondsRealtime(.5f);
-                star1.SetBool("StarOn", true);
-                yield return new WaitForSecondsRealtime(.5f);
-                star2.SetBool("StarOn", true);
-            }
-            else if (scoreType == ScoringModel.ScoreTypes.GREAT || scoreType == ScoringModel.ScoreTypes.MIN )
-            {
-                yield return new WaitForSecondsRealtime(.5f);
-                star1.SetBool("StarOn", true);
-                yield return new WaitForSecondsRealtime(.5f);
-                star2.SetBool("StarOn", true);
-                yield return new WaitForSecondsRealtime(.5f);
-                star3.SetBool("StarOn", true);
-            }
-            if (scoreType == ScoringModel.ScoreTypes.MIN)
-            {
-                yield return new WaitForSecondsRealtime(.5f);
-
-                star1.SetBool("StarSpecial", true);
-                star2.SetBool("StarSpecial", true);
-                star3.SetBool("StarSpecial", true);
-            }
-        }
+        
     }
 
     private void playMusic(bool show, AudioClip music)
