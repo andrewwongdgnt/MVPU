@@ -54,7 +54,8 @@ public class PauseMenu : MonoBehaviour {
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Load Screen");
     }
 
     public void Quit()
@@ -67,7 +68,7 @@ public class PauseMenu : MonoBehaviour {
     public void NextLevel()
     {
         LevelUtil.levelToLoad = LevelUtil.LevelPrereq[LevelUtil.levelToLoad].second;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Load Screen");
     }
 
 
