@@ -21,7 +21,7 @@ public class GameModel : MonoBehaviour
     private bool allowShowEndGameMenu;
     private IAttacker gameEndingKiller;
 
-    public EndGameMenu endGameMenu;
+    public InGameMenu inGameMenu;
 
     public Text scoreGuiText;
     public Text bestScoreGuiText;
@@ -167,7 +167,7 @@ public class GameModel : MonoBehaviour
 
     public void Undo(bool removeLastState)
     {
-        endGameMenu.HideEndGameMenu();
+        
         if (UserInteractionAllowed())
         {
             HistoryState historyState = undoManager.Undo();
@@ -195,7 +195,7 @@ public class GameModel : MonoBehaviour
 
     public void Redo()
     {
-        endGameMenu.HideEndGameMenu();
+        
         if (UserInteractionAllowed())
         {
             HistoryState historyState = undoManager.Redo();
@@ -691,7 +691,7 @@ public class GameModel : MonoBehaviour
             showKongo = enemy.whoAmI == Enemy.EnemyEntity.KONGO;
             showPurpleMonkey = enemy.whoAmI == Enemy.EnemyEntity.PURPLE_MONKEY;
         }
-        endGameMenu.ShowLoseMenu(true, showKongo, showPurpleMonkey);
+        inGameMenu.ShowLoseMenu(showKongo, showPurpleMonkey);
     }
 
     public void ShowWinMenu()
@@ -709,7 +709,7 @@ public class GameModel : MonoBehaviour
         endGameAnimationPlaying = false;
         bool showKongo = _enemyArr.Any(e => e.whoAmI == Enemy.EnemyEntity.KONGO);
         bool showPurpleMonkey = _enemyArr.Any(e => e.whoAmI == Enemy.EnemyEntity.PURPLE_MONKEY);
-        endGameMenu.ShowWinMenu(true, ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId), showKongo, showPurpleMonkey);
+        inGameMenu.ShowWinMenu(ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId), showKongo, showPurpleMonkey);
     }
 
     private void Look(Entity entity, Entity.Direction direction)
