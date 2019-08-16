@@ -23,7 +23,7 @@ public class LevelUtil
     }
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_1_4;
+    public static LevelID levelToLoad = LevelID.LEVEL_5_1;
     public static bool unlockFirst50Levels = true;
     public static int UNAVAILABLE_WORLD_START_INDEX = 5;
 
@@ -743,8 +743,8 @@ public class LevelUtil
                 new TutorialAction("Hi There!", TutorialAction.Action.NONE),
                 new TutorialAction("My name is Muffin and I'm looking for Coco. Have you seen him?", TutorialAction.Action.NONE),
                 new TutorialAction("I saw all these banana peels so he must be near by.", TutorialAction.Action.NONE),
-                new TutorialAction("I'm sorry for his mess. I marked them with a red pin so the Monkey won't slip when he gets close.", TutorialAction.Action.NONE),
-                new TutorialAction("I couldn't get them all though, and I'm not sure if anyone else will notice the red flags.", TutorialAction.Action.NONE),
+                new TutorialAction("I'm sorry for his mess. I marked the bananas with red pins so the Monkey won't slip when he gets close.", TutorialAction.Action.NONE),
+                new TutorialAction("Oops I forgot to tell Kongo. He will probably not notice and slip himself.", TutorialAction.Action.NONE),
                 new TutorialAction("Ok bye now! I still need to find Coco.", TutorialAction.Action.NONE) } ) },
             { LevelID.LEVEL_4_7, new Pair<string, TutorialAction[]>(null,
                 new TutorialAction[]{
