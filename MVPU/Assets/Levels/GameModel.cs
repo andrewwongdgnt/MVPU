@@ -286,6 +286,11 @@ public class GameModel : MonoBehaviour
             currentLevelAudioSource.Pause();
         }
     }
+    
+    public void AdjustLevelMusic(float value)
+    {
+        currentLevelAudioSource.volume = value / 100;
+    }
 
     public LevelUtil.LevelType currentLevelType
     {

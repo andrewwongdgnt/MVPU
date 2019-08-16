@@ -12,6 +12,12 @@ public class InGameMenu : MonoBehaviour
     public GameObject winMenu;
     public GameObject loseMenu;
     public GameObject pauseMenu;
+    public GameObject mainPauseMenu;
+    public GameObject settingsPauseMenu;
+
+    public Slider entitySpeedMultiplier;
+    public Slider musicVolume;
+    public Slider sfxVolume;
 
     public RatingBoard ratingBoard;
     public GameObject pauseBG;
@@ -31,7 +37,10 @@ public class InGameMenu : MonoBehaviour
     public AudioClip loseSfx;
     public AudioClip winSfx;
 
-
+    private enum PauseSubMenu
+    {
+        MAIN, SETTINGS
+    }
 
     // Use this for initialization
     void Start()
@@ -47,6 +56,7 @@ public class InGameMenu : MonoBehaviour
         Time.timeScale = pause ? 0 : 1;
         pauseMenu.SetActive(pause);
         pauseBG.SetActive(pause);
+        ShowMainPause();
 
         winMenu.SetActive(false);
         loseMenu.SetActive(false);
@@ -61,11 +71,7 @@ public class InGameMenu : MonoBehaviour
     private void SetPause(bool pause, int delay = 30)
     {
         if (pause)
-        {
-            musicAudioSource.UnPause();
-            if (!musicAudioSource.isPlaying)
-                AudioUtil.PlayMusic(musicAudioSource, pauseMusic);
-        }
+            AudioUtil.PlayMusic(musicAudioSource, pauseMusic);
         else
             musicAudioSource.Stop();
 
@@ -73,7 +79,56 @@ public class InGameMenu : MonoBehaviour
         StartCoroutine(SetPauseWithDelay(pause, delay));
 
     }
-    
+
+    public void ShowSettingsPause()
+    {
+        ShowSubPauseMenu(PauseSubMenu.SETTINGS);
+
+        entitySpeedMultiplier.value = SettingsUtil.GetEntitySpeedMultipler();
+        musicVolume.value = SettingsUtil.GetMusicVolume();
+        sfxVolume.value = SettingsUtil.GetSFXVolume();
+
+    }
+
+      public void EntitySpeed (float speed)
+    {
+        Debug.Log("Entity Speed is " + (speed));
+        SettingsUtil.SetEntitySpeedMultiplier(speed);
+    }
+
+    public void MusicVolume(float value)
+    {
+        Debug.Log("Music volume is " + (value));
+        SettingsUtil.SetMusicVolume(value);
+        musicAudioSource.volume = value / 100;
+        gameModel.AdjustLevelMusic(value);
+    }
+
+    public void SFXVolume(float value)
+    {
+        Debug.Log("SFX volume is " + (value));
+        SettingsUtil.SetSFXVolume(value);
+    }
+
+    public void ShowMainPause()
+    {
+        ShowSubPauseMenu(PauseSubMenu.MAIN);
+    }
+
+    private void ShowSubPauseMenu(PauseSubMenu pauseSubMenu)
+    {
+        mainPauseMenu.SetActive(false);
+        settingsPauseMenu.SetActive(false);
+        switch (pauseSubMenu)
+        {
+            case PauseSubMenu.MAIN:
+                mainPauseMenu.SetActive(true);
+                break;
+            case PauseSubMenu.SETTINGS:
+                settingsPauseMenu.SetActive(true);
+                break;
+        }
+    }
 
     public void ShowLoseMenu(bool showKongo, bool showPurpleMonkey)
     {
@@ -108,7 +163,7 @@ public class InGameMenu : MonoBehaviour
             ToggleImageVisibility(loseVariationNeutralImages, true);
         }
     }
-    
+
     public void ShowWinMenu(ScoringModel.ScoreTypes scoreType, bool showKongo, bool showPurpleMonkey)
     {
         StartCoroutine(ShowWinMenuWithDelay(scoreType, showKongo, showPurpleMonkey));
@@ -155,13 +210,13 @@ public class InGameMenu : MonoBehaviour
     {
         musicAudioSource.UnPause();
         if (!musicAudioSource.isPlaying)
-            AudioUtil.PlayMusic(musicAudioSource, music);    
+            AudioUtil.PlayMusic(musicAudioSource, music);
     }
-    
+
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Quit()
