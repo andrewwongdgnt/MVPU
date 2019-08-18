@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ScoringModel
+public class ScoringManager
 {
     public enum ScoreTypes
     {
@@ -11,19 +11,13 @@ public class ScoringModel
     {
         get; private set;
     }
-    public int minOfMoves
-    {
-        get
-        {
-            return _levelScore.minMoveCount;
-        }
-    }
-    private LevelScore _levelScore;
+
+    private SaveStateUtil.LevelState _levelState;
 
     private GameModel _gameModel;
-    public ScoringModel(LevelScore levelScore, GameModel gameModel)
+    public ScoringManager(SaveStateUtil.LevelState levelState, GameModel gameModel)
     {
-        _levelScore = levelScore;
+        _levelState = levelState;
         _gameModel = gameModel;
         DispatchScore();
     }
@@ -45,19 +39,15 @@ public class ScoringModel
     {
         if (_gameModel != null)
         {
-            _gameModel.UpdateScoreText(numberOfMoves,_levelScore.minMoveCount);
+            _gameModel.UpdateScoreText(numberOfMoves,_levelState==null ? (int?) null : _levelState.moveCount);
         }
     }
 
-    public ScoreTypes GetResult()
-    {
-        return GetResult(numberOfMoves, _levelScore);
-    }
     public static ScoreTypes GetResult(int numberOfMoves, LevelUtil.LevelID levelId)
     {
         return GetResult(numberOfMoves, LevelUtil.LevelScoreMap[levelId]);
     }
-    public static ScoreTypes GetResult(int numberOfMoves, LevelScore levelScore)
+    private static ScoreTypes GetResult(int numberOfMoves, LevelScore levelScore)
     {
         if (numberOfMoves <= levelScore.minMoveCount)
             return ScoreTypes.MIN;

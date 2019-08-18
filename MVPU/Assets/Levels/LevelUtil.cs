@@ -24,7 +24,7 @@ public class LevelUtil
 
     //meant to be mutable
     public static LevelID levelToLoad = LevelID.LEVEL_5_1;
-    public static bool unlockFirst50Levels = true;
+    public static bool unlockFirst50Levels = false;
     public static int UNAVAILABLE_WORLD_START_INDEX = 5;
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
@@ -521,9 +521,9 @@ public class LevelUtil
             { LevelID.LEVEL_1_2, new LevelScore(8) },
             { LevelID.LEVEL_1_3, new LevelScore(9) },
             { LevelID.LEVEL_1_4, new LevelScore(10) },
-            { LevelID.LEVEL_1_5, new LevelScore(9) },
-            { LevelID.LEVEL_1_6, new LevelScore(10) },
-            { LevelID.LEVEL_1_7, new LevelScore(9) },
+            { LevelID.LEVEL_1_5, new LevelScore(9,11,14,17) },
+            { LevelID.LEVEL_1_6, new LevelScore(10,11,13,16) },
+            { LevelID.LEVEL_1_7, new LevelScore(9,13,15,17) },
             { LevelID.LEVEL_1_8, new LevelScore(13) },
             { LevelID.LEVEL_1_9, new LevelScore(16) },
             { LevelID.LEVEL_1_10, new LevelScore(15) },

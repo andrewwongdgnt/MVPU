@@ -14,7 +14,7 @@ public class GameModel : MonoBehaviour
     private readonly float LOSE_ANIMATION_DELAY_IN_SECONDS = 1f;
     private readonly float WIN_ANIMATION_DELAY_IN_SECONDS = 1f;
 
-    private ScoringModel scoringModel;
+    private ScoringManager scoringManager;
     private UndoManager undoManager;
 
     private bool endGameAnimationPlaying;
@@ -176,7 +176,7 @@ public class GameModel : MonoBehaviour
             if (historyState == null)
                 historyState = undoManager.initialHistoryState;
 
-            scoringModel.SubtractMove();
+            scoringManager.SubtractMove();
 
             RestoreStateToEntities(historyState);
             StartCoroutine("UndoCoroutine");
@@ -202,7 +202,7 @@ public class GameModel : MonoBehaviour
             if (historyState != null)
             {
                 RestoreStateToEntities(historyState);
-                scoringModel.AddMove();
+                scoringManager.AddMove();
             }
         }
     }
@@ -237,11 +237,11 @@ public class GameModel : MonoBehaviour
 
     private void AddToHistory()
     {
-        scoringModel.AddMove();
+        scoringManager.AddMove();
         undoManager.AddToHistory(_player, _goal, _enemyArr, _bombArr, _keyArr, _wallArr);
     }
 
-    public void UpdateScoreText(int score, int bestScore)
+    public void UpdateScoreText(int score, int? bestScore)
     {
         if (scoreGuiText != null)
         {
@@ -249,7 +249,7 @@ public class GameModel : MonoBehaviour
         }
         if (bestScoreGuiText != null)
         {
-            bestScoreGuiText.text = bestScore.ToString();
+            bestScoreGuiText.text = bestScore==null ? "-" : bestScore.ToString();
         }
     }
 
@@ -332,7 +332,7 @@ public class GameModel : MonoBehaviour
         //set positions for each entity
         SetViewForEntities();
 
-        scoringModel = new ScoringModel(levelScore, this);
+        scoringManager = new ScoringManager(SaveStateUtil.LoadLevel(_currentLevelId), this);
         undoManager = new UndoManager();
         undoManager.AddInitialState(_player, _goal, _enemyArr, _bombArr, _keyArr, _wallArr);
 
@@ -646,8 +646,8 @@ public class GameModel : MonoBehaviour
             allowShowEndGameMenu = true;
             if (winning)
             {
-                Debug.Log(_currentLevelId + ": Game win with " + scoringModel.numberOfMoves + "/" + scoringModel.minOfMoves + " moves. \nMedal: " + scoringModel.GetResult());
-                SaveStateUtil.SaveLevel(_currentLevelId, scoringModel.numberOfMoves);
+                Debug.Log(_currentLevelId + ": Game win with " + scoringManager.numberOfMoves + " moves. \nMedal: " + ScoringManager.GetResult(scoringManager.numberOfMoves, _currentLevelId));
+                SaveStateUtil.SaveLevel(_currentLevelId, scoringManager.numberOfMoves);
                 _player.StartWinAnimation();
                 _goal.StartWinAnimation();
                 FaceHorizontally(_goal.entity, _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT);
@@ -714,7 +714,7 @@ public class GameModel : MonoBehaviour
         endGameAnimationPlaying = false;
         bool showKongo = _enemyArr.Any(e => e.whoAmI == Enemy.EnemyEntity.KONGO);
         bool showPurpleMonkey = _enemyArr.Any(e => e.whoAmI == Enemy.EnemyEntity.PURPLE_MONKEY);
-        inGameMenu.ShowWinMenu(ScoringModel.GetResult(scoringModel.numberOfMoves, _currentLevelId), showKongo, showPurpleMonkey);
+        inGameMenu.ShowWinMenu(ScoringManager.GetResult(scoringManager.numberOfMoves, _currentLevelId), showKongo, showPurpleMonkey);
     }
 
     private void Look(Entity entity, Entity.Direction direction)

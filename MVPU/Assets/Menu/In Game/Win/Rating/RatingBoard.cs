@@ -17,13 +17,13 @@ public class RatingBoard : MonoBehaviour
         star3.animatorEvent.genericAudioSource = star3.audioSource;
     }
 
-    public void Display(ScoringModel.ScoreTypes scoreType)
+    public void Display(ScoringManager.ScoreTypes scoreType)
     {
 
         StartCoroutine(DisplayInternal(scoreType));
     }
 
-    private IEnumerator DisplayInternal(ScoringModel.ScoreTypes scoreType)
+    private IEnumerator DisplayInternal(ScoringManager.ScoreTypes scoreType)
     {
         Animator star1Animator = star1.anim;
         Animator star2Animator = star2.anim;
@@ -36,27 +36,27 @@ public class RatingBoard : MonoBehaviour
         star2Animator.SetBool("StarOff", false);
         star3Animator.SetBool("StarOff", false);
 
-        if (scoreType != ScoringModel.ScoreTypes.NONE)
+        if (scoreType != ScoringManager.ScoreTypes.NONE)
         {
-            if (scoreType == ScoringModel.ScoreTypes.ADEQUATE || scoreType == ScoringModel.ScoreTypes.GOOD || scoreType == ScoringModel.ScoreTypes.GREAT || scoreType == ScoringModel.ScoreTypes.MIN)
+            if (scoreType == ScoringManager.ScoreTypes.ADEQUATE || scoreType == ScoringManager.ScoreTypes.GOOD || scoreType == ScoringManager.ScoreTypes.GREAT || scoreType == ScoringManager.ScoreTypes.MIN)
             {
                 yield return new WaitForSecondsRealtime(.5f);
                 star1.animatorEvent.genericAudioClip = star1.starOnAudioClip;
                 star1Animator.SetBool("StarOn", true);
             }
-            if (scoreType == ScoringModel.ScoreTypes.GOOD || scoreType == ScoringModel.ScoreTypes.GREAT || scoreType == ScoringModel.ScoreTypes.MIN)
+            if (scoreType == ScoringManager.ScoreTypes.GOOD || scoreType == ScoringManager.ScoreTypes.GREAT || scoreType == ScoringManager.ScoreTypes.MIN)
             {
                 yield return new WaitForSecondsRealtime(.5f);
                 star2.animatorEvent.genericAudioClip = star2.starOnAudioClip;
                 star2Animator.SetBool("StarOn", true);
             }
-            if (scoreType == ScoringModel.ScoreTypes.GREAT || scoreType == ScoringModel.ScoreTypes.MIN)
+            if (scoreType == ScoringManager.ScoreTypes.GREAT || scoreType == ScoringManager.ScoreTypes.MIN)
             {
                 yield return new WaitForSecondsRealtime(.5f);
                 star3.animatorEvent.genericAudioClip = star3.starOnAudioClip;
                 star3Animator.SetBool("StarOn", true);
             }
-            if (scoreType == ScoringModel.ScoreTypes.MIN)
+            if (scoreType == ScoringManager.ScoreTypes.MIN)
             {
                 yield return new WaitForSecondsRealtime(.5f);
                 star1.animatorEvent.genericAudioClip = star1.starSpecialAudioClip;

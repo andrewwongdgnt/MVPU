@@ -164,11 +164,11 @@ public class InGameMenu : MonoBehaviour
         }
     }
 
-    public void ShowWinMenu(ScoringModel.ScoreTypes scoreType, bool showKongo, bool showPurpleMonkey)
+    public void ShowWinMenu(ScoringManager.ScoreTypes scoreType, bool showKongo, bool showPurpleMonkey)
     {
         StartCoroutine(ShowWinMenuWithDelay(scoreType, showKongo, showPurpleMonkey));
     }
-    public IEnumerator ShowWinMenuWithDelay(ScoringModel.ScoreTypes scoreType, bool showKongo, bool showPurpleMonkey)
+    public IEnumerator ShowWinMenuWithDelay(ScoringManager.ScoreTypes scoreType, bool showKongo, bool showPurpleMonkey)
     {
         yield return 30;
         Time.timeScale = 0;

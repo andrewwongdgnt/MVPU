@@ -59,24 +59,24 @@ public class LevelSelectButton : MonoBehaviour
                 }
                 else
                 {
-                    ScoringModel.ScoreTypes scoreType = ScoringModel.GetResult(levelState.moveCount, levelId);
+                    ScoringManager.ScoreTypes scoreType = ScoringManager.GetResult(levelState.moveCount, levelId);
                     switch (scoreType)
                     {
-                        case ScoringModel.ScoreTypes.MIN:
+                        case ScoringManager.ScoreTypes.MIN:
                             star1.sprite = star2.sprite = star3.sprite = starSpecial;
                             break;
-                        case ScoringModel.ScoreTypes.GREAT:
+                        case ScoringManager.ScoreTypes.GREAT:
                             star1.sprite = star2.sprite = star3.sprite = starOn;
                             break;
-                        case ScoringModel.ScoreTypes.GOOD:
+                        case ScoringManager.ScoreTypes.GOOD:
                             star1.sprite = star2.sprite = starOn;
                             star3.sprite = starOff;
                             break;
-                        case ScoringModel.ScoreTypes.ADEQUATE:
+                        case ScoringManager.ScoreTypes.ADEQUATE:
                             star1.sprite = starOn;
                             star2.sprite = star3.sprite = starOff;
                             break;
-                        case ScoringModel.ScoreTypes.NONE:
+                        case ScoringManager.ScoreTypes.NONE:
                             star1.sprite = star2.sprite = star3.sprite = starOff;
                             break;
                     }
