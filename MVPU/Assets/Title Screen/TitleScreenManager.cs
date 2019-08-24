@@ -7,17 +7,21 @@ using UnityEngine.UI;
 
 public class TitleScreenManager : MonoBehaviour
 {
-    private const float Y_POSITION = -200f;
+    private const float Y_POSITION = -240f;
 
     public GameObject temp;
+    public GameObject cloneContainer;
 
-    public Image splash;
+    public Image fade;
     public Canvas canvas;
 
-    [Tooltip("At least 2  images required")]
     public Image[] images;
 
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
     private List<ImageBucket> clonedImages = new List<ImageBucket>();
+    private bool gameStarted;
 
     private class ImageBucket
     {
@@ -47,12 +51,17 @@ public class TitleScreenManager : MonoBehaviour
 
         var canvasRect = canvas.transform as RectTransform;
 
-        Spawn(images[0], -(canvasRect.rect.width / 2 + images[0].rectTransform.rect.width / 2) / 3);
-        Spawn(images[1], (canvasRect.rect.width / 2 + images[1].rectTransform.rect.width / 2) / 3);
+        StartCoroutine(SpawnWithDelay(images[0], canvasRect.rect.width / 2 + images[0].rectTransform.rect.width / 2));
 
 
     }
 
+    IEnumerator SpawnWithDelay(Image source, float relativePosition)
+    {
+        yield return new WaitForSeconds(1);
+        Spawn(source, relativePosition);
+
+    }
     void Update()
     {
         List<ImageBucket> clonedImagesToRemove = new List<ImageBucket>();
@@ -75,7 +84,7 @@ public class TitleScreenManager : MonoBehaviour
                 Destroy(image.gameObject);
             }
 
-            float spawnPoint = leftEnd / 3;
+            float spawnPoint = -leftEnd / 3;
 
             if (newPos < spawnPoint && !hasSpawnedAnother)
             {
@@ -103,6 +112,7 @@ public class TitleScreenManager : MonoBehaviour
     {
 
         Image clone = Instantiate(source, new Vector3(0, 0, 0), Quaternion.identity, canvas.transform);
+        clone.transform.parent = cloneContainer.transform;
         clone.transform.localPosition = new Vector3(relativePosition, Y_POSITION, 0);
         clonedImages.Add(new ImageBucket(clone));
         imageIndexToSpawn++;
@@ -115,6 +125,28 @@ public class TitleScreenManager : MonoBehaviour
 
     public void GoToMenu()
     {
+        if (!gameStarted)
+        {
+            AudioUtil.PlaySFX(audioSource, audioClip);
+            gameStarted = true;
+            StartCoroutine(FinishFade());
+        }
+
+
+    }
+
+    IEnumerator FinishFade()
+    {
+
+        yield return new WaitForSeconds(.8f);
+        float alpha = 0;
+        while (alpha < 1)
+        {
+            alpha += 0.05f;
+            fade.color = new Color(0, 0, 0, alpha);
+            yield return new WaitForSeconds(0.025f);
+
+        }
         SceneManager.LoadScene("Main");
 
     }
