@@ -13,8 +13,8 @@ public class AnimatorEvent : MonoBehaviour {
         IMortal mortal = gameModel.findMortalInSamePositionAs(attacker.entity);
         if (mortal == null)
             return;
-        mortal.StartDieAnimation(attacker.mortalDeathAnimation);
-        AudioUtil.PlaySFX(attacker.audioSource, attacker.sfxHitClip);
+        mortal.StartDieAnimation(attacker.opponentDeathAnimation);
+        AudioUtil.PlaySFX(attacker.audioSource, attacker.sfxAttackClip);
     }
 
     //Player Section
@@ -40,9 +40,15 @@ public class AnimatorEvent : MonoBehaviour {
 
     //Mortal Section
     public IMortal mortal { private get; set; }
-    public void MortalSlipThudEvent()
+    public void MortalThudEvent()
     {
-        AudioUtil.PlaySFX(mortal.audioSource, mortal.sfxSlipThudClip);
+        LevelUtil.LevelType levelType = gameModel.currentLevelType;
+        AudioClip sfxThud = mortal.GetResolvedSfxThud(levelType);
+        AudioUtil.PlaySFX(mortal.audioSource, sfxThud);
+    }
+    public void MortalHitEvent()
+    {
+        AudioUtil.PlaySFX(mortal.audioSource, mortal.sfxHitClip);
     }
 
     //Consumable Section

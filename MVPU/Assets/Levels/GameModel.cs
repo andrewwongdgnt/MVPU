@@ -659,7 +659,7 @@ public class GameModel : MonoBehaviour
 
                 if (gameEndingKiller != null)
                 {
-                    _player.StartDieAnimation(gameEndingKiller.mortalDeathAnimation, gameEndingKiller.attackDelayed);
+                    _player.StartDieAnimation(gameEndingKiller.opponentDeathAnimation, gameEndingKiller.attackDelayed);
                     gameEndingKiller.StartAttackAnimation();
                     Entity.Direction attackerDir = _player.facingDirection == Entity.Direction.LEFT || _player.facingDirection == Entity.Direction.UP ? Entity.Direction.RIGHT : Entity.Direction.LEFT;
                     if (!(gameEndingKiller is Enemy))
@@ -1038,7 +1038,7 @@ public class GameModel : MonoBehaviour
                     {
                         if (walker is Enemy)
                         {
-                            SetViewForEnemy((Enemy)walker, bombInfo.third.mortalDeathAnimation);
+                            SetViewForEnemy((Enemy)walker, bombInfo.third.opponentDeathAnimation);
                         }
                         Entity.Direction bombDirection = direction == Entity.Direction.LEFT || direction == Entity.Direction.UP ? Entity.Direction.LEFT : Entity.Direction.RIGHT;
 

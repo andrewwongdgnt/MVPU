@@ -6,7 +6,8 @@ using System;
 public class Player : Entity, IWalker, IMortal, ICelebrator
 {
     public LevelTypeAudioPair[] sfxFootSteps;
-    public AudioClip sfxSlipThudClip;
+    public AudioClip sfxHitClip;
+    public LevelTypeAudioPair[] sfxThuds;
     public LevelTypeAudioPair[] sfxCelebrateSteps;
 
     private WalkerService _walkerService;
@@ -146,12 +147,22 @@ public class Player : Entity, IWalker, IMortal, ICelebrator
     {
         mortalService.StopDieAnimation();
     }
-
-    AudioClip IMortal.sfxSlipThudClip
+    LevelTypeAudioPair[] IMortal.sfxThuds
     {
         get
         {
-            return sfxSlipThudClip;
+            return sfxThuds;
+        }
+    }
+    public AudioClip GetResolvedSfxThud(LevelUtil.LevelType levelType)
+    {
+        return mortalService.GetSfxThud(levelType);
+    }
+    AudioClip IMortal.sfxHitClip
+    {
+        get
+        {
+            return sfxHitClip;
         }
     }
 

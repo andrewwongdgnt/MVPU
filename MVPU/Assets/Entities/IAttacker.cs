@@ -10,9 +10,9 @@ public interface IAttacker : IEntity
     void StartAttackAnimation();
     void StopAttackAnimation();
 
-    MortalService.DeathAnimation mortalDeathAnimation { get; }
+    MortalService.DeathAnimation opponentDeathAnimation { get; }
 
-    AudioClip sfxHitClip
+    AudioClip sfxAttackClip
     {
         get;
     }

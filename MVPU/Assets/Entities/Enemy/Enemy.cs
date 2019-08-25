@@ -10,11 +10,12 @@ public class Enemy : Entity, IWalker, IAttacker, IMortal
     public int stepsPerMove;
     public bool dozer;
     public EnemyEntity whoAmI;
-    public MortalService.DeathAnimation mortalDeathAnimation;
-    public AudioClip sfxHitClip;
+    public MortalService.DeathAnimation opponentDeathAnimation;
+    public AudioClip sfxAttackClip;
     public LevelTypeAudioPair[] sfxFootSteps;
-    public AudioClip sfxSlipThudClip;
-    
+    public AudioClip sfxHitClip;
+    public LevelTypeAudioPair[] sfxThuds;
+
 
     public enum Animation { None, Dozed, Slipped }
     public enum EnemyEntity { KONGO, PURPLE_MONKEY }
@@ -260,7 +261,7 @@ public class Enemy : Entity, IWalker, IAttacker, IMortal
     {
         get
         {
-            return mortalDeathAnimation;
+            return opponentDeathAnimation;
         }
     } 
 
@@ -293,11 +294,11 @@ public class Enemy : Entity, IWalker, IAttacker, IMortal
     // IAttacker Impl
     //---------------
 
-    AudioClip IAttacker.sfxHitClip
+    AudioClip IAttacker.sfxAttackClip
     {
         get
         {
-            return sfxHitClip;
+            return sfxAttackClip;
         }
     }
 
@@ -318,11 +319,11 @@ public class Enemy : Entity, IWalker, IAttacker, IMortal
         }
     }
 
-    MortalService.DeathAnimation IAttacker.mortalDeathAnimation
+    MortalService.DeathAnimation IAttacker.opponentDeathAnimation
     {
         get
         {
-            return mortalDeathAnimation;
+            return opponentDeathAnimation;
         }
     }
 
@@ -338,12 +339,22 @@ public class Enemy : Entity, IWalker, IAttacker, IMortal
     {
         mortalService.StopDieAnimation();
     }
-
-    AudioClip IMortal.sfxSlipThudClip
+    LevelTypeAudioPair[] IMortal.sfxThuds
     {
         get
         {
-            return sfxSlipThudClip;
+            return sfxThuds;
+        }
+    }
+    public AudioClip GetResolvedSfxThud(LevelUtil.LevelType levelType)
+    {
+        return mortalService.GetSfxThud(levelType);
+    }
+    AudioClip IMortal.sfxHitClip
+    {
+        get
+        {
+            return sfxHitClip;
         }
     }
 }

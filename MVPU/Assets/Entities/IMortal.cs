@@ -8,7 +8,9 @@ public interface IMortal : IEntity
     void StartDieAnimation(MortalService.DeathAnimation deathAnimation);
     void StopDieAnimation();
 
-    AudioClip sfxSlipThudClip
+    AudioClip GetResolvedSfxThud(LevelUtil.LevelType levelType);
+    LevelTypeAudioPair[] sfxThuds { get; }
+    AudioClip sfxHitClip
     {
         get;
     }

@@ -11,7 +11,7 @@ public class Bomb : Entity, IAttacker {
     public bool affectsPlayer;
     public int numOfUses;
     public AudioClip sfxHitClip;
-    public MortalService.DeathAnimation mortalDeathAnimation;
+    public MortalService.DeathAnimation opponentDeathAnimation;
 
     public bool inactive
     {
@@ -72,7 +72,7 @@ public class Bomb : Entity, IAttacker {
         attackerService.StopAttackAnimation();
     }
 
-    AudioClip IAttacker.sfxHitClip
+    AudioClip IAttacker.sfxAttackClip
     {
         get
         {
@@ -88,11 +88,11 @@ public class Bomb : Entity, IAttacker {
         }
     }
 
-    MortalService.DeathAnimation IAttacker.mortalDeathAnimation
+    MortalService.DeathAnimation IAttacker.opponentDeathAnimation
     {
         get
         {
-            return mortalDeathAnimation;
+            return opponentDeathAnimation;
         }
     }
 }
