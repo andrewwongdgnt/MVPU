@@ -8,10 +8,15 @@ public class Menu : MonoBehaviour
 
     public Text title;
     public GameObject levelSelectGroup;
+    public Image levelSelectButton;
     public GameObject settingsGroup;
+    public Image settingsButton;
     public GameObject helpGroup;
+    public Image helpButton;
     public GameObject creditsGroup;
+    public Image creditsButton;
     public GameObject storeGroup;
+    public Image storeButton;
 
 
     // Use this for initialization
@@ -26,6 +31,7 @@ public class Menu : MonoBehaviour
     {
         title.text = "Settings";
         DeactivateObjects(exclusion: settingsGroup);
+        UnhighlightButtons(settingsButton);
     }
 
     public void GoToLevelSelect()
@@ -33,6 +39,7 @@ public class Menu : MonoBehaviour
 
         title.text = "Level Select";
         DeactivateObjects(exclusion: levelSelectGroup);
+        UnhighlightButtons(levelSelectButton);
     }
 
     public void GoToHelp()
@@ -40,6 +47,7 @@ public class Menu : MonoBehaviour
 
         title.text = "How to play";
         DeactivateObjects(exclusion: helpGroup);
+        UnhighlightButtons(helpButton);
     }
 
     public void GoToCredits()
@@ -47,13 +55,15 @@ public class Menu : MonoBehaviour
 
         title.text = "Credits";
         DeactivateObjects(exclusion: creditsGroup);
+        UnhighlightButtons(creditsButton);
     }
 
     public void GoToStore()
     {
 
-        title.text = "Store";
+        title.text = "Purchase";
         DeactivateObjects(exclusion: storeGroup);
+        UnhighlightButtons(storeButton);
     }
 
     private void DeactivateObjects(GameObject exclusion)
@@ -64,5 +74,16 @@ public class Menu : MonoBehaviour
         helpGroup.SetActive(helpGroup == exclusion);
         creditsGroup.SetActive(creditsGroup == exclusion);
         storeGroup.SetActive(storeGroup == exclusion);
+    }
+
+    private void UnhighlightButtons(Image exclusion)
+    {
+
+        levelSelectButton.color = Color.white;
+        settingsButton.color = Color.white;
+        helpButton.color = Color.white;
+        creditsButton.color = Color.white;
+        storeButton.color = Color.white;
+        exclusion.color = Color.green;
     }
 }
