@@ -221,15 +221,25 @@ public class InGameMenu : MonoBehaviour
 
     public void Quit()
     {
-        SetPause(false);
-        SceneManager.LoadScene("Main");
+
+        Action action = () => {
+            SetPause(false);
+            SceneManager.LoadScene("Main");
+        };        
+
+        AdUtil.WatchAd(action);
     }
 
 
     public void NextLevel()
     {
-        LevelUtil.levelToLoad = LevelUtil.LevelPrereq[LevelUtil.levelToLoad].second;
-        SceneManager.LoadScene("Load Screen");
+
+        Action action = () => {
+            LevelUtil.levelToLoad = LevelUtil.LevelPrereq[LevelUtil.levelToLoad].second;
+            SceneManager.LoadScene("Load Screen");
+        };
+
+        AdUtil.WatchAd(action);
     }
 
     public void Undo(bool removeLastState)
