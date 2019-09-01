@@ -10,15 +10,15 @@ public class StoreMenu : MonoBehaviour
 
     public void ButtonPress()
     {
-        if (Advertisement.IsReady())
-        {
-            Debug.Log("Ad is ready");
-            Advertisement.Show("video");
-        }
-        else
-        {
-            Debug.Log("Ad not ready");
-        }
+        //if (Advertisement.IsReady())
+        //{
+        //    Debug.Log("Ad is ready");
+        //    Advertisement.Show("video");
+        //}
+        //else
+        //{
+        //    Debug.Log("Ad not ready");
+        //}
     }
  
 }
