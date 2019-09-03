@@ -18,7 +18,7 @@ public class AdUtil
         if (currentCount >= COUNT_TO_RESET)
         {
 
-            if (Advertisement.IsReady())
+            if (Advertisement.IsReady() && !Debug.isDebugBuild)
             {
                 Debug.Log("Ad is ready");
                 Advertisement.Show("video", new ShowOptions()
@@ -46,7 +46,7 @@ public class AdUtil
             }
             else
             {
-                Debug.Log("Ad not ready");
+                Debug.Log(Debug.isDebugBuild ? "Not showing ad because it is a debug build" : "Ad not ready ");
                 action.Invoke();
             }
 
