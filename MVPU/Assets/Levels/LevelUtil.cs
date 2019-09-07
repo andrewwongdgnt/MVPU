@@ -28,7 +28,7 @@ public class LevelUtil
 
 
     //meant to be mutable
-    public static LevelID levelToLoad = LevelID.LEVEL_5_3;
+    public static LevelID levelToLoad = LevelID.LEVEL_3_9;
     public static int UNAVAILABLE_WORLD_START_INDEX = 5;
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
@@ -303,7 +303,7 @@ public class LevelUtil
             {Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_OPEN,Cell.CELL_BOTTOM_CLOSED,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
             {Cell.CELL_OPEN,Cell.CELL_TOP_CLOSED,Cell.CELL_TOP_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,Cell.CELL_TOP_CLOSED,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
             {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_RIGHT_CLOSED,Cell.CELL_LEFT_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
-            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_LEFT_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
+            {Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_OPEN,Cell.CELL_RIGHT_CLOSED,Cell.CELL_LEFT_RIGHT_CLOSED,Cell.CELL_LEFT_CLOSED,},
         }
         },
         { LevelID.LEVEL_3_10, new Cell[,]{
@@ -692,7 +692,7 @@ public class LevelUtil
                 new TutorialAction[] {
                 new TutorialAction("Hello!", TutorialAction.Action.NONE),
                 new TutorialAction("My name is Chomp and I'm here to help you reunite the Monkey and Penguin.", TutorialAction.Action.NONE),
-                new TutorialAction("To do that, you must move the Monkey along the grid while avoiding the rocks.", TutorialAction.Action.NONE),
+                new TutorialAction("To do that, you must move the Monkey along the grid while avoiding the fence.", TutorialAction.Action.NONE),
                 new TutorialAction("Swipe the screen to move the Monkey. Good luck!.", TutorialAction.Action.SWIPE) } ) },
 
             { LevelID.LEVEL_1_2, new Pair<string,  TutorialAction[]> ("Level 2 - Kongo movement",

@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class InGameMenu : MonoBehaviour
 {
@@ -36,6 +37,9 @@ public class InGameMenu : MonoBehaviour
     public AudioSource sfxAudioSource;
     public AudioClip loseSfx;
     public AudioClip winSfx;
+
+    public HintManager hintManager;
+
 
     private enum PauseSubMenu
     {
@@ -90,7 +94,7 @@ public class InGameMenu : MonoBehaviour
 
     }
 
-      public void EntitySpeed (float speed)
+    public void EntitySpeed(float speed)
     {
         Debug.Log("Entity Speed is " + (speed));
         SettingsUtil.SetEntitySpeedMultiplier(speed);
@@ -222,10 +226,11 @@ public class InGameMenu : MonoBehaviour
     public void Quit()
     {
 
-        Action action = () => {
+        Action action = () =>
+        {
             SetPause(false);
             SceneManager.LoadScene("Main");
-        };        
+        };
 
         AdUtil.WatchAd(action);
     }
@@ -234,7 +239,8 @@ public class InGameMenu : MonoBehaviour
     public void NextLevel()
     {
 
-        Action action = () => {
+        Action action = () =>
+        {
             LevelUtil.levelToLoad = LevelUtil.LevelPrereq[LevelUtil.levelToLoad].second;
             SceneManager.LoadScene("Load Screen");
         };
@@ -253,4 +259,11 @@ public class InGameMenu : MonoBehaviour
         SetPause(false);
         gameModel.Redo();
     }
+
+    public void GetHelp()
+    {
+        if (!gameModel.isTutorialInProgress)
+            hintManager.DisplayWalkthrough(gameModel.currentLevelWalkthrough);
+    }
+
 }

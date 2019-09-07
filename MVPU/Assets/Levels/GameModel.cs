@@ -154,6 +154,22 @@ public class GameModel : MonoBehaviour
         }
     }
 
+    public LevelUtil.LevelType currentLevelType
+    {
+        get
+        {
+            return LevelUtil.LevelToLevelType[_currentLevelId];
+        }
+    }
+
+    public List<LevelUtil.WalkthroughDirection> currentLevelWalkthrough
+    {
+        get
+        {
+            return LevelUtil.LevelWalkthrough[_currentLevelId];
+        }
+    }
+
     private AudioClip _currentLevelMusic;
     public AudioClip currentLevelMusic
     {
@@ -164,10 +180,19 @@ public class GameModel : MonoBehaviour
         }
     }
 
+    public bool isTutorialInProgress
+    {
+        get
+        {
+
+            return TutorialAction.isNoAction(actionAllowedFromTutorial);
+        }
+    }
+
 
     public void Undo(bool removeLastState)
     {
-        
+
         if (UserInteractionAllowed())
         {
             HistoryState historyState = undoManager.Undo();
@@ -195,7 +220,7 @@ public class GameModel : MonoBehaviour
 
     public void Redo()
     {
-        
+
         if (UserInteractionAllowed())
         {
             HistoryState historyState = undoManager.Redo();
@@ -204,7 +229,18 @@ public class GameModel : MonoBehaviour
                 RestoreStateToEntities(historyState);
                 scoringManager.AddMove();
             }
+            StartCoroutine("RedoCoroutine");
         }
+    }
+
+    private bool redoPressed;
+    private IEnumerator RedoCoroutine()
+    {
+        redoPressed = true;
+
+        yield return new WaitForSeconds(DOUBLE_TAP_DELAY + 0.2f);
+
+        redoPressed = false;
     }
 
     private void RestoreStateToEntities(HistoryState historyState)
@@ -249,7 +285,7 @@ public class GameModel : MonoBehaviour
         }
         if (bestScoreGuiText != null)
         {
-            bestScoreGuiText.text = bestScore==null ? "-" : bestScore.ToString();
+            bestScoreGuiText.text = bestScore == null ? "-" : bestScore.ToString();
         }
     }
 
@@ -286,18 +322,10 @@ public class GameModel : MonoBehaviour
             currentLevelAudioSource.Pause();
         }
     }
-    
+
     public void AdjustLevelMusic(float value)
     {
         currentLevelAudioSource.volume = value / 100;
-    }
-
-    public LevelUtil.LevelType currentLevelType
-    {
-        get
-        {
-            return LevelUtil.LevelToLevelType[_currentLevelId];
-        }
     }
 
     private List<List<bool>> animationComplete = new List<List<bool>>();
@@ -535,7 +563,7 @@ public class GameModel : MonoBehaviour
             //Check for double tap
             if (userInteractionAllowed)
             {
-                if (Input.touchCount > 0 && !undoPressed)
+                if (Input.touchCount > 0 && !undoPressed && !redoPressed)
                 { //if there is any touch
                     touchDuration += Time.deltaTime;
                     touch = Input.GetTouch(0);
