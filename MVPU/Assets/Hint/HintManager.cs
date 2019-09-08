@@ -23,7 +23,8 @@ public class HintManager : MonoBehaviour
     private int currentPage;
     private List<LevelUtil.WalkthroughDirection> _walkthroughDirections;
 
-    private bool adShown;
+    //intentionally public static
+    public static bool adShown;
 
     void Start()
     {

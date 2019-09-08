@@ -15,6 +15,7 @@ public class InitEverything : MonoBehaviour
         {
             Advertisement.Initialize(gameId, testMode);
         }
+        HintManager.adShown = false;
     }
     // Update is called once per frame
     void Update()
