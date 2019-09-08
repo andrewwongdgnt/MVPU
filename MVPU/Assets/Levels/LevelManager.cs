@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour {
             Tutorial tutorial = Array.Find(tutorials, t => levelClone.tutorialEnum == t.tutorialType);
             levelClone.tutorial = tutorial;
             levelClone.Init();
+
+            LevelSelectUtil.SaveCurrentWorld(LevelUtil.LevelToWorldIndexMap[levelClone.levelID]);
         }
     }
 }

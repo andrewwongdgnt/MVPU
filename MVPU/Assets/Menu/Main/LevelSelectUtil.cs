@@ -16,8 +16,14 @@ public class LevelSelectUtil
             currentWorld++;
         else if (!up && currentWorld > 0)
             currentWorld--;
+        SaveCurrentWorld(currentWorld);
+    }
+
+    public static void SaveCurrentWorld(int currentWorld)
+    {
         PlayerPrefs.SetInt(CURRENT_WORLD_KEY, currentWorld);
     }
+
     public static int GetCurrentWorld()
     {
         int rtn = PlayerPrefs.HasKey(CURRENT_WORLD_KEY) ? PlayerPrefs.GetInt(CURRENT_WORLD_KEY) : 0;
@@ -26,8 +32,7 @@ public class LevelSelectUtil
         else if (rtn > MAX_WORLD_INDEX)
             return MAX_WORLD_INDEX;
         else
-            return rtn;
-              
+            return rtn;              
     }
     
 

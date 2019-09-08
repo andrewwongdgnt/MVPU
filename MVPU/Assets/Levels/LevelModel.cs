@@ -43,17 +43,13 @@ public class LevelModel : MonoBehaviour
 
     public void Init()
     {
-
-
+        
         //Update skybox
         RenderSettings.skybox = mat;
-
-
+        
         gameObject.SetActive(true);
 
-
         GameModel gameModel = GameObject.Find("Game").GetComponent<GameModel>();
-
 
         gameModel.levelScore = LevelUtil.LevelScoreMap[levelID];
 

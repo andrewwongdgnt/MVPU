@@ -241,8 +241,17 @@ public class InGameMenu : MonoBehaviour
 
         Action action = () =>
         {
+
             LevelUtil.levelToLoad = LevelUtil.LevelPrereq[LevelUtil.levelToLoad].second;
-            SceneManager.LoadScene("Load Screen");
+            if (LevelUtil.levelToLoad == LevelUtil.LevelID.LEVEL_6_1)
+            {
+                LevelSelectUtil.SaveCurrentWorld(5);
+                SceneManager.LoadScene("Main");
+            }
+            else
+            {
+                SceneManager.LoadScene("Load Screen");
+            }
         };
 
         AdUtil.WatchAd(action);
