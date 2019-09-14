@@ -6,19 +6,21 @@ using UnityEngine.Advertisements;
 
 public class StoreMenu : MonoBehaviour
 {
-    public Button btn;
+    public IAPManager iapManager;
 
-    public void ButtonPress()
+    public void BuyNoAds()
     {
-        //if (Advertisement.IsReady())
-        //{
-        //    Debug.Log("Ad is ready");
-        //    Advertisement.Show("video");
-        //}
-        //else
-        //{
-        //    Debug.Log("Ad not ready");
-        //}
+        iapManager.BuyNoAds();
     }
- 
+
+    public void BuyUnlockAllLevels()
+    {
+        iapManager.BuyUnlockAllLevels();
+    }
+
+    public void BuyAllOfTheAbove()
+    {
+        iapManager.BuyAllOfTheAbove();
+    }
+
 }
