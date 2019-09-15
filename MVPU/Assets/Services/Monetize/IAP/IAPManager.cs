@@ -7,6 +7,7 @@ using UnityEngine.Purchasing;
 // Deriving the Purchaser class from IStoreListener enables it to receive messages from Unity Purchasing.
 public class IAPManager : MonoBehaviour, IStoreListener
 {
+
     private static IStoreController m_StoreController;          // The Unity Purchasing system.
     private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
 
@@ -30,14 +31,19 @@ public class IAPManager : MonoBehaviour, IStoreListener
     // Google Play Store-specific product identifier subscription product.
     private static string kProductNameGooglePlaySubscription = "com.unity3d.subscription.original";
 
-
     void Start()
     {
+
         // If we haven't set up the Unity Purchasing reference
         if (m_StoreController == null)
         {
             // Begin to configure our connection to Purchasing
             InitializePurchasing();
+        } 
+        else
+        {
+
+            CheckAvailabilityOfProducts();
         }
     }
 
@@ -55,7 +61,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
         // Add a product to sell / restore by way of its identifier, associating the general identifier
         // with its store-specific identifiers.
-       // builder.AddProduct(Something, ProductType.Consumable);
+        // builder.AddProduct(Something, ProductType.Consumable);
         // Continue adding the non-consumable product.
         builder.AddProduct(NO_ADS, ProductType.NonConsumable);
         builder.AddProduct(UNLOCK_ALL_LEVELS, ProductType.NonConsumable);
@@ -176,7 +182,8 @@ public class IAPManager : MonoBehaviour, IStoreListener
             var apple = m_StoreExtensionProvider.GetExtension<IAppleExtensions>();
             // Begin the asynchronous process of restoring purchases. Expect a confirmation response in 
             // the Action<bool> below, and ProcessPurchase if there are previously purchased products to restore.
-            apple.RestoreTransactions((result) => {
+            apple.RestoreTransactions((result) =>
+            {
                 // The first phase of restoration. If no more responses are received on ProcessPurchase then 
                 // no purchases are available to be restored.
                 Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
@@ -204,8 +211,9 @@ public class IAPManager : MonoBehaviour, IStoreListener
         m_StoreController = controller;
         // Store specific subsystem, for accessing device-specific store features.
         m_StoreExtensionProvider = extensions;
-    }
 
+        CheckAvailabilityOfProducts();
+    }
 
     public void OnInitializeFailed(InitializationFailureReason error)
     {
@@ -222,7 +230,9 @@ public class IAPManager : MonoBehaviour, IStoreListener
             || String.Equals(args.purchasedProduct.definition.id, ALL_OF_THE_ABOVE, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            
+
+            CheckAvailabilityOfProducts();
+
         }
         // Or ... a non-consumable product has been purchased by this user.
         /*else if (String.Equals(args.purchasedProduct.definition.id, kProductIDNonConsumable, StringComparison.Ordinal))
@@ -254,5 +264,42 @@ public class IAPManager : MonoBehaviour, IStoreListener
         // A product purchase attempt did not succeed. Check failureReason for more detail. Consider sharing 
         // this reason with the user to guide their troubleshooting actions.
         Debug.Log(string.Format("OnPurchaseFailed: FAIL. Product: '{0}', PurchaseFailureReason: {1}", product.definition.storeSpecificId, failureReason));
+    }
+
+
+
+    private void CheckAvailabilityOfProducts()
+    {
+
+        bool allOfTheAboveBought = CheckAvailabilityOfProduct(ALL_OF_THE_ABOVE);
+        if (allOfTheAboveBought)
+        {
+            LevelUtil.disableAds = LevelUtil.allLevelsUnlocked = true;
+        }
+        else
+        {
+            LevelUtil.disableAds = CheckAvailabilityOfProduct(NO_ADS);
+            LevelUtil.allLevelsUnlocked = CheckAvailabilityOfProduct(UNLOCK_ALL_LEVELS);
+        }
+    }
+
+    private bool CheckAvailabilityOfProduct(string productId)
+    {
+        if (!IsInitialized())
+        {
+            return false;
+        }
+
+        Product product = m_StoreController.products.WithID(productId);
+
+        if (product != null)
+        {
+            // Owned Non Consumables and Subscriptions should always have receipts.
+            // So here the Non Consumable product has already been bought.
+
+            return product.hasReceipt;
+        }
+
+        return false;
     }
 }

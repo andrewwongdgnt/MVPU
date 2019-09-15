@@ -19,6 +19,7 @@ public class LevelSelectMenu : MonoBehaviour {
 
     public Text levelsComingSoonTxt;
 
+    private bool oldLevelUnlockStatus;
     // Use this for initialization
     void Start()
     {
@@ -30,6 +31,11 @@ public class LevelSelectMenu : MonoBehaviour {
     void Update()
     {
 
+        if (oldLevelUnlockStatus != LevelUtil.allLevelsUnlocked)
+        {
+            oldLevelUnlockStatus = LevelUtil.allLevelsUnlocked;
+            UpdateAllLevelSelectButtons();
+        }
     }
 
     void UpdateAllLevelSelectButtons()

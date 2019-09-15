@@ -40,7 +40,7 @@ public class HintManager : MonoBehaviour
         isActive = !isActive;
         gameObject.SetActive(isActive);
         _walkthroughDirections = walkthroughDirections;
-        if (adShown)
+        if (adShown || LevelUtil.disableAds)
         {
             DisplayWalkthroughContent();
         }

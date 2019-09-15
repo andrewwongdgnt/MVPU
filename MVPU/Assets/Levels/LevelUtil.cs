@@ -30,6 +30,9 @@ public class LevelUtil
     //meant to be mutable
     public static LevelID levelToLoad = LevelID.LEVEL_3_9;
     public static int UNAVAILABLE_WORLD_START_INDEX = 5;
+    public static bool disableAds;
+    public static bool allLevelsUnlocked;
+
 
     public static LevelID[][] WorldToLevelArr = new LevelID[][]
     {
