@@ -36,8 +36,9 @@ public class LevelScore
     {
 
         this.minMoveCount = minMoveCount;
-        greatMoveCount = minMoveCount+2;
-        goodMoveCount = greatMoveCount + 2;
-        adequateMoveCount = goodMoveCount + 2;
+        greatMoveCount = minMoveCount+3;
+        goodMoveCount = greatMoveCount + 3;
+        adequateMoveCount = goodMoveCount + 3;
     }
+
 }
