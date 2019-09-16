@@ -241,7 +241,7 @@ public class InGameMenu : MonoBehaviour
 
         Action action = () =>
         {
-
+            HintManager.adShown = false;
             LevelUtil.levelToLoad = LevelUtil.LevelPrereq[LevelUtil.levelToLoad].second;
             if (LevelUtil.levelToLoad == LevelUtil.LevelID.LEVEL_6_1)
             {
