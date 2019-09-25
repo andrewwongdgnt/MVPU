@@ -139,7 +139,7 @@ public class HintManager : MonoBehaviour
     public void Prev()
     {
         if (adShown)
-        HandleContent(currentPage - 1);
+            HandleContent(currentPage - 1);
         else
         {
             isActive = false;

@@ -46,7 +46,7 @@ public class AdUtil
 
     private static void WatchAdInternal(Action action)
     {
-        if (Advertisement.IsReady() && !Debug.isDebugBuild)
+        if (Advertisement.IsReady() && !Debug.isDebugBuild && !LevelUtil.disableAds)
         {
             Debug.Log("Ad is ready");
             Advertisement.Show("video", new ShowOptions()
@@ -74,7 +74,13 @@ public class AdUtil
         }
         else
         {
-            Debug.Log(Debug.isDebugBuild ? "Not showing ad because it is a debug build" : "Ad not ready ");
+            if (Debug.isDebugBuild)
+                Debug.Log("Not showing ad because it is a debug build");
+            else if (LevelUtil.disableAds)            
+                Debug.Log("Not showing ad because ads are disabled");
+            else
+                Debug.Log("Ad not ready");
+
             action.Invoke();
         }
     }
